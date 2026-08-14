@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "path": "turnur",
+  "host": "github",
+  "github": {
+    "owner": "StacksOnTheRacks",
+    "repo": "turnur",
+    "projectId": "PVT_kwHOADqiOM4BWitQ",
+    "statusFieldId": "PVTSSF_lAHOADqiOM4BWitQzhR2CcE",
+    "statusIds": {
+      "backlog": "f75ad846",
+      "refinement": "e8c2872d",
+      "ready": "61e4505c",
+      "in_progress": "47fc9ee4",
+      "in_review": "df73e18b",
+      "done": "98236657"
+    }
+  },
+  "labels": {
+    "aiReady": "ai-ready",
+    "humanReady": "human-ready"
+  }
+}
