@@ -10,13 +10,14 @@
 
 # Now
 
-- Host Chrome MV3 **host control panel**: bind active `/room/:roomId` (C1); media-tab open/not + now playing; full catalog library (B1); title change via PATCH + media navigate (A1); JWT SPA↔extension bridge; no capture
-  - Board: https://github.com/StacksOnTheRacks/riffsync/issues/426
+- Remaining host Chrome MV3 **host control panel** MVP: bind active `/room/:roomId` (C1); media-tab open/not + now playing; full catalog library (B1); title change via PATCH + media navigate (A1); JWT SPA↔extension bridge; no capture
+  - Tracking: https://github.com/StacksOnTheRacks/riffsync/issues/426
+  - Scaffold shipped: #427 closed (PR #432, `apps/host-extension`)
+  - Remaining Ready (`ai-ready`): #428 media-tab, #429 catalog library, #430 title PATCH + media navigate, #431 docs
 - Treat Chromecast, PWA, catalog playback host, friends/DM, catalog browse IA, and public SEO packaging as live product baseline (board Done / closed), not open delivery risk
 
 # Next
 
-- Work extension MVP through refinement then Ready: #427–#431 under epic #426 (suggested order: scaffold → media-tab navigate → side panel library → title PATCH + media navigate → docs)
 - After extension v1 lands: pick the next discovery/hangout bet (official Live vs further polish) against an empty-or-thin open board
 
 # Later

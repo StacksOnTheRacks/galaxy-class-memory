@@ -15,5 +15,9 @@
       "in_review": "df73e18b",
       "done": "98236657"
     }
+  },
+  "labels": {
+    "aiReady": "ai-ready",
+    "humanReady": "human-ready"
   }
 }

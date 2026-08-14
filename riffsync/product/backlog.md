@@ -4,8 +4,6 @@
 
 # Ready
 
-- Host Chrome MV3 extension scaffold + package layout
-  - https://github.com/StacksOnTheRacks/riffsync/issues/427
 - Open/navigate host media tab without leaving the party tab
   - https://github.com/StacksOnTheRacks/riffsync/issues/428
 - Host control panel: load RiffSync catalog library

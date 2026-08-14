@@ -19,4 +19,4 @@
 
 # Current read
 
-- Stub: production site live at https://riffsync.tv; open board is thin (Cast ops readiness only). No quantified product dashboard read captured for init-project.
+- Stub: production site live at https://riffsync.tv. Open board is the host Chrome MV3 control-panel MVP (#426 tracking; Ready #428–#431). Scaffold #427 closed. No quantified product dashboard read captured.

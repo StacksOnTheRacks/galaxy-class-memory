@@ -42,4 +42,4 @@ Riff fans want to watch together with matched ads, chat, and presence, without e
 
 # Current focus
 
-Build a host Chrome MV3 **host control panel** so hosts bind the active `/room/:roomId` tab (C1), see media-tab open/not and now playing, and change room title from the full public catalog library without leaving the party tab. JWT via SPA↔extension bridge. No extension capture. Ready: #427 scaffold, #428 media-tab, #429 catalog library, #430 PATCH/JWT + now-playing + JWT A bridge, #431 docs (`ai-ready`). Refinement: epic #426 (tracking).
+Build a host Chrome MV3 **host control panel** so hosts bind the active `/room/:roomId` tab (C1), see media-tab open/not and now playing, and change room title from the full public catalog library without leaving the party tab. JWT via SPA↔extension bridge. No extension capture. Scaffold shipped (#427 closed; `apps/host-extension`). Ready (`ai-ready`): #428 media-tab, #429 catalog library, #430 PATCH/JWT + now-playing + JWT A bridge, #431 docs. Tracking: epic #426 (not implement-ready).
