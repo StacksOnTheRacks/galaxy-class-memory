@@ -1,0 +1,12 @@
+# Active decisions
+
+## ADR-001: Host Chrome extension — party-tab stay, host control panel, no capture
+
+- **Status:** Accepted (amended 2026-08-12: host control panel + C1 + JWT A; packaging locks for #427; media-tab reuse for #428; JWT A protocol lock for #430)
+- **Context:** Hosts need to open/navigate the host media tab and change the room title without leaving the watch-party tab. Capture already lives in the SPA (`useHostScreenCapture` → `getDisplayMedia` → RoomMediaEngine → SFU `host_screen`). Prior framing (find/focus room tab + return-to-share; product “side panel”) is not the MVP outcome.
+- **Decision:** The host Chrome MV3 extension (1) binds the room by parsing the **active** tab `/room/:roomId` (**C1**), (2) opens/navigates the host **media** tab without stealing focus from the party tab and reports media-tab open/not, (3) exposes a **host control panel** that shows **now playing** for the bound room, loads the **full public catalog** (**B1**), and changes room title via host-authenticated `PATCH` `catalogEpisodeId` **plus** media-tab navigate (**A1**). Host JWT for mutations uses an **SPA↔extension bridge** (**JWT A**). It does **not** capture media, does not use `tabCapture`/desktopCapture, and does not supply or replace the `host_screen` MediaStream. Product UI term is **host control panel** (not “side panel”). Packaging locks: package path `apps/host-extension`; host control panel Chrome UI = Side Panel API (`side_panel` + `"sidePanel"`); scaffold allow-list `["sidePanel"]` only (#427); #428 adds `"tabs"` and reuses media tabs via tracked `tabId` (`active: false`) — SPA named window `riffsync-host-source` stays SPA-only. JWT A protocol lock (#430 Ready): content script on allowed SPA origins + origin-checked `window.postMessage` (`channel: riffsync-host-bridge`, `v: 1`, `HOST_JWT_REQUEST`/`HOST_JWT_RESPONSE`); extension initiates; fan access token ephemeral in SW memory; SPA owns Cognito refresh on 401; `externally_connectable` not MVP; never deliver tokens to untrusted origins.
+- **Consequences:** Extension couples to tabs APIs, host control panel UI, catalog GET, room GET (now playing), host room PATCH, and SPA JWT bridge — not to RoomMediaEngine capture. Page remains sole capture SoT. Find/focus return-to-share is Icebox. Epic #426 is tracking-only in Refinement; implementable children are #427–#431 (all Ready `ai-ready`).
+
+# Superseded
+
+-
