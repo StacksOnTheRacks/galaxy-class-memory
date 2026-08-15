@@ -1,5 +1,11 @@
 # Ready for QA
 
+- Host control panel: change room title (PATCH + media navigate)
+  - https://github.com/StacksOnTheRacks/riffsync/issues/430
+  - PR: https://github.com/StacksOnTheRacks/riffsync/pull/435
+  - `apps/host-extension` + SPA `apps/web/src/hostBridge`
+  - Unit: host-extension 45/45; SPA bridge 5/5. Static greps clean. Manual unpacked Chrome still required for Done.
+
 # In verification
 
 # Passed back
