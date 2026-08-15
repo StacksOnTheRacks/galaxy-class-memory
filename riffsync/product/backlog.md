@@ -1,9 +1,10 @@
 # In progress
 
-# Ready
-
 - Host control panel: change room title (PATCH + media navigate)
   - https://github.com/StacksOnTheRacks/riffsync/issues/430
+
+# Ready
+
 - Docs: host extension install + hosting flow (no capture)
   - https://github.com/StacksOnTheRacks/riffsync/issues/431
 
