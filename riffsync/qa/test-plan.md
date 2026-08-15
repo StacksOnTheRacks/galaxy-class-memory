@@ -11,7 +11,8 @@
 - Auth/bridge failures (`not_signed_in`, `refresh_failed`, timeout, missing content script) surface clearly and do not PATCH successfully
 - HTTP 403 / 404 / 400 catalog codes / 409 / network map to distinct panel errors; 409 copy offers retry
 - Now playing: anonymous `GET /v1/rooms/{roomId}`; `displayTitle` else library title else id; loading / error+retry / missing-room; refresh after successful title change
-- Permissions: `sidePanel` + `tabs`; `host_permissions` API origin `/*` only; `content_scripts` on allowed SPA origins; no capture APIs
+- Permissions: `tabs`; `host_permissions` API origin `/*` only; `content_scripts` on allowed SPA origins; no `sidePanel`; no capture APIs
+- Host UI: SPA Room tab (page-initiated bridge ping / media-tab open / playback); host-local Next Up
 - Product copy labeled host control panel (not branded as side panel)
 
 # Regression focus

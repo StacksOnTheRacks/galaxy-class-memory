@@ -1,17 +1,17 @@
 # Assets
 
-- Host Chrome MV3 package at `apps/host-extension` (unpacked): host control panel, service worker, content-script JWT relay, in-memory media `tabId`, anonymous public catalog + room GET, host PATCH title change.
-- Bound `roomId` and SPA origin from the active tab URL (C1).
-- Fan Cognito access JWT (ephemeral SW memory) used to PATCH room `catalogEpisodeId`.
+- Host Chrome MV3 package at `apps/host-extension` (unpacked): service worker, content-script bridge (JWT A + page-initiated media-tab helpers), in-memory media `tabId`; no Side Panel UI.
+- Bound `roomId` and SPA origin from the party tab URL (C1; prefer content-script sender tab).
+- Fan Cognito access JWT (ephemeral SW memory) used if extension-initiated PATCH remains; Room-tab catalog skips use SPA `patchRoom`.
 - Ability to create or update one inactive media tab to an absolute http(s) URL.
-- Chrome `tabs` permission (active-tab URL for bind; create/update plus remove listener for the tracked media tab; `tabs.sendMessage` to the bound party tab).
+- Chrome `tabs` permission (party-tab URL for bind; create/update plus remove listener for the tracked media tab; `tabs.sendMessage` to media/party tabs).
 - Chrome `host_permissions` for the configured public HTTP API origin `/*` only.
-- `content_scripts` on allowed SPA origins for `riffsync-host-bridge` v1 (https://github.com/StacksOnTheRacks/riffsync/issues/430).
-- Public catalog list JSON (`GET /v1/catalog`), anonymous room snapshot (`GET /v1/rooms/{roomId}`), and panel-local library selection.
+- `content_scripts` on allowed SPA origins for `riffsync-host-bridge` v1.
+- SPA Room-tab host console: host-local Next Up, catalog browse via SPA `GET /v1/catalog`, open/broadcast/transport.
 
 # Trust boundaries
 
-- Chrome vs extension service worker vs host control panel vs isolated-world content script (same-extension `chrome.runtime` only; no `externally_connectable`).
+- Chrome vs extension service worker vs SPA Room-tab console vs isolated-world content script (same-extension `chrome.runtime` only; no `externally_connectable`).
 - Content script vs SPA page via origin-checked `window.postMessage` (`riffsync-host-bridge` v1). SPA owns Cognito refresh; extension sees access tokens only.
 - Active tab URL is browser-supplied; bind only if `url.origin` is in `ALLOWED_SPA_ORIGINS` (`https://riffsync.tv`, `http://localhost:5173`) and path is `/room/:roomId`. JWT request is sent only to that bound party tab after C1 bind.
 - Media-tab destination: generic `openOrNavigate` still accepts any absolute http(s) from a same-extension sender. A1 title-change navigate uses `resolveHostSourceTabUrl` (YouTube canonical watch or bound-origin `/watch/:id?partyCapture=1`) after PATCH 200 only.
@@ -38,7 +38,7 @@
 
 # Mitigations
 
-- Manifest `permissions` exactly `["sidePanel","tabs"]`; `host_permissions` exactly configured API origin `/*`; `content_scripts` matches allowed SPA origins only; no capture permissions; no `externally_connectable`.
+- Manifest `permissions` exactly `["tabs"]`; `host_permissions` exactly configured API origin `/*`; `content_scripts` matches allowed SPA origins only; no `sidePanel`; no capture permissions; no `externally_connectable`.
 - `getPublicApiBaseUrl` requires HTTPS origin; catalog and now-playing GET are anonymous; PATCH uses Bearer access JWT and body `{ catalogEpisodeId }` only; `roomId` is `encodeURIComponent`'d.
 - `parseRoomBind` allow-list + path parse; refuse open/navigate/PATCH/JWT when unbound.
 - JWT A: SPA `event.source === window` + origin allow-list + channel/v1; content script drops disallowed origins and unmatched `requestId`; SW 5s timeout; ephemeral in-memory cache; 401 drop + one retry; never refresh tokens in the extension; tokens omitted from panel responses.

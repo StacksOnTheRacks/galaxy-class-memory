@@ -9,7 +9,7 @@ Browsers run the SPA. Anonymous guests may browse, join, chat, and consume media
 # Major components
 
 - **SPA** (`apps/web`) - catalog, lobby, room UI; RoomMediaEngine owns chat WS, SFU session, theater playback.
-- **Host Chrome MV3 extension** (`apps/host-extension`) - host control panel (Side Panel API), media-tab control; no capture / no `host_screen` from the extension.
+- **Host Chrome MV3 extension** (`apps/host-extension`) - media-tab helper (background open/navigate + play/pause); host control panel UI is the SPA Room tab; no capture / no `host_screen` from the extension.
 - **HTTP API** (API Gateway HTTP + Lambda) - catalog, rooms, lobby, ICE, SFU join token, health, admin.
 - **WebSocket API** (API Gateway + Lambda) - control plane: connect/disconnect, ping, presence, chat, share_state, leave. Not media signaling.
 - **DynamoDB** - Catalog, Rooms, Connections (plus optional profiles/lists/events as shipped).
@@ -39,4 +39,4 @@ Browsers run the SPA. Anonymous guests may browse, join, chat, and consume media
 
 # Current focus
 
-Host Chrome MV3 extension MVP (ADR-001) at `apps/host-extension`: bind active `/room/:roomId` (C1); **host control panel** (Side Panel API) shows media-tab open/not + now playing + full catalog library (B1) and title change via host PATCH + media navigate (A1); JWT via SPA↔extension bridge (JWT A locked on #430). No capture / no `host_screen` from extension. Scaffold shipped (#427 Done 2026-08-13 via PR #432): MV3 package, host control panel shell, `"permissions": ["sidePanel"]` only. Epic #426 tracking (not ai-ready). Now Ready `ai-ready`: #428 media-tab, #429 catalog library, #430 PATCH/JWT/now-playing, #431 docs.
+Host Chrome MV3 extension (ADR-001) at `apps/host-extension` is a **tabs/media helper** only. The party **Room** tab is the host control panel (detects extension via page-initiated ping; Next Up host-local; catalog add; open/broadcast; play/pause when party-capture controllable). Side Panel retired. No capture / no `host_screen` from extension.

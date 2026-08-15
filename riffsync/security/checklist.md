@@ -22,7 +22,7 @@
 
 # Config / defaults
 
-- Manifest `permissions` exactly `["sidePanel","tabs"]`. `host_permissions` exactly the configured `PUBLIC_API_BASE_URL` origin plus `/*` (placeholder: `https://xxxx.execute-api.us-east-1.amazonaws.com/*`). No SPA origins, YouTube, `*://*/*`, or `https://*/*` in `host_permissions`.
+- Manifest `permissions` exactly `["tabs"]`. `host_permissions` exactly the configured `PUBLIC_API_BASE_URL` origin plus `/*` (placeholder: `https://xxxx.execute-api.us-east-1.amazonaws.com/*`). No SPA origins, YouTube, `*://*/*`, or `https://*/*` in `host_permissions`. No `sidePanel`.
 - `content_scripts` matches exactly allowed SPA origins (`https://riffsync.tv/*`, `http://localhost:5173/*`); no `all_frames`; isolated world (not `world: MAIN`); no `externally_connectable`. Keep content-script allowlist, SPA `ALLOWED_HOST_BRIDGE_ORIGINS`, and C1 `ALLOWED_SPA_ORIGINS` in lockstep with `content_scripts.matches`.
 - No `tabCapture` / desktopCapture / offscreen capture. Media-tab open only after bind and only for absolute `http:`/`https:` URLs. Replace the placeholder origin in both `config.js` and `manifest.json` before a real environment.
 

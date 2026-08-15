@@ -9,8 +9,8 @@
 - Production public site canonical hostname is `https://riffsync.tv` (CORS/ACM/CloudFront aligned).
 - Media stack is self-hosted mediasoup + coturn on `RiffSyncTurn`; no paid third-party RTC provider and no mesh fallback in current design.
 - Host Chrome MV3 extension lives at `apps/host-extension`; must not capture or supply `host_screen` (no `tabCapture` / desktopCapture / offscreen capture); page `getDisplayMedia` is sole capture SoT (ADR-001).
-- Host control panel UI surface is Chrome Side Panel API (`side_panel` + permission `"sidePanel"`); product term remains **host control panel**.
-- MVP party-tab → `roomId`: parse `/room/:roomId` from the active tab on allowed origins; no PATCH without a resolvable `roomId`.
+- Host control panel UI surface is the party **Room** sidebar tab (SPA); the extension must not use Chrome Side Panel API. Product term remains **host control panel**.
+- MVP party-tab → `roomId`: parse `/room/:roomId` from the party tab on allowed origins; no PATCH without a resolvable `roomId`.
 
 # Soft constraints
 
@@ -20,8 +20,8 @@
 - Staff `/v1/admin/*` behind invite-only Cognito (MFA preferred).
 - Local/CI media profiles must not mutate prod `RiffSyncTurn` or prod Secrets Manager.
 - Premium vs free/ad-supported room labels are host-declared advisory only (not verified against YouTube subscription).
-- Host Chrome MV3 extension (ADR-001): bind room via active tab `/room/:roomId` (C1); host control panel shows media-tab open/not + now playing + full public catalog library (B1) and title change via host PATCH + media navigate (A1); JWT via SPA↔extension bridge (JWT A); must not capture or supply `host_screen`.
-- Scaffold #427 allow-list is `"permissions": ["sidePanel"]` only; #428 Ready `"permissions": ["sidePanel","tabs"]` with no `host_permissions` (inactive media-tab create/update + open/not via tracked `tabId`, not SPA `window.name`); #429 Ready adds `host_permissions` for the public HTTP API origin only (catalog GET / room GET / PATCH); #430 Ready JWT A is content-script + origin-checked `window.postMessage` (`riffsync-host-bridge` v1) — SPA origins via `content_scripts.matches`, not `host_permissions`; access token ephemeral in SW memory; SPA owns Cognito refresh; never capture permissions under ADR-001.
+- Host Chrome MV3 extension (ADR-001): bind room via party `/room/:roomId` (C1); Room-tab host console shows media-tab open/not + now playing + host-local Next Up + catalog add; title change via host PATCH + media navigate (A1); JWT via SPA↔extension bridge (JWT A); page-initiated media-tab helpers; must not capture or supply `host_screen`.
+- Extension allow-list is `"permissions": ["tabs"]` plus `host_permissions` for the public HTTP API origin only; SPA origins via `content_scripts.matches` only; Side Panel retired; never capture permissions under ADR-001.
 
 # Out of bounds
 
