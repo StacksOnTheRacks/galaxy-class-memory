@@ -1,8 +1,5 @@
 # In progress
 
-- Open/navigate host media tab without leaving the party tab
-  - https://github.com/StacksOnTheRacks/riffsync/issues/428
-
 # Ready
 
 - Host control panel: load RiffSync catalog library
