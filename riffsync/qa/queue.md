@@ -1,16 +1,16 @@
 # Ready for QA
 
-- Docs: host extension install + hosting flow (no capture)
-  - https://github.com/StacksOnTheRacks/riffsync/issues/431
-  - PR: https://github.com/StacksOnTheRacks/riffsync/pull/436
-  - `apps/host-extension/README.md` + optional root README pointer
-  - Docs-only; Tier A greps on the PR. Tier B unpacked Chrome smoke is required for Done of #431 (manual).
-
 # In verification
 
 # Passed back
 
 # Approved
+
+- Docs: host extension install + hosting flow (no capture)
+  - https://github.com/StacksOnTheRacks/riffsync/issues/431
+  - PR: https://github.com/StacksOnTheRacks/riffsync/pull/436
+  - `apps/host-extension/README.md` + root README pointer
+  - QA approved: Tier A greps/read clean; docs ACs met; diff is markdown only. Manual unpacked Chrome (Tier B) not executed (residual for issue Done, not a merge blocker; same bar as #428–#430).
 
 - Open/navigate host media tab without leaving the party tab
   - https://github.com/StacksOnTheRacks/riffsync/issues/428
