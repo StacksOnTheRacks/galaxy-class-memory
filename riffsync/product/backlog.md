@@ -1,9 +1,10 @@
 # In progress
 
-# Ready
-
 - Host control panel: load RiffSync catalog library
   - https://github.com/StacksOnTheRacks/riffsync/issues/429
+
+# Ready
+
 - Host control panel: change room title (PATCH + media navigate)
   - https://github.com/StacksOnTheRacks/riffsync/issues/430
 - Docs: host extension install + hosting flow (no capture)
