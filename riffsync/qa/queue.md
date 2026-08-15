@@ -1,5 +1,10 @@
 # Ready for QA
 
+- Host control panel: load RiffSync catalog library
+  - https://github.com/StacksOnTheRacks/riffsync/issues/429
+  - PR: https://github.com/StacksOnTheRacks/riffsync/pull/434
+  - `apps/host-extension`
+
 # In verification
 
 # Passed back
