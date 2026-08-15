@@ -1,11 +1,10 @@
 # In progress
 
-- (none)
+- Open/navigate host media tab without leaving the party tab
+  - https://github.com/StacksOnTheRacks/riffsync/issues/428
 
 # Ready
 
-- Open/navigate host media tab without leaving the party tab
-  - https://github.com/StacksOnTheRacks/riffsync/issues/428
 - Host control panel: load RiffSync catalog library
   - https://github.com/StacksOnTheRacks/riffsync/issues/429
 - Host control panel: change room title (PATCH + media navigate)
