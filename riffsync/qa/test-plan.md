@@ -1,31 +1,38 @@
 # Scope
 
-- Host control panel catalog library in `apps/host-extension` ([#429](https://github.com/StacksOnTheRacks/riffsync/issues/429))
+- Host control panel title change (PATCH + media navigate + JWT A + now playing) in `apps/host-extension` and `apps/web/src/hostBridge` ([#430](https://github.com/StacksOnTheRacks/riffsync/issues/430))
 
 # Acceptance checks
 
-- Anonymous `GET {PUBLIC_API_BASE_URL}/v1/catalog` (no auth, no carousel/spotlight) renders a usable list from `entries`
-- Rows show `title` keyed by `id`; select stores id/row in panel-local state; no room PATCH; no JWT
-- Clear loading while in flight; `entries: []` shows empty (not blank or forever spinner)
-- Network / HTTP / malformed / invalid base shows error and retry without reloading the extension
-- `permissions` include `sidePanel` and `tabs`; `host_permissions` is the configured API origin `/*` only; no capture APIs
-- No `/v1/admin/catalog` CRUD client; no seed JSON as prod catalog SoT
-- Product copy is labeled host control panel (not branded as side panel)
+- C1 bind + selected library row: confirm/apply sends `PATCH /v1/rooms/{roomId}` with Bearer fan access JWT and body `{ catalogEpisodeId }` only
+- PATCH 200 then media navigate/reuse with `active: false`; party tab remains focused; PATCH failure does not navigate as success
+- Unbound / not on room tab: refuse PATCH, no invented room id, clear unbound error
+- JWT A: SPA↔extension `riffsync-host-bridge` v1; access token only; content-script origin allowlist; ephemeral SW memory; no `chrome.storage`; 401 drops cache and retries JWT once
+- Auth/bridge failures (`not_signed_in`, `refresh_failed`, timeout, missing content script) surface clearly and do not PATCH successfully
+- HTTP 403 / 404 / 400 catalog codes / 409 / network map to distinct panel errors; 409 copy offers retry
+- Now playing: anonymous `GET /v1/rooms/{roomId}`; `displayTitle` else library title else id; loading / error+retry / missing-room; refresh after successful title change
+- Permissions: `sidePanel` + `tabs`; `host_permissions` API origin `/*` only; `content_scripts` on allowed SPA origins; no capture APIs
+- Product copy labeled host control panel (not branded as side panel)
 
 # Regression focus
 
 - ADR-001 capture forbid-list greps stay clean except explicit do-not-use docs
+- No SFU/signaling, no `/v1/admin/catalog`, no refresh-token handling in the extension
 - `host_permissions` must not widen to `*://*/*`, SPA origins, or YouTube
-- Catalog fetch stays anonymous unfiltered `GET /v1/catalog`
+- #429 catalog GET stays anonymous unfiltered `GET /v1/catalog`; library select alone does not PATCH
+- #428 media-tab create/update stays `active: false`
 
 # Out of scope
 
-- #430 PATCH / JWT / now-playing
-- #428 media-tab behavior except that this slice must not add capture, PATCH, or JWT
+- #431 unpacked install / hosting-flow docs
+- Auto-updating room `displayTitle` on episode change
+- Continuous now-playing polling / WebSocket room sync
 - Web Store, Firefox/Safari, mobile Chrome
+- Extension capture / `host_screen`
 
 # Environments
 
-- Unit: `npm test --prefix apps/host-extension` (`node --test`, mocked fetch)
-- Static: issue #429 forbid-list and permissions greps from the riffsync repo root
-- Manual Chrome (required for issue Done): unpacked load with real `PUBLIC_API_BASE_URL` + matching `host_permissions`; loading then list or true-empty; select without room change; error + retry; no capture prompts
+- Unit: `npm test --prefix apps/host-extension` (`node --test`, 45 tests)
+- Unit: `npm test --prefix apps/web -- src/hostBridge/hostJwtBridge.test.ts` (5 tests)
+- Static: issue #430 forbid-list, permissions, bridge, refresh-token, and PATCH greps from the riffsync repo root
+- Manual Chrome (required for issue Done): unpacked load with real `PUBLIC_API_BASE_URL` + matching `host_permissions`; host apply title; party tab stays focused; signed-out / non-host / unbound / offline errors; page `getDisplayMedia` still works
