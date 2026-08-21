@@ -1,7 +1,5 @@
 # In progress
 
-- [#1 Scaffold Turnur CDK workspace under infra/cdk](https://github.com/StacksOnTheRacks/turnur/issues/1) (`ai-ready`)
-
 # Ready
 - [#2 Add TurnurApi stack with API Gateway HTTP API and Node 22 Lambda](https://github.com/StacksOnTheRacks/turnur/issues/2) (`ai-ready`)
 - [#3 Implement GET /v1/health handler and wire route](https://github.com/StacksOnTheRacks/turnur/issues/3) (`ai-ready`)
