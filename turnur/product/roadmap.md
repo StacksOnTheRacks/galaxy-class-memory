@@ -1,20 +1,23 @@
 # Themes
 
+- Running control plane: TypeScript, Node 22, AWS CDK, health-checkable HTTP API
+- Host attach: a host attaches a match; identity, chat, rooms, and media stay on the host
 - Game authentication: SDK key so a game can talk to Turnur
 - Backend state provider: games supply gameplay and rules; Turnur owns match state
-- Match authority after auth: seats, turns, hidden views, move log, signed result
 - Stay out of identity, chat, rooms, and media; authenticate games, not players
 
 # Now
 
-- Game authentication / SDK key so a game can talk to Turnur as a backend state provider
-- RiffSync path this unlocks: host loads a game → room loads the game client for each user → users join the game → game authenticates to Turnur
+- Scaffold the repo like RiffSync’s control plane (`infra/cdk`, Lambda TypeScript, Vitest, `cdk synth` on PRs)
+- One stack: API Gateway HTTP API + Node 22 Lambda
+- `GET /v1/health` so the application is observably running
 - Greenfield: https://github.com/StacksOnTheRacks/turnur — public, README only, empty issue board
 
 # Next
 
-- Authenticated-game match authority: seats, turns, hidden views, and the move log so a game that already has an SDK key can run a match
-- Host path polish (RiffSync or equivalent): load game into room, users join, game talks to Turnur — without Turnur owning rooms or identity
+- Game authentication / SDK key on the running API so a game can talk to Turnur
+- Host attach + match authority: seats, turns, hidden views, and the move log
+- Host path polish (RiffSync or equivalent) without Turnur owning rooms or identity
 
 # Later
 
@@ -29,3 +32,4 @@
 - Identity, chat, rooms, or media on Turnur
 - Becoming a social, lobby, or watch-party product
 - Real-time / action (non-turn-based) gameplay
+- Cloning RiffSync’s media plane or fan/staff Cognito stacks
