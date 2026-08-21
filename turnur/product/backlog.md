@@ -5,10 +5,10 @@
 # Ready
 
 - [#1 Scaffold Turnur CDK workspace under infra/cdk](https://github.com/StacksOnTheRacks/turnur/issues/1) (`ai-ready`)
+- [#2 Add TurnurApi stack with API Gateway HTTP API and Node 22 Lambda](https://github.com/StacksOnTheRacks/turnur/issues/2) (`ai-ready`)
 
 # Refinement
 
-- [#2 Add TurnurApi stack with API Gateway HTTP API and Node 22 Lambda](https://github.com/StacksOnTheRacks/turnur/issues/2)
 - [#3 Implement GET /v1/health handler and wire route](https://github.com/StacksOnTheRacks/turnur/issues/3)
 - [#4 Add GitHub Actions CI for cdk synth and Vitest on PRs](https://github.com/StacksOnTheRacks/turnur/issues/4)
 
