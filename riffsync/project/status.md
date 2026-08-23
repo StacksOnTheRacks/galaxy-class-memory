@@ -2,12 +2,12 @@
 doc: project.status
 schema_version: 1
 updated: 2026-08-23
-summary: "Now theme is product metrics baseline. Figma UI redesign queued as Next. Board empty until metrics grooming."
+summary: "Metrics baseline shaped into Refinement queue #437–#440. Figma redesign queued as Next."
 in_flight: []
 blockers: []
 next_up:
-  - "/forge.backlog-grooming for metrics baseline Refinement tickets"
-  - "After metrics ship: /forge.design-system-audit for Figma redesign Next"
+  - "/forge.refinement on #437 (instrumentation contract) first"
+  - "Then /forge.refinement on #438 and #439 in parallel, then #440"
 asks: []
 ---
 

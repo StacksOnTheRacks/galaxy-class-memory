@@ -10,16 +10,20 @@ in_scope:
 sequence:
   - "Host extension MVP #427–#431 — Done"
   - "Epic #426 — Done (closed 2026-08-20)"
-  - "Metrics baseline — groom at /forge.backlog-grooming → implement"
-  - "Figma redesign — theme bind + /forge.design-system-audit after metrics ship (or when capacity allows)"
+  - "Instrumentation contract — https://github.com/StacksOnTheRacks/riffsync/issues/437 (Refinement)"
+  - "GA4 custom product funnel events — https://github.com/StacksOnTheRacks/riffsync/issues/438 (Refinement; after #437)"
+  - "CloudWatch RiffSync/Product business counters — https://github.com/StacksOnTheRacks/riffsync/issues/439 (Refinement; after #437)"
+  - "Product metrics CloudWatch dashboard widgets — https://github.com/StacksOnTheRacks/riffsync/issues/440 (Refinement; after #439)"
+  - "Figma redesign — theme bind + /forge.design-system-audit after metrics ship"
 dependencies:
+  - "#438 and #439 depend on #437 instrumentation contract"
+  - "#440 depends on #439 CloudWatch counters"
   - "Existing GA4 bootstrap + CloudWatch EMF patterns; no new third-party analytics vendor"
   - "Figma file vQ6yHQyiGlOnRG7ngIOxR7 pre-bound for Next; Designer sign-off gate per surface"
-  - "Live code SoT remains apps/web/design/DESIGN_TOKENS.md + red-html baseline until redesign swap"
 handoffs:
-  - "Product: /forge.backlog-grooming for metrics baseline Refinement tickets"
+  - "Product/Architect/Security: /forge.refinement on #437 first, then #438/#439, then #440"
   - "After metrics ship: Designer → /forge.design-system-audit for Figma redesign Next"
   - "Architecture boundary: metrics are observability-only; redesign is presentation-layer strangler"
 ---
 
-Reconcile sequence against board — metrics grooming is the immediate next step.
+Reconcile sequence against board — refinement order: #437 → (#438 ∥ #439) → #440.

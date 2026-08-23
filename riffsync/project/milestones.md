@@ -4,9 +4,9 @@ schema_version: 1
 updated: 2026-08-23
 active: []
 upcoming:
-  - "Product metrics baseline — instrumentation contract + GA4 events + CloudWatch business counters (Refinement tickets TBD at grooming)"
-  - "Figma UI redesign program follows metrics slice — theme bind + adoption pattern; implementation milestone TBD when Designer signs first frame"
+  - "Product metrics baseline — Refinement queue #437–#440; sequence #437 → (#438 ∥ #439) → #440"
+  - "Figma UI redesign program follows metrics slice"
 slipped: []
 ---
 
-Issue links: prior extension slice [#426](https://github.com/StacksOnTheRacks/riffsync/issues/426)–[#431](https://github.com/StacksOnTheRacks/riffsync/issues/431) Done.
+Issue links: [#437](https://github.com/StacksOnTheRacks/riffsync/issues/437), [#438](https://github.com/StacksOnTheRacks/riffsync/issues/438), [#439](https://github.com/StacksOnTheRacks/riffsync/issues/439), [#440](https://github.com/StacksOnTheRacks/riffsync/issues/440).
