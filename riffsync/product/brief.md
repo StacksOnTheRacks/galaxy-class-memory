@@ -35,9 +35,9 @@ success_metrics:
     target: "Cast (when configured) stays viewer-local and does not break room authority or chat"
   - metric: "Honest fan/unofficial positioning"
     target: "Product stays clearly fan/unofficial with honest playback and affiliation disclaimers"
-current_focus: "Build a host Chrome MV3 host control panel so hosts bind the active /room/:roomId tab (C1), see media-tab open/not and now playing, and change room title from the full public catalog library without leaving the party tab. JWT via SPA↔extension bridge. No extension capture. Scaffold shipped (#427 closed; apps/host-extension). Ready (ai-ready): #428 media-tab, #429 catalog library, #430 PATCH/JWT + now-playing + JWT A bridge, #431 docs. Tracking: epic #426 (not implement-ready)."
+current_focus: "Host Chrome MV3 MVP (#426–#431 Done) and Official Live baseline are shipped. Board is empty. Next: /forge.roadmap-review to pick the next product bet."
 ---
 
 Live site: [riffsync.tv](https://riffsync.tv).
 
-Host extension work lives under `apps/host-extension`. Epic **#426** groups the control-panel slice; implement-ready tickets are **#428–#431** after scaffold **#427** (closed). C1 is the active-room tab binding; JWT bridge is SPA↔extension (JWT A), not extension-side capture.
+Host extension work lives under `apps/host-extension`. Epic **#426** and slices **#427–#431** are closed Done. C1 is the active-room tab binding; JWT bridge is SPA↔extension (JWT A), not extension-side capture.

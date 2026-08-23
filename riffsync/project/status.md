@@ -2,11 +2,11 @@
 doc: project.status
 schema_version: 1
 updated: 2026-08-23
-summary: "Host Chrome MV3 host control panel MVP slices #427–#431 are Done. #426 remains open as tracking until explicitly closed."
+summary: "Host Chrome MV3 MVP (#426–#431) and Official Live baseline are Done. Board is empty; no open delivery slice."
 in_flight: []
 blockers: []
 next_up:
-  - "Close tracking epic #426 now that #427–#431 are Done — https://github.com/StacksOnTheRacks/riffsync/issues/426"
+  - "Run /forge.roadmap-review to pick next Now theme before new Refinement tickets"
 asks: []
 ---
 

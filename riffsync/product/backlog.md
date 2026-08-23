@@ -4,17 +4,14 @@ schema_version: 1
 updated: 2026-08-23
 in_progress: []
 ready: []
-refinement:
-  - "[Epic] Host Chrome MV3: media-tab control + host control panel (no capture) — tracking; not implement-ready — https://github.com/StacksOnTheRacks/riffsync/issues/426"
+refinement: []
 blocked: []
 icebox:
   - "Find/focus room tab + return-to-share command (rejected as MVP primary)"
-  - "Official Live channels (hostless /live/:slug, Lobby discovery, staff catalog: live, indexable Live URLs) — Later; ungroomed"
+  - "Live maturity follow-ons (Cast on Live, multi-channel Live hub) — Later; pick in roadmap-review"
   - "PWA install polish — shipped baseline; polish only if demand"
   - "Federated login for hosts"
   - "Broader staff catalog lists / activity reporting beyond current admin"
-  - "Cast or participant A/V on official Live surfaces"
-  - "Live hub listing many channels in main nav"
   - "Group DMs / friend voice-video / public profiles"
   - "Additional lawful playback backends beyond YouTube + Custom host"
   - "Extension as capture source / tabCapture (forbidden unless future ADR supersedes no-capture)"
