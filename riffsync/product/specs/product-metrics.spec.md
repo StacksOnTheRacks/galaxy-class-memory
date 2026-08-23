@@ -15,7 +15,7 @@ requirements:
   - "Ops namespaces RiffSync/Realtime, RiffSync/Media, RiffSync/Api stay drawer/ops-only"
 acceptance_criteria:
   - "Contract doc lands per Ready issue #437"
-  - "#438 implements GA4 strings verbatim from contract (Refinement)"
+  - "#438 Ready (ai-ready) — GA4 funnel events pending implement after #437 merges"
   - "#439 Ready (ai-ready) — CloudWatch Product counters pending implement after #437 merges"
   - "#440 Ready (ai-ready) — Product funnels dashboard widgets on RiffSync-prod-operations; ship with or after #439"
 out_of_scope:
