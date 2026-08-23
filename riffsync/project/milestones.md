@@ -1,14 +1,11 @@
-# Active
+---
+doc: project.milestones
+schema_version: 1
+updated: 2026-08-23
+active: []
+upcoming:
+  - "Host Chrome MV3 host control panel MVP — Remaining Ready: #428, #429, #430, #431; Tracking: #426; Done in slice: #427"
+slipped: []
+---
 
--
-
-# Upcoming
-
-- Host Chrome MV3 host control panel MVP (memory projection; no host milestone URL)
-  - Remaining Ready: https://github.com/StacksOnTheRacks/riffsync/issues/428, https://github.com/StacksOnTheRacks/riffsync/issues/429, https://github.com/StacksOnTheRacks/riffsync/issues/430, https://github.com/StacksOnTheRacks/riffsync/issues/431
-  - Tracking: https://github.com/StacksOnTheRacks/riffsync/issues/426
-  - Done in slice: https://github.com/StacksOnTheRacks/riffsync/issues/427
-
-# Slipped
-
--
+Issue links: [#426](https://github.com/StacksOnTheRacks/riffsync/issues/426), [#427](https://github.com/StacksOnTheRacks/riffsync/issues/427), [#428](https://github.com/StacksOnTheRacks/riffsync/issues/428), [#429](https://github.com/StacksOnTheRacks/riffsync/issues/429), [#430](https://github.com/StacksOnTheRacks/riffsync/issues/430), [#431](https://github.com/StacksOnTheRacks/riffsync/issues/431).

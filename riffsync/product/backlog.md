@@ -1,25 +1,23 @@
-# In progress
+---
+doc: product.backlog
+schema_version: 1
+updated: 2026-08-23
+in_progress: []
+ready: []
+refinement:
+  - "[Epic] Host Chrome MV3: media-tab control + host control panel (no capture) — tracking; not implement-ready — https://github.com/StacksOnTheRacks/riffsync/issues/426"
+blocked: []
+icebox:
+  - "Find/focus room tab + return-to-share command (rejected as MVP primary)"
+  - "Official Live channels (hostless /live/:slug, Lobby discovery, staff catalog: live, indexable Live URLs) — Later; ungroomed"
+  - "PWA install polish — shipped baseline; polish only if demand"
+  - "Federated login for hosts"
+  - "Broader staff catalog lists / activity reporting beyond current admin"
+  - "Cast or participant A/V on official Live surfaces"
+  - "Live hub listing many channels in main nav"
+  - "Group DMs / friend voice-video / public profiles"
+  - "Additional lawful playback backends beyond YouTube + Custom host"
+  - "Extension as capture source / tabCapture (forbidden unless future ADR supersedes no-capture)"
+---
 
-# Ready
-
-# Refinement
-
-- [Epic] Host Chrome MV3: media-tab control + host control panel (no capture) — tracking; not implement-ready
-  - https://github.com/StacksOnTheRacks/riffsync/issues/426
-
-# Blocked
-
-- (none)
-
-# Icebox
-
-- Find/focus room tab + return-to-share command (rejected as MVP primary)
-- Official Live channels (hostless `/live/:slug`, Lobby discovery, staff `catalog: live`, indexable Live URLs) — Later; ungroomed
-- PWA install polish — shipped baseline; polish only if demand
-- Federated login for hosts
-- Broader staff catalog lists / activity reporting beyond current admin
-- Cast or participant A/V on official Live surfaces
-- Live hub listing many channels in main nav
-- Group DMs / friend voice-video / public profiles
-- Additional lawful playback backends beyond YouTube + Custom host
-- Extension as capture source / `tabCapture` (forbidden unless future ADR supersedes no-capture)
+Board/SCM wins — this file is a projection only. Reconcile against GitHub project board on grooming.

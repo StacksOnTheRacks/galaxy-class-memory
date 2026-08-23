@@ -1,31 +1,15 @@
-# Ready for QA
+---
+doc: qa.queue
+schema_version: 1
+updated: 2026-08-23
+ready_for_qa: []
+in_verification: []
+passed_back: []
+approved:
+  - "Docs: host extension install + hosting flow (#431, PR #436) — apps/host-extension/README.md + root README pointer — QA approved Tier A greps/read clean; manual unpacked Chrome residual"
+  - "Open/navigate host media tab without leaving the party tab (#428, PR #433) — apps/host-extension — QA approved unit 15/15; ACs met on code/unit evidence"
+  - "Host control panel: load RiffSync catalog library (#429, PR #434) — apps/host-extension — QA approved unit 24/24; ACs 1-8 met"
+  - "Host control panel: change room title PATCH + media navigate (#430, PR #435) — apps/host-extension + apps/web/src/hostBridge — QA approved unit 45/45 + SPA bridge 5/5; CI web-app + infra-cdk success"
+---
 
-# In verification
-
-# Passed back
-
-# Approved
-
-- Docs: host extension install + hosting flow (no capture)
-  - https://github.com/StacksOnTheRacks/riffsync/issues/431
-  - PR: https://github.com/StacksOnTheRacks/riffsync/pull/436
-  - `apps/host-extension/README.md` + root README pointer
-  - QA approved: Tier A greps/read clean; docs ACs met; diff is markdown only. Manual unpacked Chrome (Tier B) not executed (residual for issue Done, not a merge blocker; same bar as #428–#430).
-
-- Open/navigate host media tab without leaving the party tab
-  - https://github.com/StacksOnTheRacks/riffsync/issues/428
-  - PR: https://github.com/StacksOnTheRacks/riffsync/pull/433
-  - `apps/host-extension`
-  - QA approved: unit 15/15; #428 static greps clean; ACs met on code/unit evidence. Manual unpacked Chrome not executed (residual, not a blocker).
-
-- Host control panel: load RiffSync catalog library
-  - https://github.com/StacksOnTheRacks/riffsync/issues/429
-  - PR: https://github.com/StacksOnTheRacks/riffsync/pull/434
-  - `apps/host-extension`
-  - QA approved: unit 24/24 (0 fail); #429 static greps clean; ACs 1-8 met on code/unit evidence. Manual unpacked Chrome not executed (residual, not a blocker; issue text marks it required for Done).
-
-- Host control panel: change room title (PATCH + media navigate)
-  - https://github.com/StacksOnTheRacks/riffsync/issues/430
-  - PR: https://github.com/StacksOnTheRacks/riffsync/pull/435
-  - `apps/host-extension` + SPA `apps/web/src/hostBridge`
-  - QA approved: unit host-extension 45/45; SPA bridge 5/5; #430 static greps clean; ACs met on code/unit evidence. CI web-app + infra-cdk success. Manual unpacked Chrome not executed (residual, not a blocker; issue text marks it required for Done).
+PR links: [#433](https://github.com/StacksOnTheRacks/riffsync/pull/433), [#434](https://github.com/StacksOnTheRacks/riffsync/pull/434), [#435](https://github.com/StacksOnTheRacks/riffsync/pull/435), [#436](https://github.com/StacksOnTheRacks/riffsync/pull/436).

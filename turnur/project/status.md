@@ -1,21 +1,14 @@
-# Summary
+---
+doc: project.status
+schema_version: 1
+updated: 2026-08-23
+summary: "Turnur scaffold #1 Done (PR #5). Ready #2–#4 (API stack, health route, CI) await /implement-ticket. Game auth and match primitives come after."
+in_flight: []
+blockers: []
+next_up:
+  - "/forge.implement-ticket on Ready + ai-ready tickets #2, #3, #4"
+  - "After plane lands: game authentication grooming"
+asks: []
+---
 
-Turnur is greenfield (README only). This init seeds delivery memory for a coarse Now slice: **running control plane** (TypeScript / Node 22 / AWS CDK / `GET /v1/health`). Game auth and match primitives come after. Nothing is in flight. Board has zero issues and no host milestone.
-
-# In flight
-
--
-
-# Blockers
-
--
-
-# Next up
-
-- After this init is Applied: `/forge.backlog-grooming`
-- Then `/forge.refinement` until tickets are Ready + `ai-ready` or `human-ready`
-- Do not `/forge.implement-ticket` until Ready + `ai-ready` exists
-
-# Asks
-
--
+Board: [#2](https://github.com/StacksOnTheRacks/turnur/issues/2), [#3](https://github.com/StacksOnTheRacks/turnur/issues/3), [#4](https://github.com/StacksOnTheRacks/turnur/issues/4) Ready.
