@@ -2,25 +2,24 @@
 doc: project.plan
 schema_version: 1
 updated: 2026-08-23
-objective: "Pick and sequence the next product bet now that host Chrome MV3 MVP (#426–#431) and Official Live baseline are shipped; board is empty."
+objective: "Ship product metrics baseline; queue Figma-driven UI redesign as Next."
 in_scope:
-  - "Shipped baseline preserved: catalog, rooms, host broadcast, lobby, chat, friends/DM, SEO packaging, viewer-local Cast, PWA install, MV3 host extension, Official Live, TV client"
-  - "Next slice TBD via /forge.roadmap-review"
+  - "Now — metrics: instrumentation contract; GA4 custom events for guest join, host broadcast start, catalog→room/solo conversion, Live channel entry; CloudWatch business counters mirroring primary metrics; privacy-policy alignment (GA4 already disclosed)"
+  - "Next — Figma redesign: theme bind, design memory, designer-approved adoption pattern; incremental surface rollout after Designer sign-off (no code until frame ready)"
+  - "Shipped baseline preserved: catalog, rooms, host broadcast, lobby, chat, friends/DM, SEO, Cast/TV, MV3 host extension, Official Live"
 sequence:
-  - "Scaffold #427 — Done (PR #432, 2026-08-13)"
-  - "Open/navigate host media tab — https://github.com/StacksOnTheRacks/riffsync/issues/428 — Done"
-  - "Host control panel catalog library — https://github.com/StacksOnTheRacks/riffsync/issues/429 — Done"
-  - "Title change via host PATCH + media navigate — https://github.com/StacksOnTheRacks/riffsync/issues/430 — Done"
-  - "Docs: unpacked install + host control panel hosting flow — https://github.com/StacksOnTheRacks/riffsync/issues/431 — Done"
+  - "Host extension MVP #427–#431 — Done"
   - "Epic #426 — Done (closed 2026-08-20)"
-  - "Next: TBD after roadmap-review"
+  - "Metrics baseline — groom at /forge.backlog-grooming → implement"
+  - "Figma redesign — theme bind + /forge.design-system-audit after metrics ship (or when capacity allows)"
 dependencies:
-  - "Roadmap-review picks the next Now theme before new Refinement tickets"
-  - "ADR-001 no-capture and Product Decisions A1 / B1 / C1 / JWT A remain locked for extension work"
+  - "Existing GA4 bootstrap + CloudWatch EMF patterns; no new third-party analytics vendor"
+  - "Figma file vQ6yHQyiGlOnRG7ngIOxR7 pre-bound for Next; Designer sign-off gate per surface"
+  - "Live code SoT remains apps/web/design/DESIGN_TOKENS.md + red-html baseline until redesign swap"
 handoffs:
-  - "Product: /forge.roadmap-review to refresh Now/Next/Later and pick next bet"
-  - "Then: /forge.backlog-grooming to shape Refinement tickets for chosen theme"
-  - "Architecture boundary: RoomMediaEngine / host_screen stay in page; extension does not capture"
+  - "Product: /forge.backlog-grooming for metrics baseline Refinement tickets"
+  - "After metrics ship: Designer → /forge.design-system-audit for Figma redesign Next"
+  - "Architecture boundary: metrics are observability-only; redesign is presentation-layer strangler"
 ---
 
-Reconcile sequence against board — board has zero open issues as of 2026-08-23.
+Reconcile sequence against board — metrics grooming is the immediate next step.

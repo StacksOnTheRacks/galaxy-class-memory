@@ -35,9 +35,9 @@ success_metrics:
     target: "Cast (when configured) stays viewer-local and does not break room authority or chat"
   - metric: "Honest fan/unofficial positioning"
     target: "Product stays clearly fan/unofficial with honest playback and affiliation disclaimers"
-current_focus: "Host Chrome MV3 MVP (#426–#431 Done) and Official Live baseline are shipped. Board is empty. Next: /forge.roadmap-review to pick the next product bet."
+current_focus: "Ship product metrics baseline first. Figma redesign is Next — design WIP at linked Figma file; defer implementation until Designer signs a frame; do not break current product."
 ---
 
 Live site: [riffsync.tv](https://riffsync.tv).
 
-Host extension work lives under `apps/host-extension`. Epic **#426** and slices **#427–#431** are closed Done. C1 is the active-room tab binding; JWT bridge is SPA↔extension (JWT A), not extension-side capture.
+Host extension work lives under `apps/host-extension`. Epic **#426** and slices **#427–#431** are closed Done. Next delivery slice: metrics baseline, then Figma-driven UI redesign.

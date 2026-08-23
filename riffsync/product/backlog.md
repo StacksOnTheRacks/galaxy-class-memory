@@ -7,8 +7,10 @@ ready: []
 refinement: []
 blocked: []
 icebox:
+  - "Product metrics baseline — Now; groom via /forge.backlog-grooming"
+  - "Figma UI redesign — Next (design program); implementation Refinement deferred until Designer sign-off"
   - "Find/focus room tab + return-to-share command (rejected as MVP primary)"
-  - "Live maturity follow-ons (Cast on Live, multi-channel Live hub) — Later; pick in roadmap-review"
+  - "Live maturity follow-ons (Cast on Live, multi-channel Live hub) — Later; demand-gated"
   - "PWA install polish — shipped baseline; polish only if demand"
   - "Federated login for hosts"
   - "Broader staff catalog lists / activity reporting beyond current admin"

@@ -2,11 +2,12 @@
 doc: project.status
 schema_version: 1
 updated: 2026-08-23
-summary: "Host Chrome MV3 MVP (#426–#431) and Official Live baseline are Done. Board is empty; no open delivery slice."
+summary: "Now theme is product metrics baseline. Figma UI redesign queued as Next. Board empty until metrics grooming."
 in_flight: []
 blockers: []
 next_up:
-  - "Run /forge.roadmap-review to pick next Now theme before new Refinement tickets"
+  - "/forge.backlog-grooming for metrics baseline Refinement tickets"
+  - "After metrics ship: /forge.design-system-audit for Figma redesign Next"
 asks: []
 ---
 

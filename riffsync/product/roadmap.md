@@ -10,13 +10,16 @@ themes:
   - "Viewer-local presentation (Cast / Link TV / TV client) without room authority — shipped baseline"
   - "Signed-in social layer (friends + 1:1 DMs)"
   - "Official hostless Live hangouts (staff-bound YouTube live) — shipped baseline"
+  - "Product observability (GA4 + CloudWatch business metrics)"
+  - "Figma-driven UI redesign (incremental adoption)"
 now:
-  - "Board empty after host Chrome MV3 MVP (#426–#431 Done) and Official Live baseline shipped; run /forge.roadmap-review to pick next Now theme"
+  - "Product metrics baseline: define instrumentation contract; wire GA4 custom events and CloudWatch business counters for guest join, host broadcast, catalog→room create, and Live entry funnels"
   - "Treat Chromecast, PWA, catalog playback host, friends/DM, catalog browse IA, public SEO packaging, Official Live, and TV client as live product baseline (board Done / closed), not open delivery risk"
 next:
-  - "Candidate bets for roadmap-review: product metrics/instrumentation; Live maturity (Cast on Live, multi-channel hub); host/ops tooling (federated login, staff reporting); extension/TV distribution polish"
+  - "Figma redesign program — bind https://www.figma.com/design/vQ6yHQyiGlOnRG7ngIOxR7/RiffSync; Designer establishes adoption pattern; incremental surface rollout after Designer sign-off; current red-html chrome stays until each surface swaps"
+  - "Extension & TV distribution polish"
+  - "Live maturity follow-ons (Cast on Live viewer-local, multi-channel hub) — demand-gated after first metrics read"
 later:
-  - "Live and Cast maturity beyond shipped v1 (e.g. Live A/V, Cast on Live, multi-channel Live hub) only if demand justifies"
   - "Federated host login and deeper staff catalog/ops tooling beyond current admin baseline"
   - "Lawful non-YouTube playback backends that stay pluggable without a piracy vault"
 not_planning:
@@ -27,6 +30,7 @@ not_planning:
   - "Mesh WebRTC or skipping SFU/TURN in any environment"
   - "Host Chrome extension media capture / tabCapture / extension-supplied host_screen (ADR-001)"
   - "Find/focus room tab + return-to-share as the primary hosting UX"
+  - "Big-bang UI rewrite or downtime cutover"
 ---
 
 Board links: epic [#426](https://github.com/StacksOnTheRacks/riffsync/issues/426) closed 2026-08-20; scaffold [#427](https://github.com/StacksOnTheRacks/riffsync/issues/427) closed via PR #432; #428–#431 Done.
