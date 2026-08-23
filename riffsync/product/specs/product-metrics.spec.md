@@ -17,6 +17,7 @@ acceptance_criteria:
   - "Contract doc lands per Ready issue #437"
   - "#438 implements GA4 strings verbatim from contract (Refinement)"
   - "#439 Ready (ai-ready) — CloudWatch Product counters pending implement after #437 merges"
+  - "#440 Ready (ai-ready) — Product funnels dashboard widgets on RiffSync-prod-operations; ship with or after #439"
 out_of_scope:
   - "Cast, friends/DM, stale-room supporting metrics in v1 contract"
   - "New analytics vendors"

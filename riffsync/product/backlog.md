@@ -6,9 +6,9 @@ in_progress: []
 ready:
   - "Docs: product metrics instrumentation contract (ai-ready) — https://github.com/StacksOnTheRacks/riffsync/issues/437"
   - "CloudWatch: RiffSync/Product business counters (ai-ready) — https://github.com/StacksOnTheRacks/riffsync/issues/439"
+  - "Ops: product metrics CloudWatch dashboard widgets (ai-ready) — https://github.com/StacksOnTheRacks/riffsync/issues/440"
 refinement:
   - "GA4: custom product funnel events — https://github.com/StacksOnTheRacks/riffsync/issues/438"
-  - "Ops: product metrics CloudWatch dashboard widgets — https://github.com/StacksOnTheRacks/riffsync/issues/440"
 blocked: []
 icebox:
   - "Figma UI redesign — Next (design program); implementation Refinement deferred until Designer sign-off"
