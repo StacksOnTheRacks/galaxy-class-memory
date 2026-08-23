@@ -6,8 +6,8 @@ summary: "Metrics baseline shaped into Refinement queue #437–#440. Figma redes
 in_flight: []
 blockers: []
 next_up:
-  - "/forge.refinement on #437 (instrumentation contract) first"
-  - "Then /forge.refinement on #438 and #439 in parallel, then #440"
+  - "/forge.implement-ticket on #437 (instrumentation contract doc)"
+  - "Then /forge.refinement on #438 and #439"
 asks: []
 ---
 
