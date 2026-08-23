@@ -15,7 +15,8 @@ requirements:
   - "Ops namespaces RiffSync/Realtime, RiffSync/Media, RiffSync/Api stay drawer/ops-only"
 acceptance_criteria:
   - "Contract doc lands per Ready issue #437"
-  - "#438 and #439 implement strings verbatim from contract"
+  - "#438 implements GA4 strings verbatim from contract (Refinement)"
+  - "#439 Ready (ai-ready) — CloudWatch Product counters pending implement after #437 merges"
 out_of_scope:
   - "Cast, friends/DM, stale-room supporting metrics in v1 contract"
   - "New analytics vendors"
