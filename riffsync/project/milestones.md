@@ -1,12 +1,13 @@
 ---
 doc: project.milestones
 schema_version: 1
-updated: 2026-08-23
-active: []
+updated: 2026-08-25
+active:
+  - "Figma UI redesign program — awaiting Designer availability for /forge.design-system-audit; pilot surface catalog/home after sign-off; no implementation tickets until audit + surface sequencing"
 upcoming:
-  - "Product metrics baseline — Refinement queue #437–#440; sequence #437 → (#438 ∥ #439) → #440"
-  - "Figma UI redesign program follows metrics slice"
+  - "Extension & TV distribution polish"
+  - "Live maturity follow-ons (Cast on Live, multi-channel hub) — demand-gated after first metrics read"
 slipped: []
 ---
 
-Issue links: [#437](https://github.com/StacksOnTheRacks/riffsync/issues/437), [#438](https://github.com/StacksOnTheRacks/riffsync/issues/438), [#439](https://github.com/StacksOnTheRacks/riffsync/issues/439), [#440](https://github.com/StacksOnTheRacks/riffsync/issues/440).
+Completed: **Product metrics baseline** — #437–#440 Done 2026-08-25 via [PR #441](https://github.com/StacksOnTheRacks/riffsync/pull/441), [#442](https://github.com/StacksOnTheRacks/riffsync/pull/442), [#443](https://github.com/StacksOnTheRacks/riffsync/pull/443), [#444](https://github.com/StacksOnTheRacks/riffsync/pull/444). Host extension epic [#426](https://github.com/StacksOnTheRacks/riffsync/issues/426) and #427–#431 Done prior.

@@ -1,29 +1,33 @@
 ---
 doc: project.plan
 schema_version: 1
-updated: 2026-08-23
-objective: "Ship product metrics baseline; queue Figma-driven UI redesign as Next."
+updated: 2026-08-25
+objective: "Launch Figma-driven UI redesign program (Designer availability → design-system-audit → sign-off → incremental surface rollout); preserve shipped product baseline including metrics."
 in_scope:
-  - "Now — metrics: instrumentation contract; GA4 custom events for guest join, host broadcast start, catalog→room/solo conversion, Live channel entry; CloudWatch business counters mirroring primary metrics; privacy-policy alignment (GA4 already disclosed)"
-  - "Next — Figma redesign: theme bind, design memory, designer-approved adoption pattern; incremental surface rollout after Designer sign-off (no code until frame ready)"
-  - "Shipped baseline preserved: catalog, rooms, host broadcast, lobby, chat, friends/DM, SEO, Cast/TV, MV3 host extension, Official Live"
+  - "Now — Figma redesign: theme bound (vQ6yHQyiGlOnRG7ngIOxR7); design memory seeded (themes, screens, components, principles); /forge.design-system-audit when Designer is available; Designer adoption pattern; incremental surface rollout after per-surface sign-off (no code until frame ready)"
+  - "Shipped baseline preserved: catalog, rooms, host broadcast, lobby, chat, friends/DM, SEO, Cast/TV, MV3 host extension (#426–#431), Official Live, product metrics (#437–#440)"
+  - "Next after redesign kickoff — Extension & TV distribution polish; Live maturity follow-ons (Cast on Live, multi-channel hub) demand-gated after first metrics read"
 sequence:
   - "Host extension MVP #427–#431 — Done"
   - "Epic #426 — Done (closed 2026-08-20)"
-  - "Instrumentation contract — https://github.com/StacksOnTheRacks/riffsync/issues/437 (Refinement)"
-  - "GA4 custom product funnel events — https://github.com/StacksOnTheRacks/riffsync/issues/438 (Refinement; after #437)"
-  - "CloudWatch RiffSync/Product business counters — https://github.com/StacksOnTheRacks/riffsync/issues/439 (Refinement; after #437)"
-  - "Product metrics CloudWatch dashboard widgets — https://github.com/StacksOnTheRacks/riffsync/issues/440 (Refinement; after #439)"
-  - "Figma redesign — theme bind + /forge.design-system-audit after metrics ship"
+  - "Product metrics baseline #437–#440 — Done (closed 2026-08-25; PR #441–#444)"
+  - "Figma redesign — await Designer availability → /forge.design-system-audit (no open board tickets)"
+  - "Designer sign-off + surface sequencing — pilot: catalog/home (unauthenticated + authenticated)"
+  - "Incremental surface rollout (strangler; red-html chrome until each surface swaps)"
 dependencies:
-  - "#438 and #439 depend on #437 instrumentation contract"
-  - "#440 depends on #439 CloudWatch counters"
+  - "Figma file vQ6yHQyiGlOnRG7ngIOxR7 pre-bound; design memory seeded; audit pending Designer availability"
+  - "Designer sign-off gate per surface before Refinement or implementation"
+  - "Metrics baseline (#437–#440) Done (2026-08-25); enables demand-gated Live follow-ons after first GA4/CloudWatch read"
+  - "Figma redesign preserves docs/operations/product-metrics.md (GA4 event names + CloudWatch RiffSync/Product Routes); amendments only via explicit metrics ticket"
+  - "Redesign tickets touching Room-tab host console, extension popup/bridge, or media-tab open/navigate flows require Architect+Security refinement — presentation-only unless separate behavior ticket + ADR supersedes"
   - "Existing GA4 bootstrap + CloudWatch EMF patterns; no new third-party analytics vendor"
-  - "Figma file vQ6yHQyiGlOnRG7ngIOxR7 pre-bound for Next; Designer sign-off gate per surface"
 handoffs:
-  - "Product/Architect/Security: /forge.refinement on #437 first, then #438/#439, then #440"
-  - "After metrics ship: Designer → /forge.design-system-audit for Figma redesign Next"
-  - "Architecture boundary: metrics are observability-only; redesign is presentation-layer strangler"
+  - "Designer → /forge.design-system-audit when available (first gate for Figma redesign Now)"
+  - "PO/PM → backlog grooming to slice pilot surface (catalog/home) into Ready tickets after audit + Designer sign-off"
+  - "Architect+Security — refinement on ADR-001-adjacent redesign surfaces (Room sidebar host console, riffsync-host-bridge, capture/SFU-adjacent UI)"
+  - "Engineer+QA — per-surface: visual strangler + metrics contract regression (events/Routes still fire) + ADR-001 host flows unchanged"
+  - "Product → first metrics read from shipped GA4/CloudWatch instrumentation (post-#437–#440)"
+  - "Architecture boundary: metrics observability-only; redesign is presentation-layer strangler"
 ---
 
-Reconcile sequence against board — refinement order: #437 → (#438 ∥ #439) → #440.
+Board clear — zero open issues on StacksOnTheRacks/riffsync as of 2026-08-25. Metrics slice complete; redesign is Now (Designer-gated).
