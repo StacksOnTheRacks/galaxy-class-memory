@@ -4,7 +4,7 @@ schema_version: 2
 updated: 2026-08-24
 product_name: "Turnur"
 product_description: "Authoritative turn-based match engine. Hosts attach a match; Turnur owns seats, turns, hidden views, the move log, and a signed result. A host (RiffSync or anything like it) loads a game into a room; users join the game; the game authenticates to Turnur with an SDK key and uses Turnur as the backend state provider. Games supply gameplay and rules. Identity, chat, rooms, and media stay on the host. Turnur authenticates games, not players. Repo: https://github.com/StacksOnTheRacks/turnur"
-problem: "There is no running Turnur process to attach to. Before a host can attach a match, or a game can authenticate, the repo needs a deployable control plane. Without that, seats, turns, hidden views, the move log, and a signed result have nowhere to live."
+problem: "Host platforms want to attach turn-based games to rooms without building authoritative match state in-house. Game developers need seat-scoped hidden views, turn validation, and a signed move log without rolling a custom backend or adopting full-stack platforms that own player identity, chat, and matchmaking."
 audience:
   - "Turn-based game developers integrating Turnur as the authoritative match backend"
   - "Host platforms attaching turn-based play to rooms while keeping identity, chat, and media (RiffSync first beachhead)"
