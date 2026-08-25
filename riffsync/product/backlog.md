@@ -1,13 +1,9 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-08-23
+updated: 2026-08-25
 in_progress: []
-ready:
-  - "Docs: product metrics instrumentation contract (ai-ready) — https://github.com/StacksOnTheRacks/riffsync/issues/437"
-  - "GA4: custom product funnel events (ai-ready) — https://github.com/StacksOnTheRacks/riffsync/issues/438"
-  - "CloudWatch: RiffSync/Product business counters (ai-ready) — https://github.com/StacksOnTheRacks/riffsync/issues/439"
-  - "Ops: product metrics CloudWatch dashboard widgets (ai-ready) — https://github.com/StacksOnTheRacks/riffsync/issues/440"
+ready: []
 refinement: []
 blocked: []
 icebox:
