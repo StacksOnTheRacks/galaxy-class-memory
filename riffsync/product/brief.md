@@ -1,8 +1,9 @@
 ---
 doc: product.brief
-schema_version: 1
-updated: 2026-08-23
-product: "RiffSync is an open-source fan catalog and watch-party app at https://riffsync.tv. Fans browse a curated catalog of riff-style MST episodes on YouTube, and signed-in hosts create shareable rooms that drive lawful YouTube (or staff-configured Custom) embeds and optionally broadcast one shared picture to guests via WebRTC/SFU."
+schema_version: 2
+updated: 2026-08-24
+product_name: "RiffSync"
+product_description: "Open-source fan catalog and watch-party app at https://riffsync.tv. Fans browse a curated catalog of riff-style MST episodes on YouTube, and signed-in hosts create shareable rooms that drive lawful YouTube (or staff-configured Custom) embeds and optionally broadcast one shared picture to guests via WebRTC/SFU."
 problem: "Riff fans want to watch together with matched ads, chat, and presence, without each person fighting separate embeds or relying on piracy vaults. Discovery of titles and active parties is fragmented; hosting must be accountable while guests should stay anonymous-first."
 audience:
   - "Fans browsing and joining watch parties without mandatory signup"
