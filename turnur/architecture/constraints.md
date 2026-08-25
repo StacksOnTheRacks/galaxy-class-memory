@@ -1,7 +1,7 @@
 ---
 doc: architecture.constraints
 schema_version: 1
-updated: 2026-08-23
+updated: 2026-08-25
 hard_constraints:
   - "Implementation language is TypeScript. Toolchain and Lambda runtime are Node 22."
   - "Infrastructure is AWS CDK v2 (TypeScript), in the same family as RiffSync's infra/cdk."
@@ -11,7 +11,7 @@ hard_constraints:
 soft_constraints:
   - "Prefer RiffSync control-plane patterns: colocated Lambda TS handlers, Vitest, cdk synth on PRs, /v1 HTTP routes."
   - "Stay host-agnostic: RiffSync is one host, not the only host."
-  - "Keep the first slice thin: health proves the plane; do not add Dynamo or auth until the next slice."
+  - "Game-auth slice (#9–#13) adds DynamoDB registry + SDK-key validation only — no player/host auth, match tables, or attach APIs in this slice."
   - "Defer signing-mechanism and match-protocol choices until there is a reason to lock them."
 out_of_bounds:
   - "Player login, accounts, or identity as a Turnur concern."
@@ -21,6 +21,6 @@ out_of_bounds:
   - "Treating SDK-key auth or signed-result mechanism as locked ADRs (product intent only until an ADR says otherwise)."
 assumptions:
   - "A host can attach a match later. How attach works is undecided."
-  - "Product Now after this slice is game authentication via SDK key. That is not implemented or ADR-locked yet."
+  - "Product Now is game authentication via SDK key (#9–#13 Refinement). Storage/validation mechanism resolves at #9 (ADR-002)."
   - "How a result is signed, and how a host or game verifies it, is undecided."
 ---
