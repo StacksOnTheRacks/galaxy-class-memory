@@ -1,14 +1,14 @@
 ---
 doc: product.brief
-schema_version: 1
-updated: 2026-08-23
-product: "Turnur is an authoritative turn-based match engine. Hosts attach a match; Turnur owns seats, turns, hidden views, the move log, and a signed result. A host (RiffSync or anything like it) loads a game into a room; users join the game; the game authenticates to Turnur with an SDK key and uses Turnur as the backend state provider. Games supply gameplay and rules. Identity, chat, rooms, and media stay on the host. Turnur authenticates games, not players. Repo: https://github.com/StacksOnTheRacks/turnur"
+schema_version: 2
+updated: 2026-08-24
+product_name: "Turnur"
+product_description: "Authoritative turn-based match engine. Hosts attach a match; Turnur owns seats, turns, hidden views, the move log, and a signed result. A host (RiffSync or anything like it) loads a game into a room; users join the game; the game authenticates to Turnur with an SDK key and uses Turnur as the backend state provider. Games supply gameplay and rules. Identity, chat, rooms, and media stay on the host. Turnur authenticates games, not players. Repo: https://github.com/StacksOnTheRacks/turnur"
 problem: "There is no running Turnur process to attach to. Before a host can attach a match, or a game can authenticate, the repo needs a deployable control plane. Without that, seats, turns, hidden views, the move log, and a signed result have nowhere to live."
 audience:
-  - "Games that will use Turnur as a backend state provider (after auth exists)"
-  - "Host platforms (RiffSync first; any similar room/identity/chat/media host) that will attach a match"
-  - "Operators who need a health-checkable API before match features land"
-  - "Not for people seeking identity, chat, rooms, media, or a first-party Turnur game"
+  - "Turn-based game developers integrating Turnur as the authoritative match backend"
+  - "Host platforms attaching turn-based play to rooms while keeping identity, chat, and media (RiffSync first beachhead)"
+  - "Not for end players, real-time/action games, social hosts expecting identity or chat from Turnur, or buyers of a turnkey first-party game"
 goals:
   - "A running control plane: TypeScript, Node 22, AWS CDK, API Gateway HTTP + Lambda"
   - "GET /v1/health proves the application is up (synth locally; optional deploy)"
