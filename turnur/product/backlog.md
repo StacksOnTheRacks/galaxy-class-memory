@@ -1,12 +1,9 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-08-23
+updated: 2026-08-25
 in_progress: []
-ready:
-  - "[#2 Add TurnurApi stack with API Gateway HTTP API and Node 22 Lambda](https://github.com/StacksOnTheRacks/turnur/issues/2) (ai-ready)"
-  - "[#3 Implement GET /v1/health handler and wire route](https://github.com/StacksOnTheRacks/turnur/issues/3) (ai-ready)"
-  - "[#4 Add GitHub Actions CI for cdk synth and Vitest on PRs](https://github.com/StacksOnTheRacks/turnur/issues/4) (ai-ready)"
+ready: []
 refinement: []
 blocked: []
 icebox:
@@ -19,4 +16,4 @@ icebox:
   - "Match ends with a signed result (capability; not a first-goal)"
 ---
 
-Board/SCM wins — reconcile against GitHub project board on grooming. #1 Done (PR #5).
+Board/SCM wins — reconcile against GitHub project board on grooming. #1–#4 Done (PRs #5–#8, merged 2026-08-21–22). No open issues; ready list empty. Next candidates are icebox items awaiting grooming.
