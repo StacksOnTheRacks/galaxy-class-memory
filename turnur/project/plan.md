@@ -1,29 +1,32 @@
 ---
 doc: project.plan
 schema_version: 1
-updated: 2026-08-23
-objective: "Stand up a running control plane: TypeScript / Node 22 / AWS CDK with GET /v1/health. Scaffold #1 Done; implement Ready #2–#4."
+updated: 2026-08-25
+objective: "Ship game authentication on the running control plane: SDK key so a game can authenticate to Turnur before host attach and match primitives."
 in_scope:
-  - "CDK app + HTTP API + health Lambda (#2, #3)"
-  - "GitHub Actions CI for cdk synth and Vitest on PRs (#4)"
-  - "Next (not this slice): game authentication / SDK key"
-  - "Later: match-state primitives (seats, turns, hidden views, move log, signed result)"
-  - "Out of this slice: match features, host identity/chat/rooms/media, epic issues"
+  - "Game registry + SDK key storage (#9)"
+  - "SDK key validation on protected routes (#10)"
+  - "Authenticated probe route GET /v1/game/me (#11)"
+  - "TypeScript SDK client at packages/turnur-sdk/ (#12)"
+  - "Integrator onboarding docs (#13)"
+  - "Later: host attach, match-state primitives (seats, turns, hidden views, move log, signed result)"
+  - "Out of this slice: player/host auth, epic issues, identity/chat/rooms/media on host"
 sequence:
-  - "#1 Scaffold Turnur CDK workspace — Done (PR #5)"
-  - "#2 Add TurnurApi stack with API Gateway HTTP API and Node 22 Lambda — Ready (ai-ready)"
-  - "#3 Implement GET /v1/health handler and wire route — Ready (ai-ready)"
-  - "#4 Add GitHub Actions CI for cdk synth and Vitest on PRs — Ready (ai-ready)"
-  - "After plane is up: game authentication grooming"
+  - "#1–#4 control plane — Done (PRs #5–#8)"
+  - "#9 → #10 → #11 → #12 → #13 game authentication (Refinement)"
+  - "Host attach a match — icebox; after game auth"
+  - "Match primitives (seats → turns → hidden views → move log) — icebox; after host attach"
+  - "Signed result — later capability"
 dependencies:
-  - "Board: #1 Done; Ready #2–#4 on https://github.com/StacksOnTheRacks/turnur"
-  - "Shared project linked (https://github.com/users/StacksOnTheRacks/projects/1); labels exist"
-  - "Pattern reference: RiffSync infra/cdk (not a runtime dependency)"
+  - "Board: #1–#4 Done; Refinement #9–#13 on https://github.com/StacksOnTheRacks/turnur"
+  - "Game auth blocks host attach and all match primitives"
+  - "Host attach blocks match primitives"
+  - "Shared project linked; ADR-001 locked; ADR-002 at refinement on #9"
   - "Identity, chat, rooms, and media stay on the host"
 handoffs:
-  - "Engineering: /implement-ticket on #2 → #3 → #4"
-  - "Architecture: ADR-001 locked; keep host-vs-engine boundary"
-  - "Product: Icebox outcomes for game auth and match primitives after plane lands"
+  - "Product/Architecture: /forge.refinement on #9–#13 (start with #9)"
+  - "Engineering: /implement-ticket after Ready + ai-ready"
+  - "Product: host attach + match primitives stay icebox until auth ships"
 ---
 
 Board/SCM wins on ticket status.
