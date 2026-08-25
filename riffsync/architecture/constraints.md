@@ -1,7 +1,7 @@
 ---
 doc: architecture.constraints
 schema_version: 1
-updated: 2026-08-23
+updated: 2026-08-25
 hard_constraints:
   - "Lawful playback only: official YouTube iframe / IFrame Player API on the host; no re-hosting of third-party video files on RiffSync infra"
   - "Shared viewing for guests is host tab/window capture republished via WebRTC (SFU), not parallel embed clock sync"
@@ -23,6 +23,7 @@ soft_constraints:
   - "Premium vs free/ad-supported room labels are host-declared advisory only (not verified against YouTube subscription)"
   - "Host Chrome MV3 extension (ADR-001): bind room via party /room/:roomId (C1); Room-tab host console shows media-tab open/not + now playing + host-local Next Up + catalog add; title change via host PATCH + media navigate (A1); JWT via SPA↔extension bridge (JWT A)"
   - "Extension allow-list is permissions tabs plus host_permissions for the public HTTP API origin only; SPA origins via content_scripts.matches only; Side Panel retired; never capture permissions under ADR-001"
+  - "Figma redesign must not rename GA4 event names or CloudWatch RiffSync/Product Routes without an explicit metrics contract revision (docs/operations/product-metrics.md)"
 out_of_bounds:
   - "Pirate CDN, scraped streams, or communal upload vault of copyrighted video"
   - "ECS/Fargate (or alternate WS stacks) as default for control plane; exception is only EC2 for SFU/coturn"

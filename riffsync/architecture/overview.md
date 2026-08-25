@@ -1,12 +1,12 @@
 ---
 doc: architecture.overview
 schema_version: 1
-updated: 2026-08-23
+updated: 2026-08-25
 system: "RiffSync is a fan watch-party product: curated YouTube episode catalog, signed-in hosts driving lawful iframe playback, and WebRTC redistribution of the host capture so guests share one picture. Control plane is AWS serverless (CDK TypeScript, Lambda Node/TS, API Gateway HTTP + WebSocket, DynamoDB). Media plane is self-hosted mediasoup SFU + coturn on EC2 stack RiffSyncTurn. Production hostname is https://riffsync.tv."
 context: "Browsers run the SPA. Anonymous guests may browse, join, chat, and consume media. Hosting, room mutation, and publisher paths require Cognito fan JWT (hostSub = Cognito sub). Staff Cognito guards operator admin APIs. Catalog rows are Dynamo-backed; data/catalog seeds bootstrap; TMDB reconcile enriches artwork/metadata on a schedule. No pirate CDN: RiffSync does not re-host YouTube video files."
-data_flow: "1. Client loads SPA from CloudFront; reads catalog/rooms/lobby over HTTPS HTTP API. 2. Host elevates via Cognito; POST /v1/rooms / PATCH mutate Rooms. 3. Clients open room WebSocket for chat/presence/share_state. 4. Host plays YouTube iframe locally; getDisplayMedia captures tab; client mints SFU JWT, signals mediasoup, publishes host_screen. 5. Guests consume RTP from SFU. 6. EventBridge schedules sweeper and TMDB reconcile."
-deployment_shape: "IaC: AWS CDK TypeScript under infra/cdk; prod context only. Stacks: fan/staff auth, API+Dynamo (RiffSyncApi-prod), static site, observability, SES inbound as needed; singleton media RiffSyncTurn. Compute: Lambda for BFF/control; two EC2 roles in RiffSyncTurn (SFU + coturn). Local media: disposable SFU + coturn under infra/local-media. Secrets: Secrets Manager; never baked into SPA."
-current_focus: "Open slice is product metrics baseline (GA4 events + CloudWatch business counters). Figma redesign queued Next — Sidebar/Nav component set in Figma; red-html chrome live until Designer sign-off per surface."
+data_flow: "1. Client loads SPA from CloudFront; reads catalog/rooms/lobby over HTTPS HTTP API. 2. Host elevates via Cognito; POST /v1/rooms / PATCH mutate Rooms. 3. Clients open room WebSocket for chat/presence/share_state. 4. Host plays YouTube iframe locally; getDisplayMedia captures tab; client mints SFU JWT, signals mediasoup, publishes host_screen. 5. Guests consume RTP from SFU. 6. EventBridge schedules sweeper and TMDB reconcile. 7. Primary funnel signals emit to GA4 (client) and CloudWatch RiffSync/Product (server EMF)."
+deployment_shape: "IaC: AWS CDK TypeScript under infra/cdk; prod context only. Stacks: fan/staff auth, API+Dynamo (RiffSyncApi-prod), static site, observability, SES inbound as needed; singleton media RiffSyncTurn. Compute: Lambda for BFF/control; two EC2 roles in RiffSyncTurn (SFU + coturn). Local media: disposable SFU + coturn under infra/local-media. Secrets: Secrets Manager; never baked into SPA. Dashboard RiffSync-prod-operations includes Product funnel widgets alongside ops EMF."
+current_focus: "Figma UI redesign (Designer-gated, incremental strangler); product metrics baseline shipped (#437–#440)."
 major_components:
   - "SPA (apps/web) — catalog, lobby, room UI; RoomMediaEngine owns chat WS, SFU session, theater playback"
   - "Host Chrome MV3 extension (apps/host-extension) — media-tab helper; host control panel UI is the SPA Room tab; no capture"
@@ -19,6 +19,7 @@ major_components:
   - "Optional ElastiCache — read-through cache only; Dynamo remains SoT"
   - "CloudWatch — metrics, dashboards, alarms, Logs Insights (ops home)"
   - "Static site — S3 + CloudFront for SPA at riffsync.tv"
+  - "Product metrics — GA4 funnel events (apps/web/src/config/googleAnalytics.ts) + CloudWatch RiffSync/Product EMF (infra/cdk/lambda/riffsync-observability.ts); contract at docs/operations/product-metrics.md"
 ---
 
 See also `architecture/interfaces.md` and ADR-001 in `architecture/decisions.md`.
