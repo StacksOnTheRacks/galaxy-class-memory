@@ -1,7 +1,7 @@
 ---
 doc: product.brief
 schema_version: 2
-updated: 2026-08-24
+updated: 2026-08-26
 product_name: "Turnur"
 product_description: "Authoritative turn-based match engine. Hosts attach a match; Turnur owns seats, turns, hidden views, the move log, and a signed result. A host (RiffSync or anything like it) loads a game into a room; users join the game; the game authenticates to Turnur with an SDK key and uses Turnur as the backend state provider. Games supply gameplay and rules. Identity, chat, rooms, and media stay on the host. Turnur authenticates games, not players. Repo: https://github.com/StacksOnTheRacks/turnur"
 problem: "Host platforms want to attach turn-based games to rooms without building authoritative match state in-house. Game developers need seat-scoped hidden views, turn validation, and a signed move log without rolling a custom backend or adopting full-stack platforms that own player identity, chat, and matchmaking."
@@ -32,7 +32,7 @@ success_metrics:
     target: "After auth slice: a game with a valid SDK key can authenticate; missing or invalid keys are rejected"
   - metric: "Quantified targets"
     target: "TBD (greenfield; no instrumentation yet)"
-current_focus: "Running control plane: TypeScript / Node 22 / AWS CDK scaffold with API Gateway HTTP + Lambda and GET /v1/health. Ready tickets #2–#4 on board; scaffold #1 Done (PR #5)."
+current_focus: "Game authentication (SDK key): Ready #9–#13 on board; control plane #1–#4 Done (PRs #5–#8). Next: /forge.implement-ticket starting at #9."
 ---
 
 Repo: [github.com/StacksOnTheRacks/turnur](https://github.com/StacksOnTheRacks/turnur). First expected host: [RiffSync](https://github.com/StacksOnTheRacks/riffsync).
