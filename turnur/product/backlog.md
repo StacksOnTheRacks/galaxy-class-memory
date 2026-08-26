@@ -8,8 +8,8 @@ ready:
   - "[#10 Validate game SDK keys on protected HTTP API routes](https://github.com/StacksOnTheRacks/turnur/issues/10) (ai-ready)"
   - "[#11 Add GET /v1/game/me authenticated probe route](https://github.com/StacksOnTheRacks/turnur/issues/11) (ai-ready)"
   - "[#12 Add TypeScript SDK client with API key configuration](https://github.com/StacksOnTheRacks/turnur/issues/12) (ai-ready)"
-refinement:
-  - "[#13 Document game authentication onboarding for integrators](https://github.com/StacksOnTheRacks/turnur/issues/13)"
+  - "[#13 Document game authentication onboarding for integrators](https://github.com/StacksOnTheRacks/turnur/issues/13) (ai-ready)"
+refinement: []
 blocked: []
 icebox:
   - "Host attaches a match; identity, chat, rooms, and media stay on the host"
@@ -20,4 +20,4 @@ icebox:
   - "Match ends with a signed result (capability; not a first-goal)"
 ---
 
-Board/SCM wins — reconcile against GitHub project board on grooming. #1–#4 Done (PRs #5–#8). #9–#12 Ready (ai-ready); #13 Refinement on game auth milestone. Host attach + match primitives remain icebox.
+Board/SCM wins — reconcile against GitHub project board on grooming. #1–#4 Done (PRs #5–#8). #9–#13 Ready (ai-ready) on game auth milestone. Host attach + match primitives remain icebox.

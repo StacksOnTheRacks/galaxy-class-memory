@@ -13,4 +13,4 @@ contracts_in_flight: []
 ownership: []
 ---
 
-HTTP API is API Gateway HTTP API v2. GET /v1/health and GET /v1/game/me are stable v1 probes. @turnur/sdk mirrors game/me for integrators (#12 Ready). Further game routes land with the auth milestone (#13).
+HTTP API is API Gateway HTTP API v2. GET /v1/health and GET /v1/game/me are stable v1 probes. @turnur/sdk mirrors game/me for integrators (#12 Ready). Integrator onboarding docs in infra/cdk/README.md cover health → SDK key → game/me (#13 Ready).
