@@ -6,9 +6,9 @@ external_interfaces:
   - "GET /v1/health — no auth — 200 Content-Type: application/json; charset=utf-8 — body { ok: true } (stable v1; additive fields only). Only GET registered on the HTTP API for this route."
 internal_boundaries:
   - "GameRegistry DynamoDB — GetItem(PK=keyHash) → { gameId } — hash-only storage; stack output GameRegistryTableName for #10"
+  - "Game auth middleware (requireGameAuth) — Authorization: Bearer <sdk-key> — absent header → 401 game_auth_required; empty Bearer / wrong scheme / unknown hash / malformed key → 401 game_auth_invalid — success → GameAuthContext { gameId } (#10 Ready)"
 contracts_in_flight:
   - "GET /v1/game/me — SDK key auth — 200 with game identity on valid key; 401 on missing/invalid (#11). Depends on #9 registry + #10 validation."
-  - "SDK key header contract — Authorization: Bearer <key> locked at #10 refinement"
 ownership: []
 ---
 
