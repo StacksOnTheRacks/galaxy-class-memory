@@ -1,15 +1,16 @@
 ---
 doc: security.checklist
 schema_version: 1
-updated: 2026-08-23
+updated: 2026-08-25
 secrets:
   - "infra/cdk/.gitignore excludes node_modules/, cdk.out, dist/; no secrets in repo (#1, PR #5)."
   - "Add .env* to gitignore when CDK/Lambda env config is introduced."
+  - "GameRegistry (#9): SDK keys stored as SHA-256 hashes only; dev fixture plaintext in test-fixtures/ with non-production banner."
 dependencies:
   - "infra/cdk/package-lock.json committed; npm audit clean (0 vulns) as of 2026-08-20 (#1, PR #5)."
   - "Baseline: aws-cdk-lib ^2.173.4, constructs ^10.4.2, Node >=22."
 authn_authz:
-  - "Not in scope until API + game SDK key work (roadmap Next)."
+  - "Game registry storage Ready (#9); route validation #10; no player/host auth."
 data_handling:
   - "Not in scope; placeholder stack only (#1, PR #5)."
 config_defaults:

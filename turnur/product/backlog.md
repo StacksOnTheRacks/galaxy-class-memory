@@ -3,9 +3,9 @@ doc: product.backlog
 schema_version: 1
 updated: 2026-08-25
 in_progress: []
-ready: []
+ready:
+  - "[#9 Add game registry and SDK key storage to TurnurApi stack](https://github.com/StacksOnTheRacks/turnur/issues/9) (ai-ready)"
 refinement:
-  - "[#9 Add game registry and SDK key storage to TurnurApi stack](https://github.com/StacksOnTheRacks/turnur/issues/9)"
   - "[#10 Validate game SDK keys on protected HTTP API routes](https://github.com/StacksOnTheRacks/turnur/issues/10)"
   - "[#11 Add GET /v1/game/me authenticated probe route](https://github.com/StacksOnTheRacks/turnur/issues/11)"
   - "[#12 Add TypeScript SDK client with API key configuration](https://github.com/StacksOnTheRacks/turnur/issues/12)"
@@ -20,4 +20,4 @@ icebox:
   - "Match ends with a signed result (capability; not a first-goal)"
 ---
 
-Board/SCM wins — reconcile against GitHub project board on grooming. #1–#4 Done (PRs #5–#8). Game auth groomed to Refinement [#9–#13](https://github.com/StacksOnTheRacks/turnur/milestone/1). Host attach + match primitives remain icebox.
+Board/SCM wins — reconcile against GitHub project board on grooming. #1–#4 Done (PRs #5–#8). #9 Ready (ai-ready); #10–#13 Refinement on game auth milestone. Host attach + match primitives remain icebox.
