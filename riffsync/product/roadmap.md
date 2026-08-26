@@ -1,7 +1,7 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-08-23
+updated: 2026-08-26
 themes:
   - "Lawful shared watching (catalog + host embed/capture + guest SFU view)"
   - "Host browser tooling (Chrome MV3: media-tab control + Room-tab host console; no capture)"
@@ -13,10 +13,9 @@ themes:
   - "Product observability (GA4 + CloudWatch business metrics)"
   - "Figma-driven UI redesign (incremental adoption)"
 now:
-  - "Product metrics baseline: define instrumentation contract; wire GA4 custom events and CloudWatch business counters for guest join, host broadcast, catalog→room create, and Live entry funnels"
-  - "Treat Chromecast, PWA, catalog playback host, friends/DM, catalog browse IA, public SEO packaging, Official Live, and TV client as live product baseline (board Done / closed), not open delivery risk"
-next:
   - "Figma redesign program — bind https://www.figma.com/design/vQ6yHQyiGlOnRG7ngIOxR7/RiffSync; Designer establishes adoption pattern; incremental surface rollout after Designer sign-off; current red-html chrome stays until each surface swaps"
+  - "Treat Chromecast, PWA, catalog playback host, friends/DM, catalog browse IA, public SEO packaging, Official Live, TV client, product metrics baseline (#437–#440), and MV3 host extension (#426–#431) as live product baseline (board Done / closed), not open delivery risk"
+next:
   - "Extension & TV distribution polish"
   - "Live maturity follow-ons (Cast on Live viewer-local, multi-channel hub) — demand-gated after first metrics read"
 later:
@@ -33,4 +32,4 @@ not_planning:
   - "Big-bang UI rewrite or downtime cutover"
 ---
 
-Board links: epic [#426](https://github.com/StacksOnTheRacks/riffsync/issues/426) closed 2026-08-20; scaffold [#427](https://github.com/StacksOnTheRacks/riffsync/issues/427) closed via PR #432; #428–#431 Done.
+Board links: epic [#426](https://github.com/StacksOnTheRacks/riffsync/issues/426) closed 2026-08-20; scaffold [#427](https://github.com/StacksOnTheRacks/riffsync/issues/427) closed via PR #432; #428–#431 Done. Metrics baseline **#437–#440** closed Done 2026-08-25 (PRs #441–#444).

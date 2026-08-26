@@ -1,7 +1,7 @@
 ---
 doc: product.brief
 schema_version: 2
-updated: 2026-08-24
+updated: 2026-08-26
 product_name: "RiffSync"
 product_description: "Open-source fan catalog and watch-party app at https://riffsync.tv. Fans browse a curated catalog of riff-style MST episodes on YouTube, and signed-in hosts create shareable rooms that drive lawful YouTube (or staff-configured Custom) embeds and optionally broadcast one shared picture to guests via WebRTC/SFU."
 problem: "Riff fans want to watch together with matched ads, chat, and presence, without each person fighting separate embeds or relying on piracy vaults. Discovery of titles and active parties is fragmented; hosting must be accountable while guests should stay anonymous-first."
@@ -36,9 +36,9 @@ success_metrics:
     target: "Cast (when configured) stays viewer-local and does not break room authority or chat"
   - metric: "Honest fan/unofficial positioning"
     target: "Product stays clearly fan/unofficial with honest playback and affiliation disclaimers"
-current_focus: "Ship product metrics baseline first. Figma redesign is Next — design WIP at linked Figma file; defer implementation until Designer signs a frame; do not break current product."
+current_focus: "Figma redesign program — theme bound, design memory seeded; schedule /forge.design-system-audit; incremental surface rollout after per-surface sign-off (pilot: catalog/home). Product metrics baseline shipped (#437–#440); preserve GA4/CloudWatch instrumentation during redesign."
 ---
 
 Live site: [riffsync.tv](https://riffsync.tv).
 
-Host extension work lives under `apps/host-extension`. Epic **#426** and slices **#427–#431** are closed Done. Next delivery slice: metrics baseline, then Figma-driven UI redesign.
+Host extension work lives under `apps/host-extension`. Epic **#426** and slices **#427–#431** are closed Done. Metrics baseline **#437–#440** closed Done (2026-08-25). **Now**: Figma-driven UI redesign (Designer-gated).

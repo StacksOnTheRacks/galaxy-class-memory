@@ -1,13 +1,14 @@
 ---
 doc: project.status
 schema_version: 1
-updated: 2026-08-23
-summary: "Metrics baseline shaped into Refinement queue #437–#440. Figma redesign queued as Next."
+updated: 2026-08-26
+summary: "Board clear — zero open issues. Product metrics #437–#440 Done (2026-08-25). Figma redesign is Now; /forge.design-system-audit scheduled."
 in_flight: []
 blockers: []
 next_up:
-  - "/forge.implement-ticket on #437 (instrumentation contract doc)"
-  - "Then /forge.refinement on #438 and #439"
+  - "Designer → /forge.design-system-audit when available (Figma redesign kickoff gate)"
+  - "PO/PM → backlog grooming to slice pilot surface (catalog/home) into Ready tickets after audit + Designer sign-off"
+  - "Product → first GA4/CloudWatch metrics read ~1 week post-ship (#437–#440)"
 asks: []
 ---
 

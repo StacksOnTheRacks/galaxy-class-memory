@@ -1,13 +1,14 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-08-25
+updated: 2026-08-26
 in_progress: []
 ready: []
 refinement: []
 blocked: []
 icebox:
-  - "Figma UI redesign — Next (design program); implementation Refinement deferred until Designer sign-off"
+  - "Figma UI redesign — Now (design program; no board tickets until Designer audit/sign-off)"
+  - "Product metrics baseline — shipped Done (#437–#440, 2026-08-25); amendments via explicit metrics ticket only"
   - "Find/focus room tab + return-to-share command (rejected as MVP primary)"
   - "Live maturity follow-ons (Cast on Live, multi-channel Live hub) — Later; demand-gated"
   - "PWA install polish — shipped baseline; polish only if demand"
