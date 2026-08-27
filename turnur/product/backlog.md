@@ -8,8 +8,8 @@ ready:
   - "[#20 Add POST /v1/matches attach route](https://github.com/StacksOnTheRacks/turnur/issues/20)"
   - "[#21 Add GET /v1/matches/:matchId probe route](https://github.com/StacksOnTheRacks/turnur/issues/21)"
   - "[#22 Add TypeScript SDK match attach and get methods](https://github.com/StacksOnTheRacks/turnur/issues/22)"
-refinement:
   - "[#23 Document host attach onboarding for integrators](https://github.com/StacksOnTheRacks/turnur/issues/23)"
+refinement: []
 blocked: []
 icebox:
   - "Seats are created and owned by Turnur (who sits where)"
@@ -19,4 +19,4 @@ icebox:
   - "Match ends with a signed result (capability; not a first-goal)"
 ---
 
-Board/SCM wins — #1–#13 Done (PRs #5–#18). #19–#22 Ready (ai-ready); #23 remains in Refinement on [Host attach a match](https://github.com/StacksOnTheRacks/turnur/milestone/2). Match primitives + signed result remain icebox.
+Board/SCM wins — #1–#13 Done (PRs #5–#18). #19–#23 Ready (ai-ready) on [Host attach a match](https://github.com/StacksOnTheRacks/turnur/milestone/2). Match primitives + signed result remain icebox.
