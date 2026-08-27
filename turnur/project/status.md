@@ -1,15 +1,15 @@
 ---
 doc: project.status
 schema_version: 1
-updated: 2026-08-26
-summary: "Control plane complete (#1–#4 Done, PRs #5–#8). Game authentication milestone active: #9–#13 Ready + ai-ready; implement in dependency order starting #9."
+updated: 2026-08-27
+summary: "Game authentication milestone complete (#9–#13 Done, PRs #14–#18). Control plane #1–#4 Done (PRs #5–#8). Zero open board items; groom host attach + match primitives next."
 in_flight: []
 blockers: []
 next_up:
-  - "/forge.implement-ticket on #9 — game registry and SDK key storage (Ready + ai-ready)"
-  - "Then #10 → #11 → #12 and #13 per dependency chain (all Ready + ai-ready)"
-  - "After auth milestone closes: groom host attach + match primitives to Refinement"
+  - "/forge.backlog-grooming — host attach a match (icebox → Grooming)"
+  - "Groom match-state primitives (seats, turns, hidden views, move log) after host attach slice is defined"
+  - "Optionally close GitHub milestone Game authentication (SDK key) (all 5 issues closed)"
 asks: []
 ---
 
-Board: [#9](https://github.com/StacksOnTheRacks/turnur/issues/9)–[#13](https://github.com/StacksOnTheRacks/turnur/issues/13) Ready + ai-ready on [Game authentication (SDK key)](https://github.com/StacksOnTheRacks/turnur/milestone/1). Control plane [#1](https://github.com/StacksOnTheRacks/turnur/issues/1)–[#4](https://github.com/StacksOnTheRacks/turnur/issues/4) Done ([PR #5](https://github.com/StacksOnTheRacks/turnur/pull/5)–[#8](https://github.com/StacksOnTheRacks/turnur/pull/8)).
+Board: all issues [#1–#13](https://github.com/StacksOnTheRacks/turnur/issues) Done. Game auth [#9–#13](https://github.com/StacksOnTheRacks/turnur/milestone/1) merged via [PR #14](https://github.com/StacksOnTheRacks/turnur/pull/14)–[#18](https://github.com/StacksOnTheRacks/turnur/pull/18). Zero open issues; zero In Progress.

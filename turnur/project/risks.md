@@ -1,14 +1,15 @@
 ---
 doc: project.risks
 schema_version: 1
-updated: 2026-08-26
+updated: 2026-08-27
 risks: []
 issues: []
 dependencies:
-  - "Implement order: #9 → #10 → #11; #12 and #13 both depend on #11"
-  - "Game auth milestone (#9–#13) gates host attach and all match primitives (icebox)"
+  - "Host attach gates match primitives (seats → turns → hidden views → move log)"
+  - "Next delivery slice undefined on board until host attach is groomed from icebox"
 assumptions:
-  - "Board: zero In Progress, zero blockers; #9–#13 remain Ready + ai-ready with Architect + Security tech specs"
+  - "Board: zero open issues, zero In Progress, zero blockers; #1–#13 Done"
+  - "Game auth milestone issues all closed; milestone may remain open on GitHub until manually closed"
 ---
 
 See `architecture/risks.md` and `security/threat-model.md` as the stack grows.
