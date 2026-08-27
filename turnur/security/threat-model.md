@@ -1,11 +1,12 @@
 ---
 doc: security.threat_model
 schema_version: 1
-updated: 2026-08-26
+updated: 2026-08-27
 assets:
   - "Match state (seats, turns, hidden views, move log) — future"
   - "Signed match results — future"
   - "Game SDK keys (game-to-Turnur auth) — present (#9 Ready); hashed at rest in DynamoDB GameRegistry"
+  - "Match metadata (matchId, gameId, status, createdAt) — present (#19 Ready); no seats/turns/moves in v1 attach slice"
   - "CDK/IaC source under infra/cdk/ — present (#1, PR #5)"
   - "Integrator onboarding docs (infra/cdk/README.md) — #13 Ready; public doc surface for auth guidance"
 trust_boundaries:
@@ -28,4 +29,4 @@ open_questions:
   - "Signed result verification mechanism — roadmap Later"
 ---
 
-Scope: game-auth slice (#9–#13 Ready). Revisit when attach/match primitives land.
+Scope: game-auth slice (#9–#13 Done). Match attach slice (#19–#23) in flight; revisit when match state primitives land.
