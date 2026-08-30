@@ -4,13 +4,13 @@ schema_version: 1
 updated: 2026-08-30
 slug: match-authority-primitives
 title: "Match authority primitives: seats, turns, hidden views, move log"
-status: hld
+status: lld
 user_facing: false
 signoffs:
-  po: false
-  architect: false
+  po: true
+  architect: true
   designer: "na"
-  security: false
+  security: true
 board_milestone: ""
 board_tickets: []
 ---
