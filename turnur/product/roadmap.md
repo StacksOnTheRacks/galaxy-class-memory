@@ -1,7 +1,7 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-08-27
+updated: 2026-08-30
 themes:
   - "Running control plane: TypeScript, Node 22, AWS CDK, health-checkable HTTP API"
   - "Host attach: a host attaches a match; identity, chat, rooms, and media stay on the host"
@@ -9,9 +9,8 @@ themes:
   - "Backend state provider: games supply gameplay and rules; Turnur owns match state"
   - "Stay out of identity, chat, rooms, and media; authenticate games, not players"
 now:
-  - "Host attach (SDK key auth): match registry, attach route, probe route, SDK, integrator docs — Refinement #19–#23"
+  - "Match authority primitives: seats, turns, hidden views, and the move log — Refinement #29–#35 (not Ready)"
 next:
-  - "Match authority primitives: seats, turns, hidden views, and the move log"
   - "Host path polish (RiffSync or equivalent) without Turnur owning rooms or identity"
 later:
   - "Signed result as a capability (verification mechanism undecided)"
@@ -26,4 +25,4 @@ not_planning:
   - "Cloning RiffSync's media plane or fan/staff Cognito stacks"
 ---
 
-Board: game auth #9–#13 Done (PRs #14–#18). Host attach [#19–#23](https://github.com/StacksOnTheRacks/turnur/milestone/2) in Refinement.
+Board: control plane #1–#4, game auth #9–#13, host attach #19–#23 Done (PRs #5–#28). Primitives [#29–#35](https://github.com/StacksOnTheRacks/turnur/milestone/3) In Refinement — not Ready.

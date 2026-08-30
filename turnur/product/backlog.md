@@ -1,22 +1,20 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-08-27
+updated: 2026-08-30
 in_progress: []
-ready:
-  - "[#19 Add Match registry storage to TurnurApi stack](https://github.com/StacksOnTheRacks/turnur/issues/19)"
-  - "[#20 Add POST /v1/matches attach route](https://github.com/StacksOnTheRacks/turnur/issues/20)"
-  - "[#21 Add GET /v1/matches/:matchId probe route](https://github.com/StacksOnTheRacks/turnur/issues/21)"
-  - "[#22 Add TypeScript SDK match attach and get methods](https://github.com/StacksOnTheRacks/turnur/issues/22)"
-  - "[#23 Document host attach onboarding for integrators](https://github.com/StacksOnTheRacks/turnur/issues/23)"
-refinement: []
+ready: []
+refinement:
+  - "[#29 Add MatchState and MatchMoveLog storage to TurnurApi stack](https://github.com/StacksOnTheRacks/turnur/issues/29)"
+  - "[#30 Add POST and GET /v1/matches/:matchId/seats routes](https://github.com/StacksOnTheRacks/turnur/issues/30)"
+  - "[#31 Add GET/PUT /v1/matches/:matchId/turn and POST /moves routes](https://github.com/StacksOnTheRacks/turnur/issues/31)"
+  - "[#32 Add PUT and GET seat hidden-view routes](https://github.com/StacksOnTheRacks/turnur/issues/32)"
+  - "[#33 Add GET /v1/matches/:matchId/moves read route](https://github.com/StacksOnTheRacks/turnur/issues/33)"
+  - "[#34 Add TypeScript SDK match authority methods](https://github.com/StacksOnTheRacks/turnur/issues/34)"
+  - "[#35 Document match authority primitives for integrators](https://github.com/StacksOnTheRacks/turnur/issues/35)"
 blocked: []
 icebox:
-  - "Seats are created and owned by Turnur (who sits where)"
-  - "Turn order is authoritative (whose turn; illegal-turn rejected)"
-  - "Hidden views are seat-scoped (private information does not leak)"
-  - "Move log is complete and append-only for the match"
   - "Match ends with a signed result (capability; not a first-goal)"
 ---
 
-Board/SCM wins — #1–#13 Done (PRs #5–#18). #19–#23 Ready (ai-ready) on [Host attach a match](https://github.com/StacksOnTheRacks/turnur/milestone/2). Match primitives + signed result remain icebox.
+Board/SCM wins — #1–#23 Done (PRs #5–#28). #29–#35 In Refinement on [Match authority primitives](https://github.com/StacksOnTheRacks/turnur/milestone/3). Icebox is signed result only.
