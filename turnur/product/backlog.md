@@ -10,11 +10,11 @@ ready:
   - "[#32 Add PUT and GET seat hidden-view routes](https://github.com/StacksOnTheRacks/turnur/issues/32)"
   - "[#33 Add GET /v1/matches/:matchId/moves read route](https://github.com/StacksOnTheRacks/turnur/issues/33)"
   - "[#34 Add TypeScript SDK match authority methods](https://github.com/StacksOnTheRacks/turnur/issues/34)"
-refinement:
   - "[#35 Document match authority primitives for integrators](https://github.com/StacksOnTheRacks/turnur/issues/35)"
+refinement: []
 blocked: []
 icebox:
   - "Match ends with a signed result (capability; not a first-goal)"
 ---
 
-Board/SCM wins — #1–#23 Done (PRs #5–#28). #29–#34 Ready on [Match authority primitives](https://github.com/StacksOnTheRacks/turnur/milestone/3); #35 remains In Refinement. Icebox is signed result only.
+Board/SCM wins — #1–#23 Done (PRs #5–#28). #29–#35 Ready on [Match authority primitives](https://github.com/StacksOnTheRacks/turnur/milestone/3); last sibling Ready, initiative executing. Icebox is signed result only.
