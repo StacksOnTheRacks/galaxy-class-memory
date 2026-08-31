@@ -3,9 +3,9 @@ doc: product.backlog
 schema_version: 1
 updated: 2026-08-30
 in_progress: []
-ready: []
-refinement:
+ready:
   - "[#29 Add MatchState and MatchMoveLog storage to TurnurApi stack](https://github.com/StacksOnTheRacks/turnur/issues/29)"
+refinement:
   - "[#30 Add POST and GET /v1/matches/:matchId/seats routes](https://github.com/StacksOnTheRacks/turnur/issues/30)"
   - "[#31 Add GET/PUT /v1/matches/:matchId/turn and POST /moves routes](https://github.com/StacksOnTheRacks/turnur/issues/31)"
   - "[#32 Add PUT and GET seat hidden-view routes](https://github.com/StacksOnTheRacks/turnur/issues/32)"
@@ -17,4 +17,4 @@ icebox:
   - "Match ends with a signed result (capability; not a first-goal)"
 ---
 
-Board/SCM wins — #1–#23 Done (PRs #5–#28). #29–#35 In Refinement on [Match authority primitives](https://github.com/StacksOnTheRacks/turnur/milestone/3). Icebox is signed result only.
+Board/SCM wins — #1–#23 Done (PRs #5–#28). #29 Ready on [Match authority primitives](https://github.com/StacksOnTheRacks/turnur/milestone/3); #30–#35 remain In Refinement. Icebox is signed result only.
