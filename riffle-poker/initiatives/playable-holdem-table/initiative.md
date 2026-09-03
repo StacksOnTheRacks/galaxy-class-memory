@@ -1,10 +1,10 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-02
+updated: 2026-09-03
 slug: playable-holdem-table
 title: "Playable no-limit Hold'em table"
-status: lld
+status: executing
 user_facing: true
 signoffs:
   po: true
@@ -42,4 +42,4 @@ Locked for this initiative:
 
 Now-slice completeness bar: finish a hand via fold-to-one or non-all-in showdown. Side pots, all-in runout, disconnect/rejoin, and spectator polish are roadmap Next — not required to ship this initiative.
 
-LLD: nine tickets on Refinement under milestone/1. Next: `/forge.plan-refresh` then `/forge.refinement`.
+LLD complete: all nine tickets Ready (`ai-ready` + tech spec) under milestone/1. Initiative executing. Next: `/forge.implement-ticket` (sibling-Ready gate passes).
