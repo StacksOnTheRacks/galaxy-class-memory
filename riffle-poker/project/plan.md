@@ -1,26 +1,26 @@
 ---
 doc: project.plan
 schema_version: 1
-updated: 2026-08-30
-objective: "Stand up delivery order for Riffle Poker as a first-party poker game on Turnur, attachable to RiffSync — Icebox first; no board tickets yet."
+updated: 2026-09-02
+objective: "Sequence LLD for the first playable NLHE table — one host milestone, nine Refinement tickets; Ready and implement come after /forge.refinement."
 in_scope:
-  - "Now — memory seed and Icebox coarse outcomes for a first-party poker game on Turnur, attachable to RiffSync (no actionable tickets)"
-  - "Out of this slice: host milestones, epic/umbrella issues, Refinement/Ready, implementation"
+  - "Now — one host milestone Playable no-limit Hold'em table + nine actionable tickets on Refinement"
+  - "Out of this slice — Ready, implementation, signed result, side pots, all-in runout, Icebox outcomes"
 sequence:
-  - "/forge.init-project — seed memory (this event)"
-  - "PO framing HITL — brief, roadmap Themes + coarse Now/Next, Icebox outcomes"
-  - "After Apply — /forge.roadmap-review; large idea via /forge.new-initiative (HLD) before grooming"
-  - "Host milestone — only at initiative LLD or when ≥5 related tickets exist"
+  - "/forge.backlog-grooming Apply (this event) — create host milestone; land nine tickets on Refinement; assign all to the milestone"
+  - "After Apply — /forge.plan-refresh (sequence board_tickets once the board exists)"
+  - "Then /forge.refinement — compile AC; UF tickets get Designer; do not mark Ready in grooming"
+  - "After all nine Ready + ai-ready — implement in post-refinement order (not started): Wave 1 iframe-bootstrap + runtime-turnur-auth + nlhe-rules-library; Wave 2 table-seats + host-seat-capability; Wave 3 hole-cards-hidden-views; Wave 4 betting-turns-moves; Wave 5 public-board-streets; Wave 6 hand-complete"
 dependencies:
-  - "Turnur is the match-state authority; Riffle runtime holds the SDK key"
-  - "RiffSync is the first expected attach host — identity, chat, rooms, and media stay on the host"
-  - "Turnur match-authority work may couple later implementation; it does not block Icebox or initiative HLD"
-  - "No GitHub issues or host milestones; do not invent ticket numbers"
-  - "Shared board: GalaxyClass Open Source (PVT_kwHOADqiOM4BWitQ) — same project as turnur and riffsync"
+  - "Turnur match-authority-primitives is executing (#29–#35 on turnur milestone/3); Riffle consumes @turnur/sdk — couples later implement of seats/turns/views/moves; does not block this grooming"
+  - "Turnur game-auth (SDK key) already shipped; Riffle runtime holds the key"
+  - "RiffSync is the first attach host; identity, chat, rooms, media stay on the host"
+  - "runtime-hosting open, non-blocking"
+  - "Shared board PVT_kwHOADqiOM4BWitQ; sibling-Ready gate: all nine must be Ready before any /forge.implement-ticket claim"
 handoffs:
-  - "PO → first brief/roadmap/backlog (Icebox only)"
-  - "After init Apply → /forge.roadmap-review"
-  - "Large idea → /forge.new-initiative → HLD → LLD; not day-one grooming"
+  - "After grooming Apply → /forge.plan-refresh"
+  - "Then Product → /forge.refinement on all nine"
+  - "Then Engineering → /forge.implement-ticket in the post-refinement order once all siblings are Ready"
 ---
 
-Board/SCM wins. Zero issues and zero host milestones on StacksOnTheRacks/riffle-poker.
+Board/SCM wins. Host milestone and nine issues In Refinement on StacksOnTheRacks/riffle-poker. Next is plan-refresh then refinement — not Ready this event.

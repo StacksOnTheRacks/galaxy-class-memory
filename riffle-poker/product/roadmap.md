@@ -9,7 +9,7 @@ themes:
   - "Texas Hold'em as the v1 ruleset"
   - "Play-chip social play — no cashier, rake, or real money"
 now:
-  - "Playable no-limit Hold'em table (play chips) — initiative playable-holdem-table exiting HLD to LLD (iframe embed, in-process rules, host-issued seat capability; signed result out of this slice)"
+  - "Playable no-limit Hold'em table (play chips) — initiative playable-holdem-table in LLD; nine tickets on Refinement under host milestone (iframe embed, in-process rules, host-issued seat capability; signed result out of this slice)"
 next:
   - "Host-path polish on RiffSync (seat claim from the room, spectator public-board view)"
   - "Table UX maturity after the first complete hand (side pots, all-in runout, disconnect/rejoin via the host)"
@@ -27,4 +27,4 @@ not_planning:
   - "Copying RiffSync's Cognito, chat, or SFU/TURN stacks"
 ---
 
-Empty board — no issues yet. Icebox outcomes wait for `/forge.new-initiative` / grooming.
+Nine playable-holdem-table tickets on Refinement under [milestone/1](https://github.com/StacksOnTheRacks/riffle-poker/milestone/1). Icebox outcomes wait for `/forge.new-initiative` / grooming.

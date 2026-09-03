@@ -1,13 +1,13 @@
 ---
 doc: project.status
 schema_version: 1
-updated: 2026-08-30
-summary: "Greenfield init. Repo is README-only. Zero board issues and zero host milestones. Now is product framing plus Icebox; nothing in flight."
+updated: 2026-09-02
+summary: "LLD grooming applied for playable-holdem-table. One host milestone and nine Refinement tickets on the board. Repo still README-only. Nothing implementing. Initiative stays lld."
 in_flight: []
 blockers: []
 next_up:
-  - "After init Apply — /forge.roadmap-review"
-  - "Large idea — /forge.new-initiative (not /forge.backlog-grooming on day one)"
+  - "After grooming Apply — /forge.plan-refresh"
+  - "Then /forge.refinement on the nine playable-holdem-table tickets (not Ready this event)"
 asks: []
 ---
 

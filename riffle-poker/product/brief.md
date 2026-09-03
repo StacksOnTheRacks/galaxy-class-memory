@@ -35,7 +35,7 @@ success_metrics:
     target: "Hole cards are visible only to the owning seat via Turnur hidden views"
   - metric: "Quantified targets"
     target: "TBD (greenfield; no instrumentation yet)"
-current_focus: "HLD complete for playable-holdem-table — moving to LLD grooming. First playable NLHE table (play chips) on Turnur, iframe-attached from a host room (RiffSync first). Rules run in-process in the Riffle runtime; SDK key stays server-side; host-issued seat capability binds player↔match↔seat. Signed result, side pots, all-in runout, disconnect/rejoin, and spectator polish are out of this slice. Next: /forge.backlog-grooming. Do not invent board tickets."
+current_focus: "LLD for playable-holdem-table — nine Now-slice tickets are on Refinement under host milestone Playable no-limit Hold'em table. First playable NLHE table (play chips) on Turnur, iframe-attached from a host room (RiffSync first). Rules run in-process in the Riffle runtime; SDK key stays server-side; host-issued seat capability binds player↔match↔seat. Signed result, side pots, all-in runout, disconnect/rejoin, and spectator polish are out of this slice. Next: /forge.plan-refresh then /forge.refinement."
 ---
 
 Repo: [github.com/StacksOnTheRacks/riffle-poker](https://github.com/StacksOnTheRacks/riffle-poker). Match backend: [Turnur](https://github.com/StacksOnTheRacks/turnur). First expected host: [RiffSync](https://github.com/StacksOnTheRacks/riffsync).
