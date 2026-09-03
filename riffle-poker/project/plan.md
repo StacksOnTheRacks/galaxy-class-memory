@@ -1,26 +1,26 @@
 ---
 doc: project.plan
 schema_version: 1
-updated: 2026-09-02
-objective: "Sequence LLD for the first playable NLHE table — one host milestone, nine Refinement tickets; Ready and implement come after /forge.refinement."
+updated: 2026-09-03
+objective: "Sequence LLD for play-lab — one host milestone, six Refinement tickets; Ready and implement come after /forge.refinement."
 in_scope:
-  - "Now — one host milestone Playable no-limit Hold'em table + nine actionable tickets on Refinement"
-  - "Out of this slice — Ready, implementation, signed result, side pots, all-in runout, Icebox outcomes"
+  - "Now — host milestone Play lab + six actionable tickets on Refinement (#19–#24)"
+  - "Out of this slice — Ready, implementation, runtime hosting / IaC, RiffSync attach, next-hand loop"
 sequence:
-  - "/forge.backlog-grooming Apply (this event) — create host milestone; land nine tickets on Refinement; assign all to the milestone"
+  - "/forge.backlog-grooming Apply (2026-09-03) — created milestone/2; landed six tickets on Refinement"
   - "After Apply — /forge.plan-refresh (sequence board_tickets once the board exists)"
-  - "Then /forge.refinement — compile AC; UF tickets get Designer; do not mark Ready in grooming"
-  - "After all nine Ready + ai-ready — implement in post-refinement order (not started): Wave 1 iframe-bootstrap + runtime-turnur-auth + nlhe-rules-library; Wave 2 table-seats + host-seat-capability; Wave 3 hole-cards-hidden-views; Wave 4 betting-turns-moves; Wave 5 public-board-streets; Wave 6 hand-complete"
+  - "Then /forge.refinement — compile AC; #23 gets Designer; do not mark Ready in grooming"
+  - "After all six Ready + ai-ready — implement in post-refinement order (not started): Wave 1 #19 + #20; Wave 2 #21 → #22; Wave 3 #23; Wave 4 #24 (live Turnur success bar)"
 dependencies:
-  - "Turnur match-authority-primitives is executing (#29–#35 on turnur milestone/3); Riffle consumes @turnur/sdk — couples later implement of seats/turns/views/moves; does not block this grooming"
-  - "Turnur game-auth (SDK key) already shipped; Riffle runtime holds the key"
-  - "RiffSync is the first attach host; identity, chat, rooms, media stay on the host"
+  - "playable-holdem-table #1–#9 shipped — lab reuses bootstrap, capability, deal, betting, and play surfaces"
+  - "Turnur game-auth (SDK key) on runtime; live Turnur env-only for #24"
+  - "lab-exposure-bound and lab-parent-origin LLD forks resolve at refinement (#21, #23)"
   - "runtime-hosting open, non-blocking"
-  - "Shared board PVT_kwHOADqiOM4BWitQ; sibling-Ready gate: all nine must be Ready before any /forge.implement-ticket claim"
+  - "Sibling-Ready gate: all six play-lab tickets must be Ready before any /forge.implement-ticket claim"
 handoffs:
   - "After grooming Apply → /forge.plan-refresh"
-  - "Then Product → /forge.refinement on all nine"
-  - "Then Engineering → /forge.implement-ticket in the post-refinement order once all siblings are Ready"
+  - "Then Product → /forge.refinement on all six"
+  - "Then Engineering → /forge.implement-ticket in post-refinement order once all siblings are Ready"
 ---
 
-Board/SCM wins. Host milestone and nine issues In Refinement on StacksOnTheRacks/riffle-poker. Next is plan-refresh then refinement — not Ready this event.
+Board/SCM wins. Play-lab milestone/2 and issues #19–#24 In Refinement on StacksOnTheRacks/riffle-poker. Next is plan-refresh then refinement — not Ready this event.

@@ -11,8 +11,14 @@ signoffs:
   architect: true
   designer: true
   security: true
-board_milestone: ""
-board_tickets: []
+board_milestone: "[Play lab](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2)"
+board_tickets:
+  - "[#19 Host-facing POST /v1/matches wraps Turnur match.create](https://github.com/StacksOnTheRacks/riffle-poker/issues/19)"
+  - "[#20 Play iframe accepts host seat capability via postMessage](https://github.com/StacksOnTheRacks/riffle-poker/issues/20)"
+  - "[#21 Lab session orchestrator mints match, seats, bootstrap, and capabilities](https://github.com/StacksOnTheRacks/riffle-poker/issues/21)"
+  - "[#22 Lab deal orchestrator deals and opens betting for two seats](https://github.com/StacksOnTheRacks/riffle-poker/issues/22)"
+  - "[#23 First-party play lab page with two embedded /play iframes](https://github.com/StacksOnTheRacks/riffle-poker/issues/23)"
+  - "[#24 Two lab seats complete a hand against live Turnur](https://github.com/StacksOnTheRacks/riffle-poker/issues/24)"
 ---
 
 <!--
@@ -40,4 +46,4 @@ Locked for this initiative:
 - CI stays on fake Turnur; this initiative is not a CI program
 - Live Turnur is the lab success path (env-configured); provisioning a Turnur cluster is out of scope
 
-HLD complete (2026-09-03). Next: `/forge.backlog-grooming` to split into LLD tickets.
+HLD complete (2026-09-03). LLD grooming complete (2026-09-03): six tickets on Refinement under [milestone/2](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2). Next: `/forge.plan-refresh` then `/forge.refinement`.
