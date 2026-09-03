@@ -1,11 +1,11 @@
 ---
 doc: project.risks
 schema_version: 1
-updated: 2026-08-26
+updated: 2026-09-03
 risks:
   - "Figma redesign program has no board tickets until Designer completes /forge.design-system-audit — delivery idle on design track"
   - "MV3 host extension shipped unpacked; Web Store review, distribution packaging, and SPA↔extension bridge trust boundaries unvalidated (detail: architecture/risks.md)"
-  - "Post-ship metrics read not yet performed — Live maturity follow-ons remain demand-gated until GA4 + CloudWatch funnel validation (~1 week post-ship)"
+  - "First operational GA4 + CloudWatch product-funnel read still not performed after #437–#440 closed 2026-08-25 — Live maturity follow-ons remain demand-gated"
 issues: []
 dependencies:
   - "Designer availability → /forge.design-system-audit (first Figma redesign gate)"
