@@ -4,16 +4,6 @@ schema_version: 1
 updated: 2026-09-02
 items:
   - initiative: playable-holdem-table
-    id: theme-bind-riffle-poker
-    question: "Bind a Figma theme for riffle-poker (figma_url / figma_file_key on design/themes.md) so structure, tokens, and screen inventory can be projected. Until then designer HLD cannot cite real frames and design/screens.md must stay empty."
-    blocking: true
-    status: open
-  - initiative: playable-holdem-table
-    id: prebuild-seated-table-figma
-    question: "Pre-build Figma Screens/Flows for the seated iframe table (felt, my-turn actions, between-hands, showdown, embed error) with named states and a11y annotations before HLD exit. Recommend /forge.design-spike after theme-bind if frames do not exist yet."
-    blocking: true
-    status: open
-  - initiative: playable-holdem-table
     id: stack-blinds-defaults
     question: "Starting stack and blinds defaults for the first playable NLHE table?"
     blocking: false

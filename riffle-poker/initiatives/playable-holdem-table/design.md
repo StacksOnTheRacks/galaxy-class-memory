@@ -2,8 +2,8 @@
 doc: product.initiative_design
 schema_version: 1
 updated: 2026-09-02
-summary: "HLD intent for the seated-player no-limit Hold'em play surface embedded in a host iframe (RiffSync first). One composition: felt + seat-private hole cards + public board + turn/actions. No Riffle lobby, identity, chat, rooms, media, or cashier. Figma unbound — screens/states/a11y are logical names only until theme-bind and pre-built frames exist."
-figma_file: ""
+summary: "HLD play surface is a dedicated riffle-poker Figma file (not a host/sister/group file). Screens/Flows pre-built for the named seated-table screens and states at desktop + narrow iframe widths, with a11y annotations. One felt composition after attach; separate embed load/error surface for bootstrap redeem. No Riffle lobby, identity, chat, rooms, media, or cashier. Node ids live in design/screens.md."
+figma_file: "https://www.figma.com/design/NgpCBblDdJ7cw4TLrH9kUE/Riffle-Poker-Design"
 screens:
   - "Seated table (iframe play surface)"
   - "Between-hands / waiting for deal"
@@ -27,9 +27,7 @@ a11y:
   - "Confirm irreversible chip commits and table-exit before they fire"
   - "Respect reduced-motion for chip/deal animations where present"
   - "Do not ship identity, chat, rooms, presence, media, cashier, rake, KYC, HUD, or solver UI as Riffle surfaces"
-open_questions:
-  - "theme-bind-riffle-poker"
-  - "prebuild-seated-table-figma"
+open_questions: []
 ---
 
 <!--
@@ -39,4 +37,6 @@ Authoring (not validated):
 - Bump updated when any frontmatter field changes.
 -->
 
-First player-facing slice is the seated table inside a host iframe: one felt composition where the player sees their seat, seat-scoped hole cards, the shared board, pot/streets, and legal actions when it is their turn. Host owns identity/chat/rooms/media chrome; Riffle does not design those. All-in and disconnect/rejoin states are roadmap Next — not required Now screens. Until a Figma theme is bound, this doc is HLD intent only — logical screen and state names, no frames. Prefer pre-built Screens/Flows frames for the seated table (desktop + narrow iframe widths) before leaving HLD. `design/screens.md` stays empty until bind + inventory.
+First player-facing slice is the seated table inside a host iframe: one felt composition where the player sees their seat, seat-scoped hole cards, the shared board, pot/streets, and legal actions when it is their turn. Host owns identity/chat/rooms/media chrome; Riffle does not design those. All-in and disconnect/rejoin states are roadmap Next — not required Now screens.
+
+Path locked: dedicated Riffle Poker Design file (`NgpCBblDdJ7cw4TLrH9kUE`), not RiffSync. Frames exist as named states at desktop and narrow iframe widths; attach `loading` / `embed-error` are separate from the felt composition. Real frame node ids are inventoried in `design/screens.md` — do not invent node ids here. Designer HLD sign-off flips in `/forge.initiative-planning` after review.

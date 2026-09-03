@@ -1,13 +1,13 @@
 ---
 doc: design.themes
 schema_version: 1
-updated: 2026-08-30
+updated: 2026-09-02
 themes:
   - app: riffle-poker
-    figma_url: ""
-    figma_file_key: ""
-    status: unbound
+    figma_url: "https://www.figma.com/design/NgpCBblDdJ7cw4TLrH9kUE/Riffle-Poker-Design"
+    figma_file_key: NgpCBblDdJ7cw4TLrH9kUE
+    status: bound
     last_audited: ""
 ---
 
-Unbound at init: no Figma URL provided. Structure check fails until a theme is bound.
+Bound to dedicated Riffle Poker Design file (Alto9 template foundation). Not RiffSync.

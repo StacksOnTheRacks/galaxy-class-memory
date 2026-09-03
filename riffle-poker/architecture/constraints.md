@@ -17,6 +17,7 @@ soft_constraints:
   - "First host is RiffSync; remain host-agnostic so another host can attach later."
   - "Prefer TypeScript when a stack is chosen, to consume @turnur/sdk without a second language boundary. Not locked."
   - "Defer Riffle runtime hosting / IaC until a slice needs it; rules locus, iframe embed, and bootstrap token path are locked."
+  - "Play-surface UI must compose inside a host iframe at both a desktop embed width and a narrow host-panel width; Riffle does not assume full-viewport app chrome."
 out_of_bounds:
   - "Player login, accounts, or identity as a Riffle concern."
   - "Rooms, presence, chat, or a media/SFU plane of its own."

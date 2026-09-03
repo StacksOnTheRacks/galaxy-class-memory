@@ -35,6 +35,7 @@ constraints:
   - "Signed result out of scope this initiative"
   - "Play chips only; NLHE only; no tournaments/SNG"
   - "Side pots, all-in runout, disconnect/rejoin, spectator polish out of scope this HLD"
+  - "Play-surface UI is iframe-only: compose at desktop and narrow host-embed widths; do not assume full-viewport Riffle chrome. loading and embed-error are the bootstrap mint→URL→redeem session surfaces (missing/invalid/expired/already-used token, redeem reject, host attach failure before match bind). No Riffle identity/login chrome. Seat-capability failure after attach may reuse embed-error this HLD — no new screen. Signed-URL / postMessage-only / cookie session remain non-primary."
 open_questions: []
 ---
 
@@ -45,4 +46,4 @@ Authoring (not validated):
 - Bump updated when any frontmatter field changes.
 -->
 
-Trust boundary is the Riffle runtime. Bootstrap is mint → iframe URL token → redeem for match attach; seat capability is orthogonal. Turnur consumption mirrors sister match-authority-primitives (seats → turn designate + moves → hidden views → move log → SDK). Riffle maps poker streets onto designate-turn + append-move + view updates. Concurrent illegal turn → Turnur `409 illegal_turn`; runtime reconciles from log/cursor.
+Trust boundary is the Riffle runtime. Bootstrap is mint → iframe URL token → redeem for match attach; seat capability is orthogonal. Turnur consumption mirrors sister match-authority-primitives (seats → turn designate + moves → hidden views → move log → SDK). Riffle maps poker streets onto designate-turn + append-move + view updates. Concurrent illegal turn → Turnur `409 illegal_turn`; runtime reconciles from log/cursor. Play-surface Figma path is Designer vendor work on the dedicated Riffle Poker Design file — not a runtime-hosting or embed-shape decision.
