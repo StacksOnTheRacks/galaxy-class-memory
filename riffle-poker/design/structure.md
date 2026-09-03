@@ -5,6 +5,7 @@ updated: 2026-09-03
 structure_status: pass
 structure_gaps: []
 last_checked: 2026-09-03
+structure_note: "Rechecked 2026-09-03 after adding river-in-progress frames 4010:2/39/76/117"
 required_pages_found:
   - "Brand & Foundations"
   - "Tokens"

@@ -1,7 +1,7 @@
 ---
 doc: design.screens
 schema_version: 1
-updated: 2026-09-02
+updated: 2026-09-03
 screens:
   - name: Seated table / loading — desktop
     figma_node_id: "4004:15"
@@ -42,6 +42,26 @@ screens:
     figma_node_id: "4005:40"
     app: riffle-poker
     states: [my-turn]
+    responsive: [narrow-iframe]
+  - name: Seated table / hand-in-progress (river) — desktop
+    figma_node_id: "4010:2"
+    app: riffle-poker
+    states: ["hand-in-progress (river, not my turn)"]
+    responsive: [desktop]
+  - name: Seated table / hand-in-progress (river) — narrow-iframe
+    figma_node_id: "4010:39"
+    app: riffle-poker
+    states: ["hand-in-progress (river, not my turn)"]
+    responsive: [narrow-iframe]
+  - name: Seated table / my-turn (river) — desktop
+    figma_node_id: "4010:76"
+    app: riffle-poker
+    states: ["my-turn (river)"]
+    responsive: [desktop]
+  - name: Seated table / my-turn (river) — narrow-iframe
+    figma_node_id: "4010:117"
+    app: riffle-poker
+    states: ["my-turn (river)"]
     responsive: [narrow-iframe]
   - name: Seated table / showdown — desktop
     figma_node_id: "4005:78"

@@ -3,22 +3,26 @@ Feature: Advance the public board through flop, turn, and river
   I want the public board to advance through streets after action completes
   So that every seated player sees the same flop, turn, and river as shared table state
 
-  # Out of this ticket: all-in runout, side pots, betting controls, showdown
-  # ranking, signed result.
+  # Out of this ticket: all-in runout, side pots, betting-control invention,
+  # showdown ranking, signed result.
 
   Background:
-    Given a hand is in progress past preflop with action complete for the street
+    Given a hand is in progress with hole cards dealt and betting open
     And the Riffle runtime uses the in-process NLHE library to deal streets
     And hole cards remain seat-scoped hidden views
 
   Scenario: Flop is dealt to the public board after preflop action completes
+    Given preflop action is complete with at least two seats still in
     When the Riffle runtime deals the flop under NLHE rules
     Then the public board updates with the flop for all seated players
+    And betting reopens for the first still-in seat clockwise after the button
 
   Scenario: Turn and river deal as applicable
     Given the flop is already on the public board and street action is complete
     When the Riffle runtime deals the next street under NLHE rules
     Then the public board updates for turn, then river as applicable
+    And after flop or turn, betting reopens the same way
+    And completing river betting does not deal another street
 
   Scenario: All seated players see the same public board
     Given the public board has advanced
@@ -29,3 +33,8 @@ Feature: Advance the public board through flop, turn, and river
     When the public board is stored or read
     Then the public board is not stored as a seat hidden view
     And hole cards remain seat-scoped while the board is public
+
+  Scenario: Remaining undealt cards stay off the felt
+    When the runtime deals a street
+    Then remaining undealt cards and burns do not appear on the public board
+    And remaining undealt cards are not stored as a seated player's hidden view
