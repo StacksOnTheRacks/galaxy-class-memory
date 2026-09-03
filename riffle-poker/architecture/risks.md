@@ -1,11 +1,12 @@
 ---
 doc: architecture.risks
 schema_version: 1
-updated: 2026-08-30
+updated: 2026-09-02
 structural_risks: []
 coupling_hotspots: []
 migration_hazards: []
-watch_list: []
+watch_list:
+  - "Bootstrap token URL leakage (Referer, history, logs) — mitigate with short TTL, one-time redeem, prefer fragment or strip after redeem; never log tokens"
 ---
 
 <!--

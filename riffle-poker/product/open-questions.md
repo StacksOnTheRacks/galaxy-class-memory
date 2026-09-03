@@ -4,11 +4,6 @@ schema_version: 1
 updated: 2026-09-02
 items:
   - initiative: playable-holdem-table
-    id: host-iframe-bootstrap
-    question: "How does the host pass match/session context into the Riffle iframe (URL params, short-lived token, postMessage, etc.) so the runtime can attach the correct Turnur match without putting the Turnur SDK key in the browser?"
-    blocking: true
-    status: open
-  - initiative: playable-holdem-table
     id: theme-bind-riffle-poker
     question: "Bind a Figma theme for riffle-poker (figma_url / figma_file_key on design/themes.md) so structure, tokens, and screen inventory can be projected. Until then designer HLD cannot cite real frames and design/screens.md must stay empty."
     blocking: true
