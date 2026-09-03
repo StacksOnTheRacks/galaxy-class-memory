@@ -1,12 +1,13 @@
 ---
 doc: architecture.interfaces
 schema_version: 1
-updated: 2026-09-02
+updated: 2026-09-03
 external_interfaces:
   - "Host → Riffle runtime — POST /v1/bootstrap/mint with Authorization: Bearer <RIFFLE_HOST_API_KEY>; body { matchId }; returns { token, playUrl, expiresIn: 60, jti }"
   - "Host → iframe — Riffle-origin play URL {RIFFLE_PUBLIC_ORIGIN}/play#bt={token} (fragment, never query); no SDK key; not seat authority"
   - "iframe → Riffle runtime — POST /v1/bootstrap/redeem { token } → match attach + Set-Cookie riffle_play; GET /v1/bootstrap/session for reload; table API (same-origin)"
-  - "Host → Riffle runtime — seat capability (player↔match↔seat); verify before seat-scoped ops (separate from bootstrap)"
+  - "Host → Riffle runtime — POST /v1/seats/capability/mint with Authorization: Bearer <RIFFLE_HOST_API_KEY>; body { matchId, seatId, playerSubject }; 200 { token, expiresIn: 900, jti }; 401 unauthorized; 400 invalid_match_id | invalid_seat_id | invalid_player_subject; no CORS; not called from the iframe"
+  - "iframe/test → Riffle runtime — header X-Riffle-Seat-Capability: <token> on seat-scoped requests; POST /v1/seats/capability/probe is the #3 stub (calls requireSeatCapability only; no Turnur)"
   - "Riffle runtime → @turnur/sdk — match create/probe, seats, turns, views, moves; SDK key server-side only"
 internal_boundaries:
   - "iframe UI is untrusted presentation; Riffle runtime is the trust boundary"
@@ -14,10 +15,10 @@ internal_boundaries:
   - "Turnur is match authority; Riffle is not a parallel match engine"
   - "Bootstrap binds match/room attach context only; seat capability binds player↔seat"
   - "Post-redeem riffle_play cookie is match-attach only — not seat authority, not identity, not an SDK key"
-contracts_in_flight:
-  - "Seat-capability token schema (claims, issuer, crypto, TTL) — LLD; pattern locked"
+  - "Seat capability is verified by SHA-256 ledger lookup (purpose=seat); postMessage may deliver the token but is not authority; riffle_play is never sufficient for the gate"
+contracts_in_flight: []
 ownership:
-  - "Riffle owns bootstrap mint/redeem, runtime, rules library, and Turnur game credentials"
+  - "Riffle owns bootstrap mint/redeem, seat-capability mint/verify, runtime, rules library, and Turnur game credentials"
   - "Host owns identity, room, mint call, iframe embed, and seat capability issuance"
   - "Turnur owns seats, turns, hidden views, and the move log"
 ---

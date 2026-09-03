@@ -1,7 +1,7 @@
 ---
 doc: product.open_questions
 schema_version: 1
-updated: 2026-09-02
+updated: 2026-09-03
 questions:
   - id: stack-blinds-defaults
     question: "Starting stack and blinds defaults for the first playable NLHE table?"
@@ -13,11 +13,6 @@ questions:
     blocking: false
     status: open
     owner: architect
-  - id: seat-capability-token-schema
-    question: "What is the concrete host-issued seat capability format (claims, issuer, crypto, TTL, refresh/revocation) that Riffle server verifies before seat-scoped Turnur reads/writes? Pattern is locked (host-issued capability); concrete format is LLD."
-    blocking: false
-    status: open
-    owner: security
 ---
 
 <!--

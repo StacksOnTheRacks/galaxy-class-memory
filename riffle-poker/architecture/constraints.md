@@ -1,7 +1,7 @@
 ---
 doc: architecture.constraints
 schema_version: 1
-updated: 2026-09-02
+updated: 2026-09-03
 hard_constraints:
   - "After a match is attached, Turnur is state authority for seats, turns, hidden views, and the move log. Riffle must not become a parallel match engine."
   - "Gameplay and rules live in Riffle Poker. Turnur does not evaluate poker legality."
@@ -28,7 +28,7 @@ assumptions:
   - "First-party game, Turnur authority, host-attachable is the working sketch."
   - "Turnur match primitives (SDK key, seats, turns, hidden views, move log) will be consumable by a first-party game."
   - "Iframe bootstrap is settled: opaque short-lived token mint → URL → redeem (ADR-host-iframe-bootstrap)."
-  - "Concrete seat-capability token schema is LLD; the host-issued capability pattern is locked."
+  - "Seat capability LLD locked on #3: mint via Bearer RIFFLE_HOST_API_KEY; opaque 32-byte token (SHA-256 stored); claims jti/matchId/seatId/playerSubject/iat/exp=iat+900/purpose=seat; header X-Riffle-Seat-Capability; reusable until expiry; no refresh/revocation list; riffle_play is not sufficient."
   - "Bootstrap LLD locked on #1: mint via Bearer RIFFLE_HOST_API_KEY; opaque 32-byte token (SHA-256 stored); claims jti/matchId/iat/exp=iat+60/purpose=bootstrap; play URL fragment #bt=; one-time redeem; HttpOnly riffle_play cookie 1h (SameSite=Lax, match attach only)."
   - "Runtime hosting undecided (non-blocking while iframe + in-process library + server-side SDK key hold)."
 ---
