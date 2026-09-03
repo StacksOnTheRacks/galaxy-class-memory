@@ -3,11 +3,6 @@ doc: product.open_questions
 schema_version: 1
 updated: 2026-09-03
 questions:
-  - id: lab-shell-frames
-    question: "Lab-shell frames are missing on Screens / Flows. Prebuild via /forge.design-spike before designer HLD sign-off?"
-    blocking: true
-    status: open
-    owner: designer
   - id: lab-runtime-hosting
     question: "Where is the play lab and Riffle runtime served for a human operator (local process only vs a deployed lab URL)?"
     blocking: false
@@ -23,11 +18,6 @@ questions:
     blocking: false
     status: open
     owner: architect
-  - id: lab-one-seat-intermediate
-    question: "Is a one-seat-attached intermediate state a required Now screen, or is two-empty → two-live enough?"
-    blocking: false
-    status: open
-    owner: product
 ---
 
 <!--
@@ -37,3 +27,7 @@ Authoring (not validated):
 - Remove answered items; defer with status deferred rather than deleting if still relevant.
 - Bump updated when any frontmatter field changes.
 -->
+
+Answered and removed by play-lab design-spike (2026-09-03):
+- lab-shell-frames — prebuilt on Screens / Flows (4012:52, 4012:70, 4012:89, 4012:142)
+- lab-one-seat-intermediate — not required Now; two-empty → two-live is sufficient

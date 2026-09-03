@@ -93,6 +93,26 @@ screens:
     app: riffle-poker
     states: [embed-error]
     responsive: [narrow-iframe]
+  - name: Play lab / idle — desktop
+    figma_node_id: "4012:52"
+    app: riffle-poker
+    states: [lab-idle]
+    responsive: [desktop-operator]
+  - name: Play lab / session ready — desktop
+    figma_node_id: "4012:70"
+    app: riffle-poker
+    states: [lab-ready]
+    responsive: [desktop-operator]
+  - name: Play lab / two seats live — desktop
+    figma_node_id: "4012:89"
+    app: riffle-poker
+    states: [lab-two-seats]
+    responsive: [desktop-operator]
+  - name: Play lab / harness error — desktop
+    figma_node_id: "4012:142"
+    app: riffle-poker
+    states: [lab-harness-error]
+    responsive: [desktop-operator]
 ---
 
-Inventoried from Figma Screens / Flows after `/forge.design-spike` prebuild. Node ids copied from MCP; do not invent.
+Inventoried from Figma Screens / Flows. Seated-table frames after first design-spike; play-lab shell frames after play-lab design-spike (2026-09-03). Node ids copied from MCP; do not invent.

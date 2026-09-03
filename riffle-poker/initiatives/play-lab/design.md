@@ -2,13 +2,13 @@
 doc: product.initiative_design
 schema_version: 1
 updated: 2026-09-03
-summary: "HLD play lab is a first-party operator harness in the dedicated riffle-poker Figma file (not RiffSync, not a consumer lobby). Lab-shell frames are MISSING on Screens / Flows — blocking HLD exit. Existing seated-table / embed-error frames are iframe content only and must not be redesigned. Lab chrome: two labeled Riffle-origin /play slots + host-harness controls (Start session / Deal). Desktop dual-column operator layout is Now. No identity, chat, rooms, cashier. Felt node ids live in design/screens.md; lab node ids cannot be listed until design-spike prebuild."
+summary: "HLD play lab is a first-party operator harness in the dedicated riffle-poker Figma file (not RiffSync, not a consumer lobby). Lab-shell frames prebuilt on Screens / Flows below the seated-table row. Existing seated-table / embed-error frames are iframe content only and must not be redesigned. Lab chrome: two labeled Riffle-origin /play slots + host-harness controls (Start session / Deal). Desktop dual-column operator layout is Now. No identity, chat, rooms, cashier."
 figma_file: "https://www.figma.com/design/NgpCBblDdJ7cw4TLrH9kUE/Riffle-Poker-Design"
 screens:
-  - "Play lab / idle (no session) — FRAMES MISSING"
-  - "Play lab / session ready (two empty iframe slots + harness rail) — FRAMES MISSING"
-  - "Play lab / two seats live (both iframes attached) — FRAMES MISSING"
-  - "Play lab / harness error (mint / capability / attach failure on the lab page) — FRAMES MISSING"
+  - "Play lab / idle — 4012:52"
+  - "Play lab / session ready — 4012:70"
+  - "Play lab / two seats live — 4012:89"
+  - "Play lab / harness error — 4012:142"
   - "Seated table (iframe play surface) — existing; do not redesign — see design/screens.md"
   - "Embed / session error (inside an iframe) — existing; do not redesign — 4005:210 / 4005:215"
 states:
@@ -29,8 +29,7 @@ a11y:
   - "Seat columns distinguishable by text label, not color alone"
   - "Respect reduced-motion for any lab attach/transition chrome"
   - "Do not ship identity, chat, rooms, presence, media, cashier, rake, KYC, HUD, or solver UI as Riffle surfaces"
-open_questions:
-  - "PL-D1: Lab-shell frames missing on Screens / Flows — blocking until /forge.design-spike prebuild"
+open_questions: []
 ---
 
 <!--
@@ -42,11 +41,22 @@ Authoring (not validated):
 
 The Now surface is a single-operator play lab in riffle-poker. It implements the host attach contract so two browser seats can finish a fold-to-one or showdown hand against live Turnur. It is not RiffSync, not a consumer lobby, and not a standalone client.
 
-Composition (HLD, frames missing): one wide lab shell; a harness rail with Start session and Deal; two iframe slots sized to the existing narrow-iframe play surface (360×640). Each slot loads Riffle-origin /play. Felt composition stays the playable-holdem-table screens — one felt after attach, load/error separate from felt. Lab page may additionally show a harness-error when mint/capability/session fails before or outside iframe redeem.
+Composition: one wide lab shell (1200×720); a harness rail with Start session and Deal; two iframe slots sized to the existing narrow-iframe play surface (360×640). Each slot loads Riffle-origin /play. Felt composition stays the playable-holdem-table screens — one felt after attach, load/error separate from felt. Lab page may additionally show a harness-error when mint/capability/session fails before or outside iframe redeem.
 
-Path locked: same dedicated file (NgpCBblDdJ7cw4TLrH9kUE). Designer HLD sign-off stays false until lab frames exist and this doc is re-checked. Do not flip signoffs in this event.
+Path locked: same dedicated file (NgpCBblDdJ7cw4TLrH9kUE). Lab-shell frames placed below seated-table row (y≈7600) on Screens / Flows. Designer HLD sign-off stays false until `/forge.initiative-planning` re-checks completeness. Do not flip signoffs in this event.
 
-Confirmed iframe content (MCP, do not redesign):
+Lab shell frames (MCP-inventoried):
+
+| Frame | Node id | State |
+|---|---|---|
+| Play lab / idle | 4012:52 | lab-idle |
+| Play lab / session ready | 4012:70 | lab-ready |
+| Play lab / two seats live | 4012:89 | lab-two-seats (clone of 4004:50 per slot) |
+| Play lab / harness error | 4012:142 | lab-harness-error |
+
+A11y annotation blocks: 4012:67, 4012:86, 4012:139, 4012:156 (one per lab state row).
+
+Confirmed iframe content (do not redesign):
 
 | Surface | Desktop | Narrow-iframe |
 |---|---|---|
@@ -60,4 +70,4 @@ Confirmed iframe content (MCP, do not redesign):
 | hand-complete | 4005:158 | 4005:184 |
 | embed-error | 4005:210 | 4005:215 |
 
-Lab shell: no frames. Screens / Flows ends at 4010:117. Do not invent ids. Recommend /forge.design-spike after this HLD: idle, session-ready (two 360×640 slots + rail), two-seats-live (existing narrow-iframe felt as reference — do not clone), harness-error, a11y annotations, desktop operator width, copy "Play lab · operator harness".
+One-seat-attached intermediate state is not required Now — two-empty → two-live is sufficient.
