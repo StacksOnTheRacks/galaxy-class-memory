@@ -3,6 +3,7 @@ doc: architecture.interfaces
 schema_version: 1
 updated: 2026-09-03
 external_interfaces:
+  - "Host → Riffle runtime — POST /v1/matches with Authorization: Bearer <RIFFLE_HOST_API_KEY>; 201 { matchId }; 401 unauthorized; 503 turnur_unauthenticated; no CORS; iframe/lab browser MUST NOT call; runtime client.match.create() only"
   - "Host → Riffle runtime — POST /v1/bootstrap/mint with Authorization: Bearer <RIFFLE_HOST_API_KEY>; body { matchId }; returns { token, playUrl, expiresIn: 60, jti }"
   - "Host → iframe — Riffle-origin play URL {RIFFLE_PUBLIC_ORIGIN}/play#bt={token} (fragment, never query); no SDK key; not seat authority"
   - "iframe → Riffle runtime — POST /v1/bootstrap/redeem { token } → match attach + Set-Cookie riffle_play; GET /v1/bootstrap/session for reload; table API (same-origin)"
@@ -16,6 +17,11 @@ external_interfaces:
   - "iframe/test → Riffle runtime — POST /v1/seats/:seatId/actions continues after applyAction when phase is fold_to_one: game-trusted completeFoldToOne + move.create hand_complete { kind, reason: fold_to_one, winners } (no shownHoles); when phase is showdown_ready: game-trusted showdown + move.create hand_complete { kind, reason: showdown, winners, shownHoles } (still-in seats only); skip turn.set (Turnur PUT cannot designate null); iframe/host MUST NOT complete, reveal, or deal the next hand; Next hand is host POST /v1/hands/deal"
   - "iframe/test → Riffle runtime — GET /v1/table?matchId= public DTO: before hand_open roster + currentSeat only (no stacks/pot/holes/board, no view.get; omit dealer-shoe system seat); after hand_open adds public stack + pot + reconstructed currentSeat; after street_deal also board?: Card[] (length 3|4|5); after hand_complete also completeReason + winners; after showdown hand_complete also shownHoles (still-in only); folded/unshown holes never on public DTO; still no holes via view.get; GET /v1/seats/:seatId/view?matchId= and GET /v1/seats/:seatId/table?matchId= require X-Riffle-Seat-Capability and requireSeatCapability; riffle_play is not sufficient; seat DTO includes only that seat's hole plus shared board; after open seat table may add legalActions only for the capability-bound seat when it is that seat's turn"
   - "Riffle runtime → @turnur/sdk — match create/probe, seats, turns, views, moves; dealer shoe: game-trusted seat.create (one system seat per match) + view.put/get { kind: dealer_shoe, deckRemaining, burns }; never a player HoleView; never on public DTO or move payloads; SDK key server-side only"
+  - "Play lab → Riffle runtime — GET /lab (lab page + assets; no secrets in HTML/JS)"
+  - "Play lab → Riffle runtime — POST /v1/lab/session (no host key, no SDK key in request/response; server orchestrates match.create → two seats → two bootstrap mints → two capability mints; MUST NOT deal)"
+  - "Play lab → Riffle runtime — POST /v1/lab/deal body { matchId } (no keys; server runs existing deal + betting/open)"
+  - "Play lab page → /play iframes — iframe.src = playUrl (#bt=); postMessage capability token per iframe (pipe not authority)"
+  - "/play iframe → Riffle runtime — accept capability postMessage into per-iframe memory; send X-Riffle-Seat-Capability on seat-scoped GET/POST; continue to reject postMessage bootstrap"
 internal_boundaries:
   - "iframe UI is untrusted presentation; Riffle runtime is the trust boundary"
   - "Rules library is in-process in runtime; no Turnur I/O from the library itself"
@@ -28,11 +34,15 @@ internal_boundaries:
   - "Dealer shoe is a Turnur hidden view on a runtime-created system seat (kind=dealer_shoe). It is not a player hidden view, not public table state, and not a move payload. Public board lives only in street_deal moves (and DTO projection from those moves)."
   - "Public board is shared table state. MUST NOT be stored as a seat hidden view. GET /v1/table MUST NOT view.get player holes or the shoe."
   - "Shown holes are public felt facts on hand_complete (like board on street_deal). Folded/unshown holes stay in player HoleViews only. MUST NOT view.put shown holes onto any player view. GET /v1/table MUST NOT view.get player holes or the shoe — shown holes come from hand_complete."
-contracts_in_flight: []
+  - "Lab page is untrusted presentation; lab orchestrator is the trust boundary for host-key and SDK-key operations"
+  - "Same-origin play lab does not prove cross-origin host isolation (future host / RiffSync concern)"
+contracts_in_flight:
+  - "play-lab — POST /v1/matches (host key); GET /lab; POST /v1/lab/session; POST /v1/lab/deal; lab→iframe capability postMessage (pipe)"
 ownership:
   - "Riffle owns bootstrap mint/redeem, seat-capability mint/verify, runtime, rules library, and Turnur game credentials"
   - "Host owns identity, room, mint call, iframe embed, and seat capability issuance"
   - "Turnur owns seats, turns, hidden views, and the move log"
+  - "Play-lab orchestrator is Riffle runtime (first-party harness), not a host product and not identity"
 ---
 
 <!--
