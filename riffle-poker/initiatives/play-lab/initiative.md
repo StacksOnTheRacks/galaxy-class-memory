@@ -4,13 +4,13 @@ schema_version: 1
 updated: 2026-09-03
 slug: play-lab
 title: Play lab
-status: hld
+status: lld
 user_facing: true
 signoffs:
-  po: false
-  architect: false
-  designer: false
-  security: false
+  po: true
+  architect: true
+  designer: true
+  security: true
 board_milestone: ""
 board_tickets: []
 ---
@@ -39,3 +39,5 @@ Locked for this initiative:
 - Lab does not become identity, chat, rooms, or media
 - CI stays on fake Turnur; this initiative is not a CI program
 - Live Turnur is the lab success path (env-configured); provisioning a Turnur cluster is out of scope
+
+HLD complete (2026-09-03). Next: `/forge.backlog-grooming` to split into LLD tickets.

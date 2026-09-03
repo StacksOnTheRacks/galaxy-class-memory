@@ -38,9 +38,7 @@ requirements:
   - "Cross-site CSRF MUST NOT start a lab session or submit moves / fetch holes for a victim session (inherit embed CSRF/SameSite)."
   - "Play chips only. This initiative MUST NOT add real-money rails, Riffle-owned identity, or a RiffSync host. The lab implements the host contract; it does not make Riffle a host/lobby/chat/rooms product."
   - "This initiative does not add a second match authority beside Turnur and does not replace playable-holdem-table attach or capability contracts."
-open_questions:
-  - "lab-exposure-bound: localhost-only hard HLD requirement, or LLD-equivalent factory-prevention controls?"
-  - "lab-parent-origin: distinct-origin lab parent required, or LLD-equivalent iframe isolation?"
+open_questions: []
 ---
 
 <!--
