@@ -29,6 +29,6 @@ assumptions:
   - "Turnur match primitives (SDK key, seats, turns, hidden views, move log) will be consumable by a first-party game."
   - "Iframe bootstrap is settled: opaque short-lived token mint → URL → redeem (ADR-host-iframe-bootstrap)."
   - "Concrete seat-capability token schema is LLD; the host-issued capability pattern is locked."
-  - "Bootstrap mint/redeem TTL, one-time redeem, URL shape, and post-redeem credential details are LLD."
+  - "Bootstrap LLD locked on #1: mint via Bearer RIFFLE_HOST_API_KEY; opaque 32-byte token (SHA-256 stored); claims jti/matchId/iat/exp=iat+60/purpose=bootstrap; play URL fragment #bt=; one-time redeem; HttpOnly riffle_play cookie 1h (SameSite=Lax, match attach only)."
   - "Runtime hosting undecided (non-blocking while iframe + in-process library + server-side SDK key hold)."
 ---

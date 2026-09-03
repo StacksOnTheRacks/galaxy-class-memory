@@ -3,9 +3,9 @@ doc: product.backlog
 schema_version: 1
 updated: 2026-09-02
 in_progress: []
-ready: []
-refinement:
+ready:
   - "[#1 Host iframe attach via bootstrap mint → URL → redeem](https://github.com/StacksOnTheRacks/riffle-poker/issues/1)"
+refinement:
   - "[#2 Riffle runtime authenticates to Turnur with a server-side SDK key](https://github.com/StacksOnTheRacks/riffle-poker/issues/2)"
   - "[#3 Verify host-issued seat capability before seat-scoped Turnur ops](https://github.com/StacksOnTheRacks/riffle-poker/issues/3)"
   - "[#4 Create play-chip NLHE seats on the attached Turnur match](https://github.com/StacksOnTheRacks/riffle-poker/issues/4)"
@@ -22,4 +22,4 @@ icebox:
   - "Standalone playable client (no host)"
 ---
 
-Board/SCM wins — nine playable-holdem-table tickets on Refinement under [milestone/1](https://github.com/StacksOnTheRacks/riffle-poker/milestone/1). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets. Ready comes from `/forge.refinement`.
+Board/SCM wins — #1 Ready; #2–#9 remain on Refinement under [milestone/1](https://github.com/StacksOnTheRacks/riffle-poker/milestone/1). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.

@@ -23,4 +23,4 @@ anti_patterns:
   - "Study, HUD, or solver overlays on the table"
 ---
 
-Hypothesis personas (brief audience plus sister Turnur/RiffSync contracts; not interview-validated). Theme still unbound. Principles encode seated-player table UX and host-owned social surfaces.
+Hypothesis personas (brief audience plus sister Turnur/RiffSync contracts; not interview-validated). Theme bound to dedicated Riffle Poker Design file (`NgpCBblDdJ7cw4TLrH9kUE`). Principles encode seated-player table UX and host-owned social surfaces.

@@ -3,9 +3,9 @@ doc: architecture.interfaces
 schema_version: 1
 updated: 2026-09-02
 external_interfaces:
-  - "Host → Riffle runtime (server) — mint opaque short-lived bootstrap token for match attach; authenticated host integration"
-  - "Host → iframe — Riffle-origin play URL carrying bootstrap token; no SDK key; not seat authority"
-  - "iframe → Riffle runtime — redeem bootstrap → match attach context; table API (same-origin)"
+  - "Host → Riffle runtime — POST /v1/bootstrap/mint with Authorization: Bearer <RIFFLE_HOST_API_KEY>; body { matchId }; returns { token, playUrl, expiresIn: 60, jti }"
+  - "Host → iframe — Riffle-origin play URL {RIFFLE_PUBLIC_ORIGIN}/play#bt={token} (fragment, never query); no SDK key; not seat authority"
+  - "iframe → Riffle runtime — POST /v1/bootstrap/redeem { token } → match attach + Set-Cookie riffle_play; GET /v1/bootstrap/session for reload; table API (same-origin)"
   - "Host → Riffle runtime — seat capability (player↔match↔seat); verify before seat-scoped ops (separate from bootstrap)"
   - "Riffle runtime → @turnur/sdk — match create/probe, seats, turns, views, moves; SDK key server-side only"
 internal_boundaries:
@@ -13,8 +13,8 @@ internal_boundaries:
   - "Rules library is in-process in runtime; no Turnur I/O from the library itself"
   - "Turnur is match authority; Riffle is not a parallel match engine"
   - "Bootstrap binds match/room attach context only; seat capability binds player↔seat"
+  - "Post-redeem riffle_play cookie is match-attach only — not seat authority, not identity, not an SDK key"
 contracts_in_flight:
-  - "Bootstrap mint/redeem schema (TTL, one-time redeem, query vs fragment, post-redeem credential) — LLD"
   - "Seat-capability token schema (claims, issuer, crypto, TTL) — LLD; pattern locked"
 ownership:
   - "Riffle owns bootstrap mint/redeem, runtime, rules library, and Turnur game credentials"
