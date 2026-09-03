@@ -4,14 +4,34 @@ schema_version: 1
 updated: 2026-09-02
 items:
   - initiative: playable-holdem-table
-    id: host-embed-shape
-    question: "How does a host embed the Riffle play surface?"
+    id: host-iframe-bootstrap
+    question: "How does the host pass match/session context into the Riffle iframe (URL params, short-lived token, postMessage, etc.) so the runtime can attach the correct Turnur match without putting the Turnur SDK key in the browser?"
     blocking: true
     status: open
   - initiative: playable-holdem-table
-    id: rules-execution-locus
-    question: "Where do poker rules execute — in-process library, dedicated service, or client?"
+    id: theme-bind-riffle-poker
+    question: "Bind a Figma theme for riffle-poker (figma_url / figma_file_key on design/themes.md) so structure, tokens, and screen inventory can be projected. Until then designer HLD cannot cite real frames and design/screens.md must stay empty."
     blocking: true
+    status: open
+  - initiative: playable-holdem-table
+    id: prebuild-seated-table-figma
+    question: "Pre-build Figma Screens/Flows for the seated iframe table (felt, my-turn actions, between-hands, showdown, embed error) with named states and a11y annotations before HLD exit. Recommend /forge.design-spike after theme-bind if frames do not exist yet."
+    blocking: true
+    status: open
+  - initiative: playable-holdem-table
+    id: stack-blinds-defaults
+    question: "Starting stack and blinds defaults for the first playable NLHE table?"
+    blocking: false
+    status: open
+  - initiative: playable-holdem-table
+    id: runtime-hosting
+    question: "Where does Riffle runtime host (process/platform)? Undecided; non-blocking while iframe + in-process library + server-side SDK key hold."
+    blocking: false
+    status: open
+  - initiative: playable-holdem-table
+    id: seat-capability-token-schema
+    question: "What is the concrete host-issued seat capability format (claims, issuer, crypto, TTL, refresh/revocation) that Riffle server verifies before seat-scoped Turnur reads/writes? Pattern is locked (host-issued capability); concrete format is LLD."
+    blocking: false
     status: open
 ---
 
