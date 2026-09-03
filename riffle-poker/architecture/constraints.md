@@ -30,5 +30,6 @@ assumptions:
   - "Iframe bootstrap is settled: opaque short-lived token mint → URL → redeem (ADR-host-iframe-bootstrap)."
   - "Seat capability LLD locked on #3: mint via Bearer RIFFLE_HOST_API_KEY; opaque 32-byte token (SHA-256 stored); claims jti/matchId/seatId/playerSubject/iat/exp=iat+900/purpose=seat; header X-Riffle-Seat-Capability; reusable until expiry; no refresh/revocation list; riffle_play is not sufficient."
   - "Bootstrap LLD locked on #1: mint via Bearer RIFFLE_HOST_API_KEY; opaque 32-byte token (SHA-256 stored); claims jti/matchId/iat/exp=iat+60/purpose=bootstrap; play URL fragment #bt=; one-time redeem; HttpOnly riffle_play cookie 1h (SameSite=Lax, match attach only)."
+  - "Betting reconstruction LLD locked on #7: host POST /v1/hands/betting/open writes turn + public hand_open move; player POST /v1/seats/:seatId/actions is capability-gated; runtime reconstructs HandState from move log + views and discards it; no Riffle HandState ledger."
   - "Runtime hosting undecided (non-blocking while iframe + in-process library + server-side SDK key hold)."
 ---

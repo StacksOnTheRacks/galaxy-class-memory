@@ -10,7 +10,9 @@ external_interfaces:
   - "Host → Riffle runtime — POST /v1/seats/capability/mint with Authorization: Bearer <RIFFLE_HOST_API_KEY>; body { matchId, seatId, playerSubject }; 200 { token, expiresIn: 900, jti }; 401 unauthorized; 400 invalid_match_id | invalid_seat_id | invalid_player_subject; no CORS; not called from the iframe"
   - "iframe/test → Riffle runtime — header X-Riffle-Seat-Capability: <token> on seat-scoped requests; POST /v1/seats/capability/probe is the #3 stub (calls requireSeatCapability only; no Turnur)"
   - "Host → Riffle runtime — POST /v1/hands/deal with Authorization: Bearer <RIFFLE_HOST_API_KEY>; body { matchId, seats: [{ seatId, stack }], buttonSeatId, blinds }; 201 { matchId, seatIds }; no holes; runtime dealHand then game-trusted view.put; 401 unauthorized; 400 invalid_*; 503 turnur_unauthenticated; no CORS; iframe must not call; does not call requireSeatCapability"
-  - "iframe/test → Riffle runtime — GET /v1/table?matchId= public DTO (roster + currentSeat, no holes, no view.get); GET /v1/seats/:seatId/view?matchId= and GET /v1/seats/:seatId/table?matchId= require X-Riffle-Seat-Capability and requireSeatCapability; riffle_play is not sufficient; seat DTO includes only that seat's hole"
+  - "Host → Riffle runtime — POST /v1/hands/betting/open with Authorization: Bearer <RIFFLE_HOST_API_KEY>; body { matchId, seats: [{ seatId, stack }], buttonSeatId, blinds } (no holes); 201 { matchId, currentSeat }; game-trusted turn.set then move.create hand_open (public facts only); MUST NOT call requireSeatCapability; no CORS; iframe must not call; second open → 409 betting_already_open"
+  - "iframe/test → Riffle runtime — POST /v1/seats/:seatId/actions body { matchId, action } header X-Riffle-Seat-Capability; MUST requireSeatCapability before getClient / legalize / Turnur writes; riffle_play not sufficient; 409 illegal_turn reconciles from moves.list + turn.get"
+  - "iframe/test → Riffle runtime — GET /v1/table?matchId= public DTO: before hand_open roster + currentSeat only (no stacks/pot/holes, no view.get); after hand_open adds public stack + pot + reconstructed currentSeat (still no holes, no board, no view.get); GET /v1/seats/:seatId/view?matchId= and GET /v1/seats/:seatId/table?matchId= require X-Riffle-Seat-Capability and requireSeatCapability; riffle_play is not sufficient; seat DTO includes only that seat's hole; after open seat table may add legalActions only for the capability-bound seat when it is that seat's turn"
   - "Riffle runtime → @turnur/sdk — match create/probe, seats, turns, views, moves; SDK key server-side only"
 internal_boundaries:
   - "iframe UI is untrusted presentation; Riffle runtime is the trust boundary"
@@ -20,6 +22,7 @@ internal_boundaries:
   - "Post-redeem riffle_play cookie is match-attach only — not seat authority, not identity, not an SDK key"
   - "Seat capability is verified by SHA-256 ledger lookup (purpose=seat); postMessage may deliver the token but is not authority; riffle_play is never sufficient for the gate"
   - "Hole cards live only in Turnur seat-scoped views; Riffle does not persist HandState or become a parallel match engine"
+  - "Betting reconstructs HandState in-process from hand_open + action moves + views; discard after the request; never persist HandState"
 contracts_in_flight: []
 ownership:
   - "Riffle owns bootstrap mint/redeem, seat-capability mint/verify, runtime, rules library, and Turnur game credentials"
