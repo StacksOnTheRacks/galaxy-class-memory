@@ -1,7 +1,7 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-08-30
+updated: 2026-09-02
 themes:
   - "First-party poker game pack: gameplay and rules live here"
   - "Turnur as the authoritative match backend (seats, turns, hidden views, move log, signed result)"
@@ -9,7 +9,7 @@ themes:
   - "Texas Hold'em as the v1 ruleset"
   - "Play-chip social play — no cashier, rake, or real money"
 now:
-  - "First playable no-limit Hold'em table (play chips) on Turnur, attachable to a RiffSync room — initiative not opened yet"
+  - "Playable no-limit Hold'em table (play chips) — initiative playable-holdem-table exiting HLD to LLD (iframe embed, in-process rules, host-issued seat capability; signed result out of this slice)"
 next:
   - "Host-path polish on RiffSync (seat claim from the room, spectator public-board view)"
   - "Table UX maturity after the first complete hand (side pots, all-in runout, disconnect/rejoin via the host)"

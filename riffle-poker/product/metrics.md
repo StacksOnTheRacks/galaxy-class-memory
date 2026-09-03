@@ -1,7 +1,7 @@
 ---
 doc: product.metrics
 schema_version: 1
-updated: 2026-08-30
+updated: 2026-09-02
 primary:
   - "Completed Hold'em hands on Turnur (deal through showdown)"
   - "Successful game authentication to Turnur"
@@ -18,7 +18,7 @@ targets:
     target: "A table can complete a no-limit Hold'em hand on Turnur from a host room"
   - metric: "Hidden information"
     target: "Hole cards appear only on the owning seat's Turnur hidden view"
-current_read: "Stub: https://github.com/StacksOnTheRacks/riffle-poker is public, README-only, default branch main. No issues, no instrumentation. First expected host: RiffSync. Match backend: Turnur."
+current_read: "Repo is still README-only with an empty board and no instrumentation. Initiative playable-holdem-table is HLD→LLD (iframe embed, in-process rules, host-issued seat capability). First expected host: RiffSync. Match backend: Turnur."
 ---
 
 Brief holds intent/targets in `success_metrics`; this file is the working metric list and current read.
