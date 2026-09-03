@@ -9,8 +9,8 @@ ready:
   - "[#3 Verify host-issued seat capability before seat-scoped Turnur ops](https://github.com/StacksOnTheRacks/riffle-poker/issues/3)"
   - "[#4 Create play-chip NLHE seats on the attached Turnur match](https://github.com/StacksOnTheRacks/riffle-poker/issues/4)"
   - "[#5 In-process NLHE rules library (deal, legalize, streets, showdown)](https://github.com/StacksOnTheRacks/riffle-poker/issues/5)"
-refinement:
   - "[#6 Deal hole cards as seat-scoped Turnur hidden views](https://github.com/StacksOnTheRacks/riffle-poker/issues/6)"
+refinement:
   - "[#7 Apply on-turn NLHE actions via Turnur turns and moves](https://github.com/StacksOnTheRacks/riffle-poker/issues/7)"
   - "[#8 Advance the public board through flop, turn, and river](https://github.com/StacksOnTheRacks/riffle-poker/issues/8)"
   - "[#9 Complete a hand by fold-to-one or non-all-in showdown](https://github.com/StacksOnTheRacks/riffle-poker/issues/9)"
@@ -22,4 +22,4 @@ icebox:
   - "Standalone playable client (no host)"
 ---
 
-Board/SCM wins — #1–#5 Ready; #6–#9 remain on Refinement under [milestone/1](https://github.com/StacksOnTheRacks/riffle-poker/milestone/1). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
+Board/SCM wins — #1–#6 Ready (`ai-ready` + tech spec); #7–#9 remain on Refinement under [milestone/1](https://github.com/StacksOnTheRacks/riffle-poker/milestone/1). Project Status for #6 may still need a manual Ready column drag if the token lacks `project` write scope. Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
