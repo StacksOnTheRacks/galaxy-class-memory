@@ -1,8 +1,18 @@
 ---
 doc: product.open_questions_index
 schema_version: 1
-updated: 2026-08-30
-items: []
+updated: 2026-09-02
+items:
+  - initiative: playable-holdem-table
+    id: host-embed-shape
+    question: "How does a host embed the Riffle play surface?"
+    blocking: true
+    status: open
+  - initiative: playable-holdem-table
+    id: rules-execution-locus
+    question: "Where do poker rules execute — in-process library, dedicated service, or client?"
+    blocking: true
+    status: open
 ---
 
 <!--
