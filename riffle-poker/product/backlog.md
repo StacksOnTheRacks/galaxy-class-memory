@@ -5,8 +5,8 @@ updated: 2026-09-04
 in_progress: []
 ready:
   - "[#19 Host-facing POST /v1/matches wraps Turnur match.create](https://github.com/StacksOnTheRacks/riffle-poker/issues/19)"
-refinement:
   - "[#20 Play iframe accepts host seat capability via postMessage](https://github.com/StacksOnTheRacks/riffle-poker/issues/20)"
+refinement:
   - "[#21 Lab session orchestrator mints match, seats, bootstrap, and capabilities](https://github.com/StacksOnTheRacks/riffle-poker/issues/21)"
   - "[#22 Lab deal orchestrator deals and opens betting for two seats](https://github.com/StacksOnTheRacks/riffle-poker/issues/22)"
   - "[#23 First-party play lab page with two embedded /play iframes](https://github.com/StacksOnTheRacks/riffle-poker/issues/23)"
@@ -29,4 +29,4 @@ icebox:
   - "Standalone playable client (no host)"
 ---
 
-Board/SCM wins — playable-holdem-table #1–#9 closed (Done). Play-lab #19 Ready (`ai-ready`); #20–#24 on Refinement under [milestone/2](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
+Board/SCM wins — playable-holdem-table #1–#9 closed (Done). Play-lab #19–#20 Ready (`ai-ready`); #21–#24 on Refinement under [milestone/2](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
