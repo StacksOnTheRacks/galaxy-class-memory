@@ -43,4 +43,5 @@ assumptions:
   - "Runtime hosting undecided (non-blocking while iframe + in-process library + server-side SDK key hold)."
   - "Host-facing POST /v1/matches wraps client.match.create(); lab page talks only to /v1/lab/*; synthetic playerSubject lab:{seatId}; fixed two-seat play-chip defaults (exact numbers LLD); /play accepts capability postMessage as pipe only."
   - "Lab session authz locked on #21: RIFFLE_LAB_ENABLED default-off (enabled only for trimmed 1 or true, case-insensitive; else 403 lab_disabled) PLUS refuse non-loopback connection remote address (403 lab_forbidden; fail closed if address unknown; do not trust X-Forwarded-For); Content-Type application/json required; no lab shared secret; GET /lab does not create matches (#23)."
+  - "Lab parent origin locked on #23: same Riffle origin as /play (RIFFLE_FRAME_ANCESTORS stays 'self' on /play); no sandbox without allow-same-origin on /play iframes (incompatible with #20 postMessage gate and bootstrap redeem); isolation = targeted per-seat postMessage + lab never reads iframe DOM + #20 per-iframe capability memory; full cross-origin host isolation deferred to RiffSync/future hosts."
 ---

@@ -8,11 +8,6 @@ items:
     question: "Where is the play lab and Riffle runtime served for a human operator (local process only vs a deployed lab URL)?"
     blocking: false
     status: open
-  - initiative: play-lab
-    id: lab-parent-origin
-    question: "Must the lab parent be a distinct origin from the Riffle /play iframes (so sibling frames cannot reach each other through a same-origin parent), or may LLD use an equivalent isolation (e.g. iframe sandbox without allow-same-origin)?"
-    blocking: false
-    status: open
   - initiative: playable-holdem-table
     id: stack-blinds-defaults
     question: "Starting stack and blinds defaults for the first playable NLHE table?"

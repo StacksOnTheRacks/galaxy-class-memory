@@ -8,11 +8,6 @@ questions:
     blocking: false
     status: open
     owner: architect
-  - id: lab-parent-origin
-    question: "Must the lab parent be a distinct origin from the Riffle /play iframes (so sibling frames cannot reach each other through a same-origin parent), or may LLD use an equivalent isolation (e.g. iframe sandbox without allow-same-origin)?"
-    blocking: false
-    status: open
-    owner: architect
 ---
 
 <!--
@@ -29,3 +24,6 @@ Answered and removed by play-lab design-spike (2026-09-03):
 
 Answered and removed at refinement of #21 (2026-09-04):
 - lab-exposure-bound — `POST /v1/lab/session` requires default-off `RIFFLE_LAB_ENABLED` (enabled only for trimmed `1` or `true`, case-insensitive) plus loopback remote address (connection / test-injected seam; never `X-Forwarded-For`). No lab shared secret. `GET /lab` is #23.
+
+Answered and removed at refinement of #23 (2026-09-04):
+- lab-parent-origin — Lab parent MUST be the same Riffle origin as `/play` (`RIFFLE_FRAME_ANCESTORS` stays `'self'` on `/play`). Distinct-origin parent is incompatible without widening ancestors. `sandbox` without `allow-same-origin` on `/play` iframes is incompatible with `#20` origin gate and bootstrap `#bt=` redeem. Isolation = sibling frame boundaries + targeted per-seat postMessage (`riffle.seatCapability`) + lab never reads iframe DOM + `#20` per-iframe capability memory + harness tests. Full cross-origin host isolation is RiffSync/future work (accepted residual).
