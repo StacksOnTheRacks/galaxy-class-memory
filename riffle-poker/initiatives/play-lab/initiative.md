@@ -1,10 +1,10 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-03
+updated: 2026-09-04
 slug: play-lab
 title: Play lab
-status: lld
+status: executing
 user_facing: true
 signoffs:
   po: true
@@ -46,4 +46,4 @@ Locked for this initiative:
 - CI stays on fake Turnur; this initiative is not a CI program
 - Live Turnur is the lab success path (env-configured); provisioning a Turnur cluster is out of scope
 
-HLD complete (2026-09-03). LLD grooming complete (2026-09-03): six tickets on Refinement under [milestone/2](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2). Next: `/forge.plan-refresh` then `/forge.refinement`.
+HLD complete (2026-09-03). LLD complete (2026-09-04): all six tickets Ready under [milestone/2](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2) — #19–#23 `ai-ready`, #24 `human-ready`. Initiative executing. Next: `/forge.implement-ticket` on #19 (then #20–#23; #24 last after lab stack merges).
