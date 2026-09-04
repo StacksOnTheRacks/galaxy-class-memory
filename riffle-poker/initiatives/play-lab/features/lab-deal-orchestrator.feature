@@ -9,7 +9,8 @@ Feature: Lab deal orchestrator deals and opens betting for two seats
   Background:
     Given a lab session exists with two seats on a matchId
     And the lab browser never receives RIFFLE_HOST_API_KEY or TURNUR_SDK_KEY
-    And fixed two-seat play-chip defaults apply for the lab
+    And lab deal authz matches session start (RIFFLE_LAB_ENABLED plus loopback)
+    And fixed lab defaults are stack 10000 and blinds 50/100 with button on the first session seat
 
   Scenario: Lab deal deals hole cards and opens betting
     When an authorized client calls POST /v1/lab/deal with the matchId
@@ -21,6 +22,12 @@ Feature: Lab deal orchestrator deals and opens betting for two seats
     When POST /v1/lab/deal is called for an unknown or unprepared matchId
     Then the request is rejected
     And deal and open paths are not partially applied
+
+  Scenario: Deal rejects when lab flag is off or client is non-loopback
+    Given RIFFLE_LAB_ENABLED is absent or falsy
+    When an authorized client attempts POST /v1/lab/deal
+    Then the request is rejected
+    And deal and open paths are not invoked
 
   Scenario: Iframe clients do not deal or open betting
     Given POST /v1/lab/deal succeeds
