@@ -1,7 +1,7 @@
 ---
 doc: product.initiative_security
 schema_version: 1
-updated: 2026-09-03
+updated: 2026-09-04
 summary: "HLD security for a first-party play lab / embed harness in riffle-poker. The lab implements the host contract (match attach, two /play iframes, bootstrap mint→redeem, seat-capability mint, deal/open) against live Turnur so two seats can finish a hand without RiffSync. The lab is a host page, not a new product (not lobby, identity, chat, or rooms). New attach is the lab itself: RIFFLE_HOST_API_KEY and TURNUR_SDK_KEY MUST stay on the Riffle server runtime — never in lab HTML/JS, public env, or iframe bundles. Lab session-start MUST run server-side behind an authz boundary so the lab is not an unauthenticated public match factory. Seat capability tokens may appear in lab-parent memory for per-iframe postMessage delivery (accepted residual; pipe not authority). The two play iframes MUST be isolated so one seat's JS cannot read the other's holes, capability, or riffle_play. Inherits playable-holdem-table: bootstrap leak, hole leak, CSRF/clickjacking, logging, play chips only. RiffSync out of scope. Not a CI/hosting program."
 threats:
   - "Lab secret leak: RIFFLE_HOST_API_KEY or TURNUR_SDK_KEY / TURNUR_BASE_URL in lab HTML/JS/CSS, Vite/public env, lab bundles, or browser-accessible config — any caller acts as the Riffle host and game against live Turnur"
@@ -16,7 +16,7 @@ threats:
   - "Inherited — postMessage spoofing treated as bootstrap or seat authority"
 mitigations:
   - "Lab orchestrates host APIs only on the Riffle server runtime (same process that already holds RIFFLE_HOST_API_KEY and TURNUR_SDK_KEY); lab browser code never sends Bearer host key and never imports @turnur/sdk"
-  - "Browser-facing lab start is an explicit mutating action behind an authz boundary (mechanism LLD — see lab-exposure-bound); GET of the lab page MUST NOT create a match or mint tokens"
+  - "Browser-facing lab start is POST /v1/lab/session behind default-off RIFFLE_LAB_ENABLED (enabled only for trimmed 1 or true) plus loopback remote address (not X-Forwarded-For); no lab shared secret; GET of the lab page MUST NOT create a match or mint tokens"
   - "Two Riffle-origin /play iframes; each iframe.src is a distinct host-minted playUrl (#bt= fragment); each receives only its own seat capability via targeted postMessage (origin allowlist + closed schema); postMessage is delivery not authority"
   - "Iframe isolation: seat A's browsing context MUST NOT read seat B's DOM, storage, or tokens (distinct-origin lab parent and/or sandbox without allow-same-origin — mechanism LLD, see lab-parent-origin); riffle_play remains HttpOnly match-attach only"
   - "Extend existing no-sdk-key-leak / security-leak greps to lab HTML/JS/CSS and any lab client source; do not weaken those tests"
@@ -27,7 +27,7 @@ requirements:
   - "TURNUR_SDK_KEY, TURNUR_BASE_URL, and RIFFLE_HOST_API_KEY MUST exist only on the Riffle server runtime. They MUST NOT appear in lab HTML, lab JS/CSS, iframe bundles, public/Vite env, or any browser-accessible config."
   - "Lab browser code MUST NOT call host-authenticated routes (/v1/bootstrap/mint, /v1/seats, /v1/seats/capability/mint, /v1/hands/deal, /v1/hands/betting/open) and MUST NOT call Turnur."
   - "A server-side lab orchestrator MAY call those host routes with the process-held RIFFLE_HOST_API_KEY. Responses to the lab browser MUST NOT include the host key or the SDK key."
-  - "Lab session start MUST NOT be a side-effect of GET. The start path MUST have an authz boundary so the lab is not an unauthenticated public match factory if the process is reachable beyond the operator's machine. Mechanism is LLD pending lab-exposure-bound."
+  - "Lab session start MUST NOT be a side-effect of GET. POST /v1/lab/session MUST have an authz boundary: default-off RIFFLE_LAB_ENABLED (enabled only for trimmed 1 or true) plus loopback remote address (not X-Forwarded-For); no lab shared secret. GET of the lab page MUST NOT create a match or mint tokens."
   - "The lab MUST mint one bootstrap token per iframe and set each iframe.src to the returned playUrl (#bt= fragment, never query). postMessage MUST NOT be bootstrap."
   - "The lab MUST mint one seat capability per seat. Delivery to the matching iframe MAY use postMessage. postMessage MUST target that iframe, allowlist event.origin to the Riffle public origin, and use a closed schema. postMessage MUST NOT be seat authority; requireSeatCapability on X-Riffle-Seat-Capability remains the only gate. riffle_play MUST NOT be sufficient."
   - "The lab parent MAY hold both capability tokens in memory for delivery (accepted residual). It MUST NOT expose both tokens to both iframes (no wildcard postMessage, no shared same-origin global both frames can read)."

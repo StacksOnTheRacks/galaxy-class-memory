@@ -1,16 +1,11 @@
 ---
 doc: product.open_questions_index
 schema_version: 1
-updated: 2026-09-03
+updated: 2026-09-04
 items:
   - initiative: play-lab
     id: lab-runtime-hosting
     question: "Where is the play lab and Riffle runtime served for a human operator (local process only vs a deployed lab URL)?"
-    blocking: false
-    status: open
-  - initiative: play-lab
-    id: lab-exposure-bound
-    question: "Is localhost-only lab exposure (loopback bind / refuse non-loopback clients) a hard requirement this HLD, or may LLD choose any equivalent control that prevents an unauthenticated public match factory (loopback, default-off flag, lab secret, or combination)?"
     blocking: false
     status: open
   - initiative: play-lab

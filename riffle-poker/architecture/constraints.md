@@ -1,7 +1,7 @@
 ---
 doc: architecture.constraints
 schema_version: 1
-updated: 2026-09-03
+updated: 2026-09-04
 hard_constraints:
   - "After a match is attached, Turnur is state authority for seats, turns, hidden views, and the move log. Riffle must not become a parallel match engine."
   - "Gameplay and rules live in Riffle Poker. Turnur does not evaluate poker legality."
@@ -42,4 +42,5 @@ assumptions:
   - "Hand-complete LLD locked on #9: same POST /v1/seats/:seatId/actions continues after applyAction when phase is fold_to_one (completeFoldToOne) or showdown_ready (showdown). Persist public hand_complete { kind, reason, winners, shownHoles? }. shownHoles only on showdown (still-in seats); fold-to-one reveals no holes. Reconstruct from the move log; no Riffle HandState ledger. GET /v1/table still MUST NOT view.get. After complete: DTO currentSeat is null, pot awarded in reconstructed stacks, no legalActions; skip turn.set. Next hand is host POST /v1/hands/deal, not this ticket."
   - "Runtime hosting undecided (non-blocking while iframe + in-process library + server-side SDK key hold)."
   - "Host-facing POST /v1/matches wraps client.match.create(); lab page talks only to /v1/lab/*; synthetic playerSubject lab:{seatId}; fixed two-seat play-chip defaults (exact numbers LLD); /play accepts capability postMessage as pipe only."
+  - "Lab session authz locked on #21: RIFFLE_LAB_ENABLED default-off (enabled only for trimmed 1 or true, case-insensitive; else 403 lab_disabled) PLUS refuse non-loopback connection remote address (403 lab_forbidden; fail closed if address unknown; do not trust X-Forwarded-For); Content-Type application/json required; no lab shared secret; GET /lab does not create matches (#23)."
 ---

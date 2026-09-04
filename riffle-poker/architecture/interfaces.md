@@ -1,7 +1,7 @@
 ---
 doc: architecture.interfaces
 schema_version: 1
-updated: 2026-09-03
+updated: 2026-09-04
 external_interfaces:
   - "Host → Riffle runtime — POST /v1/matches with Authorization: Bearer <RIFFLE_HOST_API_KEY>; 201 { matchId }; 401 unauthorized; 503 turnur_unauthenticated; no CORS; iframe/lab browser MUST NOT call; runtime client.match.create() only"
   - "Host → Riffle runtime — POST /v1/bootstrap/mint with Authorization: Bearer <RIFFLE_HOST_API_KEY>; body { matchId }; returns { token, playUrl, expiresIn: 60, jti }"
@@ -18,7 +18,7 @@ external_interfaces:
   - "iframe/test → Riffle runtime — GET /v1/table?matchId= public DTO: before hand_open roster + currentSeat only (no stacks/pot/holes/board, no view.get; omit dealer-shoe system seat); after hand_open adds public stack + pot + reconstructed currentSeat; after street_deal also board?: Card[] (length 3|4|5); after hand_complete also completeReason + winners; after showdown hand_complete also shownHoles (still-in only); folded/unshown holes never on public DTO; still no holes via view.get; GET /v1/seats/:seatId/view?matchId= and GET /v1/seats/:seatId/table?matchId= require X-Riffle-Seat-Capability and requireSeatCapability; riffle_play is not sufficient; seat DTO includes only that seat's hole plus shared board; after open seat table may add legalActions only for the capability-bound seat when it is that seat's turn"
   - "Riffle runtime → @turnur/sdk — match create/probe, seats, turns, views, moves; dealer shoe: game-trusted seat.create (one system seat per match) + view.put/get { kind: dealer_shoe, deckRemaining, burns }; never a player HoleView; never on public DTO or move payloads; SDK key server-side only"
   - "Play lab → Riffle runtime — GET /lab (lab page + assets; no secrets in HTML/JS)"
-  - "Play lab → Riffle runtime — POST /v1/lab/session (no host key, no SDK key in request/response; server orchestrates match.create → two seats → two bootstrap mints → two capability mints; MUST NOT deal)"
+  - "Play lab → Riffle runtime — POST /v1/lab/session (no host key, no SDK key in request/response; no CORS; no Bearer required; authz: RIFFLE_LAB_ENABLED truthy (trimmed 1 or true only) AND loopback remote address; else 403 lab_disabled / lab_forbidden / 400 invalid_content_type and no match.create; Content-Type application/json required; server in-process createMatch → two createSeat → two bootstrap mints → two capability mints with playerSubject lab:{seatId}; 201 { matchId, seats: [{ seatId, playUrl, capabilityToken, playerSubject }] }; MUST NOT deal or betting/open; GET /lab is #23)"
   - "Play lab → Riffle runtime — POST /v1/lab/deal body { matchId } (no keys; server runs existing deal + betting/open)"
   - "Play lab page → /play iframes — iframe.src = playUrl (#bt=); postMessage capability token per iframe (pipe not authority)"
   - "/play iframe → Riffle runtime — accept capability postMessage into per-iframe memory; send X-Riffle-Seat-Capability on seat-scoped GET/POST; continue to reject postMessage bootstrap"
