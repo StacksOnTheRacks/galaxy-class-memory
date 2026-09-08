@@ -5,8 +5,8 @@ updated: 2026-09-08
 in_progress: []
 ready:
   - "#445 Ship Figma AppShell with nav, search, and profile menu"
-refinement:
   - "#446 Pilot MST3K channel layout with Cards | List toggle"
+refinement:
   - "#447 Add tv_shows catalog enum and Movies route canonical"
   - "#448 Ship TV Shows and Movies channel pages"
   - "#449 Add GET /v1/rooms/mine and Your Parties page"
