@@ -4,13 +4,13 @@ schema_version: 1
 updated: 2026-09-07
 slug: site-redesign
 title: Site redesign
-status: hld
+status: lld
 user_facing: true
 signoffs:
-  po: false
-  architect: false
-  designer: false
-  security: false
+  po: true
+  architect: true
+  designer: true
+  security: true
 board_milestone: ""
 board_tickets: []
 ---
@@ -50,4 +50,4 @@ Locked for this initiative:
 - Incremental surface adoption after Designer sign-off; no downtime cutover
 - ADR-001 stays: extension is media-tab helper; Room tab is host console; no capture; find/focus remains Icebox
 
-HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. Next: `/forge.initiative-planning` for sign-off review and HLD → LLD gate.
+HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. Next: `/forge.backlog-grooming` (one host milestone + Refinement tickets).
