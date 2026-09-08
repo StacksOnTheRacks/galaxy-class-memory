@@ -1,10 +1,10 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-07
+updated: 2026-09-08
 slug: site-redesign
 title: Site redesign
-status: lld
+status: executing
 user_facing: true
 signoffs:
   po: true
@@ -58,4 +58,4 @@ Locked for this initiative:
 - Incremental surface adoption after Designer sign-off; no downtime cutover
 - ADR-001 stays: extension is media-tab helper; Room tab is host console; no capture; find/focus remains Icebox
 
-HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. Groomed to Refinement (#445–#452 under milestone Site redesign); next `/forge.refinement` per ticket.
+HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. All milestone tickets Ready (#445–#452); initiative executing — next `/forge.implement-ticket` on Ready `ai-ready` cards.

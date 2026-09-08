@@ -1,7 +1,7 @@
 ---
 doc: design.components
 schema_version: 1
-updated: 2026-09-07
+updated: 2026-09-08
 components:
   - name: Navigations
     figma_node_id: "7:111"
@@ -76,23 +76,27 @@ components:
       - Watch Party Host with Extension
       - Solo Watch Page
   - name: Chatbox
-    figma_node_id: ""
-    variants: []
+    figma_node_id: "913:10332"
+    variants:
+      - Authenticated=True
+      - Authenticated=False
     used_in_screens:
       - Watch Party Host
       - Watch Party Host with Extension
   - name: HostTheaterButtonBar
-    figma_node_id: ""
-    variants: []
+    figma_node_id: "981:1965"
+    variants:
+      - default
     used_in_screens:
       - Watch Party Host
   - name: HostTheaterButtonBarWithExtension
-    figma_node_id: ""
-    variants: []
+    figma_node_id: "1053:3392"
+    variants:
+      - default
     used_in_screens:
       - Watch Party Host with Extension
   - name: ParticipantTheaterButtonBar
-    figma_node_id: ""
+    figma_node_id: "1038:2081"
     variants: []
     used_in_screens:
       - Solo Watch Page

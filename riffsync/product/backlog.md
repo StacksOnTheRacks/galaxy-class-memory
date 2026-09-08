@@ -11,8 +11,8 @@ ready:
   - "#449 Add GET /v1/rooms/mine and Your Parties page"
   - "#450 Replace Open Media Source Tab with Load Media modal"
   - "#451 Roll out remaining channels and mobile shell"
-refinement:
   - "#452 Reskin host theater to Figma media mode"
+refinement: []
 blocked: []
 icebox:
   - "Product metrics baseline — shipped Done (#437–#440, 2026-08-25); amendments via explicit metrics ticket only"
