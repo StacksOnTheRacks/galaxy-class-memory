@@ -11,8 +11,16 @@ signoffs:
   architect: true
   designer: true
   security: true
-board_milestone: ""
-board_tickets: []
+board_milestone: "Site redesign (#38)"
+board_tickets:
+  - "#445 Ship Figma AppShell with nav, search, and profile menu"
+  - "#446 Pilot MST3K channel layout with Cards | List toggle"
+  - "#447 Add tv_shows catalog enum and Movies route canonical"
+  - "#448 Ship TV Shows and Movies channel pages"
+  - "#449 Add GET /v1/rooms/mine and Your Parties page"
+  - "#450 Replace Open Media Source Tab with Load Media modal"
+  - "#451 Roll out remaining channels and mobile shell"
+  - "#452 Reskin host theater to Figma media mode"
 ---
 
 <!--
@@ -50,4 +58,4 @@ Locked for this initiative:
 - Incremental surface adoption after Designer sign-off; no downtime cutover
 - ADR-001 stays: extension is media-tab helper; Room tab is host console; no capture; find/focus remains Icebox
 
-HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. Next: `/forge.backlog-grooming` (one host milestone + Refinement tickets).
+HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. Groomed to Refinement (#445–#452 under milestone Site redesign); next `/forge.refinement` per ticket.
