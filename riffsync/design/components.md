@@ -1,24 +1,47 @@
 ---
 doc: design.components
 schema_version: 1
-updated: 2026-08-23
+updated: 2026-09-07
 components:
   - name: Navigations
-    figma_node_id: ""
+    figma_node_id: "7:111"
     variants: []
     used_in_screens:
       - Home / Unauthenticated
       - Home / Authenticated
       - Channel-MST3K
       - Channel-RiffTrax
-  - name: Sidebar
-    figma_node_id: ""
+  - name: SidebarAuthenticated
+    figma_node_id: "8:114"
+    variants: []
+    used_in_screens:
+      - Home / Authenticated
+  - name: SidebarUnauthenticated
+    figma_node_id: "1378:3545"
+    variants: []
+    used_in_screens:
+      - Home / Unauthenticated
+  - name: Navigations/SearchBox
+    figma_node_id: "7:49"
     variants: []
     used_in_screens:
       - Home / Unauthenticated
       - Home / Authenticated
-      - Channel-MST3K
-      - Channel-RiffTrax
+  - name: NavigationAuthenticated
+    figma_node_id: "7:93"
+    variants: []
+    used_in_screens:
+      - Home / Authenticated
+  - name: NavigationUnauthenticated
+    figma_node_id: "1378:3620"
+    variants: []
+    used_in_screens:
+      - Home / Unauthenticated
+  - name: Navigations/Profile
+    figma_node_id: "7:87"
+    variants: []
+    used_in_screens:
+      - Home / Authenticated
   - name: HomeHero
     figma_node_id: ""
     variants: []
@@ -46,7 +69,7 @@ components:
       - Channel-MST3K
       - Channel-RiffTrax
   - name: NavigationSlim
-    figma_node_id: ""
+    figma_node_id: "910:9936"
     variants: []
     used_in_screens:
       - Watch Party Host
