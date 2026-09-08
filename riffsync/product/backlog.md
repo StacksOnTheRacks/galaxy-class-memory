@@ -10,8 +10,8 @@ ready:
   - "#448 Ship TV Shows and Movies channel pages"
   - "#449 Add GET /v1/rooms/mine and Your Parties page"
   - "#450 Replace Open Media Source Tab with Load Media modal"
-refinement:
   - "#451 Roll out remaining channels and mobile shell"
+refinement:
   - "#452 Reskin host theater to Figma media mode"
 blocked: []
 icebox:
