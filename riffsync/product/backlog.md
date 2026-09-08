@@ -1,11 +1,11 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-07
+updated: 2026-09-08
 in_progress: []
-ready: []
-refinement:
+ready:
   - "#445 Ship Figma AppShell with nav, search, and profile menu"
+refinement:
   - "#446 Pilot MST3K channel layout with Cards | List toggle"
   - "#447 Add tv_shows catalog enum and Movies route canonical"
   - "#448 Ship TV Shows and Movies channel pages"
