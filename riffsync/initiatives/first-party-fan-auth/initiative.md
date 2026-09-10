@@ -1,10 +1,10 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-10
+updated: 2026-09-11
 slug: first-party-fan-auth
 title: First-party fan auth
-status: lld
+status: executing
 user_facing: true
 signoffs:
   po: true
@@ -43,4 +43,4 @@ This initiative does not create board tickets (LLD grooming does). It does not c
 
 **HLD sign-off (2026-09-10):** PO (Gherkin scenarios), Architect (spec.md), Designer (six default-state Figma frames on Auth page; error/mobile LLD follow-ons), Security (security.md). No blocking open questions. Status → `lld`.
 
-Groomed 2026-09-10: five Refinement tickets under milestone #39. Next: `/forge.refinement` starting with #461 (foundation).
+Groomed 2026-09-10: five tickets under milestone #39. All five Ready (`ai-ready`) as of 2026-09-11; initiative executing. Next: `/forge.implement-ticket` starting with #461 (foundation).

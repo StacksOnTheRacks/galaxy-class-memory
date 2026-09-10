@@ -16,8 +16,8 @@ ready:
   - "#462 Ship forgot-password and reset-password pages"
   - "#463 Ship sign-in, sign-up, and verify-email pages"
   - "#464 Ship change-password page"
-refinement:
   - "#465 Migrate in-app fan auth CTAs off Hosted UI"
+refinement: []
 blocked: []
 icebox:
   - "Product metrics baseline — shipped Done (#437–#440, 2026-08-25); amendments via explicit metrics ticket only"
