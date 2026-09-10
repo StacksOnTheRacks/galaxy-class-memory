@@ -24,16 +24,6 @@ items:
     blocking: false
     status: open
   - initiative: first-party-fan-auth
-    id: reset-code-in-url
-    question: "Reset code in email link vs manual entry on first-party reset-password page?"
-    blocking: false
-    status: open
-  - initiative: first-party-fan-auth
-    id: password-field-component
-    question: "Does Figma need a Password Field variant (masked + show/hide) or reuse Text Field with type=password?"
-    blocking: false
-    status: open
-  - initiative: first-party-fan-auth
     id: auth-marketing-consent
     question: "Sign-up collects marketing opt-in or terms checkbox?"
     blocking: false

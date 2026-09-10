@@ -13,9 +13,9 @@ ready:
   - "#451 Roll out remaining channels and mobile shell"
   - "#452 Reskin host theater to Figma media mode"
   - "#461 Add fan auth SRP foundation, layout, and routes"
+  - "#462 Ship forgot-password and reset-password pages"
 refinement:
   - "#463 Ship sign-in, sign-up, and verify-email pages"
-  - "#462 Ship forgot-password and reset-password pages"
   - "#464 Ship change-password page"
   - "#465 Migrate in-app fan auth CTAs off Hosted UI"
 blocked: []
