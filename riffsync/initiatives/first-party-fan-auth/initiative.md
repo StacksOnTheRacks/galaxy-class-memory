@@ -29,4 +29,11 @@ Outcome: fans complete those flows on first-party HTML pages we own and stay on 
 
 This initiative does not create board tickets (LLD grooming does). It does not change token issuance or host authority. Staff auth stays on Hosted UI.
 
-HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. Next: `/forge.initiative-design`.
+**HLD decisions (2026-09-10):**
+- **Scope:** full fan auth lifecycle on first-party HTML — sign-in, sign-up, email verify, forgot-password, reset confirm, and change-password. Fan pool, token shape, and `JWT.sub === room.hostSub` host authority stay unchanged.
+- **Routes:** `/auth/sign-in`, `/auth/sign-up`, `/auth/verify-email`, `/auth/forgot-password`, `/auth/reset-password`, `/auth/change-password`; keep `/auth/callback` for legacy Hosted UI OAuth returns only.
+- **In-app CTAs:** catalog, header, account gates, and room host prompts navigate to first-party `/auth/*` with `returnTo` (same-origin fan paths; auth handoff routes and off-origin values normalize to a safe default such as `/catalog`).
+- **Soft Hosted UI fallback:** `*.amazoncognito.com` stays for legacy bookmarks and emailed links; this initiative does not redirect in-app CTAs to Hosted UI and does not hard-cut existing callback allowlists.
+- **Out of scope:** staff stays on Cognito Hosted UI (`/admin/login`, `/admin/auth/callback`); no Facebook or federated IdP; no token-issuance or host-authority model changes.
+
+HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. Next: `/forge.initiative-planning` after Architect, Designer, and Security sign-off on the HLD package.
