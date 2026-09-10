@@ -2,43 +2,37 @@
 doc: product.initiative_design
 schema_version: 1
 updated: 2026-09-10
-summary: "Bind Figma vQ6yHQyiGlOnRG7ngIOxR7; pre-build six Auth/ frames (missing today); standalone auth layout (logo + centered card, no AppShell) using redesign tokens/components."
+summary: "Figma Auth page (vQ6yHQyiGlOnRG7ngIOxR7) with six default-state desktop frames; standalone auth layout (logo + centered AuthFormCard, no AppShell) using Text Field + CTA Link components."
 figma_file: "https://www.figma.com/design/vQ6yHQyiGlOnRG7ngIOxR7/RiffSync"
 screens:
-  - "Auth / Sign In (HLD pre-build — node TBD)"
-  - "Auth / Sign Up (HLD pre-build — node TBD)"
-  - "Auth / Verify Email (HLD pre-build — node TBD)"
-  - "Auth / Forgot Password (HLD pre-build — node TBD)"
-  - "Auth / Reset Password (HLD pre-build — node TBD)"
-  - "Auth / Change Password (HLD pre-build — node TBD)"
+  - "Auth / Sign In (1617:6584)"
+  - "Auth / Sign Up (1617:6621)"
+  - "Auth / Verify Email (1617:6660)"
+  - "Auth / Forgot Password (1617:6693)"
+  - "Auth / Reset Password (1617:6724)"
+  - "Auth / Change Password (1617:6763)"
 states:
-  - "auth-layout-standalone (logo header only — not AppShell)"
-  - "sign-in-default"
-  - "sign-in-submitting"
-  - "sign-in-field-error (invalid credentials, unverified email)"
-  - "sign-in-form-error (network / service unavailable)"
-  - "sign-up-default"
-  - "sign-up-submitting"
-  - "sign-up-field-error (email taken, weak password, mismatch)"
-  - "sign-up-success → verify-email-prompt"
-  - "verify-email-pending (check inbox copy + resend)"
-  - "verify-email-resend-sent"
-  - "verify-email-expired-or-invalid-code"
-  - "forgot-password-default"
-  - "forgot-password-submitting"
-  - "forgot-password-sent (non-enumerating success copy)"
-  - "forgot-password-field-error"
-  - "reset-password-code-entry"
-  - "reset-password-new-password (confirm field)"
-  - "reset-password-submitting"
-  - "reset-password-field-error (code invalid/expired, password policy)"
-  - "reset-password-success → sign-in with banner"
-  - "change-password-default (signed-in, from /account)"
-  - "change-password-submitting"
-  - "change-password-field-error (wrong current password, policy)"
-  - "change-password-success"
-  - "auth-mobile-stacked (HLD default — single column, 16px gutters)"
-  - "auth-return-to preserved (returnPath query visible in copy or post-auth redirect only)"
+  - "auth-layout-standalone (logo header only — not AppShell) — shipped in Figma default frames"
+  - "sign-in-default — 1617:6584"
+  - "sign-up-default — 1617:6621"
+  - "verify-email-pending — 1617:6660"
+  - "forgot-password-default — 1617:6693"
+  - "reset-password-code-entry — 1617:6724"
+  - "change-password-default — 1617:6763"
+  - "sign-in-submitting (LLD — not in Figma yet)"
+  - "sign-in-field-error (LLD — not in Figma yet)"
+  - "sign-in-form-error (LLD — not in Figma yet)"
+  - "sign-up-submitting (LLD — not in Figma yet)"
+  - "sign-up-field-error (LLD — not in Figma yet)"
+  - "verify-email-resend-sent (LLD — not in Figma yet)"
+  - "verify-email-expired-or-invalid-code (LLD — not in Figma yet)"
+  - "forgot-password-sent (LLD — not in Figma yet)"
+  - "forgot-password-field-error (LLD — not in Figma yet)"
+  - "reset-password-submitting (LLD — not in Figma yet)"
+  - "reset-password-field-error (LLD — not in Figma yet)"
+  - "change-password-submitting (LLD — not in Figma yet)"
+  - "change-password-field-error (LLD — not in Figma yet)"
+  - "auth-mobile-stacked (LLD — 390px companions not in Figma yet)"
 a11y:
   - "One visible h1 per auth route (Sign in, Create account, Verify email, etc.); match sr-only h1 contract on indexable routes if any auth URL is public/crawlable"
   - "Every input has an associated label; placeholders are supplementary only"
@@ -62,12 +56,10 @@ Authoring (not validated):
 - Bump updated when any frontmatter field changes.
 -->
 
-Existing Figma anchors: Home / Unauthenticated `3:185`, NavigationUnauthenticated `1378:3620`, Text Field `1486:6621`, CTA Link `930:10585`, CTA Link Slim `1133:3473`, Brand / Variables `1133:1902`. No dedicated auth screen frames on Screens page today.
+Figma page **Auth** (`1617:6583`) on file `vQ6yHQyiGlOnRG7ngIOxR7`. Six desktop frames (1440×1024) in a 3×2 grid. Each uses standalone auth layout: black viewport, Logo component (`2:88`), centered **AuthFormCard** (470px, dark surface), labeled **Text Field** instances (`1486:6621`), primary **CTA Link** (`930:10585`), secondary **CTA Link Slim** links (`1133:3473`).
 
-**Chrome coupling (answered):** standalone auth layout + Figma tokens/components — not AppShell (sidebar/search add noise and couple to #445 rollout), not long-term red-html. Interim red-html acceptable only if tokens blocked and operator accepts a second visual pass.
+**Chrome coupling (answered):** standalone auth layout + design-system components — not AppShell, not long-term red-html.
 
-**HLD layout defaults** (until Figma frames land): full-viewport centered card (~470px content width); minimal header with RiffSync logo → `/`; primary CTA uses CTA Link; secondary actions as text links; tokenized dark surface background.
+**LLD follow-ons (not blocking HLD exit):** error/submitting state frames, mobile 390 companions, extract shared AuthFormCard + AuthPageLayout components on Components page, bind token variables instead of literal fills.
 
-Each pre-build frame: desktop 1440×1024 + mobile 390 companion. Extract shared AuthFormCard + AuthPageLayout on Components page before LLD grooming.
-
-**Designer sign-off gate:** six Auth frames on Screens with default + error states and shared AuthFormCard; until then HLD proceeds on documented defaults with designer sign-off blocked at Refinement for user-facing tickets.
+Cross-refs: Home / Unauthenticated `3:185`, NavigationUnauthenticated `1378:3620`, Brand / Variables `1133:1902`.

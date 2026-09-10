@@ -4,13 +4,13 @@ schema_version: 1
 updated: 2026-09-10
 slug: first-party-fan-auth
 title: First-party fan auth
-status: hld
+status: lld
 user_facing: true
 signoffs:
-  po: false
-  architect: false
-  designer: false
-  security: false
+  po: true
+  architect: true
+  designer: true
+  security: true
 board_milestone: ""
 board_tickets: []
 ---
@@ -36,4 +36,6 @@ This initiative does not create board tickets (LLD grooming does). It does not c
 - **Soft Hosted UI fallback:** `*.amazoncognito.com` stays for legacy bookmarks and emailed links; this initiative does not redirect in-app CTAs to Hosted UI and does not hard-cut existing callback allowlists.
 - **Out of scope:** staff stays on Cognito Hosted UI (`/admin/login`, `/admin/auth/callback`); no Facebook or federated IdP; no token-issuance or host-authority model changes.
 
-HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. Next: `/forge.initiative-planning` after Architect, Designer, and Security sign-off on the HLD package.
+**HLD sign-off (2026-09-10):** PO (Gherkin scenarios), Architect (spec.md), Designer (six default-state Figma frames on Auth page; error/mobile LLD follow-ons), Security (security.md). No blocking open questions. Status → `lld`.
+
+Next: `/forge.backlog-grooming` for this initiative.
