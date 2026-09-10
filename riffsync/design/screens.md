@@ -1,7 +1,7 @@
 ---
 doc: design.screens
 schema_version: 1
-updated: 2026-09-07
+updated: 2026-09-10
 screens:
   - name: Home / Unauthenticated
     figma_node_id: "3:185"
@@ -142,6 +142,54 @@ screens:
       - default
     responsive:
       - desktop
+  - name: Auth / Sign In
+    figma_node_id: "1617:6584"
+    app: riffsync
+    states:
+      - default
+      - auth-layout-standalone
+    responsive:
+      - desktop
+  - name: Auth / Sign Up
+    figma_node_id: "1617:6621"
+    app: riffsync
+    states:
+      - default
+      - auth-layout-standalone
+    responsive:
+      - desktop
+  - name: Auth / Verify Email
+    figma_node_id: "1617:6660"
+    app: riffsync
+    states:
+      - default
+      - auth-layout-standalone
+    responsive:
+      - desktop
+  - name: Auth / Forgot Password
+    figma_node_id: "1617:6693"
+    app: riffsync
+    states:
+      - default
+      - auth-layout-standalone
+    responsive:
+      - desktop
+  - name: Auth / Reset Password
+    figma_node_id: "1617:6724"
+    app: riffsync
+    states:
+      - default
+      - auth-layout-standalone
+    responsive:
+      - desktop
+  - name: Auth / Change Password
+    figma_node_id: "1617:6763"
+    app: riffsync
+    states:
+      - default
+      - auth-layout-standalone
+    responsive:
+      - desktop
 ---
 
-Figma file: https://www.figma.com/design/vQ6yHQyiGlOnRG7ngIOxR7/RiffSync (Screens page `0:1`). All frames 1440×1024 desktop. Mobile HLD defaults live in initiatives/site-redesign/design.md (drawer nav, stacked channels) — no Figma mobile frames yet. Missing from redesign scope: Lobby, admin, friends/DM panels. Sidebar collapsed, global search dropdown, and list-view row component are HLD defaults not drawn as separate frames.
+Figma file: https://www.figma.com/design/vQ6yHQyiGlOnRG7ngIOxR7/RiffSync (Screens page `0:1`; Auth page `1617:6583` with six default desktop frames). All catalog/watch frames 1440×1024 desktop. Auth error/submitting/mobile 390 companions are LLD follow-ons, not in Figma yet. Mobile HLD defaults live in initiatives/site-redesign/design.md (drawer nav, stacked channels) — no Figma mobile frames yet. Missing from redesign scope: Lobby, admin, friends/DM panels. Sidebar collapsed, global search dropdown, and list-view row component are HLD defaults not drawn as separate frames.

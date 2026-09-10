@@ -12,8 +12,8 @@ ready:
   - "#450 Replace Open Media Source Tab with Load Media modal"
   - "#451 Roll out remaining channels and mobile shell"
   - "#452 Reskin host theater to Figma media mode"
-refinement:
   - "#461 Add fan auth SRP foundation, layout, and routes"
+refinement:
   - "#463 Ship sign-in, sign-up, and verify-email pages"
   - "#462 Ship forgot-password and reset-password pages"
   - "#464 Ship change-password page"

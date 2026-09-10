@@ -27,7 +27,15 @@ Feature: Fan auth SRP foundation, layout, and routes
     Then returnTo normalizes to a safe default fan path such as /catalog
     When they open /auth/sign-in?returnTo=/auth/callback
     Then returnTo normalizes to the safe default
+    When they open /auth/sign-in?returnTo=//evil.example/phish
+    Then returnTo normalizes to the safe default
     And successful auth never lands on /auth/callback except for legacy OAuth completion
+
+  Scenario: returnTo preserves valid same-origin relative paths
+    When a visitor opens /auth/sign-in?returnTo=/account
+    Then returnTo is preserved as /account
+    When they open /auth/sign-in?returnTo=/catalog/mst3k?tab=shorts
+    Then returnTo is preserved as /catalog/mst3k?tab=shorts
 
   Scenario: Legacy Hosted UI callback still completes fan OAuth at /auth/callback
     Given fanOAuthToken was extracted from fanHostedUiPkce without changing PKCE behavior
