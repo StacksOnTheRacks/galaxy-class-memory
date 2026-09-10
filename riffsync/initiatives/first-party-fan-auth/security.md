@@ -1,7 +1,7 @@
 ---
 doc: product.initiative_security
 schema_version: 1
-updated: 2026-09-10
+updated: 2026-09-11
 summary: "HLD security for first-party fan auth on riffsync.tv. Primary new risk: credential entry on SPA origin (XSS). No new server trust boundary; same fan pool, public client, JWT.sub === hostSub, extension access-only bridge."
 threats:
   - "Credential theft via SPA XSS — passwords, reset codes, and change-password inputs on riffsync.tv readable by injected script; complements existing localStorage JWT theft (riffsync.fan* keys)"
@@ -45,7 +45,6 @@ open_questions:
   - "verification-email-template-urls"
   - "cognito-advanced-security"
   - "reset-code-in-url"
-  - "global-sign-out-on-password-change"
 ---
 
 <!--

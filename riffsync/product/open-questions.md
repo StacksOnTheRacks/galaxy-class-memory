@@ -1,7 +1,7 @@
 ---
 doc: product.open_questions_index
 schema_version: 1
-updated: 2026-09-10
+updated: 2026-09-11
 items:
   - initiative: first-party-fan-auth
     id: fan-sign-out-revocation
@@ -37,7 +37,7 @@ items:
     id: global-sign-out-on-password-change
     question: "Should change-password invalidate other refresh tokens / GlobalSignOut or only rotate current session?"
     blocking: false
-    status: open
+    status: answered
 ---
 
 <!--

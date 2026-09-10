@@ -1,7 +1,7 @@
 ---
 doc: product.open_questions
 schema_version: 1
-updated: 2026-09-10
+updated: 2026-09-11
 questions:
   - id: redesign-chrome-coupling
     question: "Do first-party auth pages adopt site-redesign Figma chrome, or ship on current red-html until browse surfaces land?"
@@ -41,7 +41,7 @@ questions:
   - id: global-sign-out-on-password-change
     question: "Should change-password invalidate other refresh tokens / GlobalSignOut or only rotate current session?"
     blocking: false
-    status: open
+    status: answered
     owner: security
 ---
 

@@ -1,7 +1,7 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-10
+updated: 2026-09-11
 in_progress: []
 ready:
   - "#445 Ship Figma AppShell with nav, search, and profile menu"
@@ -15,8 +15,8 @@ ready:
   - "#461 Add fan auth SRP foundation, layout, and routes"
   - "#462 Ship forgot-password and reset-password pages"
   - "#463 Ship sign-in, sign-up, and verify-email pages"
-refinement:
   - "#464 Ship change-password page"
+refinement:
   - "#465 Migrate in-app fan auth CTAs off Hosted UI"
 blocked: []
 icebox:
