@@ -11,8 +11,13 @@ signoffs:
   architect: true
   designer: true
   security: true
-board_milestone: ""
-board_tickets: []
+board_milestone: "First-party fan auth (#39)"
+board_tickets:
+  - "#461 Add fan auth SRP foundation, layout, and routes"
+  - "#463 Ship sign-in, sign-up, and verify-email pages"
+  - "#462 Ship forgot-password and reset-password pages"
+  - "#464 Ship change-password page"
+  - "#465 Migrate in-app fan auth CTAs off Hosted UI"
 ---
 
 <!--
@@ -38,4 +43,4 @@ This initiative does not create board tickets (LLD grooming does). It does not c
 
 **HLD sign-off (2026-09-10):** PO (Gherkin scenarios), Architect (spec.md), Designer (six default-state Figma frames on Auth page; error/mobile LLD follow-ons), Security (security.md). No blocking open questions. Status → `lld`.
 
-Next: `/forge.backlog-grooming` for this initiative.
+Groomed 2026-09-10: five Refinement tickets under milestone #39. Next: `/forge.refinement` starting with #461 (foundation).

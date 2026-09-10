@@ -1,10 +1,11 @@
 ---
 doc: project.plan
 schema_version: 1
-updated: 2026-09-07
-objective: "Deliver site-redesign initiative via strangler surface rollout (AppShell → channels → Your Parties → Load Media → mobile → host theater reskin); preserve shipped baseline including GA4/CloudWatch metrics and ADR-001 host flows."
+updated: 2026-09-10
+objective: "Deliver site-redesign initiative via strangler surface rollout (AppShell → channels → Your Parties → Load Media → mobile → host theater reskin); preserve shipped baseline including GA4/CloudWatch metrics and ADR-001 host flows. Parallel track: first-party fan auth (milestone #39) replaces fan Hosted UI CTAs with SRP lifecycle pages on riffsync.tv."
 in_scope:
-  - "Now — site-redesign initiative (lld): milestone Site redesign (#38) + 8 Refinement tickets #445–#452; incremental surface adoption; old red-html chrome coexists until each surface swaps"
+  - "Now — site-redesign initiative (executing): milestone Site redesign (#38) + tickets #445–#452"
+  - "Now — first-party-fan-auth initiative (lld): milestone First-party fan auth (#39) + 5 Refinement tickets #461–#465; SRP pages + CTA migration; soft Hosted UI fallback for legacy links"
   - "Shipped baseline preserved: catalog, rooms, host broadcast, lobby, chat, friends/DM, SEO, Cast/TV, MV3 host extension (#426–#431), Official Live, product metrics (#437–#440)"
   - "Next after site-redesign — Extension & TV distribution polish; Live maturity follow-ons (Cast on Live, multi-channel hub) demand-gated after first metrics read"
 sequence:
@@ -20,6 +21,12 @@ sequence:
   - "  #450 Load Media modal — PATCH catalogEpisodeId; extension or new-tab open"
   - "  #451 Remaining channels (Home, RiffTrax, Live Now, Community) + mobile shell"
   - "  #452 Host theater reskin — Figma media mode; Load Media entry"
+  - "First-party fan auth — milestone #39; Refinement tickets in LLD order:"
+  - "  #461 Fan auth SRP foundation — fanCognitoConfig, fanSrpAuth, fanAuthNavigation, FanAuthLayout, routes, returnTo, env/CI"
+  - "  #463 Sign-in, sign-up, verify-email pages (parallel with #462, #464 after #461)"
+  - "  #462 Forgot-password and reset-password pages"
+  - "  #464 Change-password page"
+  - "  #465 Migrate in-app CTAs off Hosted UI (after auth pages)"
   - "Refinement → Ready → implement per ticket; initiative status → executing when last ticket Ready"
   - "Incremental surface rollout (strangler); metrics events unchanged per surface"
 dependencies:
@@ -36,4 +43,4 @@ handoffs:
   - "Product → first GA4/CloudWatch metrics read informs demand-gated Live follow-ons"
 ---
 
-Site-redesign groomed 2026-09-07: eight Refinement tickets under milestone #38. Next refinement target: #445 (app-shell).
+Site-redesign groomed 2026-09-07: eight tickets under milestone #38 (executing). First-party fan auth groomed 2026-09-10: five Refinement tickets under milestone #39. Next refinement target: #461 (fan-auth-foundation).

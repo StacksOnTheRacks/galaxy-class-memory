@@ -1,7 +1,7 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-08
+updated: 2026-09-10
 in_progress: []
 ready:
   - "#445 Ship Figma AppShell with nav, search, and profile menu"
@@ -12,7 +12,12 @@ ready:
   - "#450 Replace Open Media Source Tab with Load Media modal"
   - "#451 Roll out remaining channels and mobile shell"
   - "#452 Reskin host theater to Figma media mode"
-refinement: []
+refinement:
+  - "#461 Add fan auth SRP foundation, layout, and routes"
+  - "#463 Ship sign-in, sign-up, and verify-email pages"
+  - "#462 Ship forgot-password and reset-password pages"
+  - "#464 Ship change-password page"
+  - "#465 Migrate in-app fan auth CTAs off Hosted UI"
 blocked: []
 icebox:
   - "Product metrics baseline — shipped Done (#437–#440, 2026-08-25); amendments via explicit metrics ticket only"
