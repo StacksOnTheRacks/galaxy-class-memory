@@ -36,3 +36,10 @@ Figma file: https://www.figma.com/design/vQ6yHQyiGlOnRG7ngIOxR7/RiffSync (file k
 - Host Bar Room Control (separate initiative)
 - Board tickets / host milestone until HLD sign-off and LLD grooming
 - Host extension capture, find/focus, or lawful-playback policy changes
+
+**HLD scope lock (2026-09-11):**
+- **In scope:** `/room/:roomId` **NavigationSlim** reskin to Figma `910:9936` — RiffSync **logo left**, **profile menu right** (reuse ProfileMenu patterns; **no** friends person-icon per presentation.md)
+- **Primary component:** `NavigationSlim.tsx` + `riffsync-app.css`; `RoomPage.tsx` props/wiring
+- **Reuse:** app-shell logo asset (`/app-shell/topbar/logo.svg`), existing fan auth navigation
+- **Preserve:** `--riffsync-room-chrome-height`, expanded-view chrome hide, ADR-001 host theater bar unchanged
+- **Out of scope (this initiative):** Host Bar Room Control; Live channel shell header; `SiteHeader compact` dead-path cleanup (LLD fork unless needed)
