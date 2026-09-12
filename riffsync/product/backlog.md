@@ -3,32 +3,20 @@ doc: product.backlog
 schema_version: 1
 updated: 2026-09-11
 in_progress: []
-ready:
-  - "#445 Ship Figma AppShell with nav, search, and profile menu"
-  - "#446 Pilot MST3K channel layout with Cards | List toggle"
-  - "#447 Add tv_shows catalog enum and Movies route canonical"
-  - "#448 Ship TV Shows and Movies channel pages"
-  - "#449 Add GET /v1/rooms/mine and Your Parties page"
-  - "#450 Replace Open Media Source Tab with Load Media modal"
-  - "#451 Roll out remaining channels and mobile shell"
-  - "#452 Reskin host theater to Figma media mode"
-  - "#461 Add fan auth SRP foundation, layout, and routes"
-  - "#462 Ship forgot-password and reset-password pages"
-  - "#463 Ship sign-in, sign-up, and verify-email pages"
-  - "#464 Ship change-password page"
-  - "#465 Migrate in-app fan auth CTAs off Hosted UI"
+ready: []
 refinement: []
 blocked: []
 icebox:
-  - "Product metrics baseline — shipped Done (#437–#440, 2026-08-25); amendments via explicit metrics ticket only"
-  - "Find/focus room tab + return-to-share command (rejected as MVP primary)"
+  - "Host Header Layout Fix — watch-party standard header; logo plus menu on the right (Next; /forge.new-initiative before tickets)"
+  - "Host Bar Room Control — room button on primary host control bar; popup with all room options (Next; /forge.new-initiative before tickets)"
+  - "Finish the Host Chrome Extension (Next; /forge.new-initiative before tickets)"
+  - "Develop a Discord App (Next; /forge.new-initiative before tickets)"
+  - "Watch Party Game Mode — Riffle/Turnur attach in a room (Next; /forge.new-initiative before tickets)"
   - "Live maturity follow-ons (Cast on Live, multi-channel Live hub) — Later; demand-gated"
-  - "PWA install polish — shipped baseline; polish only if demand"
   - "Federated login for hosts"
   - "Broader staff catalog lists / activity reporting beyond current admin"
   - "Group DMs / friend voice-video / public profiles"
   - "Additional lawful playback backends beyond YouTube + Custom host"
-  - "Extension as capture source / tabCapture (forbidden unless future ADR supersedes no-capture)"
 ---
 
 Board/SCM wins — this file is a projection only. Reconcile against GitHub project board on grooming.

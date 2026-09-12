@@ -1,10 +1,10 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-08
+updated: 2026-09-11
 slug: site-redesign
 title: Site redesign
-status: executing
+status: shipped
 user_facing: true
 signoffs:
   po: true
@@ -58,4 +58,4 @@ Locked for this initiative:
 - Incremental surface adoption after Designer sign-off; no downtime cutover
 - ADR-001 stays: extension is media-tab helper; Room tab is host console; no capture; find/focus remains Icebox
 
-HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. All milestone tickets Ready (#445–#452); initiative executing — next `/forge.implement-ticket` on Ready `ai-ready` cards.
+HLD package: `features/initiative.feature`, `spec.md`, `design.md`, `security.md`. All milestone tickets #445–#452 shipped Done 2026-09-08. Host milestone #38 closed. Do not reopen for Host Header Layout Fix.

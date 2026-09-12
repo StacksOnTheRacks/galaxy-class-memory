@@ -1,7 +1,7 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-08-26
+updated: 2026-09-11
 themes:
   - "Lawful shared watching (catalog + host embed/capture + guest SFU view)"
   - "Host browser tooling (Chrome MV3: media-tab control + Room-tab host console; no capture)"
@@ -12,13 +12,18 @@ themes:
   - "Official hostless Live hangouts (staff-bound YouTube live) — shipped baseline"
   - "Product observability (GA4 + CloudWatch business metrics)"
   - "Figma-driven UI redesign (incremental adoption)"
+  - "Watch-party game mode — host attaches a turn-based game (Riffle / Turnur) without becoming match authority"
+  - "Discord as a community surface — not a second media plane"
 now:
-  - "Figma redesign program — bind https://www.figma.com/design/vQ6yHQyiGlOnRG7ngIOxR7/RiffSync; Designer establishes adoption pattern; incremental surface rollout after Designer sign-off; current red-html chrome stays until each surface swaps"
-  - "Treat Chromecast, PWA, catalog playback host, friends/DM, catalog browse IA, public SEO packaging, Official Live, TV client, product metrics baseline (#437–#440), and MV3 host extension (#426–#431) as live product baseline (board Done / closed), not open delivery risk"
+  - "Treat site-redesign (#445–#452 closed 2026-09-08), first-party-fan-auth (#461–#465 closed 2026-09-11), Chromecast, PWA, catalog playback host, friends/DM, catalog browse IA, public SEO packaging, Official Live, TV client, product metrics baseline (#437–#440), and MV3 host extension MVP (#426–#431) as live product baseline (board Done / closed), not open delivery risk"
 next:
-  - "Extension & TV distribution polish"
-  - "Live maturity follow-ons (Cast on Live viewer-local, multi-channel hub) — demand-gated after first metrics read"
+  - "Host Header Layout Fix — watch-party standard header; logo plus menu on the right"
+  - "Host Bar Room Control — add a room button to the primary host control bar; new popup with all room options"
+  - "Finish the Host Chrome Extension"
+  - "Develop a Discord App"
+  - "Watch Party Game Mode — attach Riffle/Turnur play in a room; identity, chat, rooms, and media stay on RiffSync"
 later:
+  - "Live maturity follow-ons (Cast on Live viewer-local, multi-channel hub) — demand-gated after first metrics read"
   - "Federated host login and deeper staff catalog/ops tooling beyond current admin baseline"
   - "Lawful non-YouTube playback backends that stay pluggable without a piracy vault"
 not_planning:
@@ -30,6 +35,7 @@ not_planning:
   - "Host Chrome extension media capture / tabCapture / extension-supplied host_screen (ADR-001)"
   - "Find/focus room tab + return-to-share as the primary hosting UX"
   - "Big-bang UI rewrite or downtime cutover"
+  - "RiffSync becoming match authority or owning game rules"
 ---
 
-Board links: epic [#426](https://github.com/StacksOnTheRacks/riffsync/issues/426) closed 2026-08-20; scaffold [#427](https://github.com/StacksOnTheRacks/riffsync/issues/427) closed via PR #432; #428–#431 Done. Metrics baseline **#437–#440** closed Done 2026-08-25 (PRs #441–#444).
+Next items are operator-locked coarse outcomes — `/forge.new-initiative` before tickets. Do not split from Icebox. Site-redesign and first-party-fan-auth shipped Done. Extension MVP #426–#431 and metrics #437–#440 are baseline.

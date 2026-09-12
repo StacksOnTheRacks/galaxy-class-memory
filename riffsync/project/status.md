@@ -1,14 +1,13 @@
 ---
 doc: project.status
 schema_version: 1
-updated: 2026-08-26
-summary: "Board clear — zero open issues. Product metrics #437–#440 Done (2026-08-25). Figma redesign is Now; /forge.design-system-audit scheduled."
+updated: 2026-09-11
+summary: "Pipeline idle. Site redesign (#445–#452) and first-party fan auth (#461–#465) shipped Done. Next: /forge.new-initiative for Host Header Layout Fix (operator override; no tickets this pass)."
 in_flight: []
 blockers: []
 next_up:
-  - "Designer → /forge.design-system-audit when available (Figma redesign kickoff gate)"
-  - "PO/PM → backlog grooming to slice pilot surface (catalog/home) into Ready tickets after audit + Designer sign-off"
-  - "Product → first GA4/CloudWatch metrics read ~1 week post-ship (#437–#440)"
+  - "/forge.new-initiative for Host Header Layout Fix — watch-party standard header; logo plus menu on the right (do not invent tickets or a host milestone this event)"
+  - "Then remaining Next queue: Host Bar Room Control; Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode"
 asks: []
 ---
 

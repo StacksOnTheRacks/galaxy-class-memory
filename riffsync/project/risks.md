@@ -1,19 +1,19 @@
 ---
 doc: project.risks
 schema_version: 1
-updated: 2026-09-03
+updated: 2026-09-11
 risks:
-  - "Figma redesign program has no board tickets until Designer completes /forge.design-system-audit — delivery idle on design track"
-  - "MV3 host extension shipped unpacked; Web Store review, distribution packaging, and SPA↔extension bridge trust boundaries unvalidated (detail: architecture/risks.md)"
-  - "First operational GA4 + CloudWatch product-funnel read still not performed after #437–#440 closed 2026-08-25 — Live maturity follow-ons remain demand-gated"
+  - "MV3 host extension shipped unpacked; Finish the Host Chrome Extension is Next — Web Store review, packaging, and SPA↔extension bridge still unvalidated"
+  - "Watch Party Game Mode couples to sister Riffle First Host Integration and Turnur primitives; sequencing across three repos can stall attach"
+  - "First operational GA4 + CloudWatch product-funnel read still pending — Live maturity follow-ons remain Later / demand-gated"
 issues: []
 dependencies:
-  - "Designer availability → /forge.design-system-audit (first Figma redesign gate)"
-  - "Designer sign-off per surface before Refinement or implementation (pilot: catalog/home)"
-  - "Metrics baseline #437–#440 Done (2026-08-25); first operational read pending"
+  - "Site redesign #445–#452 and first-party-fan-auth #461–#465 shipped Done; Next intake is /forge.new-initiative (Host Header Layout Fix first)"
+  - "Watch Party Game Mode depends on Riffle origin + Turnur match authority, not on RiffSync owning rules"
+  - "Metrics baseline #437–#440 Done; first operational read pending"
 assumptions:
   - "Shipped GA4/CloudWatch instrumentation matches docs/operations/product-metrics.md contract"
-  - "Figma surface rollout (strangler) preserves event fire sites — amendments only via explicit metrics ticket"
+  - "Next queue is operator-locked with Host Header Layout Fix first; do not invent tickets until /forge.new-initiative"
 ---
 
 See `architecture/risks.md` for structural architecture risks on the host extension slice.

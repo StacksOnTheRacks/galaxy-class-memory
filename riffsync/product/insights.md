@@ -1,21 +1,22 @@
 ---
 doc: product.insights
 schema_version: 1
-updated: 2026-08-25
+updated: 2026-09-11
 themes:
-  - "Product metrics baseline shipped — contract doc, GA4 funnel events, CloudWatch RiffSync/Product counters, and ops dashboard widgets (#437–#440) closed 2026-08-25"
-  - "Metrics instrumentation live in prod — first /forge.metrics-review read is unblocked"
-  - "Delivery queue drained — zero open riffsync issues; Ready/Refinement/Backlog empty"
-  - "Host Chrome MV3 host-control MVP complete (#426–#431 Done prior); no new extension feedback in triage window"
+  - "Operator-locked Next initiative queue: Host Header Layout Fix (first); Host Bar Room Control; Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode"
+  - "Now empty — site-redesign and first-party fan auth shipped Done; pipeline idle until next initiative intake"
+  - "Watch Party Game Mode is the RiffSync side of Riffle First Host Integration and Turnur match authority — RiffSync stays host, not match engine"
+  - "Product metrics baseline shipped; first /forge.metrics-review read still informs Later Live follow-ons only"
 open_questions:
-  - "Which Figma surface gets the first implementation ticket after Designer sign-off on a frame?"
+  - "Does Watch Party Game Mode wait on Riffle First Host Integration, or can RiffSync ship host chrome first?"
+  - "Is Discord a watch-party host, a community bot, or both?"
 evidence:
-  - "Issues #437–#440 closed 2026-08-25; PRs #441–#444 merged same day"
-  - "gh issue list --state open returns empty for StacksOnTheRacks/riffsync"
-  - "Project board: #437–#440 status Done; no riffsync items in Ready, Refinement, Backlog, or In review"
-  - "Orchestrator confirmed metrics instrumentation already deployed to prod"
+  - "product/roadmap.md Next — operator-locked whiteboard merge"
+  - "Site redesign #445–#452 shipped Done 2026-09-08; first-party-fan-auth #461–#465 shipped Done 2026-09-11"
+  - "Host extension MVP #426–#431 Done; Finish the Host Chrome Extension is a separate Next outcome"
+  - "No demand interviews for game-in-room or Discord; queue is product-decision"
 implications:
-  - "Clear backlog.md ready queue — memory still lists shipped tickets as Ready"
-  - "Next product motion: Figma redesign — run /forge.design-system-audit, codify shipped interaction patterns (embed-failure isolation, TV chat TTL, viewer-local Cast) into interaction_patterns[], then groom first signed-off surface"
-  - "Icebox unchanged; no re-rank from user demand signal (none received in last 30 days)"
+  - "Do not invent tickets from the Next queue — /forge.new-initiative first"
+  - "Game mode must not make RiffSync match authority or own poker rules"
+  - "Discord must not become a media plane or piracy vault"
 ---
