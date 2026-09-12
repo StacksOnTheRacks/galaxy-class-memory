@@ -1,15 +1,16 @@
 ---
 doc: project.risks
 schema_version: 1
-updated: 2026-08-27
-risks: []
+updated: 2026-09-11
+risks:
+  - "Play-lab latency may push WebSockets ahead of a locked transport ADR — examine first, do not copy RiffSync chat/SFU stacks"
 issues: []
 dependencies:
-  - "Host attach gates match primitives (seats → turns → hidden views → move log)"
-  - "Next delivery slice undefined on board until host attach is groomed from icebox"
+  - "Primitives #29–#35 shipped (PRs #36–#42); WebSockets examine gate is open — /forge.new-initiative, not LLD or tickets"
+  - "Signed result and authoritative writes wait on /forge.new-initiative after primitives"
 assumptions:
-  - "Board: zero open issues, zero In Progress, zero blockers; #1–#13 Done"
-  - "Game auth milestone issues all closed; milestone may remain open on GitHub until manually closed"
+  - "HTTP remains authority until an ADR locks a push channel"
+  - "Next queue is operator-locked; do not invent tickets from Icebox"
 ---
 
 See `architecture/risks.md` and `security/threat-model.md` as the stack grows.

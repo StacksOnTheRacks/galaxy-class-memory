@@ -1,31 +1,30 @@
 ---
 doc: project.plan
 schema_version: 1
-updated: 2026-08-30
-objective: "Refine and sequence match authority primitives so Turnur is match-state authority after shipped host attach."
+updated: 2026-09-11
+objective: "Primitives shipped. Intake the operator-locked Next queue starting with Integrate WebSockets (examine; play-lab latency). Too large for LLD split — /forge.new-initiative, not tickets."
 in_scope:
-  - "Shipped: control plane #1–#4 (PRs #5–#8); game auth #9–#13 (PRs #14–#18); host attach #19–#23 (PRs #24–#28)"
-  - "Now — match authority primitives: MatchState + MatchMoveLog storage (#29), seats (#30), turn designate + moves (#31), hidden views (#32), move-log read (#33), SDK (#34), integrator docs (#35)"
-  - "Later — signed result capability"
-  - "Out of scope: player/host auth, epic/umbrella issues, identity/chat/rooms/media on Turnur, game-rule engine, Idempotency-Key"
+  - "Shipped: control plane #1–#4 (PRs #5–#8); game auth #9–#13 (PRs #14–#18); host attach #19–#23 (PRs #24–#28); match authority primitives #29–#35 (PRs #36–#42)"
+  - "Next — Integrate WebSockets (examine; play-lab latency); Signed result; Authoritative writes. Coarse outcomes — /forge.new-initiative before tickets"
+  - "Out of scope: player/host auth, epic/umbrella issues, identity/chat/rooms/media on Turnur, game-rule engine, Idempotency-Key, action/realtime gameplay"
 sequence:
   - "Control plane #1–#4 — Done (PRs #5–#8)"
   - "Game authentication #9–#13 — Done (PRs #14–#18)"
   - "Host attach #19–#23 — Done (PRs #24–#28); milestone Host attach a match closed"
-  - "Refinement — #29 → #30 → #31 → #32 → #33 → #34 → #35 (Match authority primitives)"
-  - "Implement — #29 then same order after each ticket reaches Ready + ai-ready"
-  - "Signed result — later capability"
+  - "Match authority primitives #29–#35 — Done (PRs #36–#42)"
+  - "/forge.new-initiative: Integrate WebSockets (examine; play-lab latency) — not refinement, not a host milestone this event"
+  - "After WebSockets intake — /forge.new-initiative: Signed result → Authoritative writes"
 dependencies:
-  - "Board: #29–#35 In Refinement on Match authority primitives; #1–#23 Done"
-  - "Strict ticket order: #29 storage → #30 seats → #31 turns/moves → #32 views → #33 move-log → #34 SDK → #35 docs"
+  - "Board: #1–#35 Done; zero OPEN issues"
+  - "Primitives #29–#35 shipped (PRs #36–#42); WebSockets examine gate is open — initiative first"
+  - "HTTP remains authority until an ADR locks a push channel"
+  - "Signed result and authoritative writes wait on /forge.new-initiative; do not invent tickets from Icebox"
   - "Host attach (#19–#23) shipped; MatchRegistry stays metadata-only"
-  - "Game auth no longer blocks; every new route uses requireGameAuth + MatchRegistry ownership"
-  - "Architect + Security tech spec (ai-ready) required before /forge.implement-ticket"
+  - "Every new route uses requireGameAuth + MatchRegistry ownership"
   - "Identity, chat, rooms, and media stay on the host"
 handoffs:
-  - "Product → /forge.refinement on #29–#35 (dependency order starting #29)"
-  - "Engineering → /forge.implement-ticket #29 → #35 as tickets reach Ready + ai-ready"
-  - "Signed result remains later; not this milestone"
+  - "Product → /forge.new-initiative for Integrate WebSockets (examine; play-lab latency)"
+  - "Product → /forge.new-initiative on remaining Next queue after WebSockets (Signed result, Authoritative writes)"
 ---
 
-Board/SCM wins. #29–#35 In Refinement on [Match authority primitives](https://github.com/StacksOnTheRacks/turnur/milestone/3). Next: `/forge.refinement` starting at #29. Not Ready.
+Board/SCM wins. #29–#35 Done on [Match authority primitives](https://github.com/StacksOnTheRacks/turnur/milestone/3) (milestone closed). Next: `/forge.new-initiative` for Integrate WebSockets.

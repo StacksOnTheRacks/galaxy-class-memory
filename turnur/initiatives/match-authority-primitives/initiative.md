@@ -1,10 +1,10 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-08-30
+updated: 2026-09-11
 slug: match-authority-primitives
 title: "Match authority primitives: seats, turns, hidden views, move log"
-status: executing
+status: shipped
 user_facing: false
 signoffs:
   po: true

@@ -1,25 +1,22 @@
 ---
 doc: product.insights
 schema_version: 1
-updated: 2026-08-25
+updated: 2026-09-11
 themes:
   - "Dual-sided attach: host owns social surface; game owns rules/UI; Turnur owns match authority"
   - "Game-authenticated integration — SDK key for games, not player accounts on Turnur"
-  - "Host-agnostic contract with RiffSync as first concrete beachhead, not the only host"
-  - "Control plane delivered — integration slices (game auth, host attach, match primitives) are ungroomed icebox candidates"
+  - "Operator-locked Next initiative queue: Integrate WebSockets (examine); Signed result; Authoritative writes"
+  - "Play-lab latency is operator evidence that HTTP polling is too slow for seated play — examine WebSockets, do not lock an ADR yet"
 evidence:
-  - "product/brief.md audience and problem statements (2026-08-24)"
-  - "architecture/constraints.md — host does not become match authority; identity/chat/rooms/media stay on host"
-  - "product/competitive.md — wins vs DIY backend, in-house host authority, and full-stack platforms"
-  - "product/roadmap.md — next: game auth, then host attach + match primitives"
-  - "GitHub turnur #1–#4 Done (PRs #5–#8, merged 2026-08-21–22); control plane delivered; no open issues or user feedback; game/host integrator slices not yet groomed"
+  - "product/roadmap.md Next — operator-locked whiteboard merge"
+  - "Control plane, game auth, and host attach shipped; primitives #29–#35 shipped (closed)"
+  - "Sister riffle-poker play lab completes hands against live Turnur and is too slow for instant communication"
+  - "Signed-result verification mechanism still undecided"
 open_questions:
-  - "Host attach contract — how a host attaches a match (architecture/constraints assumption; undecided)"
   - "Signed-result verification — mechanism and who verifies (host, game, or both)"
-  - "First game pack on RiffSync — which game proves the attach path end-to-end"
+  - "Is a Turnur WebSocket a match-event push on the existing game-auth contract, or a new channel?"
 implications:
-  - "API and docs should optimize for game-authenticated integration; player flows remain host-owned"
-  - "Control-plane goals met; next product motion is grooming and shipping game authentication before host attach"
-  - "Near-term design validation runs through RiffSync host integrator + one game pack developer path once auth and attach slices exist"
-  - "Personas stay provisional until auth and attach slices are exercised on the first host"
+  - "Do not invent tickets from the Next queue — /forge.new-initiative first"
+  - "WebSockets examine is not action/realtime gameplay and must not copy RiffSync chat or SFU stacks"
+  - "Riffle remains the first game pack; RiffSync Watch Party Game Mode is the first host path"
 ---
