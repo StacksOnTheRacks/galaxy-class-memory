@@ -1,13 +1,12 @@
 ---
 doc: project.status
 schema_version: 1
-updated: 2026-09-02
-summary: "LLD grooming applied for playable-holdem-table. One host milestone and nine Refinement tickets on the board. Repo still README-only. Nothing implementing. Initiative stays lld."
+updated: 2026-09-11
+summary: "Playable-holdem-table #1–#9 and play lab #19–#24 shipped. 0 open issues. Operator-locked Next queue starts at Artwork via /forge.new-initiative."
 in_flight: []
 blockers: []
 next_up:
-  - "After grooming Apply — /forge.plan-refresh"
-  - "Then /forge.refinement on the nine playable-holdem-table tickets (not Ready this event)"
+  - "Product → /forge.new-initiative on Artwork (Figma + Canva)"
 asks: []
 ---
 

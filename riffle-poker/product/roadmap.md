@@ -1,19 +1,24 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-09-02
+updated: 2026-09-11
 themes:
   - "First-party poker game pack: gameplay and rules live here"
   - "Turnur as the authoritative match backend (seats, turns, hidden views, move log, signed result)"
   - "Host-attached play (RiffSync first); identity, chat, rooms, and media stay on the host"
   - "Texas Hold'em as the v1 ruleset"
   - "Play-chip social play — no cashier, rake, or real money"
-now:
-  - "Playable no-limit Hold'em table (play chips) — initiative playable-holdem-table in LLD; nine tickets on Refinement under host milestone (iframe embed, in-process rules, host-issued seat capability; signed result out of this slice)"
+  - "First-party visual identity and public site before host attach"
+now: []
 next:
-  - "Host-path polish on RiffSync (seat claim from the room, spectator public-board view)"
-  - "Table UX maturity after the first complete hand (side pots, all-in runout, disconnect/rejoin via the host)"
+  - "Artwork (Figma + Canva)"
+  - "Web Site"
+  - "Complete NLHE Hand (full rules) — side pots, all-in runout, and remaining legal play beyond fold-to-one / non-all-in showdown"
+  - "Multi-Hand Session"
+  - "First Host Integration (RiffSync) — seat claim from the room; FRAME_ANCESTORS for the host origin"
 later:
+  - "Room-guest spectator view (public board only)"
+  - "Disconnect/rejoin via the host"
   - "Additional poker variants (Omaha, Stud, mixed)"
   - "Tournaments / sit-and-go"
   - "Additional host platforms beyond RiffSync"
@@ -27,4 +32,4 @@ not_planning:
   - "Copying RiffSync's Cognito, chat, or SFU/TURN stacks"
 ---
 
-Nine playable-holdem-table tickets on Refinement under [milestone/1](https://github.com/StacksOnTheRacks/riffle-poker/milestone/1). Icebox outcomes wait for `/forge.new-initiative` / grooming.
+Next items are operator-locked coarse outcomes — `/forge.new-initiative` before tickets. Playable-holdem-table #1–#9 and play-lab #19–#24 are shipped. No executing Now slice.

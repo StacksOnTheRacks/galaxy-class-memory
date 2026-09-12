@@ -1,29 +1,25 @@
 ---
 doc: product.insights
 schema_version: 1
-updated: 2026-09-02
+updated: 2026-09-11
 themes:
-  - "No user or research signal — framing is product-decision only; repo is README-only and the board has zero issues"
+  - "Operator-locked Next initiative queue: Artwork (Figma + Canva); Web Site; Complete NLHE Hand (full rules); Multi-Hand Session; First Host Integration (RiffSync)"
+  - "Playable-holdem-table and play lab shipped; no executing Now slice"
+  - "Play-lab latency is operator evidence — sister Turnur Next examines WebSockets; Riffle does not become the match bus"
   - "Dual-sided attach: host owns identity, chat, rooms, and media; Riffle owns rules and play UI; Turnur owns match authority"
-  - "Riffle is the first-party game Turnur explicitly does not ship as v1 — a product-decision answer to sister open Q 'First game pack on RiffSync', not a demand proof"
-  - "First host (RiffSync) shows no game-attach demand and is in a Figma redesign; beachhead stays RiffSync until evidence says otherwise"
-  - "HLD locks for playable-holdem-table: iframe embed (mint→URL→redeem bootstrap), in-process NLHE library in Riffle runtime, host-issued seat capability"
+  - "Artwork and Web Site come before First Host Integration so the RiffSync embed has a visual identity and a public origin"
 open_questions:
   - "Is there player or host demand for poker in RiffSync rooms? (no interviews, feedback, or metrics exist)"
+  - "Where does the Riffle web site and runtime host? (still open; First Host Integration needs an origin)"
 evidence:
-  - "product/brief.md (2026-09-02) — audience, problem, non-goals; current_focus is HLD→LLD for playable-holdem-table"
-  - "initiatives/playable-holdem-table — HLD complete (feature, spec, design, security); status lld"
-  - "architecture/constraints.md + architecture/decisions.md — iframe bootstrap, in-process rules, host seat capability locked (ADRs)"
-  - "Sister turnur/product/brief.md — Turnur non-goal: a first-party game as v1"
-  - "Sister turnur/product/insights.md — dual-sided attach; open Q 'First game pack on RiffSync'; no Turnur user feedback"
-  - "Sister riffsync/product/insights.md — no user demand signal; current motion is Figma redesign, not game attach"
-  - "gh issue list -R StacksOnTheRacks/riffle-poker --state all — empty; no PRs; README is a one-line title"
-  - "Shared GitHub project PVT_kwHOADqiOM4BWitQ — no riffle-poker items"
+  - "product/roadmap.md Next — operator-locked whiteboard merge"
+  - "playable-holdem-table #1–#9 Done; play-lab #19–#24 Done"
+  - "Sister riffsync Next includes Watch Party Game Mode as the matching host slice"
+  - "No demand interviews; queue is product-decision"
 implications:
-  - "Do not invent board tickets from this review — split via /forge.backlog-grooming"
-  - "Personas remain hypothesis from brief audience plus sister contracts; not research-validated"
-  - "First playable slice is initiative playable-holdem-table (HLD→LLD); demand for poker-in-room stays an open research question"
-  - "RiffSync redesign with no attach demand is not a reason to drop the beachhead"
+  - "Do not invent tickets from the Next queue — /forge.new-initiative first"
+  - "Complete NLHE Hand and Multi-Hand Session stay in-process rules; do not fork Turnur"
+  - "First Host Integration pairs with RiffSync Watch Party Game Mode; FRAME_ANCESTORS widen is that slice, not play-lab"
 ---
 
 Product-decision synthesis only. No interviews, feedback, experiments, competitive scan, or instrumentation exist for this product.

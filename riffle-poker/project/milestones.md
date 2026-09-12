@@ -1,11 +1,15 @@
 ---
 doc: project.milestones
 schema_version: 1
-updated: 2026-09-03
-active:
-  - "[Play lab](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2) — six tickets In Refinement: #19 host POST /v1/matches, #20 play iframe capability postMessage, #21 lab session orchestrator, #22 lab deal orchestrator, #23 first-party lab page (two /play iframes), #24 two seats complete a hand vs live Turnur. Host due date unset — do not invent one."
-upcoming: []
+updated: 2026-09-11
+active: []
+upcoming:
+  - "Artwork (Figma + Canva)"
+  - "Web Site"
+  - "Complete NLHE Hand (full rules)"
+  - "Multi-Hand Session"
+  - "First Host Integration (RiffSync)"
 slipped: []
 ---
 
-Projection of the host milestone. Shared project GalaxyClass Open Source. Board/SCM wins.
+Upcoming names are operator-locked Next outcomes — no host milestones until `/forge.new-initiative` then LLD grooming. Playable-holdem-table [milestone/1](https://github.com/StacksOnTheRacks/riffle-poker/milestone/1) and Play lab [milestone/2](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2) are closed/shipped. Board/SCM wins.

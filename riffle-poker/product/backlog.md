@@ -1,15 +1,9 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-04
+updated: 2026-09-11
 in_progress: []
-ready:
-  - "[#19 Host-facing POST /v1/matches wraps Turnur match.create](https://github.com/StacksOnTheRacks/riffle-poker/issues/19)"
-  - "[#20 Play iframe accepts host seat capability via postMessage](https://github.com/StacksOnTheRacks/riffle-poker/issues/20)"
-  - "[#21 Lab session orchestrator mints match, seats, bootstrap, and capabilities](https://github.com/StacksOnTheRacks/riffle-poker/issues/21)"
-  - "[#22 Lab deal orchestrator deals and opens betting for two seats](https://github.com/StacksOnTheRacks/riffle-poker/issues/22)"
-  - "[#23 First-party play lab page with two embedded /play iframes](https://github.com/StacksOnTheRacks/riffle-poker/issues/23)"
-  - "[#24 Two lab seats complete a hand against live Turnur](https://github.com/StacksOnTheRacks/riffle-poker/issues/24)"
+ready: []
 refinement: []
 blocked: []
 done:
@@ -22,11 +16,23 @@ done:
   - "[#7 Apply on-turn NLHE actions via Turnur turns and moves](https://github.com/StacksOnTheRacks/riffle-poker/issues/7)"
   - "[#8 Advance the public board through flop, turn, and river](https://github.com/StacksOnTheRacks/riffle-poker/issues/8)"
   - "[#9 Complete a hand by fold-to-one or non-all-in showdown](https://github.com/StacksOnTheRacks/riffle-poker/issues/9)"
+  - "[#19 Host-facing POST /v1/matches wraps Turnur match.create](https://github.com/StacksOnTheRacks/riffle-poker/issues/19)"
+  - "[#20 Play iframe accepts host seat capability via postMessage](https://github.com/StacksOnTheRacks/riffle-poker/issues/20)"
+  - "[#21 Lab session orchestrator mints match, seats, bootstrap, and capabilities](https://github.com/StacksOnTheRacks/riffle-poker/issues/21)"
+  - "[#22 Lab deal orchestrator deals and opens betting for two seats](https://github.com/StacksOnTheRacks/riffle-poker/issues/22)"
+  - "[#23 First-party play lab page with two embedded /play iframes](https://github.com/StacksOnTheRacks/riffle-poker/issues/23)"
+  - "[#24 Two lab seats complete a hand against live Turnur](https://github.com/StacksOnTheRacks/riffle-poker/issues/24)"
 icebox:
+  - "Artwork (Figma + Canva) (Next; /forge.new-initiative before tickets)"
+  - "Web Site (Next; /forge.new-initiative before tickets)"
+  - "Complete NLHE Hand (full rules) — side pots, all-in runout (Next; /forge.new-initiative before tickets)"
+  - "Multi-Hand Session (Next; /forge.new-initiative before tickets)"
+  - "First Host Integration (RiffSync) (Next; /forge.new-initiative before tickets)"
   - "Room-guest spectator view (public board only)"
+  - "Disconnect/rejoin via the host"
   - "Additional poker variants (Omaha, Stud, mixed)"
   - "Tournaments / sit-and-go"
   - "Standalone playable client (no host)"
 ---
 
-Board/SCM wins — playable-holdem-table #1–#9 closed (Done). Play-lab #19–#23 Ready (`ai-ready`); #24 Ready (`human-ready`) under [milestone/2](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
+Board/SCM wins — playable-holdem-table #1–#9 and play-lab #19–#24 closed (Done). Refinement empty. Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.

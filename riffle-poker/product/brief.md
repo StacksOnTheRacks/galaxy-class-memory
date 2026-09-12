@@ -1,7 +1,7 @@
 ---
 doc: product.brief
 schema_version: 2
-updated: 2026-09-02
+updated: 2026-09-11
 product_name: "Riffle Poker"
 product_description: "First-party poker game (Texas Hold'em default). Authenticates to Turnur with an SDK key and uses Turnur as the authoritative match backend for seats, turns, hidden views, the move log, and a signed result. A host (RiffSync first) attaches the match to a room. Gameplay and rules live here. Identity, chat, rooms, and media stay on the host. Repo: https://github.com/StacksOnTheRacks/riffle-poker"
 problem: "People in a host room want to play real poker together without the host building match authority, and without the game owning identity, chat, or rooms. Turnur is an authoritative turn-based engine that explicitly does not ship a first-party game as v1 — Riffle Poker is that game."
@@ -35,7 +35,7 @@ success_metrics:
     target: "Hole cards are visible only to the owning seat via Turnur hidden views"
   - metric: "Quantified targets"
     target: "TBD (greenfield; no instrumentation yet)"
-current_focus: "LLD for playable-holdem-table — nine Now-slice tickets are on Refinement under host milestone Playable no-limit Hold'em table. First playable NLHE table (play chips) on Turnur, iframe-attached from a host room (RiffSync first). Rules run in-process in the Riffle runtime; SDK key stays server-side; host-issued seat capability binds player↔match↔seat. Signed result, side pots, all-in runout, disconnect/rejoin, and spectator polish are out of this slice. Next: /forge.plan-refresh then /forge.refinement."
+current_focus: "Now: idle — play lab #19–#24 and playable-holdem-table #1–#9 shipped. Next (operator-locked, coarse outcomes): Artwork (Figma + Canva); Web Site; Complete NLHE Hand (full rules); Multi-Hand Session; First Host Integration (RiffSync). Do not invent tickets from the Next queue — /forge.new-initiative first."
 ---
 
 Repo: [github.com/StacksOnTheRacks/riffle-poker](https://github.com/StacksOnTheRacks/riffle-poker). Match backend: [Turnur](https://github.com/StacksOnTheRacks/turnur). First expected host: [RiffSync](https://github.com/StacksOnTheRacks/riffsync).
