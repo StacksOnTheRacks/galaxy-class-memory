@@ -24,7 +24,7 @@ soft_constraints:
   - "Host Chrome MV3 extension (ADR-001): bind room via party /room/:roomId (C1); host-bar owns Load Media / broadcast / transport; Watch Party Settings owns displayTitle, copy URL, visibility, share-quality preset; Next Up UI hidden this initiative; title change via host PATCH + media navigate (A1); JWT via SPA↔extension bridge (JWT A)"
   - "Extension allow-list is permissions tabs plus host_permissions for the public HTTP API origin only; SPA origins via content_scripts.matches only; Side Panel retired; never capture permissions under ADR-001"
   - "Figma redesign must not rename GA4 event names or CloudWatch RiffSync/Product Routes without an explicit metrics contract revision (docs/operations/product-metrics.md)"
-  - "Watch Party Game Mode attaches a game iframe; RiffSync stays host (identity, chat, rooms, media) and does not evaluate game rules or own match state"
+  - "Watch Party Game Mode attaches Riffle embed-mode (iframe link); RiffSync stays host (identity, chat, rooms, media) and does not evaluate game rules or own match state"
   - "A Discord surface is community/distribution, not a second SFU or catalog playback backend"
 out_of_bounds:
   - "Pirate CDN, scraped streams, or communal upload vault of copyrighted video"

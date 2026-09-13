@@ -23,7 +23,7 @@ Authoring (not validated):
 - Bump updated when any frontmatter field changes.
 -->
 
-First-party visual identity and poker artwork for Riffle Poker before host attach and public site. Covers card faces, backs, chips, felt/table chrome, and exportable brand assets in the dedicated Riffle Poker Figma file and Canva. Playable table and play-lab UI already exist with Alto9-template placeholders; this initiative replaces placeholder art with a coherent Riffle look without changing gameplay rules, Turnur integration, or host contracts.
+First-party visual identity and poker artwork for Riffle Poker before public site and embed-mode launch. Covers card faces, backs, chips, felt/table chrome, and exportable brand assets in the dedicated Riffle Poker Figma file and Canva. Playable table and play-lab UI already exist with Alto9-template placeholders; this initiative replaces placeholder art with a coherent Riffle look without changing gameplay rules or match architecture.
 
 Locked for this initiative:
 - **Scope:** artwork and visual identity assets — not new gameplay, not RiffSync attach, not a public marketing site (Web Site is a separate Next item)

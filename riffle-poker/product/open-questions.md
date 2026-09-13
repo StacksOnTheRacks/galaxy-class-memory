@@ -3,6 +3,41 @@ doc: product.open_questions_index
 schema_version: 1
 updated: 2026-09-12
 items:
+  - initiative: standalone-play-and-embed
+    id: identity-mechanism
+    question: "Standalone identity mechanism — first-party auth vs Cognito vs other?"
+    blocking: true
+    status: open
+  - initiative: standalone-play-and-embed
+    id: anonymous-session
+    question: "How does anonymous play bind a seat/session without an account?"
+    blocking: true
+    status: open
+  - initiative: standalone-play-and-embed
+    id: embed-link-shape
+    question: "Embed-mode link shape — shared iframe URL vs today's host mint/redeem bootstrap?"
+    blocking: true
+    status: open
+  - initiative: standalone-play-and-embed
+    id: ws-client-locus
+    question: "WebSocket client locus — browser connects to Riffle WS vs server-only orchestrator?"
+    blocking: true
+    status: open
+  - initiative: standalone-play-and-embed
+    id: runtime-hosting
+    question: "Where does Riffle runtime host (process/platform/IaC)?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: play-lab-fate
+    question: "Fate of Turnur-backed play-lab harness — keep, rewrite, or retire?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: turnur-code-migration
+    question: "Migration strategy for shipped Turnur-backed paths — wrap, replace in place, or freeze?"
+    blocking: false
+    status: open
   - initiative: play-lab
     id: lab-runtime-hosting
     question: "Where is the play lab and Riffle runtime served for a human operator (local process only vs a deployed lab URL)?"
@@ -15,9 +50,9 @@ items:
     status: open
   - initiative: playable-holdem-table
     id: runtime-hosting
-    question: "Where does Riffle runtime host (process/platform)? Undecided; non-blocking while iframe + in-process library + server-side SDK key hold."
+    question: "Where does Riffle runtime host (process/platform)? Superseded by standalone-play-and-embed runtime-hosting."
     blocking: false
-    status: open
+    status: deferred
   - initiative: artwork
     id: figma-pages-state
     question: "Figma MCP shows Cover-only Alto9 template; do Screens/Flows pages from design/screens.md need rebuild or is MCP access stale?"
@@ -40,25 +75,17 @@ items:
     status: open
   - initiative: integrate-turnur-websockets
     id: turnur-ws-shipping
-    question: "Track Turnur milestone/4 (#44–#49); Riffle LLD grooming may proceed; implement-ticket blocked until Turnur integrate-websockets ships."
+    question: "Superseded — Turnur mothballed; initiative abandoned."
     blocking: false
     status: deferred
   - initiative: integrate-turnur-websockets
     id: ws-reconnect-backoff
-    question: "Reconnect and resubscribe backoff policy when Turnur WS disconnects mid-hand?"
+    question: "Superseded — Turnur mothballed; initiative abandoned."
     blocking: false
-    status: open
+    status: deferred
   - initiative: integrate-turnur-websockets
     id: ws-event-wait-timeout
-    question: "Default timeout before poll fallback after HTTP mutation when expected push does not arrive?"
+    question: "Superseded — Turnur mothballed; initiative abandoned."
     blocking: false
-    status: open
+    status: deferred
 ---
-
-<!--
-Authoring (not validated):
-- Rollup of initiatives/*/open-questions.md for /forge.initiative-planning.
-- items: [{ initiative, id, question, blocking, status }]
-- Maintained by open-questions-rollup skill — do not hand-edit as SoT.
-- Bump updated when any frontmatter field changes.
--->

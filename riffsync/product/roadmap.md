@@ -12,7 +12,7 @@ themes:
   - "Official hostless Live hangouts (staff-bound YouTube live) — shipped baseline"
   - "Product observability (GA4 + CloudWatch business metrics)"
   - "Figma-driven UI redesign (incremental adoption)"
-  - "Watch-party game mode — host attaches a turn-based game (Riffle / Turnur) without becoming match authority"
+  - "Watch-party game mode — host attaches Riffle embed-mode (iframe link) without becoming match authority"
   - "Discord as a community surface — not a second media plane"
 now:
   - "Treat site-redesign (#445–#452 closed 2026-09-08), first-party-fan-auth (#461–#465 closed 2026-09-11), Chromecast, PWA, catalog playback host, friends/DM, catalog browse IA, public SEO packaging, Official Live, TV client, product metrics baseline (#437–#440), and MV3 host extension MVP (#426–#431) as live product baseline (board Done / closed), not open delivery risk"
@@ -21,7 +21,7 @@ next:
   - "Host Bar Room Control — Settings replaces Share on the host theater bar; Watch Party Settings consolidates name, URL, visibility, and share quality; Room panel and playlist removed (HLD; no tickets yet)"
   - "Finish the Host Chrome Extension"
   - "Develop a Discord App"
-  - "Watch Party Game Mode — attach Riffle/Turnur play in a room; identity, chat, rooms, and media stay on RiffSync"
+  - "Watch Party Game Mode — attach Riffle embed-mode in a room; Riffle owns match and rules; identity, chat, rooms, and media stay on RiffSync"
 later:
   - "Live maturity follow-ons (Cast on Live viewer-local, multi-channel hub) — demand-gated after first metrics read"
   - "Federated host login and deeper staff catalog/ops tooling beyond current admin baseline"

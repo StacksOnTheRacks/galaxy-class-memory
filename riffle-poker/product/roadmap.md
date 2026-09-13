@@ -1,35 +1,33 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-09-11
+updated: 2026-09-12
 themes:
-  - "First-party poker game pack: gameplay and rules live here"
-  - "Turnur as the authoritative match backend (seats, turns, hidden views, move log, signed result)"
-  - "Host-attached play (RiffSync first); identity, chat, rooms, and media stay on the host"
+  - "Standalone poker app: account or anonymous play"
+  - "Riffle-owned match state and WebSockets"
+  - "Embed-mode for hosts (RiffSync first)"
   - "Texas Hold'em as the v1 ruleset"
   - "Play-chip social play — no cashier, rake, or real money"
-  - "First-party visual identity and public site before host attach"
-now: []
+  - "First-party visual identity and public site"
+now:
+  - "Standalone play and embed — HLD (initiative standalone-play-and-embed)"
 next:
   - "Artwork (Figma + Canva)"
   - "Web Site"
   - "Complete NLHE Hand (full rules) — side pots, all-in runout, and remaining legal play beyond fold-to-one / non-all-in showdown"
   - "Multi-Hand Session"
-  - "First Host Integration (RiffSync) — seat claim from the room; FRAME_ANCESTORS for the host origin"
 later:
   - "Room-guest spectator view (public board only)"
-  - "Disconnect/rejoin via the host"
+  - "Disconnect/rejoin"
   - "Additional poker variants (Omaha, Stud, mixed)"
   - "Tournaments / sit-and-go"
-  - "Additional host platforms beyond RiffSync"
-  - "Standalone playable client if demand exists after host-attached play works"
+  - "Additional embed hosts beyond RiffSync"
 not_planning:
   - "Real money, rake, cashier, or KYC"
-  - "Player or host identity, chat, rooms, or media on Riffle"
-  - "Replacing Turnur as match authority"
-  - "Becoming a social, lobby, or watch-party product"
+  - "Turnur as match authority or developer platform GTM"
+  - "Becoming a social, lobby, watch-party, chat, or SFU product"
   - "A poker study, HUD, or solver product as v1"
-  - "Copying RiffSync's Cognito, chat, or SFU/TURN stacks"
+  - "Copying RiffSync's Cognito, chat, or SFU/TURN stacks wholesale"
 ---
 
-Next items are operator-locked coarse outcomes — `/forge.new-initiative` before tickets. Playable-holdem-table #1–#9 and play-lab #19–#24 are shipped. No executing Now slice.
+Next items are operator-locked coarse outcomes — `/forge.new-initiative` before tickets. Playable-holdem-table #1–#9 and play-lab #19–#24 shipped (Turnur-backed; historical). integrate-turnur-websockets #31–#35 abandoned (Turnur mothballed).

@@ -1,38 +1,29 @@
 ---
 doc: product.brief
 schema_version: 2
-updated: 2026-09-11
+updated: 2026-09-12
 product_name: "Turnur"
-product_description: "Authoritative turn-based match engine. Hosts attach a match; Turnur owns seats, turns, hidden views, the move log, and a signed result. A host (RiffSync or anything like it) loads a game into a room; users join the game; the game authenticates to Turnur with an SDK key and uses Turnur as the backend state provider. Games supply gameplay and rules. Identity, chat, rooms, and media stay on the host. Turnur authenticates games, not players. Repo: https://github.com/StacksOnTheRacks/turnur"
-problem: "Host platforms want to attach turn-based games to rooms without building authoritative match state in-house. Game developers need seat-scoped hidden views, turn validation, and a signed move log without rolling a custom backend or adopting full-stack platforms that own player identity, chat, and matchmaking."
+product_description: "Authoritative turn-based match engine (mothballed). Shipped: control plane, game SDK-key auth, host attach, and match authority primitives (seats, turns, hidden views, move log). Operator mothballed Turnur 2026-09-12 — not a developer platform GTM. Riffle Poker absorbs match state for new work. Repo: https://github.com/StacksOnTheRacks/turnur"
+problem: "Historical: host platforms wanted turn-based match state without building in-house. Operator decided Riffle owns match state; Turnur is dormant."
 audience:
-  - "Turn-based game developers integrating Turnur as the authoritative match backend"
-  - "Host platforms attaching turn-based play to rooms while keeping identity, chat, and media (RiffSync first beachhead)"
-  - "Not for end players, real-time/action games, social hosts expecting identity or chat from Turnur, or buyers of a turnkey first-party game"
+  - "Historical — turn-based game developers (no active GTM)"
+  - "Not for new integrators — Riffle is the product"
 goals:
-  - "A running control plane: TypeScript, Node 22, AWS CDK, API Gateway HTTP + Lambda"
-  - "GET /v1/health proves the application is up (synth locally; optional deploy)"
-  - "After the plane is up: a game authenticates with an SDK key; Turnur authenticates games, not players"
-  - "After auth: a host can attach a match; Turnur owns seats, turns, hidden views, the move log, and a signed result"
-  - "Host-agnostic attach path: RiffSync is the first expected host, not the only one"
-  - "Identity, chat, rooms, and media stay on the host"
+  - "Shipped: TypeScript, Node 22, AWS CDK, API Gateway HTTP + Lambda control plane"
+  - "Shipped: game SDK-key authentication"
+  - "Shipped: match authority primitives (#29–#35)"
 non_goals:
+  - "Third-party developer platform GTM (mothballed)"
+  - "WebSocket notify slice (abandoned #44–#49)"
+  - "Riffle as an active Turnur consumer for new work"
   - "Player or host identity on Turnur"
-  - "A first-party game as v1"
   - "Chat, rooms, presence, or media/playback"
-  - "Real-time / action games (not turn-based)"
-  - "Copying RiffSync's Cognito, CloudFront SPA, WebSocket chat, or SFU/TURN stacks"
-  - "Deciding how a signed result is verified (crypto vs transport) as a first-goal"
 success_metrics:
-  - metric: "CDK synth"
-    target: "cdk synth succeeds for the Turnur API stack"
-  - metric: "Health endpoint"
-    target: "GET /v1/health returns ok from the Lambda (and from a deployed URL if operators deploy)"
-  - metric: "Game authentication"
-    target: "After auth slice: a game with a valid SDK key can authenticate; missing or invalid keys are rejected"
-  - metric: "Quantified targets"
-    target: "TBD (greenfield; no instrumentation yet)"
-current_focus: "Now: idle — match authority primitives #29–#35 shipped. Next intake: /forge.new-initiative for Integrate WebSockets (examine; play-lab latency). Operator-locked coarse outcomes after that: Signed result; Authoritative writes. Do not invent tickets from the Next queue."
+  - metric: "Product status"
+    target: "Mothballed — no new delivery unless operator unmothballs"
+  - metric: "Shipped baseline"
+    target: "Control plane, game auth, host attach, match primitives remain in repo"
+current_focus: "Mothballed (2026-09-12). No new delivery. Shipped code remains in repo. Unmothball only if operator adds a second game or external integrator."
 ---
 
-Repo: [github.com/StacksOnTheRacks/turnur](https://github.com/StacksOnTheRacks/turnur). First expected host: [RiffSync](https://github.com/StacksOnTheRacks/riffsync).
+Repo: [github.com/StacksOnTheRacks/turnur](https://github.com/StacksOnTheRacks/turnur). Sister product Riffle Poker owns match state for new work.

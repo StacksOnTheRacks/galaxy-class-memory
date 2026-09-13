@@ -3,7 +3,7 @@ doc: product.initiative
 schema_version: 1
 updated: 2026-09-12
 slug: integrate-turnur-websockets
-title: "Integrate Turnur WebSockets — server-side notify for match orchestrators"
+title: "Mothballed — Integrate Turnur WebSockets — server-side notify for match orchestrators"
 status: lld
 user_facing: false
 signoffs:
@@ -13,38 +13,13 @@ signoffs:
   security: true
 board_milestone: "[Integrate Turnur WebSockets](https://github.com/StacksOnTheRacks/riffle-poker/milestone/3)"
 board_tickets:
-  - "[#31 Add TURNUR_WS_URL env gate and Turnur WS client factory](https://github.com/StacksOnTheRacks/riffle-poker/issues/31)"
-  - "[#32 Add match subscription registry and waitForMatchEvent](https://github.com/StacksOnTheRacks/riffle-poker/issues/32)"
-  - "[#33 Wire play-lab session to subscribe server-side on match attach](https://github.com/StacksOnTheRacks/riffle-poker/issues/33)"
-  - "[#34 Refactor submit and advance post-mutation polls to WS notify](https://github.com/StacksOnTheRacks/riffle-poker/issues/34)"
-  - "[#35 Refactor remaining orchestration poll sites and verify poll reduction](https://github.com/StacksOnTheRacks/riffle-poker/issues/35)"
+  - "[#31 Add TURNUR_WS_URL env gate and Turnur WS client factory](https://github.com/StacksOnTheRacks/riffle-poker/issues/31) — closed not planned"
+  - "[#32 Add match subscription registry and waitForMatchEvent](https://github.com/StacksOnTheRacks/riffle-poker/issues/32) — closed not planned"
+  - "[#33 Wire play-lab session to subscribe server-side on match attach](https://github.com/StacksOnTheRacks/riffle-poker/issues/33) — closed not planned"
+  - "[#34 Refactor submit and advance post-mutation polls to WS notify](https://github.com/StacksOnTheRacks/riffle-poker/issues/34) — closed not planned"
+  - "[#35 Refactor remaining orchestration poll sites and verify poll reduction](https://github.com/StacksOnTheRacks/riffle-poker/issues/35) — closed not planned"
 ---
 
-<!--
-Authoring (not validated):
-- status: intake | hld | lld | executing | shipped
-- signoffs: true | false | "na" (designer "na" when not user-facing)
-- board_tickets: issue id/title strings after LLD grooming
-- Bump updated when any frontmatter field changes.
--->
+**Do not groom. Superseded by Riffle standalone-play-and-embed. Turnur is mothballed.**
 
-Play-lab and shared server paths poll Turnur HTTP after every mutation — operator-visible latency during seated play. Turnur is building a WebSocket notify channel (integrate-websockets #44–#49); this initiative adopts it on the Riffle runtime so server-side orchestrators react to push events instead of blind poll-after-every-move loops.
-
-**Problem:** Play-lab and shared server paths poll Turnur HTTP after every mutation (`submit.ts`, `advance.ts`, `public.ts`, and related hand/table modules) — operator-visible latency during seated play.
-
-**Approach:** Riffle runtime holds `TURNUR_SDK_KEY` server-side; subscribe to match events via Turnur `createTurnurWsClient`; on `move.accepted`, `turn.designated`, `seat.created`, `view.updated` — refresh local state with targeted HTTP reads only when needed (not blind poll loops).
-
-Locked for this initiative:
-- Server-side integrator only — **no browser WebSocket**, no SDK key in lab page or `/play` iframes (matches Turnur security constraint)
-- HTTP mutations unchanged — WS does not replace POST/PUT authority
-- **`TURNUR_WS_URL` optional** — when unset, retain today's HTTP poll paths (CI fake Turnur unchanged)
-- Play-lab session lifecycle owns subscribe/unsubscribe per `matchId`; shared hand orchestration modules (`submit.ts`, `advance.ts`, `complete.ts`, `open.ts`, `table/*`) refactored in the same slice — not a lab-only fork
-- **Hard dependency** on Turnur milestone [#44–#49](https://github.com/StacksOnTheRacks/turnur/milestone/4) shipping
-
-Out of scope:
-- Player-facing realtime UI
-- Host (RiffSync) WebSocket
-- Replacing Turnur HTTP client
-- Tournaments / multi-hand scope creep
-
-Success bar: With `TURNUR_WS_URL` configured, a two-seat play-lab hand completes with measurably fewer post-mutation HTTP round-trips than the poll-only baseline; orchestrator reacts to Turnur push events and falls back to HTTP when push is missed.
+Historical HLD only. Operator abandoned this initiative 2026-09-12. Riffle will own match state and WebSockets as a standalone app (accounts or anonymous) plus embed-mode. Tickets #31–#35 closed not planned; milestone/3 closed.

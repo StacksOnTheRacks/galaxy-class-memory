@@ -14,16 +14,10 @@ questions:
     status: deferred
     owner: architect
   - id: ws-apigw-access-log-redaction
-    question: "API Gateway WebSocket $connect uses ?token=. Confirm LLD mechanism so access logs and CloudWatch never emit the query string (omit access logging vs custom format without query variables). Not an ALB question — Turnur is APIGW WS."
+    question: "API Gateway WebSocket $connect uses ?token=. Confirm LLD mechanism so access logs and CloudWatch never emit the query string."
     blocking: false
-    status: open
+    status: deferred
     owner: security
 ---
 
-<!--
-Authoring (not validated):
-- questions: [{ id, question, blocking, status, owner }]
-- status: open | answered | deferred
-- Remove answered items; defer with status deferred rather than deleting if still relevant.
-- Bump updated when any frontmatter field changes.
--->
+Superseded — Turnur mothballed. Initiative abandoned — do not groom.

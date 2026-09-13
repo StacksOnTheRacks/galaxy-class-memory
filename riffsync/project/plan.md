@@ -22,7 +22,7 @@ sequence:
 dependencies:
   - "Board/SCM wins: zero open issues; milestones #38 and #39 closed on host"
   - "Each host initiative gets one host milestone at LLD grooming — do not combine"
-  - "Watch Party Game Mode still depends on Riffle origin + Turnur match authority, not on RiffSync owning rules"
+  - "Watch Party Game Mode depends on Riffle embed-mode (iframe link); Riffle owns match and rules; RiffSync does not own rules"
   - "Metrics baseline (#437–#440) Done; first operational GA4/CloudWatch read still pending"
 handoffs:
   - "/forge.plan-refresh — sequence #471, #472, #473"

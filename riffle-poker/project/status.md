@@ -2,13 +2,11 @@
 doc: project.status
 schema_version: 1
 updated: 2026-09-12
-summary: "integrate-turnur-websockets LLD groomed — #31–#35 on Refinement (milestone/3). Artwork lld ungroomed. Implement WS blocked on Turnur #44–#49."
+summary: "Operator pivot: Turnur mothballed. integrate-turnur-websockets #31–#35 closed not planned. Now: standalone-play-and-embed HLD. Artwork lld ungroomed."
 in_flight: []
-blockers:
-  - "integrate-turnur-websockets implement-ticket blocked until Turnur #44–#49 ships"
+blockers: []
 next_up:
-  - "/forge.plan-refresh for integrate-turnur-websockets"
-  - "/forge.refinement on #31–#35"
+  - "/forge.initiative-design on standalone-play-and-embed"
   - "/forge.backlog-grooming for artwork (operator-locked Next, lld)"
 asks: []
 ---

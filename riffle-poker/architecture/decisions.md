@@ -1,13 +1,17 @@
 ---
 doc: architecture.decisions
 schema_version: 1
-updated: 2026-09-03
+updated: 2026-09-12
 active_decisions:
-  - "ADR-iframe-embed — Host embed = iframe at Riffle origin; opaque match/room context; identity stays on host"
-  - "ADR-rules-in-process — Rules = in-process library in Riffle runtime; SDK key server-side only; path Host→iframe→runtime→rules→@turnur/sdk→Turnur"
-  - "ADR-host-seat-capability — Host issues opaque 15m seat capability (player↔match↔seat) via POST /v1/seats/capability/mint (Bearer RIFFLE_HOST_API_KEY); 32-byte CSPRNG, SHA-256 ledger, claims jti/matchId/seatId/playerSubject/iat/exp/purpose=seat; client presents X-Riffle-Seat-Capability; requireSeatCapability verifies before seat-scoped Turnur ops; reusable until expiry; host remints; postMessage is pipe not authority; riffle_play is not sufficient"
-  - "ADR-host-iframe-bootstrap — Opaque short-lived bootstrap token; host mints at Riffle via Bearer RIFFLE_HOST_API_KEY; play URL fragment #bt=; 60s one-time redeem; HttpOnly riffle_play cookie 1h for reload; seat capability separate channel; SDK key never in browser; signed-URL / postMessage-only / third-party-cookie session not primary"
-  - "ADR-dealer-shoe — Remaining deck+burns persist as Turnur view { kind: dealer_shoe, deckRemaining, burns } on one runtime-created system seat; not a player HoleView; not a public DTO or move field; not a Riffle HandState ledger. Public board is street_deal { street, board } only. Street deal continues the action request. #8."
-  - "ADR-play-lab-harness — First-party same-origin GET /lab implements the host contract. Server orchestrator (not the browser) creates the Turnur match via host-facing POST /v1/matches / client.match.create, sequences existing host APIs (seats, bootstrap mint, capability mint, deal, betting/open), and returns playUrls + capability tokens to the lab page. Lab page embeds two /play iframes and postMessages capabilities (pipe not authority). Browser never holds host key or SDK key. FRAME_ANCESTORS stays 'self'. Not a lobby/identity/rooms product. CI stays fake-Turnur."
-superseded: []
+  - "ADR-riffle-owned-match — Riffle owns match state and WebSocket notify for new work. Turnur mothballed. Status: Accepted (operator pivot 2026-09-12)."
+  - "ADR-standalone-identity — Standalone play supports account or anonymous session. Mechanism TBD in standalone-play-and-embed HLD. Status: Proposed."
+  - "ADR-embed-mode — Host attaches via shared iframe link at Riffle origin; host keeps chat, rooms, media. Link shape TBD in HLD. Status: Proposed."
+  - "ADR-rules-in-process — Rules = in-process NLHE library in Riffle runtime. Status: Accepted (carried forward from Turnur era)."
+  - "ADR-iframe-embed — Embed play surface = iframe at Riffle origin. Status: Accepted (carried forward; link mint/redeem may change in HLD)."
+superseded:
+  - "ADR-rules-in-process (Turnur path) — Runtime called @turnur/sdk for match authority. Superseded by ADR-riffle-owned-match."
+  - "ADR-host-seat-capability — Host issued opaque seat capability via RIFFLE_HOST_API_KEY for Turnur-era embed. Superseded pending embed-mode HLD."
+  - "ADR-host-iframe-bootstrap — Opaque bootstrap token mint/redeem for Turnur-era embed. Superseded pending embed-mode HLD."
+  - "ADR-dealer-shoe — dealer_shoe on Turnur system seat. Superseded pending Riffle-owned match migration."
+  - "ADR-play-lab-harness — Turnur-backed lab orchestrator. Superseded pending play-lab fate in HLD."
 ---

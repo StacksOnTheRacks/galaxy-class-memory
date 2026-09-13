@@ -11,21 +11,13 @@ questions:
   - id: ws-reconnect-backoff
     question: "Reconnect and resubscribe backoff policy when Turnur WS disconnects mid-hand?"
     blocking: false
-    status: open
+    status: deferred
     owner: architect
   - id: ws-event-wait-timeout
     question: "Default timeout before poll fallback after HTTP mutation when expected push does not arrive?"
     blocking: false
-    status: open
+    status: deferred
     owner: architect
 ---
 
-<!--
-Authoring (not validated):
-- questions: [{ id, question, blocking, status, owner }]
-- status: open | answered | deferred
-- Remove answered items; defer with status deferred rather than deleting if still relevant.
-- Bump updated when any frontmatter field changes.
--->
-
-Answered in HLD (removed from list): turnur-ws-url-config (TURNUR_WS_URL env from Turnur stack output); play-lab-vs-table-scope (lab owns subscribe lifecycle; shared orchestration modules in same slice); notify-vs-read-strategy (event→HTTP matrix locked in spec.md).
+Superseded by standalone-play-and-embed. Initiative mothballed — do not groom.

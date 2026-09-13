@@ -1,16 +1,15 @@
 ---
 doc: project.risks
 schema_version: 1
-updated: 2026-09-11
+updated: 2026-09-12
 risks:
-  - "Play-lab latency may push WebSockets ahead of a locked transport ADR — examine first, do not copy RiffSync chat/SFU stacks"
+  - "Mothballed repo drift — shipped Turnur code may diverge from Riffle migration without maintenance"
 issues: []
 dependencies:
-  - "Primitives #29–#35 shipped (PRs #36–#42); WebSockets examine gate is open — /forge.new-initiative, not LLD or tickets"
-  - "Signed result and authoritative writes wait on /forge.new-initiative after primitives"
+  - "Riffle standalone-play-and-embed may reuse or reimplement Turnur patterns — no Turnur delivery required"
 assumptions:
-  - "HTTP remains authority until an ADR locks a push channel"
-  - "Next queue is operator-locked; do not invent tickets from Icebox"
+  - "Operator will not unmothball without explicit decision"
+  - "Shipped HTTP match authority API remains in repo as reference"
 ---
 
 See `architecture/risks.md` and `security/threat-model.md` as the stack grows.

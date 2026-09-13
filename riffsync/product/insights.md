@@ -5,10 +5,10 @@ updated: 2026-09-11
 themes:
   - "Operator-locked Next initiative queue: Host Header Layout Fix (first); Host Bar Room Control; Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode"
   - "Now empty — site-redesign and first-party fan auth shipped Done; pipeline idle until next initiative intake"
-  - "Watch Party Game Mode is the RiffSync side of Riffle First Host Integration and Turnur match authority — RiffSync stays host, not match engine"
+  - "Watch Party Game Mode is the RiffSync side of Riffle embed-mode — Riffle owns match and rules; RiffSync stays host, not match engine"
   - "Product metrics baseline shipped; first /forge.metrics-review read still informs Later Live follow-ons only"
 open_questions:
-  - "Does Watch Party Game Mode wait on Riffle First Host Integration, or can RiffSync ship host chrome first?"
+  - "Does Watch Party Game Mode wait on Riffle standalone-play-and-embed HLD, or can RiffSync ship host chrome first?"
   - "Is Discord a watch-party host, a community bot, or both?"
 evidence:
   - "product/roadmap.md Next — operator-locked whiteboard merge"

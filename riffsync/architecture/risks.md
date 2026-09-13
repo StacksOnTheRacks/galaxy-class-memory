@@ -1,7 +1,7 @@
 ---
 doc: architecture.risks
 schema_version: 1
-updated: 2026-08-25
+updated: 2026-09-11
 structural_risks:
   - "Host Chrome MV3 extension MVP shipped unpacked; Web Store review, distribution packaging, host_permissions / tabs APIs, SPA↔extension JWT bridge trust boundaries, and service-worker lifetime remain unvalidated and could force UX redesign even without media capture APIs"
   - "Navigating a media tab without activating it depends on MV3 tab focus behavior; regressions could steal party-tab focus and reintroduce open-source-tab friction"
@@ -19,4 +19,7 @@ watch_list:
   - "C1 bind failures (not on /room/:roomId) surface clearly; no silent wrong-room PATCH"
   - "Orthogonality to viewer-local Cast and hostless Live (no shared media-plane coupling via the extension)"
   - "Post-ship metrics read — validate GA4 + RiffSync/Product dashboard before demand-gating Live follow-ons"
+  - "Watch Party Game Mode must not make RiffSync match authority; Riffle owns match state and rules"
+  - "Discord App must not become a media plane, capture source, or piracy vault"
+  - "Finish the Host Chrome Extension stays under ADR-001 (no tabCapture / extension-supplied host_screen)"
 ---
