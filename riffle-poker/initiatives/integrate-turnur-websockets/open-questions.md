@@ -4,9 +4,9 @@ schema_version: 1
 updated: 2026-09-12
 questions:
   - id: turnur-ws-shipping
-    question: "Turnur integrate-websockets (#44–#49) must ship before Riffle adoption — track milestone status?"
-    blocking: true
-    status: open
+    question: "Track Turnur milestone/4 (#44–#49); Riffle LLD grooming may proceed; implement-ticket blocked until Turnur integrate-websockets ships."
+    blocking: false
+    status: deferred
     owner: architect
   - id: ws-reconnect-backoff
     question: "Reconnect and resubscribe backoff policy when Turnur WS disconnects mid-hand?"

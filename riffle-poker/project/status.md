@@ -1,12 +1,13 @@
 ---
 doc: project.status
 schema_version: 1
-updated: 2026-09-11
-summary: "Playable-holdem-table #1–#9 and play lab #19–#24 shipped. 0 open issues. Operator-locked Next queue starts at Artwork via /forge.new-initiative."
+updated: 2026-09-12
+summary: "Artwork and integrate-turnur-websockets HLD signed off → LLD. Playable-holdem-table #1–#9 and play lab #19–#24 shipped. 0 open issues."
 in_flight: []
 blockers: []
 next_up:
-  - "Product → /forge.new-initiative on Artwork (Figma + Canva)"
+  - "/forge.backlog-grooming for artwork (operator-locked Next)"
+  - "/forge.backlog-grooming for integrate-turnur-websockets (implement blocked on Turnur #44–#49)"
 asks: []
 ---
 
