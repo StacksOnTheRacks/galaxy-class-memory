@@ -11,8 +11,14 @@ signoffs:
   architect: true
   designer: "na"
   security: true
-board_milestone: ""
-board_tickets: []
+board_milestone: "[Integrate WebSockets](https://github.com/StacksOnTheRacks/turnur/milestone/4)"
+board_tickets:
+  - "[#44 Add ConnectionRegistry and WebSocket connect/disconnect to TurnurApi stack](https://github.com/StacksOnTheRacks/turnur/issues/44)"
+  - "[#45 Add WebSocket subscribe handler with match ownership gate](https://github.com/StacksOnTheRacks/turnur/issues/45)"
+  - "[#46 Add publish-match-event module and seat.created fanout](https://github.com/StacksOnTheRacks/turnur/issues/46)"
+  - "[#47 Wire remaining WebSocket mutation publishers](https://github.com/StacksOnTheRacks/turnur/issues/47)"
+  - "[#48 Add createTurnurWsClient to TypeScript SDK](https://github.com/StacksOnTheRacks/turnur/issues/48)"
+  - "[#49 Document WebSocket notify channel for integrators](https://github.com/StacksOnTheRacks/turnur/issues/49)"
 ---
 
 <!--

@@ -1,10 +1,10 @@
 ---
 doc: project.milestones
 schema_version: 1
-updated: 2026-09-11
-active: []
+updated: 2026-09-12
+active:
+  - "[Integrate WebSockets](https://github.com/StacksOnTheRacks/turnur/milestone/4) — #44–#49 in Refinement"
 upcoming:
-  - "Integrate WebSockets (examine; play-lab latency) — no host milestone until /forge.new-initiative"
   - "Signed result"
   - "Authoritative writes"
 slipped: []

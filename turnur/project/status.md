@@ -2,11 +2,12 @@
 doc: project.status
 schema_version: 1
 updated: 2026-09-12
-summary: "integrate-websockets HLD complete — status lld (all sign-offs green). Board idle — zero OPEN issues."
+summary: "integrate-websockets groomed — six tickets (#44–#49) on Refinement under milestone/4."
 in_flight: []
 blockers: []
 next_up:
-  - "/forge.backlog-grooming — integrate-websockets (slice HLD spec into Refinement tickets; do not invent tickets here)"
+  - "/forge.plan-refresh — sequence integrate-websockets tickets #44–#49"
+  - "/forge.refinement — compile ticket .feature files → Ready + tech spec"
 asks: []
 ---
 
