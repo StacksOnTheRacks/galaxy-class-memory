@@ -32,7 +32,7 @@ icebox:
   - "Web Site (Next; /forge.new-initiative before tickets)"
   - "Complete NLHE Hand (full rules) — side pots, all-in runout (Next; /forge.new-initiative before tickets)"
   - "Multi-Hand Session (Next; /forge.new-initiative before tickets)"
-  - "Embed-mode host integration — lives on standalone-play-and-embed HLD; RiffSync Watch Party Game Mode is the first host"
+  - "Embed-mode host integration — lives on standalone-play-and-embed LLD; RiffSync Watch Party Game Mode is the first host"
   - "Room-guest spectator view (public board only)"
   - "Disconnect/rejoin"
   - "Additional poker variants (Omaha, Stud, mixed)"

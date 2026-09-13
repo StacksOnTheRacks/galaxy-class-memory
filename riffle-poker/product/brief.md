@@ -33,7 +33,7 @@ success_metrics:
     target: "Hole cards visible only to the owning seat"
   - metric: "Quantified targets"
     target: "TBD (greenfield; no instrumentation yet)"
-current_focus: "Now: standalone-play-and-embed HLD (operator pivot — Turnur mothballed). Shipped: playable-holdem-table #1–#9, play-lab #19–#24 (Turnur-backed; historical). Next (operator-locked): Artwork; Web Site; Complete NLHE Hand; Multi-Hand Session."
+current_focus: "Now: standalone-play-and-embed LLD (/forge.backlog-grooming). Shipped: playable-holdem-table #1–#9, play-lab #19–#24 (Turnur-backed; historical). Next (operator-locked): Artwork; Web Site; Complete NLHE Hand; Multi-Hand Session."
 ---
 
 Repo: [github.com/StacksOnTheRacks/riffle-poker](https://github.com/StacksOnTheRacks/riffle-poker). First expected embed host: [RiffSync](https://github.com/StacksOnTheRacks/riffsync). Turnur mothballed — not a live dependency for new work.

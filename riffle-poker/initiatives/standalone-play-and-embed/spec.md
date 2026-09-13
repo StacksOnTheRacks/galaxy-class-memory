@@ -3,12 +3,12 @@ doc: product.initiative_spec
 schema_version: 1
 updated: 2026-09-12
 summary: "Standalone NLHE app plus host embed of the same Riffle-origin play surface. Riffle owns first-party identity (account or anonymous session), match state (seats, turns, hidden views, move log), in-process rules, and browser WebSocket notify. Host (RiffSync first) loads a shared play URL in an iframe and keeps chat, rooms, media, and room identity — host is not match or seat authority. Guests self-sit via Sit at Table with a Riffle anonymous session when unauthenticated. Shipped Turnur-backed host HTTP (mint/redeem, seat capability, @turnur/sdk) is frozen historical code; new work does not wrap or extend it."
-approach: "Replace Turnur as match authority with a Riffle MatchStore in the existing Hono/TypeScript runtime. Carry forward the in-process NLHE library and /play UI. First-party Riffle sessions (not Cognito): HttpOnly session cookie or equivalent; playerSubject is account id or anon:{jti}. Sit at Table binds occupant; display name is seat-visible metadata, not identity. Primary attach is a shared play URL ({publicOrigin}/play/{matchId} or join-code alias) used by standalone navigation and host iframe.src alike — no #bt= fragment for new work. Browsers connect to Riffle WS for notify-only public table events; HTTP mutations stay authoritative; hole cards stay on seat-scoped HTTP. Freeze shipped Bearer RIFFLE_HOST_API_KEY routes and vendor/turnur-sdk; new modules (identity/, match-store/, ws/). Play-lab: rewrite against MatchStore + shared URLs + anonymous lab subjects, or retire. Runtime hosting / durable persistence remain non-blocking (process-local store is enough to start)."
+approach: "Replace Turnur as match authority with a Riffle MatchStore in the existing Hono/TypeScript runtime. Carry forward the in-process NLHE library and /play UI. First-party Riffle sessions (not Cognito): bearer Authorization (or equivalent) on standalone and embed; no ambient cookie. playerSubject is account id or anon:{jti}. Sit at Table binds occupant; display name is seat-visible metadata, not identity. Primary attach is a shared play URL ({publicOrigin}/play/{matchId} or join-code alias) used by standalone navigation and host iframe.src alike — no #bt= fragment for new work. Browsers connect to Riffle WS for notify-only public table events; HTTP mutations stay authoritative; hole cards stay on seat-scoped HTTP. WS subscribe proves the same bearer in the handshake or first control frame; token never in query strings. Freeze shipped Bearer RIFFLE_HOST_API_KEY routes and vendor/turnur-sdk; new modules (identity/, match-store/, ws/). Play-lab: rewrite against MatchStore + shared URLs + anonymous lab subjects, or retire. Runtime hosting / durable persistence remain non-blocking (process-local store is enough to start)."
 interfaces:
-  - "Player → Riffle identity — first-party account sign-up/sign-in and anonymous session; HttpOnly Riffle session; stable playerSubject (account id or anon:{jti}); not Cognito; not host playerSubject"
+  - "Player → Riffle identity — first-party account sign-up/sign-in and anonymous session; bearer Authorization (or equivalent); stable playerSubject (account id or anon:{jti}); not Cognito; not host playerSubject; no ambient cookie"
   - "Player/iframe → Riffle play URL — shared {origin}/play/{matchId} or join-code URL (standalone navigate or host iframe.src); optional ?embed=1 chrome; no #bt= fragment for new work"
-  - "Browser → Riffle WS — same-origin (or Riffle-origin iframe) subscribe by matchId using Riffle session; notify-only public table cursor; no hidden-view bodies on public frames"
-  - "Browser → Riffle runtime HTTP — table actions, public table, seat-scoped hidden view; mutations authoritative; 409 on illegal turn"
+  - "Browser → Riffle WS — same-origin (or Riffle-origin iframe) subscribe by matchId using bearer in handshake or first control frame; notify-only public table cursor; no hidden-view bodies on public frames; token never in query strings"
+  - "Browser → Riffle runtime HTTP — table actions, public table, seat-scoped hidden view; mutations authoritative; 409 on illegal turn; bearer Authorization on every request"
   - "Riffle runtime → rules library (in-process) — deal, legalize, apply, street advance, showdown; no I/O from the library"
   - "Riffle runtime → MatchStore — seats, currentSeat/turn, hidden views, append-only move log, in-process shoe; replaces @turnur/sdk match/seat/turn/move/view"
   - "Host → Riffle embed — iframe.src = shared play URL; optional UX postMessage (resize / table-changed toast) is a pipe only; host MUST NOT mint bootstrap, mint seat capability, or call frozen /v1/matches|/v1/bootstrap/*|/v1/seats/capability/*|/v1/hands/* for new work"
@@ -25,7 +25,7 @@ structure:
 constraints:
   - "Riffle owns match state and WS notify for new work; no new @turnur/sdk consumption; do not wrap Turnur behind new routes"
   - "Rules = in-process NLHE library in Riffle runtime (not client, not a separate rules service this HLD)"
-  - "Standalone supports account or anonymous; first-party Riffle session is seat authority"
+  - "Standalone supports account or anonymous; first-party Riffle bearer session is seat authority; no ambient cookie"
   - "Embed play surface = iframe at Riffle origin; host is not match or seat authority; guests self-sit via Sit at Table"
   - "Do not extend shipped Turnur-backed HTTP contracts for new work"
   - "Do not copy RiffSync Cognito, chat, or SFU/TURN wholesale"
@@ -37,19 +37,17 @@ constraints:
 open_questions:
   - runtime-hosting
   - play-lab-fate
-  - turnur-code-migration
-  - session-credential-transport
   - display-name-rules
   - anonymous-to-account
 ---
 
 Trust boundary is the Riffle runtime. The iframe/browser is untrusted presentation. Host postMessage is never seat or match authority.
 
-**Identity.** First-party Riffle pages + session store (sister pattern from RiffSync first-party-fan-auth, not the IdP). Account and anonymous share one playerSubject namespace. Anonymous is a first-class occupant (anon:{jti}), not a missing user. Embed guests sit as Riffle sessions — host room identity does not bind seats. Display name is editable seat metadata visible to the table. Upgrade-anon-to-account is LLD.
+**Identity.** First-party Riffle pages + session store (sister pattern from RiffSync first-party-fan-auth, not the IdP). Account and anonymous share one playerSubject namespace. Session transport is bearer-only (Authorization or equivalent) on standalone and embed — no ambient cookie. Historical riffle_play HttpOnly SameSite=Lax is not the forward channel. Anonymous is a first-class occupant (anon:{jti}), not a missing user. Embed guests sit as Riffle sessions — host room identity does not bind seats. Display name is editable seat metadata visible to the table. Upgrade-anon-to-account is LLD. Bearer storage in the iframe is LLD.
 
 **MatchStore.** Required by ADR-riffle-owned-match. Entities: match, seats (seatId + playerSubject + displayName + stack), currentSeat, hidden views (hole cards), append-only move log (payload kinds hand_open / action / street_deal / hand_complete so src/server/hands/reconstruct.ts + src/rules can carry forward), in-process shoe. Illegal concurrent turn → 409. Persistence backend is LLD under runtime-hosting.
 
-**WS.** Browser locus: standalone two-device play and cross-origin host embed cannot rely on same-origin lab postMessage relay. Mutations stay HTTP. Public WS frames = table cursor / refresh only. Seat-scoped views stay HTTP.
+**WS.** Browser locus: standalone two-device play and cross-origin host embed cannot rely on same-origin lab postMessage relay. Mutations stay HTTP. Public WS frames = table cursor / refresh only. Seat-scoped views stay HTTP. Subscribe proves the same bearer as HTTP in the handshake or first control frame.
 
 **Attach flow.** No Riffle lobby or match-picker in v1. Standalone: entry/auth gate (desktop) → navigate to shared play URL → unseated felt → Sit at Table → existing waiting-for-deal and hand states. Embed: host sets iframe.src to the same URL; guests never see Riffle auth chrome; unseated narrow felt → Sit at Table → existing seated narrow frames.
 

@@ -11,6 +11,7 @@ active_decisions:
   - "ADR-sit-at-table — Guests self-sit via Sit at Table with Riffle session (account or anonymous); host identity is not seat authority; mutable in-game display name. Status: Accepted (standalone-play-and-embed HLD 2026-09-12)."
   - "ADR-rules-in-process — Rules = in-process NLHE library in Riffle runtime. Status: Accepted (carried forward from Turnur era)."
   - "ADR-iframe-embed — Embed play surface = iframe at Riffle origin. Status: Accepted (carried forward)."
+  - "ADR-bearer-session — Riffle play session is bearer-only (Authorization or equivalent) for standalone and embed; no ambient cookie. Status: Accepted (operator 2026-09-12)."
 superseded:
   - "ADR-rules-in-process (Turnur path) — Runtime called @turnur/sdk for match authority. Superseded by ADR-riffle-owned-match."
   - "ADR-host-seat-capability — Host issued opaque seat capability via RIFFLE_HOST_API_KEY for Turnur-era embed. Superseded by ADR-sit-at-table and ADR-embed-mode."

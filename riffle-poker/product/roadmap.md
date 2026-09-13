@@ -10,7 +10,7 @@ themes:
   - "Play-chip social play — no cashier, rake, or real money"
   - "First-party visual identity and public site"
 now:
-  - "Standalone play and embed — HLD (initiative standalone-play-and-embed)"
+  - "Standalone play and embed — LLD (/forge.backlog-grooming) (initiative standalone-play-and-embed)"
 next:
   - "Artwork (Figma + Canva)"
   - "Web Site"

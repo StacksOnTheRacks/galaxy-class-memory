@@ -4,31 +4,6 @@ schema_version: 1
 updated: 2026-09-12
 items:
   - initiative: standalone-play-and-embed
-    id: identity-mechanism
-    question: "Standalone identity — first-party Riffle account sign-up/sign-in. Not Cognito. Not host identity."
-    blocking: false
-    status: answered
-  - initiative: standalone-play-and-embed
-    id: anonymous-session
-    question: "Anonymous play — Riffle anonymous session (anon:{jti}); seat binds on Sit at Table; mutable display name; token not in query strings."
-    blocking: false
-    status: answered
-  - initiative: standalone-play-and-embed
-    id: embed-link-shape
-    question: "Embed attach — shared play URL; freeze mint/redeem + seat capability for new work."
-    blocking: false
-    status: answered
-  - initiative: standalone-play-and-embed
-    id: ws-client-locus
-    question: "Browser connects to Riffle WS; notify-only; HTTP mutations authoritative."
-    blocking: false
-    status: answered
-  - initiative: standalone-play-and-embed
-    id: host-seat-authority-bind
-    question: "Guests self-sit via Sit at Table; no Riffle login in iframe; host identity is not seat authority."
-    blocking: false
-    status: answered
-  - initiative: standalone-play-and-embed
     id: runtime-hosting
     question: "Where does Riffle runtime host (process/platform/IaC)?"
     blocking: false
@@ -36,11 +11,6 @@ items:
   - initiative: standalone-play-and-embed
     id: play-lab-fate
     question: "Fate of Turnur-backed play-lab harness — rewrite on MatchStore + shared URLs, or retire?"
-    blocking: false
-    status: open
-  - initiative: standalone-play-and-embed
-    id: turnur-code-migration
-    question: "Migration — freeze + replace (do not wrap); new modules identity/, match-store/, ws/"
     blocking: false
     status: open
   - initiative: standalone-play-and-embed
@@ -54,48 +24,23 @@ items:
     blocking: false
     status: open
   - initiative: standalone-play-and-embed
-    id: session-credential-transport
-    question: "Riffle session transport — cookie vs bearer for standalone + cross-site embed iframe?"
-    blocking: true
-    status: open
-  - initiative: standalone-play-and-embed
-    id: missing-auth-frames
-    question: "Figma frames built — design/screens.md 4038:* inventory."
-    blocking: false
-    status: answered
-  - initiative: standalone-play-and-embed
-    id: standalone-viewport
-    question: "Standalone desktop 960×640 Now; narrow-iframe embed-only for unseated/sit/display-name."
-    blocking: false
-    status: answered
-  - initiative: standalone-play-and-embed
-    id: embed-error-copy
-    question: "Loading and embed-error copy refreshed to shared play-link language."
-    blocking: false
-    status: answered
-  - initiative: standalone-play-and-embed
-    id: csrf-mutation-channel
-    question: "CSRF for mutating iframe→Riffle APIs?"
-    blocking: false
-    status: open
-  - initiative: standalone-play-and-embed
     id: anonymous-upgrade-fixation
-    question: "Anonymous→account upgrade rotation to prevent fixation?"
+    question: "How does anonymous→account upgrade rotate so an attacker-set anonymous session cannot inherit the account?"
     blocking: false
     status: open
   - initiative: standalone-play-and-embed
     id: embed-frame-ancestors
-    question: "frame-ancestors allowlist and host registration?"
+    question: "frame-ancestors for standalone vs embed — allowlisted hosts only, never *; how are hosts registered?"
     blocking: false
     status: open
   - initiative: standalone-play-and-embed
     id: ws-subscribe-auth
-    question: "WS subscribe auth and topic ACLs?"
+    question: "How does a WS subscriber prove a Riffle session, and which topic ACLs separate public table state from seat-scoped hidden views?"
     blocking: false
     status: open
   - initiative: standalone-play-and-embed
     id: host-spoofing-embed
-    question: "Reject spoofed host without treating host chrome as match authority?"
+    question: "How does the iframe reject a spoofed host (wrong parent, forged postMessage, copied URL on a hostile page) without treating host chrome as match authority?"
     blocking: false
     status: open
   - initiative: play-lab
@@ -110,9 +55,9 @@ items:
     status: open
   - initiative: playable-holdem-table
     id: runtime-hosting
-    question: "Where does Riffle runtime host (process/platform)? Superseded by standalone-play-and-embed runtime-hosting."
+    question: "Where does Riffle runtime host (process/platform)? Undecided; non-blocking while iframe + in-process library + server-side SDK key hold."
     blocking: false
-    status: deferred
+    status: open
   - initiative: artwork
     id: figma-pages-state
     question: "Figma MCP shows Cover-only Alto9 template; do Screens/Flows pages from design/screens.md need rebuild or is MCP access stale?"
@@ -135,17 +80,17 @@ items:
     status: open
   - initiative: integrate-turnur-websockets
     id: turnur-ws-shipping
-    question: "Superseded — Turnur mothballed; initiative abandoned."
+    question: "Track Turnur milestone/4 (#44–#49); Riffle LLD grooming may proceed; implement-ticket blocked until Turnur integrate-websockets ships."
     blocking: false
     status: deferred
   - initiative: integrate-turnur-websockets
     id: ws-reconnect-backoff
-    question: "Superseded — Turnur mothballed; initiative abandoned."
+    question: "Reconnect and resubscribe backoff policy when Turnur WS disconnects mid-hand?"
     blocking: false
     status: deferred
   - initiative: integrate-turnur-websockets
     id: ws-event-wait-timeout
-    question: "Superseded — Turnur mothballed; initiative abandoned."
+    question: "Default timeout before poll fallback after HTTP mutation when expected push does not arrive?"
     blocking: false
     status: deferred
 ---
