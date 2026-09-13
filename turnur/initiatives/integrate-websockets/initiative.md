@@ -1,16 +1,16 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-11
+updated: 2026-09-12
 slug: integrate-websockets
 title: "Integrate WebSockets — examine push channel for match-event latency"
-status: hld
+status: lld
 user_facing: false
 signoffs:
-  po: false
-  architect: false
+  po: true
+  architect: true
   designer: "na"
-  security: false
+  security: true
 board_milestone: ""
 board_tickets: []
 ---

@@ -1,8 +1,23 @@
 ---
 doc: product.open_questions_index
 schema_version: 1
-updated: 2026-08-30
+updated: 2026-09-12
 items:
+  - initiative: integrate-websockets
+    id: ws-adr-lock
+    question: "When to promote examine slice to ADR vs ship minimal notify behind feature flag."
+    blocking: false
+    status: deferred
+  - initiative: integrate-websockets
+    id: ws-connection-limits
+    question: "Max concurrent connections per gameId/matchId."
+    blocking: false
+    status: deferred
+  - initiative: integrate-websockets
+    id: ws-apigw-access-log-redaction
+    question: "API Gateway WebSocket $connect uses ?token=. Confirm LLD mechanism so access logs and CloudWatch never emit the query string (omit access logging vs custom format without query variables). Not an ALB question — Turnur is APIGW WS."
+    blocking: false
+    status: open
   - initiative: match-authority-primitives
     id: match-status-lifecycle
     question: "MatchRegistry.status stays created for this initiative. When (if ever) should it move to in_progress / completed, and does GET /v1/matches/{matchId} stay additive-only?"
