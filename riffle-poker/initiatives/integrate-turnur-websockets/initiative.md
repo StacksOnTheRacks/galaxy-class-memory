@@ -11,8 +11,13 @@ signoffs:
   architect: true
   designer: "na"
   security: true
-board_milestone: ""
-board_tickets: []
+board_milestone: "[Integrate Turnur WebSockets](https://github.com/StacksOnTheRacks/riffle-poker/milestone/3)"
+board_tickets:
+  - "[#31 Add TURNUR_WS_URL env gate and Turnur WS client factory](https://github.com/StacksOnTheRacks/riffle-poker/issues/31)"
+  - "[#32 Add match subscription registry and waitForMatchEvent](https://github.com/StacksOnTheRacks/riffle-poker/issues/32)"
+  - "[#33 Wire play-lab session to subscribe server-side on match attach](https://github.com/StacksOnTheRacks/riffle-poker/issues/33)"
+  - "[#34 Refactor submit and advance post-mutation polls to WS notify](https://github.com/StacksOnTheRacks/riffle-poker/issues/34)"
+  - "[#35 Refactor remaining orchestration poll sites and verify poll reduction](https://github.com/StacksOnTheRacks/riffle-poker/issues/35)"
 ---
 
 <!--

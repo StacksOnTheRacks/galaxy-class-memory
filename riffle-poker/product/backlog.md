@@ -1,10 +1,15 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-11
+updated: 2026-09-12
 in_progress: []
 ready: []
-refinement: []
+refinement:
+  - "[#31 Add TURNUR_WS_URL env gate and Turnur WS client factory](https://github.com/StacksOnTheRacks/riffle-poker/issues/31)"
+  - "[#32 Add match subscription registry and waitForMatchEvent](https://github.com/StacksOnTheRacks/riffle-poker/issues/32)"
+  - "[#33 Wire play-lab session to subscribe server-side on match attach](https://github.com/StacksOnTheRacks/riffle-poker/issues/33)"
+  - "[#34 Refactor submit and advance post-mutation polls to WS notify](https://github.com/StacksOnTheRacks/riffle-poker/issues/34)"
+  - "[#35 Refactor remaining orchestration poll sites and verify poll reduction](https://github.com/StacksOnTheRacks/riffle-poker/issues/35)"
 blocked: []
 done:
   - "[#1 Host iframe attach via bootstrap mint → URL → redeem](https://github.com/StacksOnTheRacks/riffle-poker/issues/1)"
@@ -23,7 +28,7 @@ done:
   - "[#23 First-party play lab page with two embedded /play iframes](https://github.com/StacksOnTheRacks/riffle-poker/issues/23)"
   - "[#24 Two lab seats complete a hand against live Turnur](https://github.com/StacksOnTheRacks/riffle-poker/issues/24)"
 icebox:
-  - "Artwork (Figma + Canva) (Next; /forge.new-initiative before tickets)"
+  - "Artwork (Figma + Canva) (lld; /forge.backlog-grooming before tickets)"
   - "Web Site (Next; /forge.new-initiative before tickets)"
   - "Complete NLHE Hand (full rules) — side pots, all-in runout (Next; /forge.new-initiative before tickets)"
   - "Multi-Hand Session (Next; /forge.new-initiative before tickets)"
@@ -35,4 +40,4 @@ icebox:
   - "Standalone playable client (no host)"
 ---
 
-Board/SCM wins — playable-holdem-table #1–#9 and play-lab #19–#24 closed (Done). Refinement empty. Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
+Board/SCM wins — playable-holdem-table #1–#9 and play-lab #19–#24 closed (Done). integrate-turnur-websockets #31–#35 on Refinement. Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.

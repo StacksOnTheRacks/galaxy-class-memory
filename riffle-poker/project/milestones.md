@@ -1,10 +1,11 @@
 ---
 doc: project.milestones
 schema_version: 1
-updated: 2026-09-11
-active: []
+updated: 2026-09-12
+active:
+  - "[Integrate Turnur WebSockets](https://github.com/StacksOnTheRacks/riffle-poker/milestone/3) — #31–#35 Refinement"
 upcoming:
-  - "Artwork (Figma + Canva)"
+  - "Artwork (Figma + Canva) — lld, ungroomed"
   - "Web Site"
   - "Complete NLHE Hand (full rules)"
   - "Multi-Hand Session"
@@ -12,4 +13,4 @@ upcoming:
 slipped: []
 ---
 
-Upcoming names are operator-locked Next outcomes — no host milestones until `/forge.new-initiative` then LLD grooming. Playable-holdem-table [milestone/1](https://github.com/StacksOnTheRacks/riffle-poker/milestone/1) and Play lab [milestone/2](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2) are closed/shipped. Board/SCM wins.
+Board/SCM wins. Playable-holdem-table [milestone/1](https://github.com/StacksOnTheRacks/riffle-poker/milestone/1) and Play lab [milestone/2](https://github.com/StacksOnTheRacks/riffle-poker/milestone/2) closed/shipped.

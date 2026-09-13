@@ -2,12 +2,14 @@
 doc: project.status
 schema_version: 1
 updated: 2026-09-12
-summary: "Artwork and integrate-turnur-websockets HLD signed off → LLD. Playable-holdem-table #1–#9 and play lab #19–#24 shipped. 0 open issues."
+summary: "integrate-turnur-websockets LLD groomed — #31–#35 on Refinement (milestone/3). Artwork lld ungroomed. Implement WS blocked on Turnur #44–#49."
 in_flight: []
-blockers: []
+blockers:
+  - "integrate-turnur-websockets implement-ticket blocked until Turnur #44–#49 ships"
 next_up:
-  - "/forge.backlog-grooming for artwork (operator-locked Next)"
-  - "/forge.backlog-grooming for integrate-turnur-websockets (implement blocked on Turnur #44–#49)"
+  - "/forge.plan-refresh for integrate-turnur-websockets"
+  - "/forge.refinement on #31–#35"
+  - "/forge.backlog-grooming for artwork (operator-locked Next, lld)"
 asks: []
 ---
 
