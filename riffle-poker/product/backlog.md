@@ -1,10 +1,19 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-13
 in_progress: []
 ready: []
-refinement: []
+refinement:
+  - "[#36 First-party Riffle account and anonymous bearer session](https://github.com/StacksOnTheRacks/riffle-poker/issues/36)"
+  - "[#37 Riffle MatchStore owns seats, turns, hidden views, and the move log](https://github.com/StacksOnTheRacks/riffle-poker/issues/37)"
+  - "[#38 Shared play URL attach for standalone and host embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/38)"
+  - "[#39 Sit at Table binds a Riffle session to a seat](https://github.com/StacksOnTheRacks/riffle-poker/issues/39)"
+  - "[#40 Anonymous player can change in-game display name](https://github.com/StacksOnTheRacks/riffle-poker/issues/40)"
+  - "[#41 Browser WebSocket notify-only for public table updates](https://github.com/StacksOnTheRacks/riffle-poker/issues/41)"
+  - "[#42 Apply on-turn NLHE actions against MatchStore](https://github.com/StacksOnTheRacks/riffle-poker/issues/42)"
+  - "[#43 Hole cards stay seat-scoped and the public board is shared](https://github.com/StacksOnTheRacks/riffle-poker/issues/43)"
+  - "[#44 Complete a play-chip hand on standalone and embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/44)"
 blocked: []
 done:
   - "[#1 Host iframe attach via bootstrap mint → URL → redeem](https://github.com/StacksOnTheRacks/riffle-poker/issues/1)"
@@ -32,7 +41,6 @@ icebox:
   - "Web Site (Next; /forge.new-initiative before tickets)"
   - "Complete NLHE Hand (full rules) — side pots, all-in runout (Next; /forge.new-initiative before tickets)"
   - "Multi-Hand Session (Next; /forge.new-initiative before tickets)"
-  - "Embed-mode host integration — lives on standalone-play-and-embed LLD; RiffSync Watch Party Game Mode is the first host"
   - "Room-guest spectator view (public board only)"
   - "Disconnect/rejoin"
   - "Additional poker variants (Omaha, Stud, mixed)"

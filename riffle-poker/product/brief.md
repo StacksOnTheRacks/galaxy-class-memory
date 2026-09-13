@@ -1,7 +1,7 @@
 ---
 doc: product.brief
 schema_version: 2
-updated: 2026-09-12
+updated: 2026-09-13
 product_name: "Riffle Poker"
 product_description: "Standalone no-limit Texas Hold'em app (play chips). Players create an account or play anonymously. Riffle owns gameplay, rules, match state (seats, turns, hidden hole cards, move log), and WebSocket notify. Embed-mode lets a host (RiffSync first) load the same play surface via a shared iframe link; the host keeps chat, rooms, and media. Repo: https://github.com/StacksOnTheRacks/riffle-poker"
 problem: "People want to play real poker together online without building match authority in-house. Host platforms want to attach poker to a room without owning rules or match state. Turnur is mothballed — Riffle is the product."
@@ -33,7 +33,7 @@ success_metrics:
     target: "Hole cards visible only to the owning seat"
   - metric: "Quantified targets"
     target: "TBD (greenfield; no instrumentation yet)"
-current_focus: "Now: standalone-play-and-embed LLD (/forge.backlog-grooming). Shipped: playable-holdem-table #1–#9, play-lab #19–#24 (Turnur-backed; historical). Next (operator-locked): Artwork; Web Site; Complete NLHE Hand; Multi-Hand Session."
+current_focus: "Now: standalone-play-and-embed tickets in Refinement (#36–#44). Shipped: playable-holdem-table #1–#9, play-lab #19–#24 (Turnur-backed; historical). Next (operator-locked): Artwork; Web Site; Complete NLHE Hand; Multi-Hand Session."
 ---
 
 Repo: [github.com/StacksOnTheRacks/riffle-poker](https://github.com/StacksOnTheRacks/riffle-poker). First expected embed host: [RiffSync](https://github.com/StacksOnTheRacks/riffsync). Turnur mothballed — not a live dependency for new work.

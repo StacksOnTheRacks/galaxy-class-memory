@@ -1,7 +1,7 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-13
 themes:
   - "Standalone poker app: account or anonymous play"
   - "Riffle-owned match state and WebSockets"
@@ -10,7 +10,7 @@ themes:
   - "Play-chip social play — no cashier, rake, or real money"
   - "First-party visual identity and public site"
 now:
-  - "Standalone play and embed — LLD (/forge.backlog-grooming) (initiative standalone-play-and-embed)"
+  - "Standalone play and embed — tickets in Refinement (initiative standalone-play-and-embed)"
 next:
   - "Artwork (Figma + Canva)"
   - "Web Site"

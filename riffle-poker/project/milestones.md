@@ -1,9 +1,9 @@
 ---
 doc: project.milestones
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-13
 active:
-  - "Standalone play and embed — HLD (initiative standalone-play-and-embed; no host milestone yet)"
+  - "[Standalone play and embed](https://github.com/StacksOnTheRacks/riffle-poker/milestone/4) — #36–#44 on Refinement"
 upcoming:
   - "Artwork (Figma + Canva) — lld, ungroomed"
   - "Web Site"
