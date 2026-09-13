@@ -5,24 +5,29 @@ updated: 2026-09-12
 items:
   - initiative: standalone-play-and-embed
     id: identity-mechanism
-    question: "Standalone identity mechanism — first-party auth vs Cognito vs other?"
-    blocking: true
-    status: open
+    question: "Standalone identity — first-party Riffle account sign-up/sign-in. Not Cognito. Not host identity."
+    blocking: false
+    status: answered
   - initiative: standalone-play-and-embed
     id: anonymous-session
-    question: "How does anonymous play bind a seat/session without an account?"
-    blocking: true
-    status: open
+    question: "Anonymous play — Riffle anonymous session (anon:{jti}); seat binds on Sit at Table; mutable display name; token not in query strings."
+    blocking: false
+    status: answered
   - initiative: standalone-play-and-embed
     id: embed-link-shape
-    question: "Embed-mode link shape — shared iframe URL vs today's host mint/redeem bootstrap?"
-    blocking: true
-    status: open
+    question: "Embed attach — shared play URL; freeze mint/redeem + seat capability for new work."
+    blocking: false
+    status: answered
   - initiative: standalone-play-and-embed
     id: ws-client-locus
-    question: "WebSocket client locus — browser connects to Riffle WS vs server-only orchestrator?"
-    blocking: true
-    status: open
+    question: "Browser connects to Riffle WS; notify-only; HTTP mutations authoritative."
+    blocking: false
+    status: answered
+  - initiative: standalone-play-and-embed
+    id: host-seat-authority-bind
+    question: "Guests self-sit via Sit at Table; no Riffle login in iframe; host identity is not seat authority."
+    blocking: false
+    status: answered
   - initiative: standalone-play-and-embed
     id: runtime-hosting
     question: "Where does Riffle runtime host (process/platform/IaC)?"
@@ -30,12 +35,67 @@ items:
     status: open
   - initiative: standalone-play-and-embed
     id: play-lab-fate
-    question: "Fate of Turnur-backed play-lab harness — keep, rewrite, or retire?"
+    question: "Fate of Turnur-backed play-lab harness — rewrite on MatchStore + shared URLs, or retire?"
     blocking: false
     status: open
   - initiative: standalone-play-and-embed
     id: turnur-code-migration
-    question: "Migration strategy for shipped Turnur-backed paths — wrap, replace in place, or freeze?"
+    question: "Migration — freeze + replace (do not wrap); new modules identity/, match-store/, ws/"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: anonymous-to-account
+    question: "Can an anonymous session become a Riffle account without leaving the current table and seat?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: display-name-rules
+    question: "Uniqueness, persistence, and moderation for in-game display names?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: session-credential-transport
+    question: "Riffle session transport — cookie vs bearer for standalone + cross-site embed iframe?"
+    blocking: true
+    status: open
+  - initiative: standalone-play-and-embed
+    id: missing-auth-frames
+    question: "No Figma frames for entry/auth/display-name/Sit at Table chrome — /forge.design-spike required."
+    blocking: true
+    status: open
+  - initiative: standalone-play-and-embed
+    id: standalone-viewport
+    question: "Desktop-only standalone chrome vs also mobile web?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: embed-error-copy
+    question: "Refresh embed-error copy from mint/redeem to shared-URL language?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: csrf-mutation-channel
+    question: "CSRF for mutating iframe→Riffle APIs?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: anonymous-upgrade-fixation
+    question: "Anonymous→account upgrade rotation to prevent fixation?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: embed-frame-ancestors
+    question: "frame-ancestors allowlist and host registration?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: ws-subscribe-auth
+    question: "WS subscribe auth and topic ACLs?"
+    blocking: false
+    status: open
+  - initiative: standalone-play-and-embed
+    id: host-spoofing-embed
+    question: "Reject spoofed host without treating host chrome as match authority?"
     blocking: false
     status: open
   - initiative: play-lab

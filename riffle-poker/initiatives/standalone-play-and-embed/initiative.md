@@ -17,8 +17,12 @@ board_tickets: []
 
 Operator pivot: Turnur mothballed. Riffle owns match state and WebSockets.
 
-**Outcome:** Riffle Poker is a standalone no-limit Hold'em app. Players create an account or play anonymously. Riffle owns gameplay, rules, match state (seats, turns, hidden hole cards, move log), and WebSocket notify. Embed-mode lets a host (RiffSync first) load the same play surface via a shared iframe link; the host keeps chat, rooms, and media.
+**Outcome:** Riffle Poker is a standalone no-limit Hold'em app. Players create an account or play anonymously. Riffle owns gameplay, rules, match state (seats, turns, hidden hole cards, move log), and WebSocket notify. Embed-mode lets a host (RiffSync first) load the same play surface via a shared play URL; the host keeps chat, rooms, and media.
 
-**Not in this HLD stub:** board tickets, auth provider choice, WS protocol, embed link mint shape, or migration plan for shipped Turnur-backed code. Those resolve in `/forge.initiative-design`.
+**HLD bar:** Account or anonymous → **Sit at Table** → complete a play-chip hand (fold-to-one or non-all-in showdown). Host loads the same surface via shared play URL; guests (including unauthenticated RiffSync watch-party guests) self-sit; anonymous players can change in-game display name; hole cards seat-scoped; public board shared; table updates via Riffle notify.
 
-Suggested next: `/forge.initiative-design` on this initiative.
+**Locked this HLD:** First-party Riffle identity (not Cognito); anonymous session on Sit at Table; shared play URL (freeze mint/redeem + seat capability); browser WS notify-only; freeze Turnur host-key HTTP; no host seat authority; no production lobby.
+
+**Not this initiative:** Chat, rooms, media, real money, variants, tournaments, side pots / all-in runout / disconnect-rejoin / spectator polish, matchmaking. Anonymous-to-account without leaving the table is an open question, not required.
+
+Suggested next: `/forge.design-spike` (missing auth/entry/name frames), then `/forge.initiative-planning`.

@@ -3,17 +3,17 @@ doc: architecture.interfaces
 schema_version: 1
 updated: 2026-09-12
 external_interfaces:
-  - "Historical (shipped Turnur-backed) — Host → Riffle runtime POST /v1/matches, /v1/bootstrap/mint, /v1/seats/capability/mint, /v1/hands/deal, /v1/hands/betting/open with Bearer RIFFLE_HOST_API_KEY; iframe bootstrap redeem; X-Riffle-Seat-Capability; Riffle runtime → @turnur/sdk. Do not extend for new work."
-  - "Current-focus (TBD in standalone-play-and-embed HLD) — standalone auth (account + anonymous); Riffle-owned match CRUD; table WebSocket subscribe; embed-mode iframe link; host embed contract for RiffSync"
+  - "Frozen (historical Turnur-backed) — Host → Riffle runtime POST /v1/matches, /v1/bootstrap/mint, /v1/seats/capability/mint, /v1/hands/deal, /v1/hands/betting/open with Bearer RIFFLE_HOST_API_KEY; iframe bootstrap redeem; X-Riffle-Seat-Capability; Riffle runtime → @turnur/sdk. Do not extend for new work."
+  - "Current (standalone-play-and-embed HLD) — first-party Riffle account + anonymous session (HttpOnly Riffle session; playerSubject account id or anon:{jti}); shared play URL attach ({origin}/play/{matchId} or join-code); browser WS subscribe (notify-only public table); host embed = iframe.src only; optional UX postMessage is a pipe only"
 internal_boundaries:
   - "Play surface UI is presentation; Riffle runtime is the trust boundary for rules and match writes"
   - "Rules library is in-process; no I/O from the library itself"
   - "Hole cards live in seat-scoped hidden state; public board is shared table state"
-  - "Turnur integration in shipped code is historical — migration TBD"
+  - "New work does not call @turnur/sdk; MatchStore is the match I/O boundary. Frozen host-key routes are not the forward contract."
 contracts_in_flight:
-  - "standalone-play-and-embed — identity, anonymous session, embed link, WS protocol (HLD)"
+  - "standalone-play-and-embed — session-credential-transport (blocking); missing-auth-frames (blocking); runtime-hosting, play-lab-fate, turnur-code-migration (non-blocking)"
 ownership:
   - "Riffle owns gameplay, rules, match state, WebSocket notify, and play identity (account/anonymous) for new work"
-  - "Host owns chat, rooms, media, and room identity in embed-mode"
+  - "Host owns chat, rooms, media, and room identity in embed-mode; host is not match or seat authority"
   - "Turnur mothballed — no new ownership on Turnur side"
 ---
