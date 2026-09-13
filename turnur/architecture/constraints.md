@@ -1,7 +1,7 @@
 ---
 doc: architecture.constraints
 schema_version: 1
-updated: 2026-08-25
+updated: 2026-09-12
 hard_constraints:
   - "Implementation language is TypeScript. Toolchain and Lambda runtime are Node 22."
   - "Infrastructure is AWS CDK v2 (TypeScript), in the same family as RiffSync's infra/cdk."
@@ -13,6 +13,7 @@ soft_constraints:
   - "Stay host-agnostic: RiffSync is one host, not the only host."
   - "Game-auth slice (#9–#13) adds DynamoDB registry + SDK-key validation only — no player/host auth, match tables, or attach APIs in this slice."
   - "Defer signing-mechanism and match-protocol choices until there is a reason to lock them."
+  - "HTTP request/response remains the match-authority path until an ADR locks a push channel (ws-adr-lock deferred). integrate-websockets HLD examines a notify-only API Gateway WebSocket API; do not copy RiffSync chat or SFU WebSockets."
 out_of_bounds:
   - "Player login, accounts, or identity as a Turnur concern."
   - "Becoming a watch-party, lobby, chat, catalog, or identity product."

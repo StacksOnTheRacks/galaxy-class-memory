@@ -1,23 +1,8 @@
 ---
 doc: product.open_questions
 schema_version: 1
-updated: 2026-09-11
+updated: 2026-09-12
 questions:
-  - id: ws-connect-auth
-    question: "SDK key on $connect query token (operator confirmed). Document in integrator README?"
-    blocking: false
-    status: answered
-    owner: architect
-  - id: ws-event-catalog-v1
-    question: "Confirm v1 emit set: match.created, seat.created, turn.designated, move.accepted, view.updated (view.updated seatId-only)."
-    blocking: false
-    status: open
-    owner: architect
-  - id: ws-client-location
-    question: "Riffle play lab: WebSocket from server-side orchestrator vs browser iframe — affects where SDK key lives."
-    blocking: false
-    status: open
-    owner: po
   - id: ws-adr-lock
     question: "When to promote examine slice to ADR vs ship minimal notify behind feature flag."
     blocking: false
@@ -28,6 +13,11 @@ questions:
     blocking: false
     status: deferred
     owner: architect
+  - id: ws-apigw-access-log-redaction
+    question: "API Gateway WebSocket $connect uses ?token=. Confirm LLD mechanism so access logs and CloudWatch never emit the query string (omit access logging vs custom format without query variables). Not an ALB question — Turnur is APIGW WS."
+    blocking: false
+    status: open
+    owner: security
 ---
 
 <!--
