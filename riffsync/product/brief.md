@@ -36,9 +36,9 @@ success_metrics:
     target: "Cast (when configured) stays viewer-local and does not break room authority or chat"
   - metric: "Honest fan/unofficial positioning"
     target: "Product stays clearly fan/unofficial with honest playback and affiliation disclaimers"
-current_focus: "Host Header Layout Fix and Host Bar Room Control are LLD (sign-offs green; awaiting /forge.backlog-grooming; no tickets yet). Remaining Next (operator-locked, coarse): Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode. Preserve GA4/CloudWatch. Do not invent tickets."
+current_focus: "Host Header Layout Fix (#471) and Host Bar Room Control (#472–#473) on Refinement. Next: /forge.plan-refresh and /forge.refinement. Remaining Next (operator-locked, coarse): Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode. Preserve GA4/CloudWatch."
 ---
 
 Live site: [riffsync.tv](https://riffsync.tv).
 
-Host extension work lives under `apps/host-extension`. Epic **#426** and slices **#427–#431** are closed Done. Metrics baseline **#437–#440** closed Done (2026-08-25). Site-redesign and first-party fan auth shipped Done. **Next**: `/forge.backlog-grooming` for host-header-layout-fix, then host-bar-room-control; remaining queue in `product/roadmap.md`.
+Host extension work lives under `apps/host-extension`. Epic **#426** and slices **#427–#431** are closed Done. Metrics baseline **#437–#440** closed Done (2026-08-25). Site-redesign and first-party fan auth shipped Done. **Next**: `/forge.plan-refresh` then `/forge.refinement` for #471–#473; remaining queue in `product/roadmap.md`.

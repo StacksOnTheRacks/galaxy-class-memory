@@ -11,8 +11,10 @@ signoffs:
   architect: true
   designer: true
   security: true
-board_milestone: ""
-board_tickets: []
+board_milestone: "Host Bar Room Control (#41)"
+board_tickets:
+  - "#472 Replace host-bar Share with Watch Party Settings dialog"
+  - "#473 Remove Room sidebar panel and playlist chrome"
 ---
 
 The host theater bar still uses a Share control (`aria-label` "Share watch party") that opens a "Share Watch Party" popup with Copy party link, Rename party, and Live Now visibility. Room name, copy-link, visibility, and share quality are also spread across the chat-rail **Room** button, **Room panel**, `RoomHostIconRow`, `RoomRenameModal`, and `TheaterShareQualityControls`. Guests and hosts also reach Leave Party, Install Host Extension, Hosting Guide, and the Next Up / catalog playlist from that panel.

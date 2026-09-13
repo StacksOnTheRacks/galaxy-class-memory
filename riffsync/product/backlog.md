@@ -4,11 +4,12 @@ schema_version: 1
 updated: 2026-09-12
 in_progress: []
 ready: []
-refinement: []
+refinement:
+  - "#471 Reskin watch-party NavigationSlim to Figma standard header"
+  - "#472 Replace host-bar Share with Watch Party Settings dialog"
+  - "#473 Remove Room sidebar panel and playlist chrome"
 blocked: []
 icebox:
-  - "Host Header Layout Fix — watch-party standard header; logo plus menu on the right (Next; /forge.new-initiative before tickets)"
-  - "Host Bar Room Control — Settings replaces Share; Watch Party Settings; Room panel and playlist removed (HLD; no tickets yet)"
   - "Finish the Host Chrome Extension (Next; /forge.new-initiative before tickets)"
   - "Develop a Discord App (Next; /forge.new-initiative before tickets)"
   - "Watch Party Game Mode — Riffle/Turnur attach in a room (Next; /forge.new-initiative before tickets)"

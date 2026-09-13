@@ -11,8 +11,9 @@ signoffs:
   architect: true
   designer: true
   security: true
-board_milestone: ""
-board_tickets: []
+board_milestone: "Host Header Layout Fix (#40)"
+board_tickets:
+  - "#471 Reskin watch-party NavigationSlim to Figma standard header"
 ---
 
 <!--
