@@ -25,14 +25,15 @@ Authoring (not validated):
 
 Play-lab and shared server paths poll Turnur HTTP after every mutation — operator-visible latency during seated play. Turnur is building a WebSocket notify channel (integrate-websockets #44–#49); this initiative adopts it on the Riffle runtime so server-side orchestrators react to push events instead of blind poll-after-every-move loops.
 
-**Problem:** Play-lab and shared server paths poll Turnur HTTP after every mutation (`submit.ts`, `advance.ts`, `public.ts`) — operator-visible latency during seated play.
+**Problem:** Play-lab and shared server paths poll Turnur HTTP after every mutation (`submit.ts`, `advance.ts`, `public.ts`, and related hand/table modules) — operator-visible latency during seated play.
 
-**Approach (HLD stub):** Riffle runtime holds `TURNUR_SDK_KEY` server-side; subscribe to match events via Turnur `createTurnurWsClient`; on `move.accepted`, `turn.designated`, `seat.created`, `view.updated` — refresh local state with targeted HTTP reads only when needed (not blind poll loops).
+**Approach:** Riffle runtime holds `TURNUR_SDK_KEY` server-side; subscribe to match events via Turnur `createTurnurWsClient`; on `move.accepted`, `turn.designated`, `seat.created`, `view.updated` — refresh local state with targeted HTTP reads only when needed (not blind poll loops).
 
 Locked for this initiative:
 - Server-side integrator only — **no browser WebSocket**, no SDK key in lab page or `/play` iframes (matches Turnur security constraint)
 - HTTP mutations unchanged — WS does not replace POST/PUT authority
-- First surface: **play-lab orchestrator**; shared table/server paths in same initiative unless HLD splits
+- **`TURNUR_WS_URL` optional** — when unset, retain today's HTTP poll paths (CI fake Turnur unchanged)
+- Play-lab session lifecycle owns subscribe/unsubscribe per `matchId`; shared hand orchestration modules (`submit.ts`, `advance.ts`, `complete.ts`, `open.ts`, `table/*`) refactored in the same slice — not a lab-only fork
 - **Hard dependency** on Turnur milestone [#44–#49](https://github.com/StacksOnTheRacks/turnur/milestone/4) shipping
 
 Out of scope:
@@ -41,4 +42,4 @@ Out of scope:
 - Replacing Turnur HTTP client
 - Tournaments / multi-hand scope creep
 
-Success bar (coarse): Two-seat play-lab hand completes with measurably fewer post-mutation HTTP round-trips; orchestrator reacts to Turnur push events instead of poll-after-every-move.
+Success bar: With `TURNUR_WS_URL` configured, a two-seat play-lab hand completes with measurably fewer post-mutation HTTP round-trips than the poll-only baseline; orchestrator reacts to Turnur push events and falls back to HTTP when push is missed.

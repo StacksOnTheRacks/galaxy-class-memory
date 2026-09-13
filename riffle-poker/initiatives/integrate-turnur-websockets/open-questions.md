@@ -8,21 +8,16 @@ questions:
     blocking: true
     status: open
     owner: architect
-  - id: turnur-ws-url-config
-    question: "How does Riffle runtime obtain TURNUR_WS_URL (env var, Turnur stack output, same deploy as HTTP base)?"
+  - id: ws-reconnect-backoff
+    question: "Reconnect and resubscribe backoff policy when Turnur WS disconnects mid-hand?"
     blocking: false
     status: open
     owner: architect
-  - id: notify-vs-read-strategy
-    question: "On each event type, which HTTP reads are still required vs can be skipped (moves.list always, turn.get on turn.designated only, etc.)?"
+  - id: ws-event-wait-timeout
+    question: "Default timeout before poll fallback after HTTP mutation when expected push does not arrive?"
     blocking: false
     status: open
     owner: architect
-  - id: play-lab-vs-table-scope
-    question: "v1 limited to play-lab orchestrator or all server orchestration paths in one slice?"
-    blocking: false
-    status: open
-    owner: product
 ---
 
 <!--
@@ -32,3 +27,5 @@ Authoring (not validated):
 - Remove answered items; defer with status deferred rather than deleting if still relevant.
 - Bump updated when any frontmatter field changes.
 -->
+
+Answered in HLD (removed from list): turnur-ws-url-config (TURNUR_WS_URL env from Turnur stack output); play-lab-vs-table-scope (lab owns subscribe lifecycle; shared orchestration modules in same slice); notify-vs-read-strategy (event→HTTP matrix locked in spec.md).
