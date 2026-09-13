@@ -4,13 +4,13 @@ schema_version: 1
 updated: 2026-09-12
 slug: host-bar-room-control
 title: Host Bar Room Control
-status: hld
+status: lld
 user_facing: true
 signoffs:
-  po: false
-  architect: false
-  designer: false
-  security: false
+  po: true
+  architect: true
+  designer: true
+  security: true
 board_milestone: ""
 board_tickets: []
 ---

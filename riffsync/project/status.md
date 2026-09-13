@@ -1,13 +1,14 @@
 ---
 doc: project.status
 schema_version: 1
-updated: 2026-09-11
-summary: "Pipeline idle. Site redesign (#445–#452) and first-party fan auth (#461–#465) shipped Done. Next: /forge.new-initiative for Host Header Layout Fix (operator override; no tickets this pass)."
+updated: 2026-09-12
+summary: "Host Header Layout Fix and Host Bar Room Control exited HLD → LLD (sign-offs green; no tickets yet). Pipeline ready for backlog grooming."
 in_flight: []
 blockers: []
 next_up:
-  - "/forge.new-initiative for Host Header Layout Fix — watch-party standard header; logo plus menu on the right (do not invent tickets or a host milestone this event)"
-  - "Then remaining Next queue: Host Bar Room Control; Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode"
+  - "/forge.backlog-grooming for host-header-layout-fix (first per roadmap)"
+  - "/forge.backlog-grooming for host-bar-room-control"
+  - "Then remaining Next queue: Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode"
 asks: []
 ---
 
