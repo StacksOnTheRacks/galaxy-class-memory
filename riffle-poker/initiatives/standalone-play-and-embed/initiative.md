@@ -25,4 +25,4 @@ Operator pivot: Turnur mothballed. Riffle owns match state and WebSockets.
 
 **Not this initiative:** Chat, rooms, media, real money, variants, tournaments, side pots / all-in runout / disconnect-rejoin / spectator polish, matchmaking. Anonymous-to-account without leaving the table is an open question, not required.
 
-Suggested next: `/forge.design-spike` (missing auth/entry/name frames), then `/forge.initiative-planning`.
+Suggested next: `/forge.initiative-planning` (Designer re-check after design-spike frames built).

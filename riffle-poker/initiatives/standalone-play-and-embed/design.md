@@ -2,53 +2,43 @@
 doc: product.initiative_design
 schema_version: 1
 updated: 2026-09-12
-summary: "HLD adds Riffle-owned standalone chrome (account sign-up/sign-in and anonymous play entry) plus embed-mode of the SAME seated play surface via a shared play URL. Existing Screens / Flows seated-table and embed-error frames (desktop 960×640 + narrow-iframe 360×640) are reusable and must not be redesigned this HLD. Auth, anonymous entry, display-name edit, Sit at Table chrome, and standalone app shell are missing from Figma — blocking Designer HLD exit until /forge.design-spike. Play-lab frames are an operator harness, not consumer standalone. Host (RiffSync first) keeps chat, rooms, and media."
+summary: "Standalone + embed UX inventory built on Screens / Flows (y>11000). Standalone entry/auth/chrome at desktop 960×640; unseated Sit at Table + display-name edit at desktop and narrow-iframe; seated hand states reuse existing frames. No lobby; no Riffle login in embed iframe. Loading and embed-error copy refreshed to shared-URL language."
 figma_file: "https://www.figma.com/design/NgpCBblDdJ7cw4TLrH9kUE/Riffle-Poker-Design"
 screens:
-  - "Seated table (reuse; desktop + narrow-iframe) — see design/screens.md; do not redesign"
-  - "Embed / session error (reuse) — 4005:210 desktop / 4005:215 narrow-iframe; do not redesign"
-  - "MISSING — Standalone entry (account vs anonymous CTA)"
-  - "MISSING — Account sign-in"
-  - "MISSING — Account sign-up"
-  - "MISSING — Auth form error / validation / submitting states"
-  - "MISSING — Display-name edit (anonymous and account)"
-  - "MISSING — Sit at Table affordance on felt if not already present"
-  - "MISSING — Minimal standalone app chrome (header / account affordance)"
-  - "Play lab (existing 4012:*; operator harness only — not consumer standalone)"
+  - "Standalone app chrome / signed-out — 4038:28"
+  - "Standalone entry / choose-path — 4038:35"
+  - "Standalone app chrome / signed-in — 4038:49"
+  - "Auth / sign-in — default 4038:56; validation-error 4038:73; auth-failure 4038:91; submitting 4038:109"
+  - "Auth / sign-up — default 4038:125; validation-error 4038:145; auth-failure 4038:166; submitting 4038:187"
+  - "Table / open — unseated — desktop 4038:206; narrow-iframe 4038:217"
+  - "Table / sit-at-table — submitting — desktop 4038:228; narrow-iframe 4038:232"
+  - "Display name / edit — default 4038:236/4038:245; validation-error 4038:254/4038:264; saving 4038:274/4038:282"
+  - "Seated table (reuse) — see design/screens.md 4004:*–4010:*; hand off after Sit at Table"
+  - "Loading (copy refreshed) — 4004:15 desktop / 4004:20 narrow-iframe"
+  - "Embed / session error (copy refreshed) — 4005:210 desktop / 4005:215 narrow-iframe"
+  - "a11y annotations — standalone + embed entry — 4038:290"
 states:
-  - "standalone-entry (choose account or anonymous)"
-  - "auth-sign-in / auth-sign-up (default)"
-  - "auth-validation-error / auth-failure / auth-submitting"
-  - "anonymous-session-ready (after Sit at Table)"
-  - "display-name-edit"
-  - "iframe felt states unchanged: loading | waiting-for-deal | hand-in-progress | my-turn | showdown | hand-complete | embed-error"
-  - "embed-error remains host-attach / shared-link failure — not a Riffle login"
+  - "standalone-entry → auth-sign-in | auth-sign-up | anonymous path → unseated → sit-submitting → waiting-for-deal (reuse) → hand states (reuse)"
+  - "embed: loading → unseated narrow → sit-submitting → waiting-for-deal narrow (reuse); embed-error on bad link"
+  - "display-name-edit (default | validation-error | saving) on desktop and narrow-iframe"
 a11y:
-  - "Auth forms: visible labels on every field (not placeholder-only); errors associated with fields and announced to AT; non-color focus; keyboard complete without pointer"
-  - "Anonymous CTA must be a named control, distinguishable from Sign in / Sign up by text (not color or position alone)"
-  - "Auth failure vs validation vs network/session expiry must be plain language, not color-only"
-  - "Embed iframe needs a visible programmatic title (e.g. Riffle Poker table) so the host page and AT can name the frame"
-  - "Embed-error already has live-region intent (4005:214 / 4005:219); keep attach failure in text; do not morph it into a login form"
-  - "Standalone chrome vs embed: do not put Riffle login/identity chrome inside the embed iframe"
-  - "Desktop (960×640) vs narrow-iframe (360×640): auth/entry are standalone desktop-first; embed stays narrow-iframe"
-  - "Do not rely on color alone for auth status or anonymous vs account"
-  - "Respect reduced-motion on any entry/auth transition"
-open_questions:
-  - "BLOCKING — No Figma frames for sign-up, sign-in, anonymous entry, display-name edit, or standalone chrome. Pre-build on Screens / Flows via /forge.design-spike before Designer HLD sign-off."
-  - "BLOCKING — missing-auth-frames tracked in initiative open-questions.md"
-  - "Does standalone table use desktop frames only, with narrow-iframe reserved for embed?"
-  - "Embed-error copy still says host session mint/redeem — refresh to shared-URL language when embed ships"
-  - "design/principles.md still forbids Riffle-owned identity — update principles after the spike, not this HLD"
+  - "Auth forms: visible labels on every field; errors associated with fields; keyboard complete"
+  - "Anonymous CTA named Play without account — text-distinguishable from Sign in / Create account"
+  - "Embed iframe title Riffle Poker table on host page (4038:290 annotation)"
+  - "Sit at Table submitting: live region Taking your seat… (4038:228/4038:232)"
+  - "Embed-error live-region intent preserved (4005:214/4005:219); attach failure not a login form"
+  - "No Riffle login chrome inside embed iframe"
+open_questions: []
 ---
 
-This HLD is two product surfaces, one play felt.
+Two product surfaces, one play felt.
 
-**Reuse (MCP-verified on Screens / Flows `3:4`, 2026-09-12).** All `design/screens.md` seated-table and embed-error node ids still resolve with the same names. Desktop 960×640 and narrow-iframe 360×640 pairs are intact. Felt composition stays one table after attach. Do not redesign these frames here.
+**Flow.** Standalone: entry/auth gate (desktop only) → shared play URL → unseated felt (`4038:206`) → Sit at Table → existing waiting-for-deal (`4004:31`) and hand states. Embed: host `iframe.src` same URL → unseated narrow (`4038:217`) → Sit at Table → existing seated narrow frames. No production lobby.
 
-**Embed.** Host (RiffSync first) iframes the same `/play` surface via the shared play URL. Existing loading copy references host-session redeem; embed-error copy says "Couldn't attach to this table" / host session invalid — "This is not a Riffle login." Narrow-iframe is the embed viewport. No Riffle login chrome inside the iframe. Iframe title is a host-page a11y requirement.
+**Copy refresh (2026-09-12).** Loading: "Loading table…" / "Opening play link · no actions yet". Embed error: "Couldn't open this table" / shared play-link invalid message.
 
-**Standalone (missing).** Account sign-up/sign-in, anonymous play entry, display-name edit, and Sit at Table chrome have no frames. Components page `3:3` has Button, Input, Link, Card, Checkbox — primitives for a spike, not pre-built auth screens. Play lab `4012:*` is an operator harness; not a consumer lobby.
+**Viewport.** Standalone consumer surfaces desktop 960×640 Now. Narrow-iframe 360×640 for embed unseated, sit-submitting, and display-name only. Mobile-web standalone unscoped.
 
-**Spike path.** Same file `NgpCBblDdJ7cw4TLrH9kUE`. Add a new Screens / Flows row below play-lab (y > 11000). Designer sign-off stays false until planning re-check after frames exist.
+**Spike section.** Screens / Flows row starting y=11120; section label `4038:27`. Play-lab `4012:*` remains operator harness only.
 
-**Artwork OQ note.** MCP page listing shows Cover-only, but pages exist by id (Screens / Flows `3:4`). Inventoried frames do not need rebuild.
+Suggested next: `/forge.initiative-planning` for Designer re-check (signoffs still false until planning gate).

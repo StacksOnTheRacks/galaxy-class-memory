@@ -59,19 +59,19 @@ questions:
     status: open
     owner: security
   - id: missing-auth-frames
-    question: "No Figma frames for standalone entry (account vs anonymous), sign-in, sign-up, auth error/submitting, display-name edit, or Sit at Table chrome. Pre-build via /forge.design-spike before Designer HLD sign-off."
-    blocking: true
-    status: open
+    question: "Figma frames built on Screens / Flows y>11000 — see design/screens.md 4038:* inventory and initiative design.md."
+    blocking: false
+    status: answered
     owner: designer
   - id: standalone-viewport
-    question: "Does standalone table use desktop frames only, with narrow-iframe reserved for embed? Mobile-web standalone viewport unscoped."
+    question: "Standalone consumer surfaces desktop 960×640 Now. Narrow-iframe 360×640 embed-only for unseated/sit/display-name. Mobile-web standalone unscoped."
     blocking: false
-    status: open
+    status: answered
     owner: designer
   - id: embed-error-copy
-    question: "Embed-error frames (4005:210/215) still say host session mint/redeem. Refresh copy to shared-URL language when embed-link-shape ships?"
+    question: "Loading (4004:15/20) and embed-error (4005:210/215) copy refreshed to shared play-link language."
     blocking: false
-    status: open
+    status: answered
     owner: designer
   - id: csrf-mutation-channel
     question: "CSRF for mutating iframe→Riffle APIs — SameSite + Fetch metadata vs CSRF token vs bearer-only (no ambient cookie)?"

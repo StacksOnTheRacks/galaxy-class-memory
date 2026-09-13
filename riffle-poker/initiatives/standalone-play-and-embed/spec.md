@@ -51,6 +51,8 @@ Trust boundary is the Riffle runtime. The iframe/browser is untrusted presentati
 
 **WS.** Browser locus: standalone two-device play and cross-origin host embed cannot rely on same-origin lab postMessage relay. Mutations stay HTTP. Public WS frames = table cursor / refresh only. Seat-scoped views stay HTTP.
 
+**Attach flow.** No Riffle lobby or match-picker in v1. Standalone: entry/auth gate (desktop) → navigate to shared play URL → unseated felt → Sit at Table → existing waiting-for-deal and hand states. Embed: host sets iframe.src to the same URL; guests never see Riffle auth chrome; unseated narrow felt → Sit at Table → existing seated narrow frames.
+
 **Embed link.** Shared play URL is canonical for standalone and host iframe. Supersedes ADR-host-iframe-bootstrap and ADR-host-seat-capability for new work. Join-code vs raw matchId (leakage) is LLD detail under embed-link-shape answer.
 
 **Host embed contract (RiffSync).** Host MUST load the shared iframe URL and keep chat/rooms/media/room identity. Host MUST NOT evaluate rules, store hole cards, mint bootstrap/capability, call frozen host-key routes for new work, or treat RiffSync identity as Riffle seat authority. Watch Party Game Mode stays in the RiffSync repo.

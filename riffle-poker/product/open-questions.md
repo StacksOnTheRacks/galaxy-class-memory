@@ -60,19 +60,19 @@ items:
     status: open
   - initiative: standalone-play-and-embed
     id: missing-auth-frames
-    question: "No Figma frames for entry/auth/display-name/Sit at Table chrome — /forge.design-spike required."
-    blocking: true
-    status: open
+    question: "Figma frames built — design/screens.md 4038:* inventory."
+    blocking: false
+    status: answered
   - initiative: standalone-play-and-embed
     id: standalone-viewport
-    question: "Desktop-only standalone chrome vs also mobile web?"
+    question: "Standalone desktop 960×640 Now; narrow-iframe embed-only for unseated/sit/display-name."
     blocking: false
-    status: open
+    status: answered
   - initiative: standalone-play-and-embed
     id: embed-error-copy
-    question: "Refresh embed-error copy from mint/redeem to shared-URL language?"
+    question: "Loading and embed-error copy refreshed to shared play-link language."
     blocking: false
-    status: open
+    status: answered
   - initiative: standalone-play-and-embed
     id: csrf-mutation-channel
     question: "CSRF for mutating iframe→Riffle APIs?"
