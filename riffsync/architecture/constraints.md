@@ -1,7 +1,7 @@
 ---
 doc: architecture.constraints
 schema_version: 1
-updated: 2026-08-25
+updated: 2026-09-12
 hard_constraints:
   - "Lawful playback only: official YouTube iframe / IFrame Player API on the host; no re-hosting of third-party video files on RiffSync infra"
   - "Shared viewing for guests is host tab/window capture republished via WebRTC (SFU), not parallel embed clock sync"
@@ -12,7 +12,7 @@ hard_constraints:
   - "Production public site canonical hostname is https://riffsync.tv (CORS/ACM/CloudFront aligned)"
   - "Media stack is self-hosted mediasoup + coturn on RiffSyncTurn; no paid third-party RTC provider and no mesh fallback in current design"
   - "Host Chrome MV3 extension lives at apps/host-extension; must not capture or supply host_screen (no tabCapture / desktopCapture / offscreen capture); page getDisplayMedia is sole capture SoT (ADR-001)"
-  - "Host control panel UI surface is the party Room sidebar tab (SPA); the extension must not use Chrome Side Panel API"
+  - "Host room-admin UI surface is the host-bar Watch Party Settings dialog (SPA HostTheaterButtonBar); the extension must not use Chrome Side Panel API"
   - "MVP party-tab → roomId: parse /room/:roomId from the party tab on allowed origins; no PATCH without a resolvable roomId"
 soft_constraints:
   - "Prefer managed serverless for BFF/control; add VPC-only pieces (e.g. ElastiCache) only when load or latency requires it"
@@ -21,9 +21,11 @@ soft_constraints:
   - "Staff /v1/admin/* behind invite-only Cognito (MFA preferred)"
   - "Local/CI media profiles must not mutate prod RiffSyncTurn or prod Secrets Manager"
   - "Premium vs free/ad-supported room labels are host-declared advisory only (not verified against YouTube subscription)"
-  - "Host Chrome MV3 extension (ADR-001): bind room via party /room/:roomId (C1); Room-tab host console shows media-tab open/not + now playing + host-local Next Up + catalog add; title change via host PATCH + media navigate (A1); JWT via SPA↔extension bridge (JWT A)"
+  - "Host Chrome MV3 extension (ADR-001): bind room via party /room/:roomId (C1); host-bar owns Load Media / broadcast / transport; Watch Party Settings owns displayTitle, copy URL, visibility, share-quality preset; Next Up UI hidden this initiative; title change via host PATCH + media navigate (A1); JWT via SPA↔extension bridge (JWT A)"
   - "Extension allow-list is permissions tabs plus host_permissions for the public HTTP API origin only; SPA origins via content_scripts.matches only; Side Panel retired; never capture permissions under ADR-001"
   - "Figma redesign must not rename GA4 event names or CloudWatch RiffSync/Product Routes without an explicit metrics contract revision (docs/operations/product-metrics.md)"
+  - "Watch Party Game Mode attaches a game iframe; RiffSync stays host (identity, chat, rooms, media) and does not evaluate game rules or own match state"
+  - "A Discord surface is community/distribution, not a second SFU or catalog playback backend"
 out_of_bounds:
   - "Pirate CDN, scraped streams, or communal upload vault of copyrighted video"
   - "ECS/Fargate (or alternate WS stacks) as default for control plane; exception is only EC2 for SFU/coturn"

@@ -1,7 +1,7 @@
 ---
 doc: design.components
 schema_version: 1
-updated: 2026-09-08
+updated: 2026-09-12
 components:
   - name: Navigations
     figma_node_id: "7:111"
@@ -83,6 +83,11 @@ components:
     used_in_screens:
       - Watch Party Host
       - Watch Party Host with Extension
+  - name: RoomSettingsPopup
+    figma_node_id: "1642:10935"
+    variants: []
+    used_in_screens:
+      - Watch Party Host / Media Mode / Room Settings Option
   - name: HostTheaterButtonBar
     figma_node_id: "981:1965"
     variants:

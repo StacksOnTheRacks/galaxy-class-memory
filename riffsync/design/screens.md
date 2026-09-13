@@ -1,7 +1,7 @@
 ---
 doc: design.screens
 schema_version: 1
-updated: 2026-09-10
+updated: 2026-09-12
 screens:
   - name: Home / Unauthenticated
     figma_node_id: "3:185"
@@ -100,11 +100,12 @@ screens:
       - cast-popup
     responsive:
       - desktop
-  - name: Watch Party Host / Share Option
+  - name: Watch Party Host / Media Mode / Room Settings Option
     figma_node_id: "1433:8139"
     app: riffsync
     states:
-      - share-popup
+      - settings-open
+      - settings-button-pressed
     responsive:
       - desktop
   - name: Watch Party Host / Camera and Audio On

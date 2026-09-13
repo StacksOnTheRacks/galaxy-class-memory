@@ -1,7 +1,7 @@
 ---
 doc: product.brief
 schema_version: 2
-updated: 2026-09-11
+updated: 2026-09-12
 product_name: "RiffSync"
 product_description: "Open-source fan catalog and watch-party app at https://riffsync.tv. Fans browse a curated catalog of riff-style MST episodes on YouTube, and signed-in hosts create shareable rooms that drive lawful YouTube (or staff-configured Custom) embeds and optionally broadcast one shared picture to guests via WebRTC/SFU."
 problem: "Riff fans want to watch together with matched ads, chat, and presence, without each person fighting separate embeds or relying on piracy vaults. Discovery of titles and active parties is fragmented; hosting must be accountable while guests should stay anonymous-first."
@@ -36,9 +36,9 @@ success_metrics:
     target: "Cast (when configured) stays viewer-local and does not break room authority or chat"
   - metric: "Honest fan/unofficial positioning"
     target: "Product stays clearly fan/unofficial with honest playback and affiliation disclaimers"
-current_focus: "Now empty: site-redesign (#445–#452 closed 2026-09-08) and first-party-fan-auth (#461–#465 closed 2026-09-11) shipped. Next command: /forge.new-initiative for Host Header Layout Fix (not Host Bar Room Control). Remaining Next (operator-locked, coarse): Host Bar Room Control; Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode. Preserve GA4/CloudWatch. Do not invent tickets."
+current_focus: "Host Header Layout Fix and Host Bar Room Control are both HLD (signoffs still open; no tickets). Remaining Next (operator-locked, coarse): Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode. Preserve GA4/CloudWatch. Do not invent tickets."
 ---
 
 Live site: [riffsync.tv](https://riffsync.tv).
 
-Host extension work lives under `apps/host-extension`. Epic **#426** and slices **#427–#431** are closed Done. Metrics baseline **#437–#440** closed Done (2026-08-25). Site-redesign and first-party fan auth shipped Done. **Next**: `/forge.new-initiative` for Host Header Layout Fix; remaining queue in `product/roadmap.md`.
+Host extension work lives under `apps/host-extension`. Epic **#426** and slices **#427–#431** are closed Done. Metrics baseline **#437–#440** closed Done (2026-08-25). Site-redesign and first-party fan auth shipped Done. **Next**: HLD sign-off for Host Header Layout Fix and Host Bar Room Control; remaining queue in `product/roadmap.md`.
