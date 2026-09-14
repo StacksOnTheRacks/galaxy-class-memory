@@ -1,12 +1,12 @@
 ---
 doc: product.initiative_design
 schema_version: 1
-updated: 2026-09-11
+updated: 2026-09-13
 summary: "Replace Alto9 placeholder identity with Riffle clean-flat artwork in the bound Figma file. Reskin existing seated-table and play-lab frames without changing layout structure. Produce a Canva marketing kit derived from the same identity. Art direction: clean flat vector — bold suits, minimal texture, modern app feel."
 figma_file: "https://www.figma.com/design/NgpCBblDdJ7cw4TLrH9kUE/Riffle-Poker-Design"
 screens:
   - "Brand & Foundations — logo mark, wordmark, primary/secondary palette (replace Alto9 brand/500), typography pairing"
-  - "Assets / Components — 52 card face component set, card back, chip denominations (1/5/25/100/500/1000 play-chip styling), felt swatch, dealer button (optional)"
+  - "Assets / Components — 52 card face component set, card back, chip denominations (1/5/25/100/500/1000 play-chip styling), Table Felt (Riffle) component (4050:14), dealer button (optional)"
   - "Seated table / my-turn — desktop + narrow iframe (reskin; reference design/screens.md names)"
   - "Seated table / hand-in-progress — desktop + narrow iframe"
   - "Seated table / showdown — desktop + narrow iframe"
