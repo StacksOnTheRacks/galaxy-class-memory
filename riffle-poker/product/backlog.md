@@ -1,11 +1,11 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-13
+updated: 2026-09-14
 in_progress: []
-ready: []
-refinement:
+ready:
   - "[#36 First-party Riffle account and anonymous bearer session](https://github.com/StacksOnTheRacks/riffle-poker/issues/36)"
+refinement:
   - "[#37 Riffle MatchStore owns seats, turns, hidden views, and the move log](https://github.com/StacksOnTheRacks/riffle-poker/issues/37)"
   - "[#38 Shared play URL attach for standalone and host embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/38)"
   - "[#39 Sit at Table binds a Riffle session to a seat](https://github.com/StacksOnTheRacks/riffle-poker/issues/39)"
