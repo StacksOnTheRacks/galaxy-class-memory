@@ -1,10 +1,10 @@
 ---
 doc: architecture.interfaces
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-14
 external_interfaces:
   - "Frozen (historical Turnur-backed) — Host → Riffle runtime POST /v1/matches, /v1/bootstrap/mint, /v1/seats/capability/mint, /v1/hands/deal, /v1/hands/betting/open with Bearer RIFFLE_HOST_API_KEY; iframe bootstrap redeem; X-Riffle-Seat-Capability; Riffle runtime → @turnur/sdk. Do not extend for new work."
-  - "Current (standalone-play-and-embed) — first-party Riffle account + anonymous session (bearer Authorization or equivalent; playerSubject account id or anon:{jti}; no ambient cookie); shared play URL attach ({origin}/play/{matchId} or join-code); browser WS subscribe (notify-only public table; bearer in handshake or first control frame); host embed = iframe.src only; optional UX postMessage is a pipe only"
+  - "Current (standalone-play-and-embed) — first-party Riffle account + anonymous session (bearer Authorization or equivalent; playerSubject account id or anon:{jti}; no ambient cookie); shared play URL attach ({origin}/play/{matchId} or join-code); browser WS on GET /v1/ws (first control frame { type: subscribe, matchId, authorization: Bearer <token> }; non-browser MAY send upgrade Authorization; reject token in URL or Sec-WebSocket-Protocol; topic table:{matchId} only; outbound { type: table.refresh, matchId, cursor }); host embed = iframe.src only; optional UX postMessage is a pipe only"
 internal_boundaries:
   - "Play surface UI is presentation; Riffle runtime is the trust boundary for rules and match writes"
   - "Rules library is in-process; no I/O from the library itself"

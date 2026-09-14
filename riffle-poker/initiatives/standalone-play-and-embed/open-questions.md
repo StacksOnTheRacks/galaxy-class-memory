@@ -28,9 +28,4 @@ questions:
     blocking: false
     status: open
     owner: security
-  - id: ws-subscribe-auth
-    question: "How does a WS subscriber prove a Riffle session, and which topic ACLs separate public table state from seat-scoped hidden views?"
-    blocking: false
-    status: open
-    owner: security
 ---

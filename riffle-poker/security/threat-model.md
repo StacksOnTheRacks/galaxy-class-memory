@@ -34,14 +34,14 @@ threats:
 mitigations:
   - "Runtime-only rules and match writes; host is not match authority"
   - "Riffle bearer session (account or anonymous) is seat authority; host bind is absent by design (ADR-sit-at-table)"
-  - "Seat-scoped authorization on HTTP and WS; public payloads omit hidden fields"
+  - "Seat-scoped authorization on HTTP (holes stay HTTP this path); WS public topic table:{matchId} only; public payloads omit hidden fields"
   - "Shared play URL is locator/attach only; frame-ancestors is 'self' plus RIFFLE_FRAME_ANCESTORS registered hosts; never * or 'none'; never switch on ?embed=1"
   - "Bearer-only session transport — no ambient cookie; CSRF-via-cookie out of scope"
   - "Anonymous token unguessable, not in query; rotate on upgrade"
-  - "WS bearer + topic ACL; HTTP mutations authoritative; no hidden views on public topics"
+  - "IdentityStore bearer + first-control-frame subscribe (non-browser MAY send upgrade Authorization); reject query/hash/Sec-WebSocket-Protocol; public table:{matchId} only; HTTP mutations authoritative; no hidden views on public topics"
   - "postMessage origin allowlist + closed schema; not authority"
   - "No hole/token/host-key logging; no real-money rails"
   - "Do not extend host API key / seat-capability for new work"
 open_questions:
-  - "anonymous-upgrade-fixation, ws-subscribe-auth — see initiative security.md"
+  - "anonymous-upgrade-fixation — see initiative security.md"
 ---

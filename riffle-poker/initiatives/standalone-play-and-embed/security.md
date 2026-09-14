@@ -28,7 +28,7 @@ mitigations:
   - "CSP frame-ancestors on the shared play URL is 'self' plus registered host origins from RIFFLE_FRAME_ANCESTORS; never * or 'none'; never switch on ?embed=1; hostile iframe fails CSP; top-level open is locator attach only"
   - "Mutating iframe→Riffle APIs and hidden-view reads use explicit Authorization (or equivalent); no ambient cookie that can mutate or fetch holes"
   - "Anonymous session is unguessable, not placed in query strings, and rotated on account upgrade"
-  - "WS subscribe requires the same Riffle bearer as HTTP (handshake or first control frame). Topic ACLs separate public table notify from seat-scoped channels. Push is not mutation success"
+  - "Browser WS subscribe proves the same IdentityStore bearer as HTTP on the first control frame after upgrade (non-browser MAY send upgrade Authorization). Tokens in query, hash, or Sec-WebSocket-Protocol are rejected. ACL is public table:{matchId} only. Holes stay on HTTP. Host JWT, room membership, postMessage, shared play URL, riffle_play, RIFFLE_HOST_API_KEY, and X-Riffle-Seat-Capability are not subscribe grants. Push is not mutation success"
   - "postMessage: allowlist event.origin; closed schema; ignore unknown types; never attach, sit, or seat-authorize"
   - "Do not log, sample, or export hole cards, hidden views, raw session/embed tokens, passwords, or host keys"
   - "Play chips only — no cashier, KYC, or real-money rails. Still reject illegal actions and client-supplied stacks/pots/deals"
@@ -40,7 +40,7 @@ requirements:
   - "Seat-scoped HTTP and WS operations MUST authorize the caller as the Riffle bearer bound to that matchId+seatId. Host JWT, room id, and postMessage MUST NOT suffice"
   - "Account and anonymous sessions MUST be first-class Riffle play identities. Provider is first-party Riffle (identity-mechanism answered). MUST NOT copy RiffSync Cognito client, pool, or SRP contracts"
   - "Session transport MUST be bearer-only (Authorization or equivalent) on standalone and embed. No ambient cookie that can mutate or fetch holes. Historical riffle_play HttpOnly SameSite=Lax is NOT the forward channel"
-  - "Bearer token MUST NOT appear in URL query strings (HTTP or WS). WS subscribe MUST prove the same bearer in the handshake or first control frame"
+  - "Bearer token MUST NOT appear in URL query, hash, or Sec-WebSocket-Protocol (HTTP or WS). Browser WS subscribe MUST prove the same IdentityStore bearer on the first control frame after upgrade; non-browser MAY send upgrade Authorization. Topic ACL MUST be public table:{matchId} only"
   - "Anonymous bind MUST be unguessable and MUST NOT appear in URL query strings. Account upgrade MUST rotate or rebind so a pre-upgrade anonymous token cannot keep the account's seats"
   - "Embed MUST be an iframe at Riffle origin. The shared play URL MUST NOT be seat authority. Shared-link leakage MUST be treated as uninvited attach risk, not a hidden-info grant"
   - "Shared play URL MUST set CSP frame-ancestors to 'self' plus registered host origins from RIFFLE_FRAME_ANCESTORS; MUST NOT emit * or 'none'; MUST NOT vary CSP because of ?embed=1; hostile framing blocked; top-level navigation is locator attach without a seat"
@@ -53,7 +53,6 @@ requirements:
   - "LLD tickets MUST slice forge-tech-spec AC from this doc at refinement"
 open_questions:
   - anonymous-upgrade-fixation
-  - ws-subscribe-auth
 ---
 
-Trust boundary: player browser / Riffle-origin iframe (untrusted UI) | host page (RiffSync first; untrusted for match writes; owns host identity/chat/rooms/media) | Riffle runtime (rules + match store + WS notify + play session) | hostile framers. A compromised runtime still sees all holes (accepted SoT). No cash-out reduces theft-to-money; hidden info and play-chip integrity remain in scope. Bearer storage in the iframe is LLD.
+Trust boundary: player browser / Riffle-origin iframe (untrusted UI) | host page (RiffSync first; untrusted for match writes; owns host identity/chat/rooms/media) | Riffle runtime (rules + match store + WS notify + play session) | hostile framers. A compromised runtime still sees all holes (accepted SoT). No cash-out reduces theft-to-money; hidden info and play-chip integrity remain in scope. Bearer storage in the iframe is LLD. `ws-subscribe-auth` is answered: browser WS subscribe proves the same IdentityStore bearer as HTTP on the first control frame after upgrade (non-browser MAY send upgrade Authorization); tokens in query, hash, or Sec-WebSocket-Protocol are rejected; ACL is public `table:{matchId}` only.

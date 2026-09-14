@@ -28,11 +28,6 @@ items:
     question: "How does anonymous→account upgrade rotate so an attacker-set anonymous session cannot inherit the account?"
     blocking: false
     status: open
-  - initiative: standalone-play-and-embed
-    id: ws-subscribe-auth
-    question: "How does a WS subscriber prove a Riffle session, and which topic ACLs separate public table state from seat-scoped hidden views?"
-    blocking: false
-    status: open
   - initiative: play-lab
     id: lab-runtime-hosting
     question: "Where is the play lab and Riffle runtime served for a human operator (local process only vs a deployed lab URL)?"
