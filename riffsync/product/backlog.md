@@ -5,8 +5,8 @@ updated: 2026-09-14
 in_progress: []
 ready:
   - "#471 Reskin watch-party NavigationSlim to Figma standard header"
-refinement:
   - "#472 Replace host-bar Share with Watch Party Settings dialog"
+refinement:
   - "#473 Remove Room sidebar panel and playlist chrome"
 blocked: []
 icebox:

@@ -62,3 +62,36 @@ Feature: Replace host-bar Share with Watch Party Settings dialog
     And Settings exposes aria-expanded while the screen is open
     And Close and Escape dismiss the screen and return focus to Settings
     And toast-like confirmations are announced to assistive technology
+
+  Scenario: Empty party name is rejected
+    Given Watch Party Settings is open
+    When I clear the party name and save
+    Then the party name is not updated
+    And a success toast-like confirmation is not shown
+
+  Scenario: Party name longer than 120 characters is rejected
+    Given Watch Party Settings is open
+    When I enter a party name longer than 120 characters and save
+    Then the party name is not updated
+    And a success toast-like confirmation is not shown
+
+  Scenario: Failed party-name save does not toast
+    Given Watch Party Settings is open
+    When I change the party name and save
+    And the name update does not succeed
+    Then the party name is not treated as saved
+    And a success toast-like confirmation is not shown
+
+  Scenario: Failed visibility change does not toast
+    Given Watch Party Settings is open
+    When I change room visibility
+    And the visibility update does not succeed
+    Then the room visibility is not treated as saved
+    And a success toast-like confirmation is not shown
+
+  Scenario: Re-selecting the current visibility does nothing
+    Given Watch Party Settings is open
+    And the room is already Public
+    When I activate Public
+    Then the room visibility is not sent again
+    And a success toast-like confirmation is not shown

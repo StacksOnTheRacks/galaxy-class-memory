@@ -36,7 +36,7 @@ success_metrics:
     target: "Cast (when configured) stays viewer-local and does not break room authority or chat"
   - metric: "Honest fan/unofficial positioning"
     target: "Product stays clearly fan/unofficial with honest playback and affiliation disclaimers"
-current_focus: "Host Header Layout Fix (#471) and Host Bar Room Control (#472–#473) on Refinement. Next: /forge.plan-refresh and /forge.refinement. Remaining Next (operator-locked, coarse): Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode. Preserve GA4/CloudWatch."
+current_focus: "Host Header Layout Fix (#471 Ready); Host Bar Room Control (#472 Ready, #473 Refinement). Next: /forge.refinement on #473. Remaining Next (operator-locked, coarse): Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode. Preserve GA4/CloudWatch."
 ---
 
 Live site: [riffsync.tv](https://riffsync.tv).
