@@ -1,7 +1,7 @@
 ---
 doc: product.initiative_security
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-14
 summary: "HLD security for standalone NLHE plus embed. Riffle runtime is the sole match and rules authority; play identity is a Riffle account or anonymous session (first-party, bearer-only). Hole cards are seat-scoped on every REST and WS path except legal showdown reveal. Embed is an iframe at Riffle origin; host (RiffSync first) keeps identity, chat, rooms, and media and MUST NOT become match authority. Host identity is not Riffle seat authority — guests self-sit via Sit at Table with a Riffle anonymous session. No real money — play-chip integrity and hidden information still matter. Historical host API key, bootstrap mint/redeem, and seat-capability are Turnur-era residuals, not the forward design."
 threats:
   - "Hole-card cross-seat leak — seat A's holes appear in seat B or spectator REST, WS topics, shared DTOs, error bodies, cache, or UI"
@@ -25,7 +25,7 @@ mitigations:
   - "Every hidden-view read, hole-card field, and seat-scoped move is authorized for that matchId+seatId against the bound Riffle bearer; fail closed"
   - "Public table state, move log, and WS public topics omit hole cards and other-seat private fields except cards legally revealed at showdown"
   - "Shared play URL is match attach or locator only — never seat authority and never a hidden-view grant"
-  - "CSP frame-ancestors is an explicit allowlist (standalone 'none' or 'self'; embed adds registered host origins). Never *"
+  - "CSP frame-ancestors on the shared play URL is 'self' plus registered host origins from RIFFLE_FRAME_ANCESTORS; never * or 'none'; never switch on ?embed=1; hostile iframe fails CSP; top-level open is locator attach only"
   - "Mutating iframe→Riffle APIs and hidden-view reads use explicit Authorization (or equivalent); no ambient cookie that can mutate or fetch holes"
   - "Anonymous session is unguessable, not placed in query strings, and rotated on account upgrade"
   - "WS subscribe requires the same Riffle bearer as HTTP (handshake or first control frame). Topic ACLs separate public table notify from seat-scoped channels. Push is not mutation success"
@@ -43,7 +43,7 @@ requirements:
   - "Bearer token MUST NOT appear in URL query strings (HTTP or WS). WS subscribe MUST prove the same bearer in the handshake or first control frame"
   - "Anonymous bind MUST be unguessable and MUST NOT appear in URL query strings. Account upgrade MUST rotate or rebind so a pre-upgrade anonymous token cannot keep the account's seats"
   - "Embed MUST be an iframe at Riffle origin. The shared play URL MUST NOT be seat authority. Shared-link leakage MUST be treated as uninvited attach risk, not a hidden-info grant"
-  - "Play surface MUST set CSP frame-ancestors to an allowlist; MUST NOT use *. Standalone SHOULD deny foreign framing; embed MAY add registered host origins only"
+  - "Shared play URL MUST set CSP frame-ancestors to 'self' plus registered host origins from RIFFLE_FRAME_ANCESTORS; MUST NOT emit * or 'none'; MUST NOT vary CSP because of ?embed=1; hostile framing blocked; top-level navigation is locator attach without a seat"
   - "Cross-site framing MUST NOT submit moves or fetch hole cards for a victim bearer session"
   - "If WS is browser-facing, subscribe MUST prove the Riffle bearer and MUST enforce topic ACLs. Push MUST NOT be write authority and MUST NOT carry unauthorized hidden views"
   - "postMessage handlers MUST allowlist origin and use a closed schema; spoofed messages MUST be dropped; postMessage MUST NOT attach, sit, or grant seats"
@@ -53,9 +53,7 @@ requirements:
   - "LLD tickets MUST slice forge-tech-spec AC from this doc at refinement"
 open_questions:
   - anonymous-upgrade-fixation
-  - embed-frame-ancestors
   - ws-subscribe-auth
-  - host-spoofing-embed
 ---
 
 Trust boundary: player browser / Riffle-origin iframe (untrusted UI) | host page (RiffSync first; untrusted for match writes; owns host identity/chat/rooms/media) | Riffle runtime (rules + match store + WS notify + play session) | hostile framers. A compromised runtime still sees all holes (accepted SoT). No cash-out reduces theft-to-money; hidden info and play-chip integrity remain in scope. Bearer storage in the iframe is LLD.

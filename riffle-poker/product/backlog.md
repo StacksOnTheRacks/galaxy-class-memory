@@ -6,8 +6,8 @@ in_progress: []
 ready:
   - "[#36 First-party Riffle account and anonymous bearer session](https://github.com/StacksOnTheRacks/riffle-poker/issues/36)"
   - "[#37 Riffle MatchStore owns seats, turns, hidden views, and the move log](https://github.com/StacksOnTheRacks/riffle-poker/issues/37)"
-refinement:
   - "[#38 Shared play URL attach for standalone and host embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/38)"
+refinement:
   - "[#39 Sit at Table binds a Riffle session to a seat](https://github.com/StacksOnTheRacks/riffle-poker/issues/39)"
   - "[#40 Anonymous player can change in-game display name](https://github.com/StacksOnTheRacks/riffle-poker/issues/40)"
   - "[#41 Browser WebSocket notify-only for public table updates](https://github.com/StacksOnTheRacks/riffle-poker/issues/41)"

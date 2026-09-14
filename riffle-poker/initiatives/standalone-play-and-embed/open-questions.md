@@ -1,7 +1,7 @@
 ---
 doc: product.open_questions
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-14
 questions:
   - id: runtime-hosting
     question: "Where does Riffle runtime host (process/platform/IaC)?"
@@ -28,18 +28,8 @@ questions:
     blocking: false
     status: open
     owner: security
-  - id: embed-frame-ancestors
-    question: "frame-ancestors for standalone vs embed — allowlisted hosts only, never *; how are hosts registered?"
-    blocking: false
-    status: open
-    owner: security
   - id: ws-subscribe-auth
     question: "How does a WS subscriber prove a Riffle session, and which topic ACLs separate public table state from seat-scoped hidden views?"
-    blocking: false
-    status: open
-    owner: security
-  - id: host-spoofing-embed
-    question: "How does the iframe reject a spoofed host (wrong parent, forged postMessage, copied URL on a hostile page) without treating host chrome as match authority?"
     blocking: false
     status: open
     owner: security

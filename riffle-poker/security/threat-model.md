@@ -1,7 +1,7 @@
 ---
 doc: security.threat_model
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-14
 assets:
   - "Seat-scoped hidden hole cards / hidden views (except legal showdown reveal)"
   - "Match state — seats, stacks, pot, board, turn, move log (play chips; no cash)"
@@ -35,7 +35,7 @@ mitigations:
   - "Runtime-only rules and match writes; host is not match authority"
   - "Riffle bearer session (account or anonymous) is seat authority; host bind is absent by design (ADR-sit-at-table)"
   - "Seat-scoped authorization on HTTP and WS; public payloads omit hidden fields"
-  - "Shared play URL is locator/attach only; frame-ancestors allowlist, never *"
+  - "Shared play URL is locator/attach only; frame-ancestors is 'self' plus RIFFLE_FRAME_ANCESTORS registered hosts; never * or 'none'; never switch on ?embed=1"
   - "Bearer-only session transport — no ambient cookie; CSRF-via-cookie out of scope"
   - "Anonymous token unguessable, not in query; rotate on upgrade"
   - "WS bearer + topic ACL; HTTP mutations authoritative; no hidden views on public topics"
@@ -43,5 +43,5 @@ mitigations:
   - "No hole/token/host-key logging; no real-money rails"
   - "Do not extend host API key / seat-capability for new work"
 open_questions:
-  - "anonymous-upgrade-fixation, embed-frame-ancestors, ws-subscribe-auth, host-spoofing-embed — see initiative security.md"
+  - "anonymous-upgrade-fixation, ws-subscribe-auth — see initiative security.md"
 ---
