@@ -31,11 +31,22 @@ Feature: Apply on-turn NLHE actions against MatchStore
     When an action is submitted
     Then accept/reject is determined by HTTP response
     And WS push does not count as accept
+    And after HTTP accept notifyPublicTable is called when the hub exists
 
   Scenario: Host identity cannot submit seat actions
     When a caller presents only host identity without the seat occupant bearer
     Then the action is rejected
 
+  Scenario: Occupant bearer must be bound to matchId and seatId
+    When a caller presents a bearer that is not the occupant bound to that matchId and seatId
+    Then the action is rejected
+
   Scenario: Client-supplied stack, pot, or deal is rejected
     When a client supplies stack, pot, or deal values with an action
     Then the mutation is rejected
+
+  Scenario: Existing play turn controls submit the action
+    Given the seated /play my-turn actions-bar is shown
+    When the on-turn player confirms a legal action
+    Then the client posts POST /v1/play/matches/:matchId/seats/:seatId/actions with { action }
+    And the felt is not rebuilt

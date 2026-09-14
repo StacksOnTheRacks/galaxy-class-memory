@@ -4,18 +4,18 @@ schema_version: 1
 updated: 2026-09-14
 in_progress: []
 ready:
-  - "[#37 Riffle MatchStore owns seats, turns, hidden views, and the move log](https://github.com/StacksOnTheRacks/riffle-poker/issues/37)"
-  - "[#38 Shared play URL attach for standalone and host embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/38)"
-  - "[#39 Sit at Table binds a Riffle session to a seat](https://github.com/StacksOnTheRacks/riffle-poker/issues/39)"
   - "[#40 Anonymous player can change in-game display name](https://github.com/StacksOnTheRacks/riffle-poker/issues/40)"
   - "[#41 Browser WebSocket notify-only for public table updates](https://github.com/StacksOnTheRacks/riffle-poker/issues/41)"
-refinement:
   - "[#42 Apply on-turn NLHE actions against MatchStore](https://github.com/StacksOnTheRacks/riffle-poker/issues/42)"
+refinement:
   - "[#43 Hole cards stay seat-scoped and the public board is shared](https://github.com/StacksOnTheRacks/riffle-poker/issues/43)"
   - "[#44 Complete a play-chip hand on standalone and embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/44)"
 blocked: []
 done:
   - "[#36 First-party Riffle account and anonymous bearer session](https://github.com/StacksOnTheRacks/riffle-poker/issues/36)"
+  - "[#37 Riffle MatchStore owns seats, turns, hidden views, and the move log](https://github.com/StacksOnTheRacks/riffle-poker/issues/37)"
+  - "[#38 Shared play URL attach for standalone and host embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/38)"
+  - "[#39 Sit at Table binds a Riffle session to a seat](https://github.com/StacksOnTheRacks/riffle-poker/issues/39)"
   - "[#1 Host iframe attach via bootstrap mint → URL → redeem](https://github.com/StacksOnTheRacks/riffle-poker/issues/1)"
   - "[#2 Riffle runtime authenticates to Turnur with a server-side SDK key](https://github.com/StacksOnTheRacks/riffle-poker/issues/2)"
   - "[#3 Verify host-issued seat capability before seat-scoped Turnur ops](https://github.com/StacksOnTheRacks/riffle-poker/issues/3)"
@@ -47,4 +47,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins — playable-holdem-table #1–#9 and play-lab #19–#24 closed (Done). integrate-turnur-websockets #31–#35 closed not planned (milestone/3 closed). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
+Board/SCM wins — standalone-play-and-embed #36–#39 closed (Done). playable-holdem-table #1–#9 and play-lab #19–#24 closed (Done). integrate-turnur-websockets #31–#35 closed not planned (milestone/3 closed). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
