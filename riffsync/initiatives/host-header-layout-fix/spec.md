@@ -1,13 +1,13 @@
 ---
 doc: product.initiative_spec
 schema_version: 1
-updated: 2026-09-11
-summary: "Reskin watch-party NavigationSlim to match Figma NavigationSlim (910:9936): logo left, profile menu right; remove leave-first layout; no new APIs."
-approach: "Refactor NavigationSlim layout (flex: logo start, menu end); embed or adapt ProfileMenu for room context; swap leave-left pattern for logo; relocate episode title per design OQ room-title-placement; CSS updates under .riffsync-navigation-slim*."
+updated: 2026-09-14
+summary: "Reskin watch-party NavigationSlim to match Figma NavigationSlim (910:9936): logo left, profile menu right; remove leave-first layout; sr-only H1 for room title; no new APIs."
+approach: "Refactor NavigationSlim layout (flex: logo start, menu end); embed or adapt ProfileMenu for room context (Account + Sign out only); swap leave-left pattern for logo; render episode title as sr-only H1; retire leaveHref; CSS updates under .riffsync-navigation-slim*."
 interfaces:
-  - "NavigationSlimProps — simplify; title/subtitle/leaveHref may move or retire per OQs"
+  - "NavigationSlimProps — keep title (sr-only H1); retire subtitle, leaveHref, leaveLabel"
   - "ProfileMenu / fan auth — navigateToFanAuth, useFanSession, startFanHostedUiSignOut; room-appropriate returnTo"
-  - "RoomChromeProvider — nowPlayingLabel if episode title moves out of header strip"
+  - "RoomChromeProvider — unchanged; title stays NavigationSlim prop, not nowPlayingLabel"
 structure:
   - "apps/web/src/room/NavigationSlim.tsx"
   - "apps/web/src/room/NavigationSlim.test.tsx"
@@ -21,9 +21,7 @@ constraints:
   - "Guest and host header layout parity; host authority unchanged"
   - "GA4 unchanged unless existing header events are already wired"
   - "SiteHeader compact dead path on /room routes out of scope unless LLD consolidates"
-open_questions:
-  - "room-title-placement"
-  - "leave-party-affordance"
+open_questions: []
 ---
 
 <!--
@@ -34,3 +32,5 @@ Authoring (not validated):
 -->
 
 Primary implementation target is NavigationSlim on RoomPage, not SiteHeader compact (SiteLayout hides SiteHeader on /room routes). Reuse app-shell logo SVG and ProfileMenu auth patterns from the shipped AppShell.
+
+LLD locks (2026-09-14): room title is sr-only H1 only; Leave party is retired from NavigationSlim and not added to the profile menu.

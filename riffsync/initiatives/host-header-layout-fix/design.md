@@ -1,8 +1,8 @@
 ---
 doc: product.initiative_design
 schema_version: 1
-updated: 2026-09-11
-summary: "Bind room header to Figma NavigationSlim — logo left at 24px inset, NavigationAuthenticated right; episode title not in Figma header strip (placement deferred to OQ room-title-placement)."
+updated: 2026-09-14
+summary: "Bind room header to Figma NavigationSlim — logo left at 24px inset, NavigationAuthenticated right; episode title sr-only H1 (not visible in slim strip); Leave party retired."
 figma_file: "https://www.figma.com/design/vQ6yHQyiGlOnRG7ngIOxR7/RiffSync"
 screens:
   - "NavigationSlim (910:9936)"
@@ -18,10 +18,8 @@ a11y:
   - "Logo control: aria-label for RiffSync home navigation"
   - "Profile trigger: aria-expanded toggles when menu open; Escape closes menu and returns focus to trigger"
   - "Sign in button: visible label or aria-label when signed out"
-  - "Room title: preserve sr-only or visible document H1 strategy per room-title-placement OQ"
-open_questions:
-  - "room-title-placement"
-  - "leave-party-affordance"
+  - "Room title: sr-only H1 for episode/room title; no visible title in slim header strip"
+open_questions: []
 ---
 
 <!--
@@ -37,4 +35,4 @@ Figma NavigationSlim (`910:9936`, 1440×56): Logo instance (`910:9881`) left ins
 
 **Mobile-narrow:** logo and menu remain on one row; menu panel uses AppShell dropdown width conventions.
 
-Episode/room title is absent from the Figma header strip — resolve placement in LLD via `room-title-placement` OQ (sr-only H1, stage chrome, or secondary line below header).
+**LLD locks (2026-09-14):** episode/room title is sr-only H1 only (not visible in slim strip; not in stage chrome, HostTheaterButtonBar, or a second header row). Leave party is retired from NavigationSlim and not added to the profile menu.

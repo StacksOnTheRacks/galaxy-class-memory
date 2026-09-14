@@ -1,10 +1,10 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-14
 slug: host-header-layout-fix
 title: Host Header Layout Fix
-status: lld
+status: executing
 user_facing: true
 signoffs:
   po: true
@@ -44,3 +44,5 @@ Figma file: https://www.figma.com/design/vQ6yHQyiGlOnRG7ngIOxR7/RiffSync (file k
 - **Reuse:** app-shell logo asset (`/app-shell/topbar/logo.svg`), existing fan auth navigation
 - **Preserve:** `--riffsync-room-chrome-height`, expanded-view chrome hide, ADR-001 host theater bar unchanged
 - **Out of scope (this initiative):** Host Bar Room Control; Live channel shell header; `SiteHeader compact` dead-path cleanup (LLD fork unless needed)
+
+**LLD locks (2026-09-14, #471 Ready):** room title is sr-only H1 only; Leave party is retired from NavigationSlim and not added to the profile menu.

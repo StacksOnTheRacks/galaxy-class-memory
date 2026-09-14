@@ -1,18 +1,8 @@
 ---
 doc: product.open_questions_index
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-14
 items:
-  - initiative: host-header-layout-fix
-    id: room-title-placement
-    question: "After logo+menu header, where does the episode/room title display (sr-only H1 only, stage chrome, HostTheaterButtonBar, or secondary line below header)? Figma NavigationSlim omits visible title."
-    blocking: false
-    status: open
-  - initiative: host-header-layout-fix
-    id: leave-party-affordance
-    question: "Figma NavigationSlim has no Leave party control. Retire leave link, move to profile menu, or keep as secondary icon?"
-    blocking: false
-    status: open
   - initiative: host-bar-room-control
     id: leave-party-remaining-surface
     question: "After this initiative removes Leave Party from the Room panel, the only remaining in-room leave control is NavigationSlim. host-header-layout-fix OQ leave-party-affordance owns whether that stays, moves, or retires. This initiative must not add a replacement leave control. Confirm accepted: if the header OQ retires Leave Party, hosts and guests may have no in-room leave affordance until a later decision."
@@ -68,4 +58,4 @@ Authoring (not validated):
 - Bump updated when any frontmatter field changes.
 -->
 
-Rollup from initiative-planning 2026-09-12. Both host initiatives exited HLD → LLD. All items non-blocking; LLD forks carry forward.
+Rollup from initiative-planning 2026-09-12. Host-header LLD forks answered at #471 refinement 2026-09-14.

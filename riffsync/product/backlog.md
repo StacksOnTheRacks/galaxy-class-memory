@@ -1,11 +1,11 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-14
 in_progress: []
-ready: []
-refinement:
+ready:
   - "#471 Reskin watch-party NavigationSlim to Figma standard header"
+refinement:
   - "#472 Replace host-bar Share with Watch Party Settings dialog"
   - "#473 Remove Room sidebar panel and playlist chrome"
 blocked: []

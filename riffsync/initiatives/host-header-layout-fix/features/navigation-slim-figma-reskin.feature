@@ -40,4 +40,17 @@ Feature: Reskin watch-party NavigationSlim to Figma standard header
     When the slim header renders
     Then the logo control has an accessible name for home navigation
     And the profile or Sign in control exposes aria-expanded when its menu is open
-    And the room document preserves a primary heading strategy for the episode or room title per design OQ
+    And the room document has a primary heading for the episode or room title that is sr-only
+    And the slim header strip does not show a visible episode or room title
+    And the slim header strip does not show a visible Host subtitle
+
+  Scenario: Episode title stays out of other chrome
+    When the room page renders
+    Then the episode or room title is not shown in stage chrome
+    And the episode or room title is not shown on HostTheaterButtonBar
+    And no secondary header row is added for the title
+
+  Scenario: Leave party is retired from the header
+    When the slim header renders
+    Then NavigationSlim does not show a Leave party link or leave control
+    And the profile menu does not include Leave party
