@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "path": "galaxyclass-www",
+  "kind": "site",
+  "host": "github",
+  "github": {
+    "owner": "StacksOnTheRacks",
+    "repo": "galaxyclass-www"
+  },
+  "labels": {
+    "aiReady": "ai-ready",
+    "humanReady": "human-ready"
+  }
+}
