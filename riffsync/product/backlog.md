@@ -6,8 +6,8 @@ in_progress: []
 ready:
   - "#471 Reskin watch-party NavigationSlim to Figma standard header"
   - "#472 Replace host-bar Share with Watch Party Settings dialog"
-refinement:
   - "#473 Remove Room sidebar panel and playlist chrome"
+refinement: []
 blocked: []
 icebox:
   - "Finish the Host Chrome Extension (Next; /forge.new-initiative before tickets)"

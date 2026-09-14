@@ -1,7 +1,7 @@
 ---
 doc: product.brief
 schema_version: 2
-updated: 2026-09-12
+updated: 2026-09-14
 product_name: "RiffSync"
 product_description: "Open-source fan catalog and watch-party app at https://riffsync.tv. Fans browse a curated catalog of riff-style MST episodes on YouTube, and signed-in hosts create shareable rooms that drive lawful YouTube (or staff-configured Custom) embeds and optionally broadcast one shared picture to guests via WebRTC/SFU."
 problem: "Riff fans want to watch together with matched ads, chat, and presence, without each person fighting separate embeds or relying on piracy vaults. Discovery of titles and active parties is fragmented; hosting must be accountable while guests should stay anonymous-first."
@@ -36,7 +36,7 @@ success_metrics:
     target: "Cast (when configured) stays viewer-local and does not break room authority or chat"
   - metric: "Honest fan/unofficial positioning"
     target: "Product stays clearly fan/unofficial with honest playback and affiliation disclaimers"
-current_focus: "Host Header Layout Fix (#471 Ready); Host Bar Room Control (#472 Ready, #473 Refinement). Next: /forge.refinement on #473. Remaining Next (operator-locked, coarse): Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode. Preserve GA4/CloudWatch."
+current_focus: "Host Header Layout Fix (#471 Ready); Host Bar Room Control (#472 Ready, #473 Ready, initiative executing). Next: /forge.implement-ticket on #472 first, then #473. Remaining Next (operator-locked, coarse): Finish the Host Chrome Extension; Develop a Discord App; Watch Party Game Mode. Preserve GA4/CloudWatch."
 ---
 
 Live site: [riffsync.tv](https://riffsync.tv).

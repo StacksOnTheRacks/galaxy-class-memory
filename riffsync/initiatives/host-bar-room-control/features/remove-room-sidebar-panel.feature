@@ -23,3 +23,17 @@ Feature: Remove Room sidebar panel and playlist chrome
     When the room sidebar renders
     Then Chat and People tabs remain
     And Friends remains available for signed-in fans
+
+  Scenario: Live channel sidebar is unchanged
+    Given I am on a live channel route that uses the shared room sidebar
+    When the live sidebar renders
+    Then Chat and People tabs remain
+    And Friends remains available for signed-in fans
+    And there is no Room button or Room panel
+
+  Scenario: Leftover Room tab selection shows Chat
+    Given I am on a watch-party room route /room/:roomId
+    And the sidebar tab state is room
+    When the room sidebar renders
+    Then Chat is shown
+    And the Room panel is not present
