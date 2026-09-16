@@ -30,3 +30,20 @@ Feature: Hole cards stay seat-scoped and the public board is shared
     When seated players view the table
     Then existing /play hole and board UI reads from MatchStore
     And not from Turnur hidden views
+
+  Scenario: Seat-scoped hole read requires the occupant bearer
+    When an unseated caller, other-seat bearer, or non-session credential reads a seat's holes
+    Then the read is rejected and no foreign holes are returned
+
+  Scenario: Public board is not a hidden view
+    Given the public board has advanced past preflop
+    When public table and each seat-scoped table are read
+    Then every seated player sees the same public board
+    And the board is not stored as a seat hidden view
+    And remaining undealt cards and burns stay off the felt
+
+  Scenario: Store-side street deal advances the shared board
+    Given a preflop, flop, or turn street is complete in MatchStore
+    When advanceStreetIfComplete runs
+    Then a street_deal move is appended and the public board is write-through
+    And river complete and hand complete do not advance here
