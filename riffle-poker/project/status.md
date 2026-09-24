@@ -1,13 +1,13 @@
 ---
 doc: project.status
 schema_version: 1
-updated: 2026-09-13
-summary: "Operator pivot: Turnur mothballed. integrate-turnur-websockets #31–#35 closed not planned. Now: standalone-play-and-embed milestone/4 with #36–#44 on Refinement. Artwork lld ungroomed."
+updated: 2026-09-24
+summary: "Operator pivot: Turnur mothballed. Now: standalone-play-and-embed #44 In Refinement (milestone/4; #36–#43 closed). Next: Artwork lld (not executing) — #53–#58 on Refinement, milestone/5."
 in_flight: []
 blockers: []
 next_up:
-  - "/forge.plan-refresh then /forge.refinement on standalone-play-and-embed"
-  - "/forge.backlog-grooming for artwork (operator-locked Next, lld, ungroomed)"
+  - "/forge.plan-refresh then /forge.refinement on #44 (Now remaining)"
+  - "Artwork slugs stay Next / lld until #44 is through Ready"
 asks: []
 ---
 

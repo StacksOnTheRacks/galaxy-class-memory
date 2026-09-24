@@ -1,11 +1,11 @@
 ---
 doc: project.milestones
 schema_version: 1
-updated: 2026-09-13
+updated: 2026-09-24
 active:
-  - "[Standalone play and embed](https://github.com/StacksOnTheRacks/riffle-poker/milestone/4) — #36–#44 on Refinement"
+  - "[Standalone play and embed](https://github.com/StacksOnTheRacks/riffle-poker/milestone/4) — #36–#43 closed; #44 In Refinement"
 upcoming:
-  - "Artwork (Figma + Canva) — lld, ungroomed"
+  - "[Artwork](https://github.com/StacksOnTheRacks/riffle-poker/milestone/5) — #53–#58 In Refinement"
   - "Web Site"
   - "Complete NLHE Hand (full rules)"
   - "Multi-Hand Session"

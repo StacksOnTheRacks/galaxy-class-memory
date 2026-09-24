@@ -1,7 +1,7 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-09-13
+updated: 2026-09-24
 themes:
   - "Standalone poker app: account or anonymous play"
   - "Riffle-owned match state and WebSockets"
@@ -10,9 +10,9 @@ themes:
   - "Play-chip social play — no cashier, rake, or real money"
   - "First-party visual identity and public site"
 now:
-  - "Standalone play and embed — tickets in Refinement (initiative standalone-play-and-embed)"
+  - "Standalone play and embed — #44 remaining in Refinement (#36–#43 Done)"
 next:
-  - "Artwork (Figma + Canva)"
+  - "Artwork (Figma + Canva) — tickets in Refinement (not Ready)"
   - "Web Site"
   - "Complete NLHE Hand (full rules) — side pots, all-in runout, and remaining legal play beyond fold-to-one / non-all-in showdown"
   - "Multi-Hand Session"

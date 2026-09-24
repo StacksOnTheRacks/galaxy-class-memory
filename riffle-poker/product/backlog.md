@@ -1,21 +1,27 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-16
+updated: 2026-09-24
 in_progress: []
-ready:
-  - "[#40 Anonymous player can change in-game display name](https://github.com/StacksOnTheRacks/riffle-poker/issues/40)"
-  - "[#41 Browser WebSocket notify-only for public table updates](https://github.com/StacksOnTheRacks/riffle-poker/issues/41)"
-  - "[#42 Apply on-turn NLHE actions against MatchStore](https://github.com/StacksOnTheRacks/riffle-poker/issues/42)"
-  - "[#43 Hole cards stay seat-scoped and the public board is shared](https://github.com/StacksOnTheRacks/riffle-poker/issues/43)"
+ready: []
 refinement:
   - "[#44 Complete a play-chip hand on standalone and embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/44)"
+  - "[#53 Define Riffle Figma source components for cards, chips, and felt](https://github.com/StacksOnTheRacks/riffle-poker/issues/53)"
+  - "[#54 Serve first-party artwork via GET /assets/* and cardAssetUrl](https://github.com/StacksOnTheRacks/riffle-poker/issues/54)"
+  - "[#55 Render Riffle card faces on hole, board, and showdown](https://github.com/StacksOnTheRacks/riffle-poker/issues/55)"
+  - "[#56 Apply Riffle felt and table chrome tokens](https://github.com/StacksOnTheRacks/riffle-poker/issues/56)"
+  - "[#57 Show chip artwork at pot and seat stacks](https://github.com/StacksOnTheRacks/riffle-poker/issues/57)"
+  - "[#58 Publish Canva kit from the same Riffle identity](https://github.com/StacksOnTheRacks/riffle-poker/issues/58)"
 blocked: []
 done:
   - "[#36 First-party Riffle account and anonymous bearer session](https://github.com/StacksOnTheRacks/riffle-poker/issues/36)"
   - "[#37 Riffle MatchStore owns seats, turns, hidden views, and the move log](https://github.com/StacksOnTheRacks/riffle-poker/issues/37)"
   - "[#38 Shared play URL attach for standalone and host embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/38)"
   - "[#39 Sit at Table binds a Riffle session to a seat](https://github.com/StacksOnTheRacks/riffle-poker/issues/39)"
+  - "[#40 Anonymous player can change in-game display name](https://github.com/StacksOnTheRacks/riffle-poker/issues/40)"
+  - "[#41 Browser WebSocket notify-only for public table updates](https://github.com/StacksOnTheRacks/riffle-poker/issues/41)"
+  - "[#42 Apply on-turn NLHE actions against MatchStore](https://github.com/StacksOnTheRacks/riffle-poker/issues/42)"
+  - "[#43 Hole cards stay seat-scoped and the public board is shared](https://github.com/StacksOnTheRacks/riffle-poker/issues/43)"
   - "[#1 Host iframe attach via bootstrap mint → URL → redeem](https://github.com/StacksOnTheRacks/riffle-poker/issues/1)"
   - "[#2 Riffle runtime authenticates to Turnur with a server-side SDK key](https://github.com/StacksOnTheRacks/riffle-poker/issues/2)"
   - "[#3 Verify host-issued seat capability before seat-scoped Turnur ops](https://github.com/StacksOnTheRacks/riffle-poker/issues/3)"
@@ -37,7 +43,6 @@ done:
   - "[#34 Refactor submit and advance post-mutation polls to WS notify](https://github.com/StacksOnTheRacks/riffle-poker/issues/34) — closed not planned"
   - "[#35 Refactor remaining orchestration poll sites and verify poll reduction](https://github.com/StacksOnTheRacks/riffle-poker/issues/35) — closed not planned"
 icebox:
-  - "Artwork (Figma + Canva) (lld; /forge.backlog-grooming before tickets)"
   - "Web Site (Next; /forge.new-initiative before tickets)"
   - "Complete NLHE Hand (full rules) — side pots, all-in runout (Next; /forge.new-initiative before tickets)"
   - "Multi-Hand Session (Next; /forge.new-initiative before tickets)"
@@ -47,4 +52,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins — standalone-play-and-embed #36–#39 closed (Done). playable-holdem-table #1–#9 and play-lab #19–#24 closed (Done). integrate-turnur-websockets #31–#35 closed not planned (milestone/3 closed). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
+Board/SCM wins — #36–#43 closed (Done). #44 remains Refinement (milestone/4). Artwork #53–#58 in Refinement (milestone/5). playable-holdem-table #1–#9 and play-lab #19–#24 closed (Done). integrate-turnur-websockets #31–#35 closed not planned (milestone/3 closed). Icebox is coarse outcomes only (Next/Later); do not treat these as tickets.
