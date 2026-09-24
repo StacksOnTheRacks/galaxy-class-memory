@@ -1,7 +1,7 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-24
 themes:
   - "Lawful shared watching (catalog + host embed/capture + guest SFU view)"
   - "Host browser tooling (Chrome MV3: media-tab control + Room-tab host console; no capture)"
@@ -15,10 +15,8 @@ themes:
   - "Watch-party game mode — host attaches Riffle embed-mode (iframe link) without becoming match authority"
   - "Discord as a community surface — not a second media plane"
 now:
-  - "Treat site-redesign (#445–#452 closed 2026-09-08), first-party-fan-auth (#461–#465 closed 2026-09-11), Chromecast, PWA, catalog playback host, friends/DM, catalog browse IA, public SEO packaging, Official Live, TV client, product metrics baseline (#437–#440), and MV3 host extension MVP (#426–#431) as live product baseline (board Done / closed), not open delivery risk"
+  - "Treat site-redesign (#445–#452 closed 2026-09-08), first-party-fan-auth (#461–#465 closed 2026-09-11), host-header-layout-fix (#471 closed 2026-09-14), host-bar-room-control (#472–#473 closed 2026-09-14), Chromecast, PWA, catalog playback host, friends/DM, catalog browse IA, public SEO packaging, Official Live, TV client, product metrics baseline (#437–#440), and MV3 host extension MVP (#426–#431) as live product baseline (board Done / closed), not open delivery risk"
 next:
-  - "Host Header Layout Fix — watch-party standard header; logo plus menu on the right"
-  - "Host Bar Room Control — Settings replaces Share on the host theater bar; Watch Party Settings consolidates name, URL, visibility, and share quality; Room panel and playlist removed (HLD; no tickets yet)"
   - "Finish the Host Chrome Extension"
   - "Develop a Discord App"
   - "Watch Party Game Mode — attach Riffle embed-mode in a room; Riffle owns match and rules; identity, chat, rooms, and media stay on RiffSync"
@@ -38,4 +36,4 @@ not_planning:
   - "RiffSync becoming match authority or owning game rules"
 ---
 
-Next items are operator-locked coarse outcomes — `/forge.new-initiative` before tickets. Do not split from Icebox. Site-redesign and first-party-fan-auth shipped Done. Extension MVP #426–#431 and metrics #437–#440 are baseline.
+Next items are operator-locked coarse outcomes — `/forge.new-initiative` before tickets. Do not split from Icebox. Site-redesign, first-party-fan-auth, host-header-layout-fix, and host-bar-room-control shipped Done. Extension MVP #426–#431 and metrics #437–#440 are baseline.

@@ -1,10 +1,10 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-14
+updated: 2026-09-24
 slug: host-bar-room-control
 title: Host Bar Room Control
-status: executing
+status: shipped
 user_facing: true
 signoffs:
   po: true

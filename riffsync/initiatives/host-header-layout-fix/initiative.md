@@ -1,10 +1,10 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-14
+updated: 2026-09-24
 slug: host-header-layout-fix
 title: Host Header Layout Fix
-status: executing
+status: shipped
 user_facing: true
 signoffs:
   po: true
