@@ -8,7 +8,14 @@ Feature: Submit and publish Host extension on Chrome Web Store
 
   Background:
     Given a Chrome Web Store-ready zip artifact exists from #478
-    And the privacy policy URL https://riffsync.tv/privacy is live
+    And the privacy policy URL https://riffsync.tv/privacy is live with Host extension disclosure
+
+  Scenario: Privacy page Host-extension disclosure is live before store submit
+    Given the sibling privacy disclosure for the Host extension is deployed (#481)
+    And https://riffsync.tv/privacy states single purpose, tabs, host_permissions, SPA-only content script, and ephemeral in-memory access JWT
+    When the operator prepares Chrome Web Store submission
+    Then the listing Privacy policy field may be set to https://riffsync.tv/privacy
+    And submit does not proceed until that disclosure is live
 
   Scenario: Published listing is installable and extension-present behavior is unchanged
     Given the Host extension is published on the Chrome Web Store

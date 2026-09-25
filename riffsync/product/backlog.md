@@ -6,8 +6,9 @@ in_progress: []
 ready:
   - "#478 Package Host extension for Chrome Web Store submission"
   - "#479 Wire how-to Host extension section to Chrome Web Store URL"
-refinement:
   - "#480 Submit and publish Host extension on Chrome Web Store"
+  - "#481 Disclose Host Chrome extension on the privacy policy page"
+refinement: []
 blocked: []
 icebox:
   - "Develop a Discord App (Next; /forge.new-initiative before tickets)"

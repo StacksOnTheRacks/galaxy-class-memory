@@ -36,7 +36,6 @@ requirements:
   - "C1 bind, room PATCH authority (JWT.sub === hostSub), and resolveHostSourceTabUrl navigate rules MUST remain unchanged — this initiative MUST NOT alter API CORS for chrome-extension:// origins"
   - "Implementation MUST NOT weaken existing threat-model mitigations or checklist items for extension bridge, tabs permission scope, or ADR-001 no-capture"
 open_questions:
-  - "privacy-policy-extension-section"
   - "developer-account-custody"
 ---
 

@@ -64,11 +64,6 @@ items:
     blocking: false
     status: open
   - initiative: host-chrome-extension-completion
-    id: privacy-policy-extension-section
-    question: "Does https://riffsync.tv/privacy need an extension-specific paragraph for Chrome Web Store disclosure (tabs permission, ephemeral JWT relay)?"
-    blocking: false
-    status: open
-  - initiative: host-chrome-extension-completion
     id: developer-account-custody
     question: "Named owner and 2FA backup access for the Chrome Web Store developer account used to publish RiffSync Host."
     blocking: false

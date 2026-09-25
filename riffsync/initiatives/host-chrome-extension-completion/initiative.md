@@ -4,7 +4,7 @@ schema_version: 1
 updated: 2026-09-25
 slug: host-chrome-extension-completion
 title: Host Chrome Extension Completion
-status: lld
+status: executing
 user_facing: true
 signoffs:
   po: true
@@ -16,6 +16,7 @@ board_tickets:
   - "#478 Package Host extension for Chrome Web Store submission"
   - "#479 Wire how-to Host extension section to Chrome Web Store URL"
   - "#480 Submit and publish Host extension on Chrome Web Store"
+  - "#481 Disclose Host Chrome extension on the privacy policy page"
 ---
 
 <!--

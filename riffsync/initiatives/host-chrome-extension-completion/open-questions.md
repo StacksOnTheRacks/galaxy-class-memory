@@ -3,11 +3,6 @@ doc: product.open_questions
 schema_version: 1
 updated: 2026-09-25
 questions:
-  - id: privacy-policy-extension-section
-    question: "Does https://riffsync.tv/privacy need an extension-specific paragraph for Chrome Web Store disclosure (tabs permission, ephemeral JWT relay)?"
-    blocking: false
-    status: open
-    owner: security
   - id: developer-account-custody
     question: "Named owner and 2FA backup access for the Chrome Web Store developer account used to publish RiffSync Host."
     blocking: false
@@ -26,3 +21,5 @@ Authoring (not validated):
 Resolved at HLD design (2026-09-25): cta-surface-post-room-panel (how-to only; no in-room CTA), store-listing-readiness (env-gated CTAs), cta-target-store-vs-docs (how-to page owns store link when env set).
 
 Resolved at #478 refinement (2026-09-25): store-zip-localhost-matches (store zip matches https://riffsync.tv/* only; source may keep localhost), extension-version-source-of-truth (manifest.json 0.2.0 is SoT; package.json reconciled), contributor-unpacked-fallback (Load unpacked developer-only in apps/host-extension/README.md; no how-to collapsed note).
+
+Resolved at #480 refinement (2026-09-25): privacy-policy-extension-section (yes — #481 adds Host extension disclosure to https://riffsync.tv/privacy before #480 submit).
