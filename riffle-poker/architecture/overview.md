@@ -1,18 +1,17 @@
 ---
 doc: architecture.overview
 schema_version: 1
-updated: 2026-09-12
-system: "Riffle Poker is a standalone no-limit Hold'em app. Riffle owns gameplay, rules, match state (seats, turns, hidden views, move log), and WebSocket notify. Players create an account or play anonymously. Embed-mode lets a host (RiffSync first) load the play surface via a shared iframe link; the host keeps identity, chat, rooms, and media. Turnur is mothballed — not in the new architecture path."
-context: "Shipped playable-holdem-table (#1–#9) and play-lab (#19–#24) used Turnur as match authority via @turnur/sdk — historical proof only. Operator pivot: Riffle absorbs match state and WS. TypeScript preferred (soft). Runtime hosting not locked."
-data_flow: "1. Standalone: player signs up/signs in or starts anonymous session on Riffle. 2. Player joins or creates a table; Riffle runtime runs in-process NLHE rules and persists match state. 3. WebSocket notify pushes table updates to connected clients. 4. Embed-mode: host loads Riffle iframe link; players in the host room share the same play surface; host keeps chat/rooms/media. 5. Hole cards stay seat-scoped; public board is shared table state."
-deployment_shape: "Runtime hosting not locked. Riffle-owned match store + WebSocket API in LLD (standalone-play-and-embed). Shipped Turnur integration remains in repo as historical code path."
-current_focus: "standalone-play-and-embed LLD — /forge.backlog-grooming. Next: Artwork; Web Site; Complete NLHE Hand; Multi-Hand Session."
+updated: 2026-09-25
+system: "Riffle Poker is a standalone play-chip no-limit Hold'em app with a dashboard play UI. Riffle owns rules, table state, and realtime over API Gateway WebSocket. Forward path: static SPA (S3/CloudFront) + Lambda + DynamoDB. No embed/RiffSync/Turnur/live A/V in the forward path."
+context: "Operator lock 2026-09-25: cheap serverless stack (dashboard-holdem). Prior Turnur-backed, embed-first, and notify-only WS paths are historical / superseded for new work."
+data_flow: "1. Browser loads SPA from CloudFront/S3. 2. Client opens WebSocket; joins table; sits with display name + seat token. 3. Actions over WS → Lambda applies NLHE → DynamoDB → seat-scoped PostToConnection snapshots. 4. Hole cards only in owning seat snapshot."
+deployment_shape: "CDK: API Gateway WebSocket + Lambda + DynamoDB + S3/CloudFront. Deploy from GitHub Actions via OIDC. No always-on server; no ElastiCache."
+current_focus: "dashboard-holdem LLD — #59–#67 In Refinement. /forge.refinement next."
 major_components:
-  - "Poker rules — in-process NLHE library; deal, legal actions, streets, showdown"
-  - "Play surface — table UI (standalone app and embed iframe at Riffle origin)"
-  - "Riffle runtime — match authority, rules orchestration, WebSocket notify (new direction)"
-  - "Identity — first-party account + anonymous sessions; bearer-only (Authorization or equivalent)"
-  - "Embed-mode — shared iframe link for hosts; host keeps social/media chrome"
-  - "Play lab — first-party harness (historical Turnur-backed; fate TBD in LLD)"
-  - "Host (RiffSync first) — chat, rooms, media, embed iframe load; not match authority"
+  - "Static play SPA — S3 + CloudFront"
+  - "WebSocket API — API Gateway"
+  - "NLHE Lambda — in-process rules, match writes, fan-out"
+  - "DynamoDB — table/seat/hand/connection store"
+  - "CDK + GitHub Actions — infra deploy"
+  - "Poker rules — in-process NLHE library inside Lambda"
 ---

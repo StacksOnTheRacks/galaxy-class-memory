@@ -1,9 +1,9 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-24
+updated: 2026-09-25
 slug: artwork
-title: "Artwork (Figma + Canva)"
+title: "[Superseded by dashboard-holdem] Artwork (Figma + Canva)"
 status: lld
 user_facing: true
 signoffs:
@@ -21,7 +21,9 @@ board_tickets:
   - "[#58 Publish Canva kit from the same Riffle identity](https://github.com/StacksOnTheRacks/riffle-poker/issues/58)"
 ---
 
-First-party visual identity and poker artwork for Riffle Poker before public site and embed-mode launch. Covers card faces, backs, chips, felt/table chrome, and exportable brand assets in the dedicated Riffle Poker Figma file and Canva. Playable table and play-lab UI already exist with Alto9-template placeholders; this initiative replaces placeholder art with a coherent Riffle look without changing gameplay rules or match architecture.
+**SUPERSEDED by dashboard-holdem.** Felt/Canva artwork pipeline not planned now; UI direction is dashboard Table / Your Turn. Issues #53–#58 closed not planned.
+
+First-party visual identity and poker artwork for Riffle Poker (historical scope). Covers card faces, backs, chips, felt/table chrome, and exportable brand assets in the dedicated Riffle Poker Figma file and Canva. Playable table and play-lab UI already exist with Alto9-template placeholders; this initiative replaces placeholder art with a coherent Riffle look without changing gameplay rules or match architecture.
 
 Locked for this initiative:
 - **Scope:** artwork and visual identity assets — not new gameplay, not RiffSync attach, not a public marketing site (Web Site is a separate Next item)

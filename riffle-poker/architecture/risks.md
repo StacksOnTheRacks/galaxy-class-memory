@@ -1,20 +1,23 @@
 ---
 doc: architecture.risks
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-25
 structural_risks:
-  - "Migration from shipped Turnur-backed runtime to Riffle MatchStore — freeze + replace; wrap rejected (violates ADR-riffle-owned-match)"
+  - "Lambda cold start vs as interactive as possible"
+  - "Fan-out cost/latency on larger tables (PostToConnection per connection)"
+  - "DynamoDB conditional-write races under burst actions on same hand"
 coupling_hotspots:
-  - "Shipped play-lab and table modules still call @turnur/sdk — must not extend while migration is open"
-  - "Embed-mode uses shared play URL; mint/redeem + capability frozen — RiffSync Watch Party Game Mode depends on this contract"
+  - "SPA tightly coupled to WS message contract (join_table, action, snapshot)"
+  - "Connection registry must stay consistent on disconnect for fan-out"
+  - "Shipped MatchStore/Turnur modules remain in repo — must not extend while building serverless path"
 migration_hazards:
-  - "Turnur-backed ADRs and interfaces remain in repo until cutover completes"
-  - "Play-lab CI uses fake Turnur — may block or diverge during Riffle-owned match build; frozen host-key tests must not gate MatchStore CI"
+  - "Freeze+replace vs leftover Turnur/embed/MatchStore-HTTP paths; do not extend historical contracts"
+  - "Prior embed/RiffSync expectations (Watch Party Game Mode) deferred until embed initiative returns"
 watch_list:
-  - "Embed shared play URL leakage (Referer, history, logs) — treat as uninvited attach, not hidden-info grant"
-  - "Hole-card leakage during migration — seat-scoped views must stay enforced on REST and WS"
-  - "Anonymous session abuse (seat squatting, griefing) — security HLD + display-name-rules OQ"
-  - "Iframe play surface at desktop and narrow embed widths"
-  - "RiffSync Watch Party Game Mode must not make RiffSync match authority"
-  - "Bearer theft via XSS on Riffle origin — JS-readable bearer is seat authority"
+  - "Hole-card leakage via wrong PostToConnection payload or DynamoDB over-read"
+  - "Connection hijack / missing seat-token auth on join and action"
+  - "GitHub OIDC deploy role blast radius"
+  - "Seat-token theft via XSS on static origin"
+  - "Snapshot payload size as My Hand adds strength/outs"
+  - "Abandoning embed breaks RiffSync Game Mode until a later embed initiative ships"
 ---

@@ -1,9 +1,9 @@
 ---
 doc: product.initiative
 schema_version: 1
-updated: 2026-09-13
+updated: 2026-09-25
 slug: standalone-play-and-embed
-title: "Standalone play and embed"
+title: "[Superseded by dashboard-holdem] Standalone play and embed"
 status: lld
 user_facing: true
 signoffs:
@@ -24,9 +24,11 @@ board_tickets:
   - "[#44 Complete a play-chip hand on standalone and embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/44)"
 ---
 
+**SUPERSEDED by dashboard-holdem.** Remaining open work (#44) closed not planned. Embed/RiffSync and felt completion are out of the active product path. Done tickets #36–#43 left alone.
+
 Operator pivot: Turnur mothballed. Riffle owns match state and WebSockets.
 
-**Outcome:** Riffle Poker is a standalone no-limit Hold'em app. Players create an account or play anonymously. Riffle owns gameplay, rules, match state (seats, turns, hidden hole cards, move log), and WebSocket notify. Embed-mode lets a host (RiffSync first) load the same play surface via a shared play URL; the host keeps chat, rooms, and media.
+**Outcome (historical):** Riffle Poker is a standalone no-limit Hold'em app. Players create an account or play anonymously. Riffle owns gameplay, rules, match state (seats, turns, hidden hole cards, move log), and WebSocket notify. Embed-mode lets a host (RiffSync first) load the same play surface via a shared play URL; the host keeps chat, rooms, and media.
 
 **HLD bar:** Account or anonymous → **Sit at Table** → complete a play-chip hand (fold-to-one or non-all-in showdown). Host loads the same surface via shared play URL; guests (including unauthenticated RiffSync watch-party guests) self-sit; anonymous players can change in-game display name; hole cards seat-scoped; public board shared; table updates via Riffle notify.
 

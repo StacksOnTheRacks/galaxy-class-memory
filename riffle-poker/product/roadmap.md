@@ -1,20 +1,18 @@
 ---
 doc: product.roadmap
 schema_version: 1
-updated: 2026-09-24
+updated: 2026-09-25
 themes:
   - "Standalone poker app: account or anonymous play"
+  - "Dashboard play UI (not felt)"
   - "Riffle-owned match state and WebSockets"
-  - "Embed-mode for hosts (RiffSync first)"
   - "Texas Hold'em as the v1 ruleset"
   - "Play-chip social play — no cashier, rake, or real money"
   - "First-party visual identity and public site"
 now:
-  - "Standalone play and embed — #44 remaining in Refinement (#36–#43 Done)"
+  - "Dashboard Hold'em — game-first NLHE on Figma Table / Your Turn (#59–#67 in Refinement, milestone/6)"
 next:
-  - "Artwork (Figma + Canva) — tickets in Refinement (not Ready)"
   - "Web Site"
-  - "Complete NLHE Hand (full rules) — side pots, all-in runout, and remaining legal play beyond fold-to-one / non-all-in showdown"
   - "Multi-Hand Session"
 later:
   - "Room-guest spectator view (public board only)"
@@ -27,7 +25,8 @@ not_planning:
   - "Turnur as match authority or developer platform GTM"
   - "Becoming a social, lobby, watch-party, chat, or SFU product"
   - "A poker study, HUD, or solver product as v1"
+  - "Live mic/camera on the play surface"
   - "Copying RiffSync's Cognito, chat, or SFU/TURN stacks wholesale"
 ---
 
-Next items are operator-locked coarse outcomes — `/forge.new-initiative` before tickets. Playable-holdem-table #1–#9 and play-lab #19–#24 shipped (Turnur-backed; historical). integrate-turnur-websockets #31–#35 abandoned (Turnur mothballed).
+#44 and artwork #53–#58 closed not planned (superseded by dashboard-holdem). Playable-holdem-table #1–#9 and play-lab #19–#24 shipped (Turnur-backed; historical).

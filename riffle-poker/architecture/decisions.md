@@ -1,21 +1,25 @@
 ---
 doc: architecture.decisions
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-25
 active_decisions:
+  - "ADR-serverless-ws-stack — Forward runtime is Amazon API Gateway WebSocket API + Lambda + DynamoDB; static SPA on S3 + CloudFront; infra as CDK deployed from GitHub Actions (OIDC). Client actions and seat-scoped fan-out over the WebSocket. Replaces unlocked runtime-hosting and embed-first product direction for new work. Status: Accepted (operator 2026-09-25)."
   - "ADR-riffle-owned-match — Riffle owns match state and WebSocket notify for new work. Turnur mothballed. Status: Accepted (operator pivot 2026-09-12)."
-  - "ADR-standalone-identity — Standalone play uses first-party Riffle session (account or anonymous player-subject). Not Cognito. Not host identity. Status: Accepted (standalone-play-and-embed HLD 2026-09-12)."
-  - "ADR-embed-mode — Host attaches via shared play URL at Riffle origin; host keeps chat, rooms, media. Mint/redeem + host seat capability frozen for new work. Status: Accepted (standalone-play-and-embed HLD 2026-09-12)."
-  - "ADR-browser-ws-notify — Browser connects to Riffle WS; notify-only public table events; HTTP mutations authoritative; no hidden views on public frames. Status: Accepted (standalone-play-and-embed HLD 2026-09-12)."
-  - "ADR-freeze-turnur-http — Freeze shipped host-key + @turnur/sdk paths; replace with new modules (identity/, match-store/, ws/); do not wrap. Status: Accepted (standalone-play-and-embed HLD 2026-09-12)."
-  - "ADR-sit-at-table — Guests self-sit via Sit at Table with Riffle session (account or anonymous); host identity is not seat authority; mutable in-game display name. Status: Accepted (standalone-play-and-embed HLD 2026-09-12)."
-  - "ADR-rules-in-process — Rules = in-process NLHE library in Riffle runtime. Status: Accepted (carried forward from Turnur era)."
-  - "ADR-iframe-embed — Embed play surface = iframe at Riffle origin. Status: Accepted (carried forward)."
-  - "ADR-bearer-session — Riffle play session is bearer-only (Authorization or equivalent) for standalone and embed; no ambient cookie. Status: Accepted (operator 2026-09-12)."
+  - "ADR-rules-in-process — Rules = in-process NLHE library in Lambda. Status: Accepted (carried forward)."
+  - "ADR-dashboard-ui — Play surface is dashboard composition (Table / Your Turn), not felt. Status: Accepted (dashboard-holdem 2026-09-25)."
+  - "ADR-no-live-av — Player tiles are avatar or initials; no live mic/camera. Status: Accepted (dashboard-holdem 2026-09-25)."
+  - "ADR-seat-token — Anonymous display name + server-issued seat token is seat authority for dashboard-holdem v1. Status: Accepted (dashboard-holdem 2026-09-25)."
 superseded:
-  - "ADR-rules-in-process (Turnur path) — Runtime called @turnur/sdk for match authority. Superseded by ADR-riffle-owned-match."
-  - "ADR-host-seat-capability — Host issued opaque seat capability via RIFFLE_HOST_API_KEY for Turnur-era embed. Superseded by ADR-sit-at-table and ADR-embed-mode."
-  - "ADR-host-iframe-bootstrap — Opaque bootstrap token mint/redeem for Turnur-era embed. Superseded by ADR-embed-mode."
-  - "ADR-dealer-shoe — dealer_shoe on Turnur system seat. Superseded by MatchStore in-process shoe."
-  - "ADR-play-lab-harness — Turnur-backed lab orchestrator. Superseded pending play-lab fate in HLD."
+  - "ADR-embed-mode — Host attaches via shared play URL. Superseded for forward work by ADR-serverless-ws-stack (embed later, not current initiative)."
+  - "ADR-browser-ws-notify — Notify-only WS + HTTP mutations authoritative. Superseded by WS-authoritative actions + seat-scoped snapshots."
+  - "ADR-iframe-embed — Embed play surface = iframe at Riffle origin. Superseded for forward work (embed later)."
+  - "ADR-standalone-identity — First-party account/anon bearer session. Historical; dashboard-holdem v1 uses seat token (account optional later)."
+  - "ADR-bearer-session — Bearer-only session transport. Historical for MatchStore path; dashboard-holdem uses seat token over WSS."
+  - "ADR-sit-at-table — Guests self-sit via Sit at Table with Riffle session. Historical MatchStore path."
+  - "ADR-freeze-turnur-http — Freeze Turnur HTTP paths. Still valid; Turnur mothballed."
+  - "ADR-rules-in-process (Turnur path) — Runtime called @turnur/sdk. Superseded by ADR-riffle-owned-match."
+  - "ADR-host-seat-capability — Host issued seat capability for Turnur-era embed. Superseded."
+  - "ADR-host-iframe-bootstrap — Bootstrap mint/redeem for Turnur-era embed. Superseded."
+  - "ADR-dealer-shoe — dealer_shoe on Turnur system seat. Superseded by Lambda in-process shoe."
+  - "ADR-play-lab-harness — Turnur-backed lab orchestrator. Historical only."
 ---

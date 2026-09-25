@@ -1,8 +1,23 @@
 ---
 doc: design.screens
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-25
 screens:
+  - name: Dashboard / your-turn — desktop
+    figma_node_id: "4132:45"
+    app: riffle-poker
+    states: [your-turn]
+    responsive: [desktop]
+  - name: Dashboard / your-turn — tablet
+    figma_node_id: "4132:795"
+    app: riffle-poker
+    states: [your-turn]
+    responsive: [tablet]
+  - name: Dashboard / your-turn — phone
+    figma_node_id: "4132:796"
+    app: riffle-poker
+    states: [your-turn, action-sheet]
+    responsive: [phone]
   - name: Seated table / loading — desktop
     figma_node_id: "4004:15"
     app: riffle-poker
@@ -220,4 +235,4 @@ screens:
     responsive: [desktop-operator]
 ---
 
-Inventoried from Figma Screens / Flows (`3:4`). Seated-table frames after first design-spike; play-lab after play-lab design-spike (2026-09-03). Standalone entry/auth/unseated/display-name frames after standalone-play-and-embed design-spike (2026-09-12) at y>11000. Loading (`4004:15`/`4004:20`) and embed-error (`4005:210`/`4005:215`) copy refreshed to shared-URL language. Node ids from MCP; do not invent.
+Current play surface: dashboard Table / Your Turn (`4132:44` — desktop `4132:45`, tablet `4132:795`, phone `4132:796`). Historical felt seated-table frames below (`3:4` Screens / Flows). Seated-table frames after first design-spike; play-lab after play-lab design-spike (2026-09-03). Standalone entry/auth/unseated/display-name frames after standalone-play-and-embed design-spike (2026-09-12) at y>11000. Loading (`4004:15`/`4004:20`) and embed-error (`4005:210`/`4005:215`) copy refreshed to shared-URL language. Node ids from MCP; do not invent.

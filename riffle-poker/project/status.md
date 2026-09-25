@@ -1,13 +1,12 @@
 ---
 doc: project.status
 schema_version: 1
-updated: 2026-09-24
-summary: "Operator pivot: Turnur mothballed. Now: standalone-play-and-embed #44 In Refinement (milestone/4; #36–#43 closed). Next: Artwork lld (not executing) — #53–#58 on Refinement, milestone/5."
+updated: 2026-09-25
+summary: "Dashboard Hold'em pivot applied. Now: #59–#67 In Refinement (milestone/6). #44 and artwork #53–#58 closed not planned. Milestones 4 and 5 closed."
 in_flight: []
 blockers: []
 next_up:
-  - "/forge.plan-refresh then /forge.refinement on #44 (Now remaining)"
-  - "Artwork slugs stay Next / lld until #44 is through Ready"
+  - "/forge.refinement on dashboard-holdem #59–#67"
 asks: []
 ---
 

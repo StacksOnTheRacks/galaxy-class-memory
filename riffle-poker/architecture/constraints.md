@@ -1,31 +1,31 @@
 ---
 doc: architecture.constraints
 schema_version: 1
-updated: 2026-09-12
+updated: 2026-09-25
 hard_constraints:
-  - "Riffle owns match state for new work: seats, turns, hidden views, move log. Turnur is mothballed — no new @turnur/sdk consumption."
-  - "Gameplay and rules live in Riffle Poker. Riffle evaluates poker legality in-process."
-  - "Standalone play supports account sign-up/sign-in or anonymous session — first-party Riffle bearer session (account id or anon:{jti}); not Cognito; not host identity."
-  - "Embed-mode: host loads Riffle play surface as iframe at Riffle origin; host keeps chat, rooms, and media."
-  - "Browser connects to Riffle WS for notify-only public table events; HTTP mutations stay authoritative."
-  - "Session transport is bearer-only (Authorization or equivalent) on standalone and embed; no ambient cookie."
-  - "No real-money wagering, cashier, or KYC."
-  - "Riffle is a poker game, not a watch-party, chat, catalog, or media product."
-  - "Host does not evaluate poker rules or own match state in embed-mode."
+  - "Forward hosting is serverless only: API Gateway WebSocket + Lambda + DynamoDB + S3/CloudFront via CDK/GHA OIDC"
+  - "Actions over WebSocket; Lambda is authoritative for rules and persistence"
+  - "Seat-scoped snapshots; hole cards never broadcast to other seats"
+  - "Gameplay and rules live in Riffle Poker. Riffle evaluates poker legality in-process in Lambda."
+  - "Play chips only — no real-money wagering, cashier, or KYC"
+  - "Riffle is a poker game, not a watch-party, chat, catalog, or media product"
+  - "No live mic/camera on the play surface; tiles are avatar or initials"
+  - "No RiffSync, embed, or Turnur dependency for new work"
+  - "Turnur is mothballed — no new @turnur/sdk consumption"
 soft_constraints:
-  - "First embed host is RiffSync; remain host-agnostic for embed-mode."
-  - "Prefer TypeScript when a stack is chosen. Not locked."
-  - "Defer runtime hosting / IaC until LLD resolves; in-process rules locus is locked."
-  - "Play-surface UI must compose at desktop and narrow embed widths."
-  - "Shipped Turnur-backed paths are frozen — freeze + replace (do not wrap); do not extend them."
+  - "Prefer TypeScript when a stack is chosen"
+  - "Prefer one Lambda for WS connect/disconnect/default"
+  - "Dashboard UI must compose at desktop, tablet, and phone breakpoints"
+  - "Shipped Turnur/MatchStore paths are frozen — do not extend for new work"
 out_of_bounds:
-  - "Turnur as match backend or developer platform GTM."
-  - "Rooms, presence, chat, or a media/SFU plane of Riffle's own."
-  - "Real-money wagering, cashier, or KYC systems."
-  - "Play lab as production lobby or matchmaking (historical harness only)."
-  - "Copying RiffSync's Cognito, chat, or SFU/TURN stacks wholesale."
+  - "Always-on game servers, ElastiCache/Redis as required path"
+  - "Embed/RiffSync as product requirement in current initiative"
+  - "Turnur as match backend or developer platform GTM"
+  - "Rooms, presence, chat, or a media/SFU plane of Riffle's own"
+  - "Real-money wagering, cashier, or KYC systems"
+  - "Live audio/video on player tiles"
 assumptions:
-  - "Operator mothballed Turnur; Riffle standalone + embed is the product bet."
-  - "Shipped Turnur-backed table/play-lab code is historical proof, not the forward architecture."
-  - "Runtime hosting undecided (non-blocking during LLD)."
+  - "Operator locked cheap interactive serverless path 2026-09-25"
+  - "Shipped Turnur-backed and MatchStore HTTP code is historical proof, not forward architecture"
+  - "Embed and RiffSync attach are later, not blocked on dashboard-holdem"
 ---

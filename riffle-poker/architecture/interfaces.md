@@ -1,19 +1,19 @@
 ---
 doc: architecture.interfaces
 schema_version: 1
-updated: 2026-09-14
+updated: 2026-09-25
 external_interfaces:
-  - "Frozen (historical Turnur-backed) — Host → Riffle runtime POST /v1/matches, /v1/bootstrap/mint, /v1/seats/capability/mint, /v1/hands/deal, /v1/hands/betting/open with Bearer RIFFLE_HOST_API_KEY; iframe bootstrap redeem; X-Riffle-Seat-Capability; Riffle runtime → @turnur/sdk. Do not extend for new work."
-  - "Current (standalone-play-and-embed) — first-party Riffle account + anonymous session (bearer Authorization or equivalent; playerSubject account id or anon:{jti}; no ambient cookie); shared play URL attach ({origin}/play/{matchId} or join-code); browser WS on GET /v1/ws (first control frame { type: subscribe, matchId, authorization: Bearer <token> }; non-browser MAY send upgrade Authorization; reject token in URL or Sec-WebSocket-Protocol; topic table:{matchId} only; outbound { type: table.refresh, matchId, cursor }); host embed = iframe.src only; optional UX postMessage is a pipe only"
+  - "Current (dashboard-holdem) — Browser ↔ CloudFront/S3 SPA; Browser ↔ API Gateway WebSocket (join_table, sit/leave, start_hand, action, snapshot); GitHub Actions OIDC → AWS CDK deploy"
+  - "Frozen (historical) — Host → Riffle runtime POST /v1/matches, bootstrap, capability, hands/* with Bearer RIFFLE_HOST_API_KEY; GET /v1/ws notify-only; iframe embed; @turnur/sdk. Do not extend for new work."
 internal_boundaries:
-  - "Play surface UI is presentation; Riffle runtime is the trust boundary for rules and match writes"
-  - "Rules library is in-process; no I/O from the library itself"
-  - "Hole cards live in seat-scoped hidden state; public board is shared table state"
-  - "New work does not call @turnur/sdk; MatchStore is the match I/O boundary. Frozen host-key routes are not the forward contract."
+  - "Play surface UI is presentation; Lambda is the trust boundary for rules and match writes"
+  - "Rules library is in-process inside Lambda; no I/O from the library itself"
+  - "Hole cards live in seat-scoped storage and snapshots; public board is shared table state"
+  - "Static SPA and browser are untrusted; seat token + Lambda authorization is the trust boundary"
 contracts_in_flight:
-  - "standalone-play-and-embed — runtime-hosting, play-lab-fate (non-blocking)"
+  - "dashboard-holdem — table-discovery, disconnect-policy (non-blocking)"
 ownership:
-  - "Riffle owns gameplay, rules, match state, WebSocket notify, and play identity (account/anonymous) for new work"
-  - "Host owns chat, rooms, media, and room identity in embed-mode; host is not match or seat authority"
+  - "Riffle owns SPA, WS API, Lambda rules/state, DynamoDB for forward work"
   - "Turnur mothballed — no new ownership on Turnur side"
+  - "Embed/RiffSync host ownership is historical / later — not forward path"
 ---
