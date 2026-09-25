@@ -1,13 +1,15 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-24
+updated: 2026-09-25
 in_progress: []
 ready: []
-refinement: []
+refinement:
+  - "#478 Package Host extension for Chrome Web Store submission"
+  - "#479 Wire how-to Host extension section to Chrome Web Store URL"
+  - "#480 Submit and publish Host extension on Chrome Web Store"
 blocked: []
 icebox:
-  - "Finish the Host Chrome Extension (Next; /forge.new-initiative before tickets)"
   - "Develop a Discord App (Next; /forge.new-initiative before tickets)"
   - "Watch Party Game Mode — Riffle embed-mode attach in a room (Next; /forge.new-initiative before tickets)"
   - "Live maturity follow-ons (Cast on Live, multi-channel Live hub) — Later; demand-gated"

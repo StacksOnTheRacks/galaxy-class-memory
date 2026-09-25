@@ -11,8 +11,11 @@ signoffs:
   architect: true
   designer: true
   security: true
-board_milestone: ""
-board_tickets: []
+board_milestone: "Host Chrome Extension Completion (#42)"
+board_tickets:
+  - "#478 Package Host extension for Chrome Web Store submission"
+  - "#479 Wire how-to Host extension section to Chrome Web Store URL"
+  - "#480 Submit and publish Host extension on Chrome Web Store"
 ---
 
 <!--
