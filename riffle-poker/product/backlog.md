@@ -9,8 +9,8 @@ ready:
   - "[#81 Seed exactly one unguessable table and export the play URL](https://github.com/StacksOnTheRacks/riffle-poker/issues/81)"
   - "[#82 Reject create_table on the deployed public WebSocket handler](https://github.com/StacksOnTheRacks/riffle-poker/issues/82)"
   - "[#83 Join from /<table-guid> and fail closed otherwise](https://github.com/StacksOnTheRacks/riffle-poker/issues/83)"
-refinement:
   - "[#84 Sit with a display name and no account, then play on the dashboard surface](https://github.com/StacksOnTheRacks/riffle-poker/issues/84)"
+refinement: []
 blocked: []
 done:
   - "[#59 Host interactive match runtime on API Gateway WebSocket + Lambda + DynamoDB](https://github.com/StacksOnTheRacks/riffle-poker/issues/59)"
@@ -67,4 +67,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins. Milestone/7 Anonymous table play: #79–#83 Ready; #84 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
+Board/SCM wins. Milestone/7 Anonymous table play: #79–#84 Ready. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.

@@ -4,7 +4,7 @@ schema_version: 1
 updated: 2026-09-25
 slug: anonymous-table-play
 title: "Anonymous table play"
-status: lld
+status: executing
 user_facing: true
 signoffs:
   po: true
@@ -33,4 +33,4 @@ board_tickets:
 
 **Out:** Authentication, Cognito, and user onramp; custom DNS; marketing site; Turnur; embed / RiffSync; multi-table discovery; felt artwork; real money.
 
-Suggested next: `/forge.refinement` (Designer attends user-facing #83 and #84).
+Suggested next: `/forge.implement-ticket` (all milestone tickets Ready).

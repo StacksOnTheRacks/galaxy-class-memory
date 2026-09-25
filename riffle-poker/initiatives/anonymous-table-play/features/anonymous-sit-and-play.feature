@@ -5,10 +5,17 @@ Feature: Anonymous sit and play on dashboard surface
 
   Scenario: Player sits with a display name and no account
     Given a player has opened the seeded table URL and joined that table
-    When they sit at an open seat with a non-empty display name
+    When they sit at an open seat with a display name of 3–24 characters after trim on the sit action
     Then they are seated with that display name as the seat label
-    And they receive a play-chip stack
+    And they receive the table play-chip default stack
     And sitting does not create or require a Riffle account
+
+  Scenario: Invalid display name does not sit
+    Given a player has opened the seeded table URL and joined that table
+    When they try to sit with a display name that is empty, whitespace-only, shorter than 3, or longer than 24 after trim
+    Then the sit is not sent
+    And the surface shows Name must be 3–24 characters.
+    And the validation is text, not color-only
 
   Scenario: Seated players complete a play-chip NLHE hand on the dashboard table
     Given at least two players are seated at the seeded table
