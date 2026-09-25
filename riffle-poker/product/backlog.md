@@ -7,8 +7,8 @@ ready:
   - "[#79 Extend production GitHub OIDC deploy role for S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/79)"
   - "[#80 Host the dashboard play SPA on S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/80)"
   - "[#81 Seed exactly one unguessable table and export the play URL](https://github.com/StacksOnTheRacks/riffle-poker/issues/81)"
-refinement:
   - "[#82 Reject create_table on the deployed public WebSocket handler](https://github.com/StacksOnTheRacks/riffle-poker/issues/82)"
+refinement:
   - "[#83 Join from /<table-guid> and fail closed otherwise](https://github.com/StacksOnTheRacks/riffle-poker/issues/83)"
   - "[#84 Sit with a display name and no account, then play on the dashboard surface](https://github.com/StacksOnTheRacks/riffle-poker/issues/84)"
 blocked: []
@@ -67,4 +67,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins. Milestone/7 Anonymous table play: #79–#81 Ready; #82–#84 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
+Board/SCM wins. Milestone/7 Anonymous table play: #79–#82 Ready; #83–#84 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
