@@ -5,8 +5,8 @@ updated: 2026-09-25
 in_progress: []
 ready:
   - "[#79 Extend production GitHub OIDC deploy role for S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/79)"
-refinement:
   - "[#80 Host the dashboard play SPA on S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/80)"
+refinement:
   - "[#81 Seed exactly one unguessable table and export the play URL](https://github.com/StacksOnTheRacks/riffle-poker/issues/81)"
   - "[#82 Reject create_table on the deployed public WebSocket handler](https://github.com/StacksOnTheRacks/riffle-poker/issues/82)"
   - "[#83 Join from /<table-guid> and fail closed otherwise](https://github.com/StacksOnTheRacks/riffle-poker/issues/83)"
@@ -67,4 +67,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins. Milestone/7 Anonymous table play: #79–#84 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
+Board/SCM wins. Milestone/7 Anonymous table play: #79 and #80 Ready; #81–#84 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
