@@ -22,6 +22,7 @@ board_tickets:
   - "[#65 Sit at table, post blinds, deal hole cards, and open betting](https://github.com/StacksOnTheRacks/riffle-poker/issues/65)"
   - "[#66 Advance legal betting through flop, turn, and river](https://github.com/StacksOnTheRacks/riffle-poker/issues/66)"
   - "[#67 Settle all-in with side pots when required, showdown or fold-out, and update stacks](https://github.com/StacksOnTheRacks/riffle-poker/issues/67)"
+  - "[#68 Configure AWS OIDC deploy role and GitHub environment for serverless match runtime](https://github.com/StacksOnTheRacks/riffle-poker/issues/68)"
 ---
 
 **Outcome:** Players sit at a Riffle dashboard table and complete no-limit Hold'em hands in play chips: deal → act → streets → fold-out or showdown (including all-in), with stacks settling correctly.

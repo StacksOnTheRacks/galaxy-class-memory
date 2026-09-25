@@ -3,9 +3,10 @@ doc: product.backlog
 schema_version: 1
 updated: 2026-09-25
 in_progress: []
-ready: []
-refinement:
+ready:
   - "[#59 Host interactive match runtime on API Gateway WebSocket + Lambda + DynamoDB](https://github.com/StacksOnTheRacks/riffle-poker/issues/59)"
+  - "[#68 Configure AWS OIDC deploy role and GitHub environment for serverless match runtime](https://github.com/StacksOnTheRacks/riffle-poker/issues/68)"
+refinement:
   - "[#60 Render dashboard table shell for Desktop, Tablet, and Phone](https://github.com/StacksOnTheRacks/riffle-poker/issues/60)"
   - "[#61 Show player row tiles with stack, cards, action, positions, and turn timer](https://github.com/StacksOnTheRacks/riffle-poker/issues/61)"
   - "[#62 Show My Hand pocket, bank, session delta, committed, strength, outs, and action log](https://github.com/StacksOnTheRacks/riffle-poker/issues/62)"
