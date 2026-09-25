@@ -11,9 +11,9 @@ ready:
   - "[#63 Show Board slots, pot, and players in hand](https://github.com/StacksOnTheRacks/riffle-poker/issues/63)"
   - "[#64 Ship Fold/Check/Call/Raise controls with raise presets, slider, and phone action sheet](https://github.com/StacksOnTheRacks/riffle-poker/issues/64)"
   - "[#65 Sit at table, post blinds, deal hole cards, and open betting](https://github.com/StacksOnTheRacks/riffle-poker/issues/65)"
+  - "[#66 Advance legal betting through flop, turn, and river](https://github.com/StacksOnTheRacks/riffle-poker/issues/66)"
   - "[#68 Configure AWS OIDC deploy role and GitHub environment for serverless match runtime](https://github.com/StacksOnTheRacks/riffle-poker/issues/68)"
 refinement:
-  - "[#66 Advance legal betting through flop, turn, and river](https://github.com/StacksOnTheRacks/riffle-poker/issues/66)"
   - "[#67 Settle all-in with side pots when required, showdown or fold-out, and update stacks](https://github.com/StacksOnTheRacks/riffle-poker/issues/67)"
 blocked: []
 done:
@@ -61,4 +61,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins — #44 and #53–#58 closed not planned (superseded by dashboard-holdem). Milestone/6 Dashboard Hold'em: #59, #60, #61, #62, #63, #64, #65, #68 Ready; #66–#67 In Refinement. Icebox is coarse outcomes only; do not treat as tickets.
+Board/SCM wins — #44 and #53–#58 closed not planned (superseded by dashboard-holdem). Milestone/6 Dashboard Hold'em: #59, #60, #61, #62, #63, #64, #65, #66, #68 Ready; #67 In Refinement. Icebox is coarse outcomes only; do not treat as tickets.
