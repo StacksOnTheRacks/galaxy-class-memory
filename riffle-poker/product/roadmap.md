@@ -10,7 +10,7 @@ themes:
   - "Play-chip social play — no cashier, rake, or real money"
   - "First-party visual identity and public site"
 now:
-  - "Dashboard Hold'em — game-first NLHE on Figma Table / Your Turn (#59–#67 in Refinement, milestone/6)"
+  - "Anonymous table play — CloudFront GUID join, one seeded table, anonymous sit and play (#79–#84 in Refinement, milestone/7)"
 next:
   - "Web Site"
   - "Multi-Hand Session"

@@ -3,7 +3,16 @@ doc: product.backlog
 schema_version: 1
 updated: 2026-09-25
 in_progress: []
-ready:
+ready: []
+refinement:
+  - "[#79 Extend production GitHub OIDC deploy role for S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/79)"
+  - "[#80 Host the dashboard play SPA on S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/80)"
+  - "[#81 Seed exactly one unguessable table and export the play URL](https://github.com/StacksOnTheRacks/riffle-poker/issues/81)"
+  - "[#82 Reject create_table on the deployed public WebSocket handler](https://github.com/StacksOnTheRacks/riffle-poker/issues/82)"
+  - "[#83 Join from /<table-guid> and fail closed otherwise](https://github.com/StacksOnTheRacks/riffle-poker/issues/83)"
+  - "[#84 Sit with a display name and no account, then play on the dashboard surface](https://github.com/StacksOnTheRacks/riffle-poker/issues/84)"
+blocked: []
+done:
   - "[#59 Host interactive match runtime on API Gateway WebSocket + Lambda + DynamoDB](https://github.com/StacksOnTheRacks/riffle-poker/issues/59)"
   - "[#60 Render dashboard table shell for Desktop, Tablet, and Phone](https://github.com/StacksOnTheRacks/riffle-poker/issues/60)"
   - "[#61 Show player row tiles with stack, cards, action, positions, and turn timer](https://github.com/StacksOnTheRacks/riffle-poker/issues/61)"
@@ -14,9 +23,6 @@ ready:
   - "[#66 Advance legal betting through flop, turn, and river](https://github.com/StacksOnTheRacks/riffle-poker/issues/66)"
   - "[#67 Settle all-in with side pots when required, showdown or fold-out, and update stacks](https://github.com/StacksOnTheRacks/riffle-poker/issues/67)"
   - "[#68 Configure AWS OIDC deploy role and GitHub environment for serverless match runtime](https://github.com/StacksOnTheRacks/riffle-poker/issues/68)"
-refinement: []
-blocked: []
-done:
   - "[#36 First-party Riffle account and anonymous bearer session](https://github.com/StacksOnTheRacks/riffle-poker/issues/36)"
   - "[#37 Riffle MatchStore owns seats, turns, hidden views, and the move log](https://github.com/StacksOnTheRacks/riffle-poker/issues/37)"
   - "[#38 Shared play URL attach for standalone and host embed](https://github.com/StacksOnTheRacks/riffle-poker/issues/38)"
@@ -61,4 +67,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins — #44 and #53–#58 closed not planned (superseded by dashboard-holdem). Milestone/6 Dashboard Hold'em: #59–#68 Ready. Icebox is coarse outcomes only; do not treat as tickets.
+Board/SCM wins. Milestone/7 Anonymous table play: #79–#84 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.

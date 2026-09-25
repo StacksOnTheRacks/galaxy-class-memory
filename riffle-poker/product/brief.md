@@ -31,7 +31,7 @@ success_metrics:
     target: "Hole cards visible only to the owning seat"
   - metric: "Quantified targets"
     target: "TBD (greenfield; no instrumentation yet)"
-current_focus: "Now: dashboard-holdem in Refinement (#59–#67, milestone/6). Prior standalone #36–#43 Done; #44 and artwork #53–#58 closed not planned. Next: Web Site; Multi-Hand Session."
+current_focus: "Now: anonymous-table-play in Refinement (#79–#84, milestone/7). Dashboard Hold'em #59–#68 Done. Prior standalone #36–#43 Done; #44 and artwork #53–#58 closed not planned. Next: Web Site; Multi-Hand Session."
 ---
 
 Repo: [github.com/StacksOnTheRacks/riffle-poker](https://github.com/StacksOnTheRacks/riffle-poker). Turnur mothballed — not a live dependency for new work.
