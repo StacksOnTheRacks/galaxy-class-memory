@@ -8,8 +8,8 @@ ready:
   - "[#80 Host the dashboard play SPA on S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/80)"
   - "[#81 Seed exactly one unguessable table and export the play URL](https://github.com/StacksOnTheRacks/riffle-poker/issues/81)"
   - "[#82 Reject create_table on the deployed public WebSocket handler](https://github.com/StacksOnTheRacks/riffle-poker/issues/82)"
-refinement:
   - "[#83 Join from /<table-guid> and fail closed otherwise](https://github.com/StacksOnTheRacks/riffle-poker/issues/83)"
+refinement:
   - "[#84 Sit with a display name and no account, then play on the dashboard surface](https://github.com/StacksOnTheRacks/riffle-poker/issues/84)"
 blocked: []
 done:
