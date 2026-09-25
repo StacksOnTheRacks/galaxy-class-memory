@@ -2,7 +2,7 @@
 doc: project.plan
 schema_version: 1
 updated: 2026-09-25
-objective: "Host Chrome Extension Completion LLD groomed — milestone #42, tickets #478–#480 in Refinement. Next: /forge.plan-refresh then /forge.refinement."
+objective: "Host Chrome Extension Completion is active — milestone #42, tickets #478→#479→#480 in Refinement. Next: /forge.refinement."
 in_scope:
   - "Now — host-chrome-extension-completion: milestone Host Chrome Extension Completion (#42); tickets #478–#480 in Refinement"
   - "Shipped — site-redesign: milestone Site redesign (#38) + tickets #445–#452 all CLOSED"
@@ -19,7 +19,7 @@ sequence:
   - "First-party fan auth — milestone #39 — shipped Done (#461–#465 all CLOSED)"
   - "Host Header Layout Fix — milestone #40 — shipped Done (#471 CLOSED)"
   - "Host Bar Room Control — milestone #41 — shipped Done (#472–#473 CLOSED)"
-  - "Host Chrome Extension Completion — milestone #42 — #478 store packaging → #479 how-to CTA → #480 CWS publish (Refinement)"
+  - "Host Chrome Extension Completion — milestone #42 — #478 store packaging → #479 how-to CTA → #480 CWS publish (Refinement; #478 and #479 may proceed in parallel once zip exists)"
   - "Then remaining Next queue: Develop a Discord App → Watch Party Game Mode"
 dependencies:
   - "Board/SCM wins: #478–#480 open in Refinement on milestone #42"
@@ -28,10 +28,9 @@ dependencies:
   - "Watch Party Game Mode depends on Riffle embed-mode (iframe link); Riffle owns match and rules; RiffSync does not own rules"
   - "Metrics baseline (#437–#440) Done; first operational GA4/CloudWatch read still pending"
 handoffs:
-  - "/forge.plan-refresh — sequence #478–#480"
-  - "/forge.refinement — promote #478–#480 to Ready with ai-ready / human-ready"
-  - "Do not /forge.implement-ticket until tickets are Ready with ai-ready"
+  - "/forge.refinement — promote #478, then #479, then #480 to Ready with ai-ready / human-ready"
+  - "/forge.implement-ticket — ai-ready tickets only after Ready gate passes"
   - "Product → first GA4/CloudWatch metrics read informs demand-gated Live follow-ons"
 ---
 
-Host Chrome Extension Completion groomed. Three Refinement tickets on milestone #42. Next: `/forge.plan-refresh`, then `/forge.refinement`.
+Host Chrome Extension Completion is the active delivery thread on milestone #42. Three Refinement tickets (#478–#480) must pass refinement before implementation. Next: `/forge.refinement`.
