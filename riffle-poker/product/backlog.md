@@ -67,4 +67,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins. Milestone/7 Anonymous table play: #79–#82 Ready; #83–#84 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
+Board/SCM wins. Milestone/7 Anonymous table play: #79–#83 Ready; #84 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
