@@ -3,9 +3,9 @@ doc: product.backlog
 schema_version: 1
 updated: 2026-09-25
 in_progress: []
-ready: []
-refinement:
+ready:
   - "#478 Package Host extension for Chrome Web Store submission"
+refinement:
   - "#479 Wire how-to Host extension section to Chrome Web Store URL"
   - "#480 Submit and publish Host extension on Chrome Web Store"
 blocked: []

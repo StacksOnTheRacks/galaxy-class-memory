@@ -19,7 +19,6 @@ a11y:
   - "After copy swap, remove contradictory no-store-yet prose when env is set; screen readers should not hear developer-mode-only requirements on the public help page"
 open_questions:
   - "store-listing-url"
-  - "contributor-unpacked-fallback"
 ---
 
 <!--

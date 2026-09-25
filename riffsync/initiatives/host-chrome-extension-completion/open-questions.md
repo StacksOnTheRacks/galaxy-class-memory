@@ -3,21 +3,6 @@ doc: product.open_questions
 schema_version: 1
 updated: 2026-09-25
 questions:
-  - id: store-zip-localhost-matches
-    question: "Should the store zip strip localhost:5173 from content_scripts matches, leaving only https://riffsync.tv/* for the published package?"
-    blocking: false
-    status: open
-    owner: architect
-  - id: extension-version-source-of-truth
-    question: "Reconcile manifest version 0.2.0 vs package.json 0.1.0 — which is SoT for store releases and zip filenames?"
-    blocking: false
-    status: open
-    owner: architect
-  - id: contributor-unpacked-fallback
-    question: "Keep Load unpacked instructions only in apps/host-extension/README.md, or add a collapsed for-developers note on the how-to page?"
-    blocking: false
-    status: open
-    owner: product
   - id: privacy-policy-extension-section
     question: "Does https://riffsync.tv/privacy need an extension-specific paragraph for Chrome Web Store disclosure (tabs permission, ephemeral JWT relay)?"
     blocking: false
@@ -39,3 +24,5 @@ Authoring (not validated):
 -->
 
 Resolved at HLD design (2026-09-25): cta-surface-post-room-panel (how-to only; no in-room CTA), store-listing-readiness (env-gated CTAs), cta-target-store-vs-docs (how-to page owns store link when env set).
+
+Resolved at #478 refinement (2026-09-25): store-zip-localhost-matches (store zip matches https://riffsync.tv/* only; source may keep localhost), extension-version-source-of-truth (manifest.json 0.2.0 is SoT; package.json reconciled), contributor-unpacked-fallback (Load unpacked developer-only in apps/host-extension/README.md; no how-to collapsed note).

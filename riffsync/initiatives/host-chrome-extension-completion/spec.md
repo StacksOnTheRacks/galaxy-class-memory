@@ -33,9 +33,6 @@ constraints:
   - "Version alignment — manifest version 0.2.0 is SoT for store package; reconcile package.json 0.1.0 drift"
   - "Do not modify HostRoomConsole install CTA — how-to page only per HLD scope lock; host-bar-room-control #473 Room panel removal stands"
 open_questions:
-  - "store-zip-localhost-matches"
-  - "extension-version-source-of-truth"
-  - "contributor-unpacked-fallback"
   - "privacy-policy-extension-section"
 ---
 

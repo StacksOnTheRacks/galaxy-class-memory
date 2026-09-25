@@ -16,6 +16,19 @@ Feature: Package Host extension for Chrome Web Store submission
     And the zip includes manifest, service worker, content script, popup, icons, and config.js
     And test harness files and node_modules are excluded
 
+  Scenario: Store zip content_scripts matches are production-only
+    Given the store zip is built from current extension sources
+    When I inspect the packaged manifest.json inside the zip
+    Then content_scripts matches are exactly https://riffsync.tv/*
+    And http://localhost:5173/* is not present in the packaged manifest
+    And the unpacked source manifest may still include localhost for local dev
+
+  Scenario: Manifest version is source of truth for store package
+    Given manifest.json version is 0.2.0
+    When the store zip is built
+    Then the zip filename is riffsync-host-0.2.0.zip
+    And apps/host-extension/package.json version is 0.2.0
+
   Scenario: Manifest includes required store icons and MVP permissions only
     Given the extension package is prepared for Chrome Web Store submission
     When manifest.json permissions and host_permissions are reviewed
@@ -27,11 +40,12 @@ Feature: Package Host extension for Chrome Web Store submission
     Given I read host extension install documentation
     When I follow the public install path from apps/host-extension/README.md
       | or the root README host-extension pointer |
-    Then the primary instructions point to the Chrome Web Store listing URL when the listing is live
+    Then the primary instructions point to the Chrome Web Store as the default install path
     And Developer mode and Load unpacked are not the default public install flow
-    And any remaining unpacked instructions are clearly labeled internal or developer-only if retained
+    And any remaining unpacked instructions are clearly labeled developer or contributor-only in apps/host-extension/README.md
+    And the how-to page is out of scope for this ticket (#479)
 
-  Scenario: Extension tests pass on packaged sources
-    Given the store zip is built from current extension sources
-    When npm test runs under apps/host-extension
+  Scenario: Extension tests pass on source tree
+    Given the store packaging script and icons are added to apps/host-extension
+    When npm test runs under apps/host-extension on the source tree
     Then all extension unit tests pass
