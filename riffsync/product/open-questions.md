@@ -1,7 +1,7 @@
 ---
 doc: product.open_questions_index
 schema_version: 1
-updated: 2026-09-14
+updated: 2026-09-25
 items:
   - initiative: host-bar-room-control
     id: leave-party-remaining-surface
@@ -48,6 +48,31 @@ items:
     question: "Is Advanced Security Mode or edge rate limiting in scope for this initiative, or accepted deferral with Cognito default lockout only?"
     blocking: false
     status: open
+  - initiative: host-chrome-extension-completion
+    id: store-zip-localhost-matches
+    question: "Should the store zip strip localhost:5173 from content_scripts matches, leaving only https://riffsync.tv/* for the published package?"
+    blocking: false
+    status: open
+  - initiative: host-chrome-extension-completion
+    id: extension-version-source-of-truth
+    question: "Reconcile manifest version 0.2.0 vs package.json 0.1.0 — which is SoT for store releases and zip filenames?"
+    blocking: false
+    status: open
+  - initiative: host-chrome-extension-completion
+    id: contributor-unpacked-fallback
+    question: "Keep Load unpacked instructions only in apps/host-extension/README.md, or add a collapsed for-developers note on the how-to page?"
+    blocking: false
+    status: open
+  - initiative: host-chrome-extension-completion
+    id: privacy-policy-extension-section
+    question: "Does https://riffsync.tv/privacy need an extension-specific paragraph for Chrome Web Store disclosure (tabs permission, ephemeral JWT relay)?"
+    blocking: false
+    status: open
+  - initiative: host-chrome-extension-completion
+    id: developer-account-custody
+    question: "Named owner and 2FA backup access for the Chrome Web Store developer account used to publish RiffSync Host."
+    blocking: false
+    status: open
 ---
 
 <!--
@@ -58,4 +83,4 @@ Authoring (not validated):
 - Bump updated when any frontmatter field changes.
 -->
 
-Rollup from initiative-planning 2026-09-12. Host-header LLD forks answered at #471 refinement 2026-09-14.
+Rollup from initiative-planning 2026-09-25. host-chrome-extension-completion HLD signed off; status lld.
