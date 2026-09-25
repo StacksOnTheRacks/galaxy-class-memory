@@ -3,9 +3,9 @@ doc: product.backlog
 schema_version: 1
 updated: 2026-09-25
 in_progress: []
-ready: []
-refinement:
+ready:
   - "[#79 Extend production GitHub OIDC deploy role for S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/79)"
+refinement:
   - "[#80 Host the dashboard play SPA on S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/80)"
   - "[#81 Seed exactly one unguessable table and export the play URL](https://github.com/StacksOnTheRacks/riffle-poker/issues/81)"
   - "[#82 Reject create_table on the deployed public WebSocket handler](https://github.com/StacksOnTheRacks/riffle-poker/issues/82)"
