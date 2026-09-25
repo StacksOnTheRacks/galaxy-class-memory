@@ -4,53 +4,38 @@ schema_version: 1
 updated: 2026-09-25
 items:
   - initiative: dashboard-holdem
-    id: stack-blinds-defaults
-    question: "Starting stack and blinds defaults for the dashboard NLHE table?"
-    blocking: false
-    status: answered
-  - initiative: dashboard-holdem
-    id: max-seats
-    question: "Maximum seats at the v1 dashboard table?"
-    blocking: false
-    status: answered
-  - initiative: dashboard-holdem
     id: turn-timer-expiry
-    question: "Turn timer duration and what happens on expiry?"
+    question: "Turn timer duration and what happens on expiry (auto-fold, auto-check where legal, or soft prompt only)?"
     blocking: false
     status: open
   - initiative: dashboard-holdem
     id: hand-strength-outs-bar
-    question: "Accuracy bar for hand strength and outs in My Hand?"
+    question: "Accuracy bar for hand strength and outs shown in My Hand (exact combinatorial vs approximate)?"
     blocking: false
     status: open
   - initiative: dashboard-holdem
     id: session-delta-baseline
-    question: "Baseline for session delta in My Hand?"
+    question: "What is the baseline for session delta in My Hand (buy-in, session start stack, or table join)?"
     blocking: false
     status: open
   - initiative: dashboard-holdem
     id: table-discovery
-    question: "How do players meet a table — share link, join code, or list?"
+    question: "How do players meet a table — create+share link, short join code, or in-app list?"
     blocking: false
     status: open
   - initiative: dashboard-holdem
     id: disconnect-policy
-    question: "Mid-hand disconnect behavior?"
+    question: "Mid-hand disconnect: auto-fold timer vs sit-out vs leave seat immediately?"
     blocking: false
     status: open
   - initiative: standalone-play-and-embed
-    id: runtime-hosting
-    question: "Where does Riffle runtime host?"
-    blocking: false
-    status: answered
-  - initiative: standalone-play-and-embed
     id: play-lab-fate
-    question: "Fate of Turnur-backed play-lab harness?"
+    question: "Fate of Turnur-backed play-lab harness — rewrite on MatchStore + shared URLs, or retire?"
     blocking: false
     status: open
   - initiative: standalone-play-and-embed
     id: anonymous-to-account
-    question: "Can an anonymous session become a Riffle account without leaving the table?"
+    question: "Can an anonymous session become a Riffle account without leaving the current table and seat?"
     blocking: false
     status: open
   - initiative: standalone-play-and-embed
@@ -58,31 +43,59 @@ items:
     question: "Uniqueness, persistence, and moderation for in-game display names?"
     blocking: false
     status: open
+  - initiative: standalone-play-and-embed
+    id: anonymous-upgrade-fixation
+    question: "How does anonymous→account upgrade rotate so an attacker-set anonymous session cannot inherit the account?"
+    blocking: false
+    status: open
   - initiative: artwork
     id: figma-pages-state
-    question: "Figma MCP shows Cover-only Alto9 template?"
+    question: "Figma MCP shows Cover-only Alto9 template; do Screens/Flows pages from design/screens.md need rebuild or is MCP access stale?"
     blocking: false
-    status: deferred
+    status: open
   - initiative: artwork
     id: canva-workspace
-    question: "Which Canva workspace owns the Riffle kit?"
+    question: "Which Canva workspace/account owns the Riffle kit and who publishes?"
     blocking: false
-    status: deferred
+    status: open
   - initiative: artwork
     id: chip-denom-set
-    question: "Exact play-chip denomination set for flat chip art?"
+    question: "Exact play-chip denomination set and max stack display rules for flat chip art?"
     blocking: false
-    status: deferred
+    status: open
   - initiative: artwork
     id: card-back-wire
-    question: "Wire card-back in the running app?"
+    question: "Wire card-back in the running app this initiative or defer until hidden-card UI exists?"
+    blocking: false
+    status: open
+  - initiative: integrate-turnur-websockets
+    id: turnur-ws-shipping
+    question: "Track Turnur milestone/4 (#44–#49); Riffle LLD grooming may proceed; implement-ticket blocked until Turnur integrate-websockets ships."
     blocking: false
     status: deferred
   - initiative: integrate-turnur-websockets
-    id: turnur-ws-shipping
-    question: "Turnur WS shipping dependency?"
+    id: ws-reconnect-backoff
+    question: "Reconnect and resubscribe backoff policy when Turnur WS disconnects mid-hand?"
     blocking: false
     status: deferred
+  - initiative: integrate-turnur-websockets
+    id: ws-event-wait-timeout
+    question: "Default timeout before poll fallback after HTTP mutation when expected push does not arrive?"
+    blocking: false
+    status: deferred
+  - initiative: playable-holdem-table
+    id: stack-blinds-defaults
+    question: "Starting stack and blinds defaults for the first playable NLHE table?"
+    blocking: false
+    status: open
+  - initiative: playable-holdem-table
+    id: runtime-hosting
+    question: "Where does Riffle runtime host (process/platform)? Undecided; non-blocking while iframe + in-process library + server-side SDK key hold."
+    blocking: false
+    status: open
+  - initiative: play-lab
+    id: lab-runtime-hosting
+    question: "Where is the play lab and Riffle runtime served for a human operator (local process only vs a deployed lab URL)?"
+    blocking: false
+    status: open
 ---
-
-runtime-hosting answered: API Gateway WebSocket + Lambda + DynamoDB + S3/CloudFront CDK/GHA (operator lock 2026-09-25). stack-blinds-defaults answered: stack 2000, blinds 1/2 (#65 refinement 2026-09-25). max-seats answered: 8 (#65 refinement 2026-09-25).

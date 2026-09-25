@@ -1,13 +1,14 @@
 ---
 doc: product.open_questions
 schema_version: 1
-updated: 2026-09-14
+updated: 2026-09-25
 questions:
   - id: runtime-hosting
     question: "Where does Riffle runtime host (process/platform/IaC)?"
     blocking: false
-    status: open
+    status: answered
     owner: architect
+    answer: "API Gateway WebSocket + Lambda + DynamoDB + S3/CloudFront CDK/GHA (operator lock 2026-09-25)."
   - id: play-lab-fate
     question: "Fate of Turnur-backed play-lab harness — rewrite on MatchStore + shared URLs, or retire?"
     blocking: false

@@ -4,13 +4,13 @@ schema_version: 1
 updated: 2026-09-25
 slug: anonymous-table-play
 title: "Anonymous table play"
-status: hld
+status: lld
 user_facing: true
 signoffs:
-  po: false
-  architect: false
-  designer: false
-  security: false
+  po: true
+  architect: true
+  designer: true
+  security: true
 board_milestone: ""
 board_tickets: []
 ---
@@ -27,4 +27,4 @@ board_tickets: []
 
 **Out:** Authentication, Cognito, and user onramp; custom DNS; marketing site; Turnur; embed / RiffSync; multi-table discovery; felt artwork; real money.
 
-Suggested next: `/forge.initiative-design` (Designer attends — user-facing).
+Suggested next: `/forge.backlog-grooming`.
