@@ -7,12 +7,12 @@ items:
     id: stack-blinds-defaults
     question: "Starting stack and blinds defaults for the dashboard NLHE table?"
     blocking: false
-    status: open
+    status: answered
   - initiative: dashboard-holdem
     id: max-seats
     question: "Maximum seats at the v1 dashboard table?"
     blocking: false
-    status: open
+    status: answered
   - initiative: dashboard-holdem
     id: turn-timer-expiry
     question: "Turn timer duration and what happens on expiry?"
@@ -85,4 +85,4 @@ items:
     status: deferred
 ---
 
-runtime-hosting answered: API Gateway WebSocket + Lambda + DynamoDB + S3/CloudFront CDK/GHA (operator lock 2026-09-25).
+runtime-hosting answered: API Gateway WebSocket + Lambda + DynamoDB + S3/CloudFront CDK/GHA (operator lock 2026-09-25). stack-blinds-defaults answered: stack 2000, blinds 1/2 (#65 refinement 2026-09-25). max-seats answered: 8 (#65 refinement 2026-09-25).

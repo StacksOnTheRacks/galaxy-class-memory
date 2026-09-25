@@ -6,13 +6,15 @@ questions:
   - id: stack-blinds-defaults
     question: "Starting stack and blinds defaults for the dashboard NLHE table?"
     blocking: false
-    status: open
+    status: answered
     owner: product-owner
+    answer: "Starting stack 2000 play chips; blinds 1/2 (display $1 / $2). Locked at refinement #65 (2026-09-25)."
   - id: max-seats
     question: "Maximum seats at the v1 dashboard table?"
     blocking: false
-    status: open
+    status: answered
     owner: product-owner
+    answer: "8 seats (Players n / 8). Locked at refinement #65 (2026-09-25)."
   - id: turn-timer-expiry
     question: "Turn timer duration and what happens on expiry (auto-fold, auto-check where legal, or soft prompt only)?"
     blocking: false
