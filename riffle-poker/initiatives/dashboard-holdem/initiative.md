@@ -4,7 +4,7 @@ schema_version: 1
 updated: 2026-09-25
 slug: dashboard-holdem
 title: "Dashboard Hold'em"
-status: lld
+status: executing
 user_facing: true
 signoffs:
   po: false
