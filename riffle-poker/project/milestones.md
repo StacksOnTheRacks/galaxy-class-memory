@@ -10,4 +10,4 @@ upcoming:
 slipped: []
 ---
 
-Board/SCM wins. Playable-holdem-table milestone/1, Play lab milestone/2, Integrate Turnur WebSockets milestone/3 closed. Standalone milestone/4 and Artwork milestone/5 closed (issues Done or closed not planned). Dashboard Hold'em milestone/6 open on host but #59–#68 Done — not the active Refinement queue.
+Board/SCM wins. Playable-holdem-table milestone/1, Play lab milestone/2, Integrate Turnur WebSockets milestone/3 closed. Standalone milestone/4 and Artwork milestone/5 closed (issues Done or closed not planned). Dashboard Hold'em milestone/6 closed (#59–#68 Done). Active delivery is milestone/7 only.
