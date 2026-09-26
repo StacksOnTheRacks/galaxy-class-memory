@@ -1,13 +1,11 @@
 ---
 doc: design.themes
 schema_version: 1
-updated: 2026-09-14
+updated: 2026-09-26
 themes:
   - app: galaxyclass-www
-    figma_url: ""
-    figma_file_key: ""
-    status: unbound
-    last_audited: ""
+    figma_url: "https://www.figma.com/design/0ByUrA0pS5qXyzcUsDstby/Galaxy-Class-Web"
+    figma_file_key: 0ByUrA0pS5qXyzcUsDstby
+    status: bound
+    last_audited: "2026-09-26"
 ---
-
-Operator Accept — no Figma file yet. Theme unbound; do not invent a file.

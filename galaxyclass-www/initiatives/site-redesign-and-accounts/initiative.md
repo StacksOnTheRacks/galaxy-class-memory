@@ -26,10 +26,10 @@ board_tickets:
 
 **Domain (locked):** `galaxyclass.app` — Route53 hosted zone `Z02927871LCJW2KMZGKOP` (profile `me`). ACM cert to be issued in us-east-1 during implement.
 
-**Start state:** Existing Next.js 15 static-export marketing site (dark space theme, Framer Motion). No CDK, no CI, no Cognito. Figma unbound.
+**Start state:** Existing Next.js 15 static-export marketing site (dark space theme, Framer Motion). No CDK, no CI, no Cognito. Figma bound (Galaxy-Class-Web).
 
 **In scope:** Studio site redesign (impressive modern craft, tasteful motion); custom Cognito auth UI (not Hosted UI); Cognito user pool for Galaxy Class accounts; ACM + DNS; CDK stacks; GitHub Actions OIDC deploy (pattern: riffle-poker / riffsync); CloudFront `/riffle/*` routing to Riffle S3 origin via SSM cross-repo wiring.
 
 **Out:** Riffle token integration (follow-up initiative); leaderboards backend; real money; high-cost art production pipeline; in-page Riffle embed on the studio home.
 
-Suggested next: `/forge.initiative-design riffle-poker` (basePath /riffle, SSM write, PlayUrl) → Figma theme-bind → `/forge.initiative-planning` → `/forge.refinement` #3/#5/#6. `/forge.implement-ticket` blocked until initiative returns to LLD and #3–#6 are Ready.
+Suggested next: `/forge.initiative-planning` → `/forge.refinement` #3/#5/#6. `/forge.implement-ticket` blocked until initiative returns to LLD and #3–#6 are Ready.

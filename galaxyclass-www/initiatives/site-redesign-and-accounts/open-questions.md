@@ -9,9 +9,9 @@ questions:
     status: answered
     owner: architect
   - id: figma-bind-vs-code
-    question: "Bind a Figma file for galaxyclass-www before Ready for user-facing tickets (#5, #6)."
-    blocking: true
-    status: open
+    question: "Bind a Figma file for galaxyclass-www before Ready for user-facing tickets (#5, #6). Bound to Galaxy-Class-Web (0ByUrA0pS5qXyzcUsDstby). Figma is SoT for #5 and #6."
+    blocking: false
+    status: answered
     owner: designer
   - id: apex-vs-www
     question: "Apex galaxyclass.app is canonical; www.galaxyclass.app redirects to apex preserving path and query."

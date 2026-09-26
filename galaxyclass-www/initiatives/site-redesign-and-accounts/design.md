@@ -2,19 +2,19 @@
 doc: product.initiative_design
 schema_version: 1
 updated: 2026-09-26
-summary: "Code-first redesign on existing dark cinematic theme (void/nebula/gold/stellar/riffle Tailwind tokens). Studio brand distinct from Riffle product green. Auth screens are first-class surfaces matching studio craft. Play Riffle CTA navigates to /riffle on galaxyclass.app (same domain, separate deploy). Figma unbound — code is source of truth for this initiative."
-figma_file: ""
+summary: "Figma SoT for studio screens on dark cinematic theme (void/nebula/gold/stellar). Studio brand distinct from Riffle product green. Auth screens are first-class surfaces matching studio craft. Play Riffle CTA navigates to /riffle on galaxyclass.app (same domain, separate deploy)."
+figma_file: "https://www.figma.com/design/0ByUrA0pS5qXyzcUsDstby/Galaxy-Class-Web"
 screens:
-  - "Home / — hero, studio pillars, Riffle featured card with Play CTA to /riffle, footer (evolve existing page.tsx sections)"
-  - "Nav — signed-out: Sign in + Sign up; signed-in: Account + Sign out"
-  - "/sign-up — default, validation-error, submitting, check-email"
-  - "/sign-in — default, not-authorized, unconfirmed-hint, submitting"
-  - "/confirm — code entry, resend, error"
-  - "/forgot-password — request, check-email"
-  - "/reset-password — code + new password, validation-error, success"
-  - "/account — profile summary (email), sign out; redirect when signed out"
+  - "Home / — figma node 4:81 (default 4:81, reduced-motion 4:396)"
+  - "Nav — figma node 4:97 (signed-out 4:97, signed-in 4:105)"
+  - "/sign-up — figma node 4:112 (default, validation-error 4:133, submitting 4:156, check-email 4:177)"
+  - "/sign-in — figma node 4:190 (default, not-authorized 4:212, unconfirmed-hint 4:234, submitting 4:255)"
+  - "/confirm — figma node 4:276 (default, error 4:293)"
+  - "/forgot-password — figma node 4:310 (request, check-email 4:326)"
+  - "/reset-password — figma node 4:336 (default, validation-error 4:355, success 4:372)"
+  - "/account — figma node 4:384 (authenticated profile)"
 states:
-  - "Home — default with motion; reduced-motion static layout"
+  - "Home — default with motion; reduced-motion static layout (4:396)"
   - "Auth routes — loading, default, validation-error, submitting, success, error per step"
   - "Nav — signed-out vs signed-in session states"
   - "Account — authenticated profile vs redirect-to-sign-in"
@@ -27,4 +27,4 @@ a11y:
 open_questions: []
 ---
 
-Code-first: no Figma file bound. Replace HostEmbedSection with Play Riffle CTA linking to /riffle (same-domain navigation, not external hostname or iframe). Riffle table UI is riffle-poker owned at /riffle/* — studio home does not embed gameplay. Retain Starfield/Hero glass aesthetic; tighten copy for functional/fun studio positioning over costly art. Auth pages share studio chrome (Nav, dark background, gold/stellar accents) but simplify motion for form clarity.
+Bound to Galaxy-Class-Web (`0ByUrA0pS5qXyzcUsDstby`). Replace HostEmbedSection with Play Riffle CTA linking to /riffle (same-domain navigation, not external hostname or iframe). Riffle table UI is riffle-poker owned at /riffle/* — studio home does not embed gameplay. Retain Starfield/Hero glass aesthetic; tighten copy for functional/fun studio positioning over costly art. Auth pages share studio chrome (Nav, dark background, gold/stellar accents) but simplify motion for form clarity.
