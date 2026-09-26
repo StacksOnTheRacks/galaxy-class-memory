@@ -32,4 +32,4 @@ board_tickets:
 
 **Out:** Riffle token integration (follow-up initiative); leaderboards backend; real money; high-cost art production pipeline; in-page Riffle embed on the studio home.
 
-Suggested next: `/forge.refinement` for #3, #5, #6 (Refinement column). #1, #2, #4, #7 already Ready — no re-grooming needed. `/forge.implement-ticket` when all seven siblings are Ready.
+Suggested next: `/forge.refinement` for #6. #1–#5 and #7 are Ready. `/forge.implement-ticket` when #6 is also Ready.
