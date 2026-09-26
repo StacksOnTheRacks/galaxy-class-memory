@@ -1,11 +1,11 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-26T14:32:00Z
+updated: 2026-09-26T14:36:00Z
 in_progress: []
-ready: []
-refinement:
+ready:
   - "[#1 Configure GitHub OIDC deploy role for galaxyclass-www CDK and static deploy](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/1)"
+refinement:
   - "[#2 Deploy GalaxyClassAuth-prod Cognito stack (SES, SRP client, outputs)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/2)"
   - "[#3 Deploy GalaxyClassSite-prod (ACM, Route53, S3, CloudFront OAC, www→apex)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/3)"
   - "[#4 Add GitHub Actions OIDC deploy workflow (build + CDK + BucketDeployment)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/4)"
