@@ -1,7 +1,7 @@
 {
   "version": 1,
   "path": "galaxyclass-www",
-  "kind": "site",
+  "kind": "app",
   "host": "github",
   "github": {
     "owner": "StacksOnTheRacks",

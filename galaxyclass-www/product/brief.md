@@ -1,40 +1,39 @@
 ---
 doc: product.brief
 schema_version: 2
-updated: 2026-09-14
+updated: 2026-09-26
 product_name: "Galaxy Class Gaming"
-product_description: "Public marketing site for Galaxy Class Gaming — a highly design-focused company website, not a product app. First featured product is Riffle (standalone no-limit Texas Hold'em, play chips; embed-mode for hosts, RiffSync first). Repo: https://github.com/StacksOnTheRacks/galaxyclass-www. Later deployable with AWS CDK (not this init)."
-problem: "Galaxy Class Gaming has no public face. People who find the company or Riffle have nowhere to land that communicates the brand, the first product, or how to play or embed. The need is a design-led marketing site, not another play surface."
+product_description: "Galaxy Class Gaming makes online table and board games for friends and family. Play anonymously, or sign up for a Galaxy Class account that works across every Galaxy Class game (leaderboards and more). Functional, usable, fun over high-cost art. Riffle Poker is the first game; more are on the way. Domain: galaxyclass.app. Repo: https://github.com/StacksOnTheRacks/galaxyclass-www"
+problem: "People discovering Galaxy Class or its games need a studio home that communicates the brand, lets them play anonymously or create one account for advanced features across all Galaxy Class games, and routes them to Riffle and future titles."
 audience:
-  - "Prospective players discovering Galaxy Class Gaming and Riffle"
-  - "Hosts evaluating embed-mode (RiffSync first)"
+  - "Friends and family who want functional, fun online table and board games"
+  - "Players who want anonymous quick play or a Galaxy Class account for leaderboards and cross-game identity"
+  - "Prospective players discovering Riffle as the first featured game"
   - "Press, partners, and collaborators looking for brand and product story"
-  - "Not for in-product play, real-money operators, or anyone expecting this site to be a game"
+  - "Not for real-money operators or high-cost cinematic art consumers as the primary bet"
 goals:
-  - "A public, design-led marketing site that is the company face for Galaxy Class Gaming"
-  - "Feature Riffle first, with accurate positioning (standalone NLHE play chips; embed-mode for hosts)"
-  - "Brand-first visual identity (Figma unbound this run)"
-  - "Keep the site structured so it can later deploy with AWS CDK — capability, not this init"
+  - "Public studio site at galaxyclass.app with impressive modern design and tasteful motion"
+  - "Galaxy Class accounts via Cognito with custom auth UI (sign up, sign in, account)"
+  - "Shared identity that will work across all Galaxy Class games"
+  - "Cost-effective serverless hosting (S3, CloudFront, Cognito) deployed via CDK and GitHub Actions"
+  - "Feature Riffle first with accurate positioning; structure for future games"
 non_goals:
-  - "A product app: playable table, accounts, match state, or embed runtime on this site"
-  - "CI, live deploy, or an AWS CDK stack this run"
-  - "Figma theme bind this run (unbound; no file yet)"
-  - "Creating or joining a Forge group"
-  - "Product-targeted implement, grooming, or refinement while kind is site"
   - "Real money, rake, cashier, or KYC"
-  - "Featuring Turnur or mothballed platforms"
-  - "A multi-product catalog, blog, or store as v1"
-  - "Board tickets, epics, or role signoffs at init"
+  - "High-cost graphic art production as the primary investment"
+  - "Leaderboards backend on the site (later)"
+  - "Riffle token integration in the first initiative (follow-up)"
+  - "Turnur or mothballed platforms"
+  - "A multi-product store or blog as v1"
 success_metrics:
-  - metric: "Company landing"
-    target: "A design-led public site that names Galaxy Class Gaming and presents Riffle as the first featured product"
-  - metric: "Riffle story accuracy"
-    target: "Riffle described as standalone NLHE (play chips) with embed-mode for hosts (RiffSync first); Turnur not featured"
-  - metric: "Later CDK deployability"
-    target: "Site can accept AWS CDK deploy later without a product rewrite — not built or deployed this init"
+  - metric: "Studio landing"
+    target: "galaxyclass.app live with redesigned studio site and Galaxy Class account flows"
+  - metric: "Auth"
+    target: "Players can sign up, sign in, and manage a Galaxy Class account on custom UI backed by Cognito"
+  - metric: "Deploy"
+    target: "Site deploys via CDK + GitHub Actions to galaxyclass.app on serverless stack"
   - metric: "Quantified traffic"
-    target: "TBD (greenfield; no instrumentation or live URL this run)"
-current_focus: "Init kind: site — seed brief + design memory only. Figma unbound. No CI, CDK, or live deploy this run. Product-targeted implement/grooming/refinement stop while kind is site; later site-build either stays outside the ticket pipeline or kind flips to app."
+    target: "TBD (greenfield)"
+current_focus: "Initiative site-redesign-and-accounts in HLD. kind flipped to app. Next: /forge.initiative-design."
 ---
 
-Host repo [StacksOnTheRacks/galaxyclass-www](https://github.com/StacksOnTheRacks/galaxyclass-www) was empty at init; first featured product is [Riffle](https://github.com/StacksOnTheRacks/riffle-poker) (`riffle-poker`). Turnur is mothballed. Standalone product (no Forge group). While `kind: site`, product-targeted implement / grooming / refinement stop — later site-build stays outside the ticket pipeline or `kind` flips to `app`.
+Host repo [StacksOnTheRacks/galaxyclass-www](https://github.com/StacksOnTheRacks/galaxyclass-www). First featured game is [Riffle](https://github.com/StacksOnTheRacks/riffle-poker) (`riffle-poker`). Route53 hosted zone `galaxyclass.app` exists (profile `me`). Board fields (`projectId`, `statusIds`) deferred until ensure-config before grooming.

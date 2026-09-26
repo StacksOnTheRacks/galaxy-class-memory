@@ -1,8 +1,13 @@
 ---
 doc: product.open_questions_index
 schema_version: 1
-updated: 2026-09-25
+updated: 2026-09-26
 items:
+  - initiative: product
+    id: galaxy-class-accounts-supersede
+    question: "Galaxy Class accounts (shared Cognito pool at galaxyclass.app) supersede standalone-play-and-embed first-party identity direction. Riffle adoption pending follow-up initiative."
+    blocking: false
+    status: open
   - initiative: dashboard-holdem
     id: turn-timer-expiry
     question: "Turn timer duration and what happens on expiry (auto-fold, auto-check where legal, or soft prompt only)?"
