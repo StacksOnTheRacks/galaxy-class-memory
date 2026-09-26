@@ -4,13 +4,13 @@ schema_version: 1
 updated: 2026-09-26
 slug: site-redesign-and-accounts
 title: "Site redesign and Galaxy Class accounts"
-status: hld
+status: lld
 user_facing: true
 signoffs:
-  po: false
-  architect: false
-  designer: false
-  security: false
+  po: true
+  architect: true
+  designer: true
+  security: true
 board_milestone: "[Site redesign and Galaxy Class accounts](https://github.com/StacksOnTheRacks/galaxyclass-www/milestone/1)"
 board_tickets:
   - "[#1 Configure GitHub OIDC deploy role for galaxyclass-www CDK and static deploy](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/1)"
@@ -32,4 +32,4 @@ board_tickets:
 
 **Out:** Riffle token integration (follow-up initiative); leaderboards backend; real money; high-cost art production pipeline; in-page Riffle embed on the studio home.
 
-Suggested next: `/forge.initiative-planning` → `/forge.refinement` #3/#5/#6. `/forge.implement-ticket` blocked until initiative returns to LLD and #3–#6 are Ready.
+Suggested next: `/forge.refinement` for #3, #5, #6 (Refinement column). #1, #2, #4, #7 already Ready — no re-grooming needed. `/forge.implement-ticket` when all seven siblings are Ready.
