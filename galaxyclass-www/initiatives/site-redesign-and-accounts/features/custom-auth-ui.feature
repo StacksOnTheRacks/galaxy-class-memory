@@ -42,3 +42,48 @@ Feature: Galaxy Class custom auth UI
     Then every form field has an explicit label
     And errors are linked via aria-describedby
     And keyboard navigation completes each flow without relying on color alone
+
+  Scenario: Sign-up check-email uses verification code wording and links to confirm
+    Given a visitor has just completed sign-up on /sign-up
+    When they see the check-email state
+    Then the copy refers to a verification code (not a verification link)
+    And a link to /confirm is available
+    And they are not sent to Cognito Hosted UI
+
+  Scenario: Confirm accepts a code and can resend
+    Given a visitor is on /confirm with email remembered from sign-up
+    When they submit a verification code
+    Then their account can be confirmed on the custom UI
+    And Resend code is available without leaving the custom UI
+    When they open /confirm without a remembered email
+    Then the form also asks for email so they can finish
+
+  Scenario: Sign-in errors do not enumerate accounts
+    When a visitor signs in with an unknown email or a wrong password
+    Then they see "Incorrect email or password."
+    When a visitor signs in with an unconfirmed account
+    Then they see "Confirm your email before signing in."
+    When a visitor signs up with an email that is already registered
+    Then the UI does not say the email is already registered
+
+  Scenario: Forgot check-email is always generic and links to reset
+    When a visitor submits /forgot-password for any email
+    Then they see "If an account exists, a reset code was sent."
+    And a link to /reset-password is available
+
+  Scenario: Reset collects code and new password without putting password in the URL
+    Given a visitor is on /reset-password
+    When they submit a code and a new password that meets the password rule
+    Then they can sign in with the new password on the custom UI
+    And the password never appears in the URL
+    When they open /reset-password without a remembered email
+    Then the form also asks for email so they can finish
+
+  Scenario: Unresolved session does not reveal account email
+    When a visitor opens /account while the session is still unresolved
+    Then the page does not show an account email
+
+  Scenario: Sign-in page links to forgot-password and sign-up
+    When a visitor views /sign-in
+    Then they can navigate to /forgot-password
+    And they can navigate to /sign-up

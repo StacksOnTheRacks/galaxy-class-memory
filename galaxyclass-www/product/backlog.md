@@ -9,9 +9,9 @@ ready:
   - "[#3 Author GalaxyClassSite-prod (ACM, Route53, S3, CloudFront OAC, www→apex, /riffle origin)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/3)"
   - "[#4 Add GitHub Actions OIDC deploy workflow (build + CDK + BucketDeployment)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/4)"
   - "[#5 Redesign studio home and navigation (Riffle featured, /riffle play CTA)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/5)"
-  - "[#7 Verify SES domain galaxyclass.app in us-east-1 (noreply@galaxyclass.app)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/7)"
-refinement:
   - "[#6 Implement Galaxy Class custom auth UI (sign-up through reset + account)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/6)"
+  - "[#7 Verify SES domain galaxyclass.app in us-east-1 (noreply@galaxyclass.app)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/7)"
+refinement: []
 blocked: []
 icebox: []
 ---

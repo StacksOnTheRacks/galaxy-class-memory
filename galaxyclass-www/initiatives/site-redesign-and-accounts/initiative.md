@@ -4,7 +4,7 @@ schema_version: 1
 updated: 2026-09-26
 slug: site-redesign-and-accounts
 title: "Site redesign and Galaxy Class accounts"
-status: lld
+status: executing
 user_facing: true
 signoffs:
   po: true
@@ -32,4 +32,4 @@ board_tickets:
 
 **Out:** Riffle token integration (follow-up initiative); leaderboards backend; real money; high-cost art production pipeline; in-page Riffle embed on the studio home.
 
-Suggested next: `/forge.refinement` for #6. #1–#5 and #7 are Ready. `/forge.implement-ticket` when #6 is also Ready.
+Suggested next: `/forge.implement-ticket` — all milestone siblings (#1–#7) are Ready.
