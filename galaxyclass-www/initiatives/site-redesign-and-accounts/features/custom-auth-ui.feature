@@ -30,6 +30,13 @@ Feature: Galaxy Class custom auth UI
     Then they can sign in with the new password on the custom UI
     And they are not sent to Cognito Hosted UI
 
+  Scenario: Navigation reflects session state
+    When a signed-out visitor views the site
+    Then navigation shows Sign in and Sign up
+    When a signed-in visitor views the site
+    Then navigation shows Account and Sign out
+    And sign-out clears the session
+
   Scenario: Auth forms meet accessibility baseline
     When a visitor uses sign-up sign-in confirm or reset flows
     Then every form field has an explicit label

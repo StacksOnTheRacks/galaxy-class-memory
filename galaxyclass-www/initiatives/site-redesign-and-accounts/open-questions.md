@@ -3,10 +3,15 @@ doc: product.open_questions
 schema_version: 1
 updated: 2026-09-26
 questions:
+  - id: riffle-subpath-routing
+    question: "How is galaxyclass.app/riffle/* served from the separate Riffle deploy? Covers CloudFront behavior/origin on GalaxyClassSite-prod, Riffle SPA base path, same-origin session/storage isolation from studio Amplify session, and which repo owns the route."
+    blocking: true
+    status: open
+    owner: architect
   - id: figma-bind-vs-code
-    question: "Design in code first — evolve existing Next.js/Tailwind site; Figma bind later."
-    blocking: false
-    status: answered
+    question: "Bind a Figma file for galaxyclass-www before Ready for user-facing tickets (#5, #6)."
+    blocking: true
+    status: open
     owner: designer
   - id: apex-vs-www
     question: "Apex galaxyclass.app is canonical; www.galaxyclass.app redirects to apex preserving path and query."

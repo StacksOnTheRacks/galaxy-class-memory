@@ -4,21 +4,21 @@ schema_version: 1
 updated: 2026-09-26
 slug: site-redesign-and-accounts
 title: "Site redesign and Galaxy Class accounts"
-status: lld
+status: hld
 user_facing: true
 signoffs:
-  po: true
-  architect: true
-  designer: true
-  security: true
+  po: false
+  architect: false
+  designer: false
+  security: false
 board_milestone: "[Site redesign and Galaxy Class accounts](https://github.com/StacksOnTheRacks/galaxyclass-www/milestone/1)"
 board_tickets:
   - "[#1 Configure GitHub OIDC deploy role for galaxyclass-www CDK and static deploy](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/1)"
   - "[#2 Author GalaxyClassAuth-prod Cognito stack (SES wiring, SRP client, outputs)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/2)"
   - "[#7 Verify SES domain galaxyclass.app in us-east-1 (noreply@galaxyclass.app)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/7)"
-  - "[#3 Deploy GalaxyClassSite-prod (ACM, Route53, S3, CloudFront OAC, www→apex)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/3)"
+  - "[#3 Author GalaxyClassSite-prod (ACM, Route53, S3, CloudFront OAC, www→apex)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/3)"
   - "[#4 Add GitHub Actions OIDC deploy workflow (build + CDK + BucketDeployment)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/4)"
-  - "[#5 Redesign studio home and navigation (Riffle featured, external play CTA)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/5)"
+  - "[#5 Redesign studio home and navigation (Riffle featured, /riffle play CTA)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/5)"
   - "[#6 Implement Galaxy Class custom auth UI (sign-up through reset + account)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/6)"
 ---
 
@@ -30,6 +30,6 @@ board_tickets:
 
 **In scope:** Studio site redesign (impressive modern craft, tasteful motion); custom Cognito auth UI (not Hosted UI); Cognito user pool for Galaxy Class accounts; ACM + DNS; CDK stacks; GitHub Actions OIDC deploy (pattern: riffle-poker / riffsync).
 
-**Out:** Riffle token integration (follow-up initiative); leaderboards backend; real money; high-cost art production pipeline; game runtime on the studio site.
+**Out:** Riffle token integration (follow-up initiative); leaderboards backend; real money; high-cost art production pipeline; in-page Riffle embed on the studio home.
 
-Suggested next: `/forge.refinement` (#3 site stack). `/forge.implement-ticket` blocked until #3–#6 are Ready.
+Suggested next: Figma theme-bind for galaxyclass-www → `/forge.initiative-design` (Riffle `/riffle` routing) → `/forge.initiative-planning`. `/forge.implement-ticket` blocked until initiative returns to LLD and #3–#6 are Ready.
