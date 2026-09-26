@@ -28,4 +28,4 @@ constraints:
 open_questions: []
 ---
 
-Trust boundary: static SPA is untrusted; Cognito is auth authority. Build pipeline reads Cognito pool/client IDs from CDK outputs at deploy time — never bake secrets. SES domain verification for galaxyclass.app is a deploy prerequisite (human-ready step if not automated). First deploy may require two-phase workflow: deploy auth stack, then build with outputs, then deploy site stack — or SSM parameter store for stable build-time config after initial auth deploy.
+Trust boundary: static SPA is untrusted; Cognito is auth authority. Build pipeline reads Cognito pool/client IDs from CDK outputs at deploy time — never bake secrets. SES domain verification for galaxyclass.app is a deploy prerequisite (human-ready step if not automated). Deploy order is locked: deploy GalaxyClassAuth-prod, read Cognito CfnOutputs into NEXT_PUBLIC_COGNITO_*, run the Next.js static export, then deploy GalaxyClassSite-prod so BucketDeployment publishes out/ (no SSM for build-time Cognito config).
