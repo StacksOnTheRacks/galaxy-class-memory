@@ -3,11 +3,16 @@ doc: product.open_questions_index
 schema_version: 1
 updated: 2026-09-26
 items:
-  - initiative: product
+  - initiative: galaxyclass-riffle-subpath
+    id: anonymous-table-play-supersession
+    question: "Prod cutover relationship to executing anonymous-table-play milestone (#79–#84). This initiative owns galaxyclass.app prod URL; anonymous-table-play may remain dev-only or be retired later."
+    blocking: false
+    status: deferred
+  - initiative: galaxyclass-riffle-subpath
     id: galaxy-class-accounts-supersede
     question: "Galaxy Class accounts (shared Cognito pool at galaxyclass.app) supersede standalone-play-and-embed first-party identity direction. Riffle adoption pending follow-up initiative."
     blocking: false
-    status: open
+    status: deferred
   - initiative: dashboard-holdem
     id: turn-timer-expiry
     question: "Turn timer duration and what happens on expiry (auto-fold, auto-check where legal, or soft prompt only)?"

@@ -4,13 +4,13 @@ schema_version: 1
 updated: 2026-09-26
 slug: galaxyclass-riffle-subpath
 title: "Riffle at galaxyclass.app/riffle subpath"
-status: hld
+status: lld
 user_facing: true
 signoffs:
-  po: false
-  architect: false
-  designer: false
-  security: false
+  po: true
+  architect: true
+  designer: true
+  security: true
 board_milestone: ""
 board_tickets: []
 ---
@@ -27,4 +27,4 @@ board_tickets: []
 
 **Depends on:** galaxyclass-www `GalaxyClassSite-prod` `/riffle/*` behavior reading SSM param (deploy riffle bucket + SSM before first site stack synth that includes behavior).
 
-Suggested next: `/forge.initiative-planning` → `/forge.backlog-grooming` → implement coordinated with galaxyclass-www #3.
+Suggested next: `/forge.backlog-grooming` for this initiative (coordinated with galaxyclass-www #3).

@@ -8,4 +8,9 @@ questions:
     blocking: false
     status: deferred
     owner: po
+  - id: galaxy-class-accounts-supersede
+    question: "Galaxy Class accounts (shared Cognito pool at galaxyclass.app) supersede standalone-play-and-embed first-party identity direction. Riffle adoption pending follow-up initiative."
+    blocking: false
+    status: deferred
+    owner: po
 ---
