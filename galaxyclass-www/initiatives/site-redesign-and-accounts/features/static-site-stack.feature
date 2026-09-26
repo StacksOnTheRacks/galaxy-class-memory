@@ -14,13 +14,20 @@ Feature: Deploy GalaxyClassSite-prod static hosting stack
     And the origin is a private S3 bucket behind CloudFront OAC
 
   Scenario: www host redirects to apex preserving path and query
-    When a visitor opens https://www.galaxyclass.app/sign-in
-    Then the browser is redirected to https://galaxyclass.app/sign-in
+    When a visitor opens https://www.galaxyclass.app/sign-in?next=/account
+    Then the browser receives HTTP 301 to https://galaxyclass.app/sign-in?next=/account
 
-  Scenario: SPA fallback and security headers are configured
+  Scenario: Extensionless export routes resolve to path.html
+    When a visitor opens https://galaxyclass.app/sign-in
+    Then CloudFront serves the exported sign-in.html object for that route
+
+  Scenario: SPA fallback when no exported object exists
     When a client requests a path with no matching origin object
     Then CloudFront returns /index.html for SPA routing
-    And baseline security headers include HSTS and CSP for static plus Cognito endpoints
+
+  Scenario: SPA fallback and security headers are configured
+    When the site stack is deployed
+    Then baseline security headers include HSTS and CSP for static plus Cognito endpoints
 
   Scenario: ACM certificate covers apex and www
     When the site stack is deployed
