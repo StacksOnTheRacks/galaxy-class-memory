@@ -4,38 +4,38 @@ schema_version: 1
 updated: 2026-09-26
 questions:
   - id: figma-bind-vs-code
-    question: "Bind a Figma theme file for the redesign, or design in code first?"
-    blocking: true
-    status: open
+    question: "Design in code first — evolve existing Next.js/Tailwind site; Figma bind later."
+    blocking: false
+    status: answered
     owner: designer
+  - id: apex-vs-www
+    question: "Apex galaxyclass.app is canonical; www.galaxyclass.app redirects to apex preserving path and query."
+    blocking: false
+    status: answered
+    owner: architect
+  - id: social-sign-in
+    question: "Email and password only at launch; Google/Apple deferred to a later initiative."
+    blocking: false
+    status: answered
+    owner: po
   - id: cognito-feature-plan
-    question: "Cognito feature plan (Lite vs Essentials) and MFA or passkeys at launch?"
+    question: "Recommend Cognito Essentials (MFA optional later without plan migration). Confirm at implement if pricing/features change."
     blocking: false
     status: open
     owner: architect
   - id: email-sender
-    question: "Email sender: Cognito default vs SES with a galaxyclass.app sender?"
+    question: "Recommend SES noreply@galaxyclass.app via UserPoolEmail.withSES. Verify galaxyclass.app in SES during implement."
     blocking: false
     status: open
     owner: architect
   - id: cross-game-session
-    question: "Cross-game session: games on *.galaxyclass.app subdomains share tokens via shared-domain cookies vs redirect handoff?"
+    question: "Defer subdomain handoff. This initiative stores Amplify session on parent domain galaxyclass.app only; *.galaxyclass.app token sharing waits for Riffle integration initiative."
     blocking: false
-    status: open
+    status: deferred
     owner: architect
-  - id: apex-vs-www
-    question: "Apex galaxyclass.app vs www.galaxyclass.app as canonical host?"
-    blocking: false
-    status: open
-    owner: architect
-  - id: social-sign-in
-    question: "Social sign-in (Google or Apple) at launch or later?"
-    blocking: false
-    status: open
-    owner: po
   - id: anonymous-upgrade
-    question: "Can anonymous players later upgrade to a Galaxy Class account while keeping their history?"
+    question: "Defer to Riffle follow-up initiative — can anonymous players upgrade to Galaxy Class account while keeping history?"
     blocking: false
-    status: open
+    status: deferred
     owner: po
 ---
