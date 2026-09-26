@@ -11,8 +11,11 @@ signoffs:
   architect: true
   designer: true
   security: true
-board_milestone: ""
-board_tickets: []
+board_milestone: "[Riffle at galaxyclass.app/riffle](https://github.com/StacksOnTheRacks/riffle-poker/milestone/8)"
+board_tickets:
+  - "[#89 Extend OIDC deploy role for play-origin S3 and SSM](https://github.com/StacksOnTheRacks/riffle-poker/issues/89)"
+  - "[#90 Host private play-origin S3, deploy /riffle SPA, publish SSM and PlayUrl](https://github.com/StacksOnTheRacks/riffle-poker/issues/90)"
+  - "[#91 Join and play at /riffle/<table-guid> with no account](https://github.com/StacksOnTheRacks/riffle-poker/issues/91)"
 ---
 
 **Outcome:** A player opens `https://galaxyclass.app/riffle/<table-guid>`, joins the one seeded table, sits with a display name, and plays NLHE in play chips — no account, onramp, or login.
@@ -27,4 +30,4 @@ board_tickets: []
 
 **Depends on:** galaxyclass-www `GalaxyClassSite-prod` `/riffle/*` behavior reading SSM param (deploy riffle bucket + SSM before first site stack synth that includes behavior).
 
-Suggested next: `/forge.backlog-grooming` for this initiative (coordinated with galaxyclass-www #3).
+Suggested next: `/forge.plan-refresh` then `/forge.refinement` (#89–#91).

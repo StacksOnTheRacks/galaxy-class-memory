@@ -1,18 +1,21 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-25
+updated: 2026-09-26
 in_progress: []
-ready:
+ready: []
+refinement:
+  - "[#89 Extend OIDC deploy role for play-origin S3 and SSM](https://github.com/StacksOnTheRacks/riffle-poker/issues/89)"
+  - "[#90 Host private play-origin S3, deploy /riffle SPA, publish SSM and PlayUrl](https://github.com/StacksOnTheRacks/riffle-poker/issues/90)"
+  - "[#91 Join and play at /riffle/<table-guid> with no account](https://github.com/StacksOnTheRacks/riffle-poker/issues/91)"
+blocked: []
+done:
   - "[#79 Extend production GitHub OIDC deploy role for S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/79)"
   - "[#80 Host the dashboard play SPA on S3 and CloudFront](https://github.com/StacksOnTheRacks/riffle-poker/issues/80)"
   - "[#81 Seed exactly one unguessable table and export the play URL](https://github.com/StacksOnTheRacks/riffle-poker/issues/81)"
   - "[#82 Reject create_table on the deployed public WebSocket handler](https://github.com/StacksOnTheRacks/riffle-poker/issues/82)"
   - "[#83 Join from /<table-guid> and fail closed otherwise](https://github.com/StacksOnTheRacks/riffle-poker/issues/83)"
   - "[#84 Sit with a display name and no account, then play on the dashboard surface](https://github.com/StacksOnTheRacks/riffle-poker/issues/84)"
-refinement: []
-blocked: []
-done:
   - "[#59 Host interactive match runtime on API Gateway WebSocket + Lambda + DynamoDB](https://github.com/StacksOnTheRacks/riffle-poker/issues/59)"
   - "[#60 Render dashboard table shell for Desktop, Tablet, and Phone](https://github.com/StacksOnTheRacks/riffle-poker/issues/60)"
   - "[#61 Show player row tiles with stack, cards, action, positions, and turn timer](https://github.com/StacksOnTheRacks/riffle-poker/issues/61)"
@@ -67,4 +70,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins. Milestone/7 Anonymous table play: #79–#84 Ready. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
+Board/SCM wins. Milestone/7 Anonymous table play: #79–#84 Done (milestone open, 0 open issues; cutover deferred). Milestone/8 Riffle at galaxyclass.app/riffle: #89–#91 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
