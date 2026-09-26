@@ -19,14 +19,14 @@ questions:
     status: answered
     owner: po
   - id: cognito-feature-plan
-    question: "Recommend Cognito Essentials (MFA optional later without plan migration). Confirm at implement if pricing/features change."
+    question: "Cognito Essentials locked for HLD exit (MFA optional later without plan migration)."
     blocking: false
-    status: open
+    status: answered
     owner: architect
   - id: email-sender
-    question: "Recommend SES noreply@galaxyclass.app via UserPoolEmail.withSES. Verify galaxyclass.app in SES during implement."
+    question: "SES noreply@galaxyclass.app via UserPoolEmail.withSES locked for HLD exit; verify galaxyclass.app in SES during implement."
     blocking: false
-    status: open
+    status: answered
     owner: architect
   - id: cross-game-session
     question: "Defer subdomain handoff. This initiative stores Amplify session on parent domain galaxyclass.app only; *.galaxyclass.app token sharing waits for Riffle integration initiative."
@@ -34,7 +34,7 @@ questions:
     status: deferred
     owner: architect
   - id: anonymous-upgrade
-    question: "Defer to Riffle follow-up initiative — can anonymous players upgrade to Galaxy Class account while keeping history?"
+    question: "Defer to Riffle follow-up initiative — can anonymous players upgrade to a Galaxy Class account while keeping history?"
     blocking: false
     status: deferred
     owner: po

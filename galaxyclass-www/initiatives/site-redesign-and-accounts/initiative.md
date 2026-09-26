@@ -4,13 +4,13 @@ schema_version: 1
 updated: 2026-09-26
 slug: site-redesign-and-accounts
 title: "Site redesign and Galaxy Class accounts"
-status: hld
+status: lld
 user_facing: true
 signoffs:
-  po: false
-  architect: false
-  designer: false
-  security: false
+  po: true
+  architect: true
+  designer: true
+  security: true
 board_milestone: ""
 board_tickets: []
 ---
@@ -25,4 +25,4 @@ board_tickets: []
 
 **Out:** Riffle token integration (follow-up initiative); leaderboards backend; real money; high-cost art production pipeline; game runtime on the studio site.
 
-Suggested next: `/forge.initiative-design`.
+Suggested next: `/forge.backlog-grooming` (after board fields configured via ensure-config).

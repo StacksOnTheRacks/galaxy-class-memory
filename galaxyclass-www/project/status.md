@@ -2,11 +2,12 @@
 doc: project.status
 schema_version: 1
 updated: 2026-09-26
-summary: "galaxyclass-www flipped kind site → app. First initiative site-redesign-and-accounts in HLD."
+summary: "site-redesign-and-accounts HLD signed off; initiative status lld."
 in_flight: []
 blockers:
   - "GitHub Project board fields not yet configured in forge.json"
 next_up:
-  - "/forge.initiative-design"
+  - "ensure-config for GitHub board fields (projectId, statusIds)"
+  - "/forge.backlog-grooming"
 asks: []
 ---
