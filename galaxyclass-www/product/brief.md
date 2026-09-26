@@ -36,4 +36,4 @@ success_metrics:
 current_focus: "Initiative site-redesign-and-accounts in LLD (HLD signed off). Next: ensure-config for board fields, then /forge.backlog-grooming."
 ---
 
-Host repo [StacksOnTheRacks/galaxyclass-www](https://github.com/StacksOnTheRacks/galaxyclass-www). First featured game is [Riffle](https://github.com/StacksOnTheRacks/riffle-poker) (`riffle-poker`). Route53 hosted zone `galaxyclass.app` exists (profile `me`). Board fields (`projectId`, `statusIds`) deferred until ensure-config before grooming.
+Host repo [StacksOnTheRacks/galaxyclass-www](https://github.com/StacksOnTheRacks/galaxyclass-www). First featured game is [Riffle](https://github.com/StacksOnTheRacks/riffle-poker) (`riffle-poker`). Route53 hosted zone `galaxyclass.app` exists (profile `me`). GitHub Project: GalaxyClass Open Source (`PVT_kwHOADqiOM4BWitQ`), shared with riffsync/riffle-poker.
