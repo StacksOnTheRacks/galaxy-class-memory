@@ -5,8 +5,8 @@ updated: 2026-09-26
 in_progress: []
 ready:
   - "[#89 Extend OIDC deploy role for play-origin S3 and SSM](https://github.com/StacksOnTheRacks/riffle-poker/issues/89)"
-refinement:
   - "[#90 Host private play-origin S3, deploy /riffle SPA, publish SSM and PlayUrl](https://github.com/StacksOnTheRacks/riffle-poker/issues/90)"
+refinement:
   - "[#91 Join and play at /riffle/<table-guid> with no account](https://github.com/StacksOnTheRacks/riffle-poker/issues/91)"
 blocked: []
 done:
@@ -70,4 +70,4 @@ icebox:
   - "Tournaments / sit-and-go"
 ---
 
-Board/SCM wins. Milestone/7 Anonymous table play: #79–#84 Done (milestone open, 0 open issues; cutover deferred). Milestone/8 Riffle at galaxyclass.app/riffle: #89 Ready (human-ready); #90–#91 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.
+Board/SCM wins. Milestone/7 Anonymous table play: #79–#84 Done (milestone open, 0 open issues; cutover deferred). Milestone/8 Riffle at galaxyclass.app/riffle: #89 Ready (human-ready); #90 Ready (ai-ready); #91 In Refinement. Milestone/6 Dashboard Hold'em: #59–#68 Done. Icebox is coarse outcomes only; do not treat as tickets.

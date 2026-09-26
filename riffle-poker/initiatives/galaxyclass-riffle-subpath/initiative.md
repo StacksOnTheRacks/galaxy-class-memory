@@ -30,4 +30,4 @@ board_tickets:
 
 **Depends on:** galaxyclass-www `GalaxyClassSite-prod` `/riffle/*` behavior reading SSM param (deploy riffle bucket + SSM before first site stack synth that includes behavior).
 
-Suggested next: `/forge.plan-refresh` then `/forge.refinement` (#89–#91).
+Suggested next: `/forge.refinement` on #91 (Designer attends). #89 Ready (`human-ready`); #90 Ready (`ai-ready`).
