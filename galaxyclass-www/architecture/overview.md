@@ -6,7 +6,7 @@ system: "Galaxy Class Gaming public studio site at galaxyclass.app — static Ne
 context: "Redesign from marketing-only site to studio home with shared cross-game accounts. Riffle Poker is first featured game; Riffle token integration is a follow-up initiative."
 data_flow: "1. Browser loads static site from CloudFront/S3. 2. Sign up/sign in via custom UI → Cognito SRP. 3. Account pages read Cognito session/JWT client-side. 4. Future games consume same pool tokens (follow-up)."
 deployment_shape: "CDK TypeScript: cert (us-east-1 ACM), auth (Cognito pool + app client), site (S3 + CloudFront + Route53). GitHub Actions OIDC; local AWS CLI profile me."
-current_focus: "site-redesign-and-accounts initiative in HLD."
+current_focus: "site-redesign-and-accounts initiative in LLD (Refinement); Cognito stack is issue #2."
 major_components:
   - "Static studio SPA — S3 + CloudFront at galaxyclass.app"
   - "Cognito user pool — Galaxy Class accounts"

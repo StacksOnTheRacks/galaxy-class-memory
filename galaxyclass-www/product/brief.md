@@ -33,7 +33,7 @@ success_metrics:
     target: "Site deploys via CDK + GitHub Actions to galaxyclass.app on serverless stack"
   - metric: "Quantified traffic"
     target: "TBD (greenfield)"
-current_focus: "Initiative site-redesign-and-accounts in LLD; #1–#6 In Refinement (milestone/1). Next: /forge.refinement."
+current_focus: "Initiative site-redesign-and-accounts in LLD; #1 Ready (human-ready); #2 Ready (ai-ready); #7 Ready (human-ready); #3–#6 In Refinement. Next: /forge.refinement."
 ---
 
 Host repo [StacksOnTheRacks/galaxyclass-www](https://github.com/StacksOnTheRacks/galaxyclass-www). First featured game is [Riffle](https://github.com/StacksOnTheRacks/riffle-poker) (`riffle-poker`). Route53 hosted zone `galaxyclass.app` exists (profile `me`). GitHub Project: GalaxyClass Open Source (`PVT_kwHOADqiOM4BWitQ`), shared with riffsync/riffle-poker.

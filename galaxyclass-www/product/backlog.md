@@ -1,12 +1,13 @@
 ---
 doc: product.backlog
 schema_version: 1
-updated: 2026-09-26T14:36:00Z
+updated: 2026-09-26
 in_progress: []
 ready:
   - "[#1 Configure GitHub OIDC deploy role for galaxyclass-www CDK and static deploy](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/1)"
+  - "[#2 Author GalaxyClassAuth-prod Cognito stack (SES wiring, SRP client, outputs)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/2)"
+  - "[#7 Verify SES domain galaxyclass.app in us-east-1 (noreply@galaxyclass.app)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/7)"
 refinement:
-  - "[#2 Deploy GalaxyClassAuth-prod Cognito stack (SES, SRP client, outputs)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/2)"
   - "[#3 Deploy GalaxyClassSite-prod (ACM, Route53, S3, CloudFront OAC, www→apex)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/3)"
   - "[#4 Add GitHub Actions OIDC deploy workflow (build + CDK + BucketDeployment)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/4)"
   - "[#5 Redesign studio home and navigation (Riffle featured, external play CTA)](https://github.com/StacksOnTheRacks/galaxyclass-www/issues/5)"
