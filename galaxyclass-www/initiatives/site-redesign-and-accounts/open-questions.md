@@ -4,9 +4,9 @@ schema_version: 1
 updated: 2026-09-26
 questions:
   - id: riffle-subpath-routing
-    question: "How is galaxyclass.app/riffle/* served from the separate Riffle deploy? Covers CloudFront behavior/origin on GalaxyClassSite-prod, Riffle SPA base path, same-origin session/storage isolation from studio Amplify session, and which repo owns the route."
-    blocking: true
-    status: open
+    question: "galaxyclass.app/riffle/* served via /riffle/* CloudFront behavior on GalaxyClassSite-prod → Riffle S3 origin (bucket from SSM /galaxyclass/riffle/play-origin-bucket, written by riffle-poker). Riffle SPA basePath /riffle. galaxyclass-www owns distribution + behavior; riffle-poker owns origin bucket + SPA. Same origin; Riffle does not read Amplify storage; token handoff deferred."
+    blocking: false
+    status: answered
     owner: architect
   - id: figma-bind-vs-code
     question: "Bind a Figma file for galaxyclass-www before Ready for user-facing tickets (#5, #6)."
@@ -34,7 +34,7 @@ questions:
     status: answered
     owner: architect
   - id: cross-game-session
-    question: "Defer subdomain handoff. This initiative stores Amplify session on parent domain galaxyclass.app only; *.galaxyclass.app token sharing waits for Riffle integration initiative."
+    question: "Defer token handoff. Riffle at /riffle is same-origin but does not consume Amplify session; explicit token sharing waits for Riffle integration initiative."
     blocking: false
     status: deferred
     owner: architect

@@ -8,7 +8,7 @@ Feature: Site redesign and Galaxy Class accounts
   # - Leaderboards backend on the studio site
   # - Cognito Hosted UI or OAuth social IdP (Google/Apple) at launch
   # - Real money, rake, cashier, or KYC
-  # - Game runtime, table UI, or in-site gameplay
+  # - In-page Riffle embed or table UI on the studio home
   # - Anonymous-to-account upgrade inside Riffle
   # - Turnur, embed-mode, or RiffSync host attach on the studio site
   # - Riffle first-party identity store as account source of truth
@@ -17,6 +17,7 @@ Feature: Site redesign and Galaxy Class accounts
     Given the studio site is a static Next.js export on S3 behind CloudFront
     And the public hostname is https://galaxyclass.app
     And www.galaxyclass.app redirects to the apex host preserving path and query
+    And Riffle play is served at https://galaxyclass.app/riffle/<table-guid>
     And Galaxy Class accounts use a Cognito user pool with custom auth UI via Amplify Auth SRP
     And sign-up and sign-in are email and password only at launch
     And the site deploys via GitHub Actions OIDC and AWS CDK with no long-lived AWS keys in the repo
@@ -25,7 +26,7 @@ Feature: Site redesign and Galaxy Class accounts
     When a visitor opens https://galaxyclass.app/
     Then they see the redesigned Galaxy Class studio home
     And the page presents the studio story and functional, fun positioning
-    And Riffle is featured as the first game with an external play destination
+    And Riffle is featured as the first game with a Play Riffle CTA linking to /riffle
     And atmospheric motion honors prefers-reduced-motion
 
   Scenario: www host redirects to apex
@@ -62,10 +63,15 @@ Feature: Site redesign and Galaxy Class accounts
     And the built static export is published to the CloudFront origin
     And the site is reachable at https://galaxyclass.app
 
-  Scenario: Studio site routes to games externally without in-site gameplay
-    When a visitor uses play CTAs for Riffle or future games from the studio site
-    Then they leave the studio site for the game's play destination
-    And no playable table or match state runs on galaxyclass.app
+  Scenario: Play Riffle CTA navigates to /riffle on galaxyclass.app
+    When a visitor uses the Play Riffle CTA from the studio home
+    Then they navigate to /riffle on galaxyclass.app
+    And the studio home does not embed or run Riffle table or match state
+
+  Scenario: /riffle path routes to Riffle origin
+    When a visitor opens https://galaxyclass.app/riffle/<table-guid>
+    Then the Riffle play SPA loads from the Riffle origin
+    And the response is not the studio site /index.html fallback
 
   Scenario: Riffle integration and legacy identity stay out of ship criteria
     When the studio site and Galaxy Class accounts ship under this initiative

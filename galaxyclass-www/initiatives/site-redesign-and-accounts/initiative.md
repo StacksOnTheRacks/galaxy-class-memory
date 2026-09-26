@@ -28,8 +28,8 @@ board_tickets:
 
 **Start state:** Existing Next.js 15 static-export marketing site (dark space theme, Framer Motion). No CDK, no CI, no Cognito. Figma unbound.
 
-**In scope:** Studio site redesign (impressive modern craft, tasteful motion); custom Cognito auth UI (not Hosted UI); Cognito user pool for Galaxy Class accounts; ACM + DNS; CDK stacks; GitHub Actions OIDC deploy (pattern: riffle-poker / riffsync).
+**In scope:** Studio site redesign (impressive modern craft, tasteful motion); custom Cognito auth UI (not Hosted UI); Cognito user pool for Galaxy Class accounts; ACM + DNS; CDK stacks; GitHub Actions OIDC deploy (pattern: riffle-poker / riffsync); CloudFront `/riffle/*` routing to Riffle S3 origin via SSM cross-repo wiring.
 
 **Out:** Riffle token integration (follow-up initiative); leaderboards backend; real money; high-cost art production pipeline; in-page Riffle embed on the studio home.
 
-Suggested next: Figma theme-bind for galaxyclass-www → `/forge.initiative-design` (Riffle `/riffle` routing) → `/forge.initiative-planning`. `/forge.implement-ticket` blocked until initiative returns to LLD and #3–#6 are Ready.
+Suggested next: `/forge.initiative-design riffle-poker` (basePath /riffle, SSM write, PlayUrl) → Figma theme-bind → `/forge.initiative-planning` → `/forge.refinement` #3/#5/#6. `/forge.implement-ticket` blocked until initiative returns to LLD and #3–#6 are Ready.
