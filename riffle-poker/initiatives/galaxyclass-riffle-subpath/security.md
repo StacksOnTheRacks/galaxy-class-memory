@@ -1,12 +1,12 @@
 ---
 doc: product.initiative_security
 schema_version: 1
-updated: 2026-09-26
-summary: "HLD security for galaxyclass-riffle-subpath: one seeded DynamoDB table joined via unguessable GUID at galaxyclass.app/riffle/<guid>; no account/Cognito/Amplify on play path; S3 origin + SSM publish; no riffle prod CloudFront. Reuses dashboard-holdem seat-token model. Same-origin with studio — Riffle must not read Amplify storage."
+updated: 2026-09-27
+summary: "HLD security for galaxyclass-riffle-subpath: one seeded DynamoDB table joined via unguessable GUID at galaxyclass.app/riffle/<guid>; bare /riffle lists that single table from config.json (no live seat counts). No account/Cognito/Amplify on play path; S3 origin + SSM publish; no riffle prod CloudFront. Reuses dashboard-holdem seat-token model. Same-origin with studio — Riffle must not read Amplify storage."
 threats:
   - "Table GUID / capability leak — URL is join secret; predictable ids allow unauthorized joins"
   - "Public create_table minting extra tables"
-  - "Table enumeration via list/discovery API"
+  - "Table enumeration via list/discovery API or config.json tables[] growth beyond the single seeded table"
   - "Secrets or foreign seat data in static SPA bundle"
   - "S3 public list/write or over-privileged OIDC deploy role"
   - "SSM param tampering — overly broad PutParameter scope"
@@ -14,9 +14,10 @@ threats:
   - "Seat-token theft via XSS on static origin (existing residual)"
   - "Client-supplied stacks/pots/deals"
 mitigations:
-  - "Seeded table id MUST be unguessable UUID; join_table only with that id; no lobby"
+  - "Seeded table id MUST be unguessable UUID; join_table only with that id; no dynamic lobby API"
   - "Deployed handler MUST reject create_table; exactly one seeded table"
-  - "Unknown tableId → table_not_found; no enumeration APIs"
+  - "config.json tables[] exposes only the one CDK-seeded table (static metadata, no live seat counts); no WebSocket list_tables action"
+  - "Unknown tableId → table_not_found"
   - "SPA: UI + public webSocketUrl only; no AWS keys, foreign tokens, or hole cards in bundle"
   - "Riffle bundle excludes Amplify; does not read Cognito localStorage keys"
   - "S3 block public access; galaxyclass CloudFront OAC is public read path for /riffle/*"
