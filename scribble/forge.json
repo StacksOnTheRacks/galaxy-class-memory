@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "path": "scribble",
+  "kind": "app",
+  "host": "github",
+  "github": {
+    "owner": "StacksOnTheRacks",
+    "repo": "galaxyclass",
+    "packagePath": "packages/scribble"
+  },
+  "labels": {
+    "aiReady": "ai-ready",
+    "humanReady": "human-ready"
+  }
+}
