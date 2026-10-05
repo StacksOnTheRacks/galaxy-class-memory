@@ -16,8 +16,11 @@ soft_constraints:
   - "Keep TableController free of Phaser so input, draft, camera, and timeline stay unit-testable"
   - "Client-safe rules constants live in rules/limits.ts so the bundle never pulls node:crypto"
   - "Execution policies stay under the 6,144-character managed-policy limit"
+  - "A dropped connection never ends a game; only leave or remove_player frees an in-game seat"
+  - "The dictionary is never shipped to the browser; the preview asks check_words"
 out_of_bounds:
-  - "Public create-table, turn timers, seat resume after disconnect (not v1)"
+  - "Public create-table and turn timers (not v1)"
+  - "Turn notifications (email/push) for away players — later"
   - "Challenges or alternate word lists"
   - "Shared DynamoDB table or WebSocket API with Riffle"
 assumptions:
